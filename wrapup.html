@@ -26,58 +26,6 @@
     <script src="static/js/notify.7898a6be1e40.js"></script>
     <script src="static/js/time.4f918ead85cd.js"></script>
     <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
-    <script>
-        function setCookie(name,value,days=7) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days*24*60*60*1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-        }
-    
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0;i < ca.length;i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1,c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-            }
-            return null;
-        }
-    </script>
-    <style>#cookie-hide {
-        display: none;
-    }
-    /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-</style>
-    
-<script>
-  /* FIXME */
-</script>
 
 </head>
 
@@ -169,11 +117,7 @@
         
         
         
-        <script>
-        /**/
-        
-        showLink();
-        </script> 
+
     </div>
     <div class="inner-column lighten-bg">
         <div class="content">
