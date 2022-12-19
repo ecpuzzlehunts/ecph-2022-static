@@ -1,0 +1,250 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Butterfly Catching - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/autumn.html" class="btn">Back to Autumn</a>
+
+
+
+<a href="../post-hunt-solve/butterflycatching.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/butterflycatching.html" class="btn">View solution</a>
+<a href="../stats/butterflycatching.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Butterfly Catching
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    <div class="puzzle-erratum">
+        
+        On <time datetime="2022-10-16T12:50:38+00:00" data-format="%A, %B %-d at %-I:%M %p %Z">Sunday, October 16 at 8:50 AM EDT</time>,
+        the 14th image was found to be slightly incorrect; it was updated after the hunt ended.
+    </div>
+    
+    
+
+    
+    
+    <p class="flavor">We travelled to many cities in search of local butterflies.</p>
+<div><a href="../static/puzzle_resources/butterflycatching/a.png"><img src="../static/puzzle_resources/butterflycatching/a.6aadeb35c8df.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/b.png"><img src="../static/puzzle_resources/butterflycatching/b.e7501e7113bd.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/c.png"><img src="../static/puzzle_resources/butterflycatching/c.88c4d3c637c2.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/d.png"><img src="../static/puzzle_resources/butterflycatching/d.9405fcb14880.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/e.png"><img src="../static/puzzle_resources/butterflycatching/e.5c418ee7fbac.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/f.png"><img src="../static/puzzle_resources/butterflycatching/f.4a5e7ff33253.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/g.png"><img src="../static/puzzle_resources/butterflycatching/g.31a868d60090.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/h.png"><img src="../static/puzzle_resources/butterflycatching/h.afb38b70c68e.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/i.png"><img src="../static/puzzle_resources/butterflycatching/i.ca5ffaf3a6b8.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/j.png"><img src="../static/puzzle_resources/butterflycatching/j.b0ab6a34a115.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/k.png"><img src="../static/puzzle_resources/butterflycatching/k.dd87328dabf6.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/l.png"><img src="../static/puzzle_resources/butterflycatching/l.632d74f18f9c.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/m.png"><img src="../static/puzzle_resources/butterflycatching/m.c88a5769c3c9.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/n.png"><img src="../static/puzzle_resources/butterflycatching/n.f144724e65e2.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/o.png"><img src="../static/puzzle_resources/butterflycatching/o.7eaa7b16a66a.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/p.png"><img src="../static/puzzle_resources/butterflycatching/p.d9a3ce41861f.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/q.png"><img src="../static/puzzle_resources/butterflycatching/q.913af36257c6.png" width="100%"></a><a href="../static/puzzle_resources/butterflycatching/r.png"><img src="../static/puzzle_resources/butterflycatching/r.e2c0b0a81188.png" width="100%"></a></div>
+<p><center>(Click on each image to open a full-sized version.)</center></p>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

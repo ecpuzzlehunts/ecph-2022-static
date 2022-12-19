@@ -1,0 +1,1246 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Back to School - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/backtoschool.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Back to School
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">ROWAN ATKINSON</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+eanacra, quatrevingtneuf and chimpaznee
+
+    </h2>
+
+    
+    <style>
+  .u {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .selectors {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .selectors button {
+    margin-bottom: 0;
+    /* margin: 0 1px; */
+
+    text-transform: initial;
+    font-size: initial;
+    font-weight: initial;
+    padding: 0 1rem;
+
+    border: 0px;
+    border-radius: 0;
+
+    background-color: rgba(0, 136, 119, 0.1);
+    /* color: #eef; */
+    transition: 0.3s;
+  }
+
+  .selectors button:hover {
+    background-color: #3ba;
+    color: #fff;
+  }
+
+  button.selected {
+    background-color: #087;
+    color: #eee;
+  }
+
+  button.selected:hover {
+    background-color: #087;
+    color: #eee;
+  }
+</style>
+<script src="../static/puzzle_resources/backtoschool/backtoschool.64ebe9ba09f0.js"></script>
+<p>This puzzle consists of many subpuzzles based on popular quiz game shows. Each of them has a single-word answer as a solution. The answers are in turn used to solve the final Only Connect subpuzzle.</p>
+<p>Click on a subpuzzle title below to see its solution.</p>
+<div class="selectors"><button id="toggle-blockbusters" onclick="toggleSoln(this, '.blockbusters')">Blockbusters</button><button id="toggle-chainreaction" onclick="toggleSoln(this, '.chainreaction')">Chain Reaction</button><button id="toggle-thechase" onclick="toggleSoln(this, '.thechase')">The Chase</button><button id="toggle-countdown" onclick="toggleSoln(this, '.countdown')">Countdown</button><button id="toggle-familyfeud" onclick="toggleSoln(this, '.familyfeud')">Family Feud</button><button id="toggle-jeopardy" onclick="toggleSoln(this, '.jeopardy')">Jeopardy</button><button id="toggle-mastermind" onclick="toggleSoln(this, '.mastermind')">Mastermind</button><button id="toggle-mervgriffinscrosswords" onclick="toggleSoln(this, '.mervgriffinscrosswords')">Merv Griffin's Crosswords</button><button id="toggle-pointless" onclick="toggleSoln(this, '.pointless')">Pointless</button><button id="toggle-thepriceisright" onclick="toggleSoln(this, '.thepriceisright')">The Price Is Right</button><button id="toggle-taskmaster" onclick="toggleSoln(this, '.taskmaster')">Taskmaster</button><button id="toggle-tenable" onclick="toggleSoln(this, '.tenable')">Tenable</button><button id="toggle-universitychallenge" onclick="toggleSoln(this, '.universitychallenge')">University Challenge</button><button id="toggle-theweakestlink" onclick="toggleSoln(this, '.theweakestlink')">Weakest Link</button><button id="toggle-wheeloffortune" onclick="toggleSoln(this, '.wheeloffortune')">Wheel of Fortune</button><button id="toggle-whowantstobeamillionaire" onclick="toggleSoln(this, '.whowantstobeamillionaire')">Who Wants to Be a Millionaire?</button></div>
+<div class="nested-solution blockbusters">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Blockbusters - by quatrevingtneuf</h4>
+<p>In the show, contestants answer trivia questions in the form “What [letter] [question]” in order to 
+  claim a letter space on the board. The answers to the questions are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What N might have a special habit?</td>
+<td>NUN</td>
+</tr>
+<tr>
+<td>What R gets counted in a game of baseball?</td>
+<td>RUN</td>
+</tr>
+<tr>
+<td>What P is a common vegetable?</td>
+<td>PEA</td>
+</tr>
+<tr>
+<td>What C is a social deduction board game?</td>
+<td>COUP</td>
+</tr>
+<tr>
+<td>What Q might you catch a ferry at?</td>
+<td>QUAY</td>
+</tr>
+<tr>
+<td>What D is a colour for a horse?</td>
+<td>DUN</td>
+</tr>
+<tr>
+<td>What G is a sort of sandwich?</td>
+<td>GYRO</td>
+</tr>
+</tbody>
+</table>
+<p>Perhaps by saying the words out loud, solvers will notice that the words rhyme with numbers. The 
+  letters only appear once each on the given board, so we know to match the answers up directly and 
+  place numbers on the board. From here, we proceed as with a game of minesweeper (the number gives 
+  how many of the surrounding six hexagons should be marked).</p>
+<p><center><img src="../static/puzzle_resources/backtoschool/sol01_nsou.20fccd62ff09.png" width="80%"><br></center></p>
+<p>Taking the marked cells in reading order yields the answer to this subpuzzle, <strong>SMITH</strong>. </p>
+</div>
+<div class="nested-solution chainreaction">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Chain Reaction - by quatrevingtneuf</h4>
+<p>Chain Reaction is normally a show about word association. Here, each of the clues here clues a 
+  two-letter "word". Considering "reaction" in the name of the show, we may suspect that the answers 
+  are related to elements. Indeed, we should fill in the middle gap with the chemical element that 
+  comes in between.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Clue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cs</td>
+<td>TECH DISCIPLINE</td>
+</tr>
+<tr>
+<td>Ba</td>
+<td>?</td>
+</tr>
+<tr>
+<td>La</td>
+<td>SOLFEGE SIXTH</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pb</td>
+<td>RECORD FOR ONESELF</td>
+</tr>
+<tr>
+<td>Bi</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Po</td>
+<td>BY MOUTH</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cf</td>
+<td>LUNG DISEASE</td>
+</tr>
+<tr>
+<td>Es</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Fm</td>
+<td>RADIO TYPE</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the middle elements together, we get our subpuzzle answer: <strong>BABIES</strong>.</p>
+</div>
+<div class="nested-solution thechase">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>The Chase - by chimpaznee</h4>
+<p>The questions seem like they are all missing something.</p>
+<p>If we do some research about the UK version of The Chase, we can find out that it has six chasers. If we consider the nicknames of the chasers, we can find unique answers to the questions, such that each question is connected to one of the chasers (we'll have use context clues to figure out which chaser fits which question).</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Chaser</th>
+<th>Completed question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The Menace</td>
+<td>What is the word preceding "<strong>Menace</strong>" in the Star Wars film's title?</td>
+<td>Phantom</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The Dark Destroyer</td>
+<td>What was the third of the first five American <strong>destroyer</strong> classes with a weight of over a thousand tons?</td>
+<td>O'Brien</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The Sinnerman</td>
+<td>What is the third word in the song <strong>Sinnerman</strong>'s lyrics?</td>
+<td>Where</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The Governess</td>
+<td>Who was the first <strong>governess</strong> of Connecticut?</td>
+<td>Ella T. Grasso</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The Vixen</td>
+<td>Who is the author of the work on which the opera with "<strong>Vixen</strong>" in its name is based?</td>
+<td>Rudolf Těsnohlídek</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The Beast</td>
+<td>What is the Number of the <strong>Beast</strong>?</td>
+<td>Six hundred and sixty six</td>
+</tr>
+</tbody>
+</table>
+<p>The first letters of the answers spell out the subpuzzle answer: <strong>POWERS</strong>.</p>
+</div>
+<div class="nested-solution countdown">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Countdown - by quatrevingtneuf</h4>
+<p>One segment in Countdown involves unscrambling nine letters to form the longest word possible. In this 
+  subpuzzle, we are faced with Chinese characters instead. Searching them together, we find that these are 
+  all radicals used when typing with the Cangjie input method, one of many ways to type Chinese. To give 
+  solvers somewhere to start, a couple radicals are given. Either by trial and error, or by searching a 
+  list, we can eventually find the anagram we need. The sequence "月山日女 月山手一月" produces the 
+  characters "眼睛", which translate to this subpuzzle's answer, <strong>EYE</strong>.</p>
+</div>
+<div class="nested-solution familyfeud">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Family Feud - by eanacra</h4>
+<p>In Family Feud, contestants aim to come up with the most popular answer to questions. The break-in to this sub-puzzle is most easily found via the fourth board where OXYGEN and TITANIUM are the only two answers with non-zero score. Indeed, both of these are chemical elements and their scores are equal to the element’s atomic numbers. This is further confirmed by the title "Infinitesimal Amount". From here, we infer that in each board the score of an answer is calculated by a fixed rule clued by the title (by default, the score is 0 if the answer does not satisfy a condition of the rule). We should then pick the answer that scores the highest for each question.</p>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Question</th>
+<th>Highest-scoring answer</th>
+<th>Score</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N-th prime where N is the highest A1Z26 value present in the answer</td>
+<td>Name a season.</td>
+<td>WINTER</td>
+<td>83</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Year in which the film whose last word is the answer won the Academy Award for Best Picture</td>
+<td>Name a room in Clue.</td>
+<td>HALL</td>
+<td>77</td>
+<td>M</td>
+</tr>
+<tr>
+<td>N-th triangular number minus one, where N is the answer's length (OEIS sequence <a href="https://oeis.org/A000096">A000096</a href>)</td>
+<td>Name a zodiac sign.</td>
+<td>SAGITTARIUS</td>
+<td>65</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Atomic number of the element</td>
+<td>Name a metal of antiquity.</td>
+<td>LEAD</td>
+<td>82</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Sum of A1Z26 values of consonants in the answer</td>
+<td>Name one of the seven dwarfs.</td>
+<td>SNEEZY</td>
+<td>84</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>The first letters of the titles spell ASCII. Since the highest scores are in the ASCII range for uppercase letters, we can convert them to letters, thus producing the subpuzzle answer: <strong>SMART</strong>.</p>
+</div>
+<div class="nested-solution jeopardy">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Jeopardy! - by quatrevingtneuf</h4>
+<p>We begin by answering the trivia questions, which are generally fairly straightforward:</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A Canadian Olympian named Alex did this to win Canada's first ever medal in this Winter Olympic event. (5)</td>
+<td>LUGED</td>
+</tr>
+<tr>
+<td>This synonym of "strenuous" or "laborious" may also appear in discussions of fiscal policy. (6)</td>
+<td>TAXING</td>
+</tr>
+<tr>
+<td>Algorithms such as the T permutation exchange the positions of four of these. (6)</td>
+<td>CUBIES</td>
+</tr>
+<tr>
+<td>The maximum size of this in the NFL is 7 greater than that for the CFL. (6)</td>
+<td>ROSTER</td>
+</tr>
+<tr>
+<td>"Sk8r Boi" by Avril Lavigne follows a similar chord progression to this famous piece in D major. (5)</td>
+<td>CANON</td>
+</tr>
+</tbody>
+</table>
+<p>As we might realize when considering "Daily Double", each of these clue answers can have one of their 
+  letters doubled to form a new valid word:</p>
+<table>
+<thead>
+<tr>
+<th>Original</th>
+<th>Doubled</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LUGED</td>
+<td>LUGGED</td>
+<td>G</td>
+</tr>
+<tr>
+<td>TAXING</td>
+<td>TAXIING</td>
+<td>I</td>
+</tr>
+<tr>
+<td>CUBIES</td>
+<td>CUBBIES</td>
+<td>B</td>
+</tr>
+<tr>
+<td>ROSTER</td>
+<td>ROOSTER</td>
+<td>O</td>
+</tr>
+<tr>
+<td>CANON</td>
+<td>CANNON</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>After one more letter doubling, we get our subpuzzle answer: <strong>GIBBON</strong>.</p>
+</div>
+<div class="nested-solution mastermind">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Mastermind - by eanacra</h4>
+<p>We are presented with six questions. The first unusual thing we might notice is the inclusion of the phrase “I’ve started so I’ll finish” in the middle of the last question. This is in fact the catchphrase of the Mastermind presenter Magnus Magnusson who said it whenever the time ran out while he was reading a question on the show. This suggests we should pay attention to the order of the questions.</p>
+<p>Next, we turn to the questions themselves but they seem to be very ambiguous. Nevertheless, after listing a few answer candidates for each question, we might notice, for example, the answer SORT works for both the second-last question and the last question. This leads to the gimmick of this subpuzzle: the contestant’s specialist subject is “answering two consecutive questions at the same time”. The questions are given in the order they are asked.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer 1</th>
+<th>Answer 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What word do you get when the last letter is removed from an alcoholic drink?</td>
+<td>---</td>
+<td>BEE</td>
+</tr>
+<tr>
+<td>What word goes in the following blank: "carpenter <span class="u">___</span>"?</td>
+<td>BEE</td>
+<td>ANT</td>
+</tr>
+<tr>
+<td>What word do you get when a letter is deleted from a family member?</td>
+<td>ANT</td>
+<td>NICE</td>
+</tr>
+<tr>
+<td>What word might you use to describe an amiable friend?</td>
+<td>NICE</td>
+<td>KIND</td>
+</tr>
+<tr>
+<td>What word goes in the following blank: "I couldn't answer the question about what <span class="u">___</span> of fish Nemo is"?</td>
+<td>KIND</td>
+<td>SORT</td>
+</tr>
+<tr>
+<td>What might you - I've started so I'll finish - do to a list of numbers?</td>
+<td>SORT</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the first letters of the answers, we obtain the subpuzzle answer: <strong>BANKS</strong>.</p>
+</div>
+<div class="nested-solution mervgriffinscrosswords">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Merv Griffin's Crosswords - by chimpaznee</h4>
+<p>This is a divided 9x9 crossword with a lot of special entries in 2 different colors, and two unclued entries. We can start by solving it like a normal crossword. But we'll quickly find out that none of the special entries fit into the grid.</p>
+<p>Instead, each special entry must be transformed in one of two ways before being entered (based on its colour and which half of the grid it is found in). The orange entries must be entered as completions of compound words or phrases, and the blue entries must by entered as rhymes.</p>
+<p>Here is the filled-in grid:</p>
+<table style="table-layout:auto; width:325px; margin-left:auto; margin-right:auto;"><tr style="height:36px"><td style="width:36px; border:1px solid black; text-align:center; padding:0;">D</td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">A</td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">D</td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">D</td><td style="width:36px; background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">A</td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">C</td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">M</td><td style="width:36px; border:1px solid black; text-align:center; padding:0;">E</td></tr><tr style="height:36px"><td style="border:1px solid black; text-align:center; padding:0;">I</td><td style="border:1px solid black; text-align:center; padding:0;">D</td><td style="border:1px solid black; text-align:center; padding:0;">E</td><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">L</td><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="border:1px solid black; text-align:center; padding:0;">U</td><td style="border:1px solid black; text-align:center; padding:0;">D</td></tr><tr style="height:36px"><td style="border:1px solid black; text-align:center; padding:0;">S</td><td style="border:1px solid black; text-align:center; padding:0;">O</td><td style="border:1px solid black; text-align:center; padding:0;">F</td><td style="border:1px solid black; text-align:center; padding:0;">T</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">E</td><td style="border:1px solid black; text-align:center; padding:0;">U</td><td style="border:1px solid black; text-align:center; padding:0;">R</td><td style="border:1px solid black; text-align:center; padding:0;">O</td></tr><tr style="height:36px"><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">E</td><td style="border:1px solid black; text-align:center; padding:0;">E</td><td style="border:1px solid black; text-align:center; padding:0;">L</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">S</td><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="border:1px solid black; text-align:center; padding:0;">M</td></tr><tr style="height:36px"><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">R</td><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="border:1px solid black; text-align:center; padding:0;">D</td><td style="border:1px solid black; text-align:center; padding:0;">I</td><td style="border:1px solid black; text-align:center; padding:0;">C</td><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="border:1px solid black; text-align:center; padding:0;">L</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td></tr><tr style="height:36px"><td style="border:1px solid black; text-align:center; padding:0;">M</td><td style="border:1px solid black; text-align:center; padding:0;">E</td><td style="border:1px solid black; text-align:center; padding:0;">T</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">D</td><td style="border:1px solid black; text-align:center; padding:0;">O</td><td style="border:1px solid black; text-align:center; padding:0;">T</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td></tr><tr style="height:36px"><td style="border:1px solid black; text-align:center; padding:0;">I</td><td style="border:1px solid black; text-align:center; padding:0;">B</td><td style="border:1px solid black; text-align:center; padding:0;">I</td><td style="border:1px solid black; text-align:center; padding:0;">S</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">M</td><td style="border:1px solid black; text-align:center; padding:0;">I</td><td style="border:1px solid black; text-align:center; padding:0;">S</td><td style="border:1px solid black; text-align:center; padding:0;">S</td></tr><tr style="height:36px"><td style="border:1px solid black; text-align:center; padding:0;">C</td><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="border:1px solid black; text-align:center; padding:0;">S</td><td style="border:1px solid black; text-align:center; padding:0;">T</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">B</td><td style="border:1px solid black; text-align:center; padding:0;">O</td><td style="border:1px solid black; text-align:center; padding:0;">L</td><td style="border:1px solid black; text-align:center; padding:0;">E</td></tr><tr style="height:36px"><td style="border:1px solid black; text-align:center; padding:0;">A</td><td style="border:1px solid black; text-align:center; padding:0;">R</td><td style="border:1px solid black; text-align:center; padding:0;">M</td><td style="border:1px solid black; text-align:center; padding:0;">Y</td><td style="background-color:#000; border:1px solid black; text-align:center; padding:0;"></td><td style="border:1px solid black; text-align:center; padding:0;">O</td><td style="border:1px solid black; text-align:center; padding:0;">N</td><td style="border:1px solid black; text-align:center; padding:0;">Y</td><td style="border:1px solid black; text-align:center; padding:0;">X</td></tr></table>
+<p>The answers to the two unclued entries are LAUD (in the blue region) and CAST (in the orange region). To find the final answer, we should find a rhyme of LAUD that can have "CAST" appended to it to form a compound word or phrase. The subpuzzle answer is a five-letter long word that satisfies both of these conditions - <strong>BROAD</strong>.</p>
+<p>Answers to the special clues:</p>
+<table>
+<thead>
+<tr>
+<th>Orange clue</th>
+<th>Answer</th>
+<th>Blue clue</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4D. Not in</td>
+<td>OUT</td>
+<td>5D. Bucket</td>
+<td>PAIL</td>
+</tr>
+<tr>
+<td>11A. Prefix meaning one millionth</td>
+<td>MICRO</td>
+<td>15A. Male sheep</td>
+<td>RAM</td>
+</tr>
+<tr>
+<td>13A. Like a non-acoustic guitar</td>
+<td>ELECTRIC</td>
+<td>19A. Not cold</td>
+<td>HOT</td>
+</tr>
+<tr>
+<td>20A. Shiny and smooth</td>
+<td>GLOSSY</td>
+<td>23D. 3.14159...</td>
+<td>PI</td>
+</tr>
+<tr>
+<td>21D. Sus animal</td>
+<td>PIG</td>
+<td>24D. Chest muscles, colloquially</td>
+<td>PECS</td>
+</tr>
+<tr>
+<td>27A. Material making up the Tanagra figurines</td>
+<td>TERRACOTTA</td>
+<td>26A. Naughty kids' Christmas gift</td>
+<td>COAL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="nested-solution pointless">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Pointless - by eanacra</h4>
+<p>Pointless is a show where contestants try to come up with answers that the least people thought of. A “Pointless” answer is one that none of the 100 people gave. In this subpuzzle we are given 6 categories and the title “Pointless Things”, so the logical thing to try is to find the “Pointless” answer in each category.</p>
+<p>By looking at the list of members for each set, one should spot a commonality between all 6 sets — they each contain something with the thematic substring NIL (this is most easily seen in NIL RECURRING or ONE NIL where the substring is not “hidden”). We can then extract a letter from each entry by going left or right (depending on the arrow’s direction) by the given number, starting at NIL.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>"Pointless" answer</th>
+<th>Extracted letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Films directed by Sean Ellis (←7)</td>
+<td>METRO MA<strong>NIL</strong>A</td>
+<td>M</td>
+</tr>
+<tr>
+<td>Players for the Atlanta Hawks in the 2021-22 season (←1)</td>
+<td>DA<strong>NIL</strong>O GALLINARI</td>
+<td>A</td>
+</tr>
+<tr>
+<td>EPs by Porcupine Tree (→5)</td>
+<td><strong>NIL</strong> RECURRING</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Films directed by Cameron Crowe (→4)</td>
+<td>VA<strong>NIL</strong>LA SKY</td>
+<td>K</td>
+</tr>
+<tr>
+<td>Neil Finn albums (←1)</td>
+<td>ONE <strong>NIL</strong></td>
+<td>E</td>
+</tr>
+<tr>
+<td>Agatha Christie books featuring Poirot (←7)</td>
+<td>DEATH ON THE <strong>NIL</strong>E</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>This gives us the subpuzzle answer, <strong>MARKET</strong>.</p>
+</div>
+<div class="nested-solution thepriceisright">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>The Price is Right - by quatrevingtneuf</h4>
+<p>Each of the items has been assigned a "price", but these certainly aren't things you would normally buy. 
+  All of the words are 3 letters long, which helps with identification:</p>
+<p><tt>
+  CAT<br />
+  HAT<br />
+  ANT<br />
+  MAN<br />
+  POP<br />
+  EAR<br />
+  ROW<br />
+  NET<br />
+  ONE<br />
+  WAX<br />
+  NAP<br />
+  EVE
+  </tt></p>
+<p>Reading the first letters gives us the clue CHAMPERNOWNE. 
+  <a href="https://en.wikipedia.org/wiki/Champernowne_constant">Champernowne's constant</a> can be 
+  generated by listing all the numbers in a given base in order (following a decimal point). If we try the 
+  same thing with letters (i.e. ABC...XYZAAABAC...ZXZYZZAAAAAB...), the first occurrence of each of the 
+  words above is at the index given by its "price". Notice that if had missed the CHAMPERNOWNE clue, we 
+  may have been able to surmise this rule from a couple patterns (the small gap between CAT and HAT, "price" 
+  in a similar order of magnitude for POP/EVE and MAN/WAX, higher "prices" for words where all the letters 
+  appear later in the alphabet, etc.).</p>
+<p>Now all that's left to do is to find the word that appears at the index with the question mark underneath. 
+  It's probably easiest to calculate this or write a simple script for it (note that sheets formulae won't 
+  easily be able generate the string because it's too long). At that position, you'll find the answer, <strong>NAVY</strong>.</p>
+</div>
+<div class="nested-solution taskmaster">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Taskmaster - by eanacra</h4>
+<p>We are given 14 instructions in order so we might try to follow them immediately. However, we soon get stuck at step 10 where we are asked to anagram everything to form an uncapitalized noun. Instead, we should search for the 14 names and realize that they are names of Taskmasters and Taskmaster’s Assistants in various (international) versions of Taskmaster. In the style of the game Simon Says, we should then only perform the instructions given by a Taskmaster. If we only perform the instructions given by an Assistant, we end up with the phrase RED HERRING. The table below shows the results following each step:</p>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Identity</th>
+<th>Assistant</th>
+<th>Taskmaster</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Greg says, "Write down the letter denoted by three dashes in Morse code."</td>
+<td>Taskmaster</td>
+<td></td>
+<td>O</td>
+</tr>
+<tr>
+<td>2. Alex says, "Write down the Roman numeral for 506."</td>
+<td>Assistant</td>
+<td>DVI</td>
+<td></td>
+</tr>
+<tr>
+<td>3. Pilvi says, "Write down the letter denoted by dot-dash-dot in Morse code."</td>
+<td>Assistant</td>
+<td>DVIR</td>
+<td></td>
+</tr>
+<tr>
+<td>4. Lasse says, "Write down the Roman numeral for 4."</td>
+<td>Taskmaster</td>
+<td></td>
+<td>OIV</td>
+</tr>
+<tr>
+<td>5. Mark says, "Write down the last recorded letter shifted 13 spaces backwards in the alphabet."</td>
+<td>Assistant</td>
+<td>DVIRE</td>
+<td></td>
+</tr>
+<tr>
+<td>6. Reggie says, "Write down the last recorded letter shifted 4 spaces backwards in the alphabet."</td>
+<td>Taskmaster</td>
+<td></td>
+<td>OIVR</td>
+</tr>
+<tr>
+<td>7. Jeremy says, "Write down the letter denoted by dash-dash-dot in Morse code."</td>
+<td>Taskmaster</td>
+<td></td>
+<td>OIVRG</td>
+</tr>
+<tr>
+<td>8. David says, "Write down the second-last recorded letter two more times."</td>
+<td>Assistant</td>
+<td>DVIRERR</td>
+<td></td>
+</tr>
+<tr>
+<td>9. Paul says, "Duplicate the fifth recorded letter."</td>
+<td>Assistant</td>
+<td>DVIREERR</td>
+<td></td>
+</tr>
+<tr>
+<td>10. Babben says, "Anagram everything to form an uncapitalized noun."</td>
+<td>Taskmaster</td>
+<td></td>
+<td>VIGOR</td>
+</tr>
+<tr>
+<td>11. Olli says, "Replace the second letter with H."</td>
+<td>Assistant</td>
+<td>DHIREERR</td>
+<td></td>
+</tr>
+<tr>
+<td>12. Atle says, "Add the letters OUS to the end of your string."</td>
+<td>Taskmaster</td>
+<td></td>
+<td>VIGOROUS</td>
+</tr>
+<tr>
+<td>13. Luka says, "Add the letters NG to the end of your string."</td>
+<td>Assistant</td>
+<td>DHIREERRNG</td>
+<td></td>
+</tr>
+<tr>
+<td>14. Nuno says, "Anagram everything to form a two-word phrase."</td>
+<td>Assistant</td>
+<td>RED HERRING</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Following the Taskmasters' directions leads us to the subpuzzle answer, <strong>VIGOROUS</strong>.</p>
+</div>
+<div class="nested-solution tenable">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Tenable - by eanacra</h4>
+<p>In Tenable, contestants are asked to name 10 items in an ordered list. In this subpuzzle, we are not told the name of the list, but instead given the enumerations of all 10 items along with 3 letters for extra confirmation.</p>
+<p>Entering the longer phrases into <a href="https://nutrimatic.org/">Nutrimatic</a href> will help solve most of these categories easily. To solve the first list, it might help to conjecture that the answers start with consecutive letters of the alphabet. The lists are presented in alphabetical order of the title, though solvers need not understand this to solve the subpuzzle and there isn’t a standard way of describing them anyway.</p>
+<table>
+<thead>
+<tr>
+<th>Android version names</th>
+<th>Booker Prize winners</th>
+<th>Eurovision winning Songs</th>
+<th>Summer Olympics host cities</th>
+<th>US states by area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GINGERBREAD</td>
+<td>BRING UP THE BODIES</td>
+<td>EUPHORI<u><strong>A</strong></u></td>
+<td>LOS ANGELES</td>
+<td>WYOMING</td>
+</tr>
+<tr>
+<td>HONEYCOMB</td>
+<td>THE LUMINARIES</td>
+<td>ONLY TEARDROPS</td>
+<td>SEOUL</td>
+<td>OREGO<u><strong>N</strong></u></td>
+</tr>
+<tr>
+<td>ICE CREAM <u><strong>S</strong></u>ANDWICH</td>
+<td>THE NARROW ROAD TO THE DEEP NORTH</td>
+<td>RISE LIKE A PHOENIX</td>
+<td>BARCELONA</td>
+<td>COLORADO</td>
+</tr>
+<tr>
+<td>JELLY BEAN</td>
+<td>A BRIEF HISTORY OF SEVEN KILL<u><strong>I</strong></u>NGS</td>
+<td>HEROES</td>
+<td>ATLANTA</td>
+<td>NEVADA</td>
+</tr>
+<tr>
+<td>KITKAT</td>
+<td>THE SELLOUT</td>
+<td>1944</td>
+<td><u><strong>S</strong></u>YDNEY</td>
+<td>ARIZONA</td>
+</tr>
+<tr>
+<td>LOLLIPOP</td>
+<td>LINCOLN IN THE BARDO</td>
+<td>AMAR <u><strong>P</strong></u>ELOS DOIS</td>
+<td>ATHENS</td>
+<td>NEW MEXICO</td>
+</tr>
+<tr>
+<td>MARSHMALLOW</td>
+<td>MILKMAN</td>
+<td>TOY</td>
+<td>BEIJING</td>
+<td>MONTAN<u><strong>A</strong></u></td>
+</tr>
+<tr>
+<td>NOUGA<u><strong>T</strong></u></td>
+<td>THE TESTAMENTS; GIRL, WOMAN, OTHER</td>
+<td>ARCADE</td>
+<td>LONDON</td>
+<td>CALIFORNIA</td>
+</tr>
+<tr>
+<td>OREO</td>
+<td>SHUGGIE BAIN</td>
+<td>ZITTI E BUONI</td>
+<td>RIO DE JANE<u><strong>I</strong></u>RO</td>
+<td>TEXAS</td>
+</tr>
+<tr>
+<td>PIE</td>
+<td>THE PR<u><strong>O</strong></u>MISE</td>
+<td>STEFANIA</td>
+<td>TOKYO</td>
+<td>ALASKA</td>
+</tr>
+</tbody>
+</table>
+<p>There is exactly one red letter per row and reading those letters in order gives us the phrase ANS IS PATIO. Hence, the answer to this subpuzzle is <strong>PATIO</strong>.</p>
+</div>
+<div class="nested-solution universitychallenge">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>University Challenge - by eanacra</h4>
+<p>We are presented with 6 images each accompanied by a number after a double-headed arrow. One can reverse image search these images easily, but as expected indexing into the names immediately doesn’t result in a word. Having a basic understanding of how the show works is helpful here — as explained in <a href="https://en.wikipedia.org/wiki/University_Challenge">the show’s Wikipedia article</a href>, teams consist of 4 members and represent a university, except the colleges of the University of Cambridge and the University of Oxford are allowed to enter independent teams. Even without this knowledge, a search of “university” with some key words from the titles of the artwork will eventually lead us to the realization that each image clues a Cambridge or Oxford college.</p>
+<p>What does the double-headed arrow represent? With this new discovery, we might guess that each Cambridge college is connected in some way with an Oxford college. Indeed, clued by the instruction "Identify the sibling in each case", we find that every college has a sister college in the other university. (Be careful not to confuse Oxford’s St Cath<strong>e</strong>rine’s College with Cambridge’s St Cath<strong>a</strong>rine’s College.)</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>College</th>
+<th>Sister college</th>
+<th>Index</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Charles Darwin</td>
+<td>DARWIN</td>
+<td>WOLFSON</td>
+<td>5</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Alexandre Charles Emmanuel de Crussol-Florensac</td>
+<td>EMMANUEL</td>
+<td>EXETER</td>
+<td>4</td>
+<td>T</td>
+</tr>
+<tr>
+<td>Charles Churchill</td>
+<td>CHURCHILL</td>
+<td>TRINITY</td>
+<td>2</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Abraham Lincoln</td>
+<td>LINCOLN</td>
+<td>DOWNING</td>
+<td>5</td>
+<td>I</td>
+</tr>
+<tr>
+<td>The Crowning of Saint Catherine</td>
+<td>ST CATHERINE'S</td>
+<td>ROBINSON</td>
+<td>5</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Mary Somerville</td>
+<td>SOMERVILLE</td>
+<td>GIRTON</td>
+<td>1</td>
+<td>G</td>
+</tr>
+</tbody>
+</table>
+<p>Indexing the given numbers into the sister colleges, we obtain the subpuzzle answer, <strong>STRING</strong>.</p>
+</div>
+<div class="nested-solution theweakestlink">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Weakest Link - by quatrevingtneuf</h4>
+<p>We begin by finding the answers to the given trivia questions:</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In geography, what is the traditional name given to indigenous residents of Aotearoa?</td>
+<td>MAORI</td>
+</tr>
+<tr>
+<td>In hunt puzzles, what ordering is often used to indicate that a re-sorting step is required?</td>
+<td>ALPHABETICAL</td>
+</tr>
+<tr>
+<td>In the animal kingdom, what reptile possesses hands where the five digits are fused into two chunks?</td>
+<td>CHAMELEON</td>
+</tr>
+<tr>
+<td>In pop culture, what type of degree is held by both members of YouTube comedy duo Rhett and Link?</td>
+<td>ENGINEERING</td>
+</tr>
+<tr>
+<td>In computer science, what collaborative software development platform was launched in April 2008?</td>
+<td>GITHUB</td>
+</tr>
+<tr>
+<td>In literature, what president is set to be executed, but is ultimately spared by the bow-wielding protagonist?</td>
+<td>SNOW</td>
+</tr>
+<tr>
+<td>In film, what animated film revolves around restoring the top half of the main characters' father?</td>
+<td>ONWARD</td>
+</tr>
+<tr>
+<td>In the human body, what type of cell may possess nodes of Ranvier?</td>
+<td>NEURON</td>
+</tr>
+<tr>
+<td>In mathematics, whose eponymous paradox concerns random chords in a circle in comparison to an inscribed equilateral triangle?</td>
+<td>BERTRAND</td>
+</tr>
+</tbody>
+</table>
+<p>On the show, contestants are able to "bank" money earned from previous answers by saying "bank". Treating 
+  the answers to all the questions as a single string (as suggested by the formatting of the questions),
+  we find substrings that are currencies that we can "bank":</p>
+<p>MAO <strong>RIAL</strong> PHABETICALCHAME <strong>LEONE</strong> NGINEE <strong>RINGGIT</strong> HUBSNO <strong>WON</strong> WARDN <strong>EURO</strong> NBERT <strong>RAND</strong></p>
+<p>Converting the number of letters between each currency (thematically, the amount "banked") via A1Z26 
+  yields this subpuzzle's answer, <strong>COFFEE</strong>.</p>
+</div>
+<div class="nested-solution wheeloffortune">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Wheel of Fortune - by quatrevingtneuf</h4>
+<p>If we simply try to fill in the blanks as normal, we may not find satisfying phrases for a couple of 
+  these grids. The gimmick here is that we need to spin the whole board around, flipping all the blanks 
+  and letters upside down. Letters that are invariant under 180° rotation are given, along with Ws that 
+  become Ms when rotated. The completed phrases are:</p>
+<ul>
+<li>FRESH PRINCE OF BEL-AIR</li>
+<li>BICYCLE KICK</li>
+<li>INKAY EVOLVING INTO MALAMAR</li>
+<li>BUNDT CAKE</li>
+</ul>
+<p>All of these things involve flipping upside down. Taking the letters indicated by blue boxes, we get our 
+  subpuzzle answer: <strong>BELT</strong>.</p>
+</div>
+<div class="nested-solution whowantstobeamillionaire">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>Who Wants to Be a Millionaire? - by eanacra</h4>
+<p>We are presented with 4 multiple-choice questions in the style of the show along with a bar chart and an image showing three lifelines. We can quickly notice that each question contains a number and 3 of these numbers do not make sense. We should use the lifelines! First, apply the “50:50” lifeline to half the numbers in each question (they are all even). Now that the questions make sense, we can proceed to answer them. It turns out all the answers are exactly 5 letters long, equal to the number of digits in each option. This is where the second lifeline “Phone a Friend” comes into play — we can convert each letter to a number via the mapping on a telephone keypad (e.g. D/E/F equals 3) and one of the options is the correct answer. Now observe that the 4 correct answers come from distinct options so we should sort them by the option letter (the questions are presented in alphabetical order).</p>
+<p>How do we extract the answer now? By invoking the final lifeline “Ask the Audience”. The lifeline yielded the percentages 20%, 20%, 40%, 20% respectively and since 20% of 5 is 1, we extract the first letters of the answers corresponding to options A, B, D and the first two letters of the answer corresponding to option C.</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+<th>Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A song from which Disney film was nominated for Best Original Song at the <s>178</s> 89th Academy Awards?</td>
+<td>MOANA</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Fill in the blank: Haydn's Symphony No. <s>202</s> 101 is commonly known as "The <span class="u">___</span>".</td>
+<td>CLOCK</td>
+<td>D</td>
+</tr>
+<tr>
+<td>What is the <s>8</s> 4th month of the year?</td>
+<td>APRIL</td>
+<td>B</td>
+</tr>
+<tr>
+<td>What is the adjective in the title of the Roald Dahl novel published <s>122</s> 61 years ago?</td>
+<td>GIANT</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Answer</th>
+<th>Percentage</th>
+<th>Extraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><strong>M</strong>OANA</td>
+<td>20</td>
+<td>M</td>
+</tr>
+<tr>
+<td>B</td>
+<td><strong>A</strong>PRIL</td>
+<td>20</td>
+<td>A</td>
+</tr>
+<tr>
+<td>C</td>
+<td><strong>GI</strong>ANT</td>
+<td>40</td>
+<td>GI</td>
+</tr>
+<tr>
+<td>D</td>
+<td><strong>C</strong>LOCK</td>
+<td>20</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+<p>Concatenating these letters gives the subpuzzle answer, <strong>MAGIC</strong>.</p>
+</div>
+<hr><h4>Only Connect - by quatrevingtneuf and eanacra</h4>
+
+<p>At long last, we arrive at the end: a connecting wall. Our subpuzzle answers can be sorted into four 
+groups of four. These four groups of four reference films and TV shows, as clued by the movie camera emojis.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Subpuzzle Answers</th>
+<th>Film</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Words that can be prepended with "black" to form a phrase</td>
+<td>BELT, EYE, MAGIC, MARKET</td>
+<td>BLACKADDER</td>
+</tr>
+<tr>
+<td>Fictional Spies</td>
+<td>BANKS, POWERS, SMART, SMITH</td>
+<td>JOHNNY ENGLISH</td>
+</tr>
+<tr>
+<td>Types of beans</td>
+<td>BROAD, COFFEE, NAVY, STRING</td>
+<td>MR. BEAN</td>
+</tr>
+<tr>
+<td>Words whose first letter can be replaced with "R"</td>
+<td>BABIES, GIBBON, PATIO, VIGOROUS</td>
+<td>SCOOBY-DOO</td>
+</tr>
+</tbody>
+</table>
+<p>In true Only Connect fashion, we find the final link between these four films/shows: they all 
+prominently feature <strong>ROWAN ATKINSON</strong>, the final answer to this puzzle.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>By coincidence, this puzzle has the structure of the main round — 4 groups of 4 answers contributing to a 
+meta! The initial idea for this puzzle was completely different but was scrapped as it significantly 
+overlapped with a past MIT Mystery Hunt puzzle. We placed this puzzle at the first half of the main round to 
+encourage more teams to try it because we know it will take a long time due to the large number of 
+subpuzzles. Most subpuzzles underwent revision after testsolving in an effort to make them easier 
+and this was the last puzzle in the seasons round to pass testsolving.</p>
+<p>We aimed to make the “bean” puzzles harder on average compared to the other 3 sets since it was a lot 
+easier to get the answer with MR BEAN. We considered whether we should replace MR BEAN with a less 
+obvious film, provide enumerations or the movie camera emoji for Only Connect, but ultimately we decided 
+to be as generous as possible because the puzzle was already quite long. However, the presence of enumerations has resulted in testsolvers short-circuiting the connecting wall (with a hyphenated 6-3 being very specific), so we tried to test it without them. Fortunately, we managed to get a successful test of the wall in this state.</p>
+<p><strong>Blockbusters:</strong> It seems that many people got caught up on the pronunciation of QUAY, which incidentally also appears in a homophone clue in another puzzle in the hunt.</p>
+<p><strong>The Chase:</strong> The third question used to be "What is commonly associated with Squidward?" with the answer being WRATH (a sin). This tripped up testsolvers, so (un)fortunately, the puzzle is now free of any SpongeBob SquarePants fan theories!</p>
+<p><strong>Countdown:</strong> This idea came to me while playing <a href="https://samuello.io/jndle/">JNDLE</a>. I don't type with this method, but I do find it interesting. Originally, I didn't want to provide any givens, but this was ultimately deemed too cruel for 1/16th of a puzzle.</p>
+<p><strong>Family Feud:</strong> To my surprise, most testsolvers were completely stuck on this subpuzzle despite the fairly standard atomic number in board 4. As a result, I added the titles to simplify the subpuzzle and clue the extraction.</p>
+<p><strong>Jeopardy!:</strong> I love luge.</p>
+<p><strong>Mastermind:</strong> This entire puzzle was partly inspired by thinking about writing a puzzle in the style of this subpuzzle. Originally the questions were not sorted in the extraction order and the second-last question was harder, but this was changed after no testsolvers solved this subpuzzle.</p>
+<p><strong>Pointless:</strong> I’m not entirely satisfied with the current puzzle as it doesn’t fully utilize the interesting Pointless format.</p>
+<p><strong>Taskmaster:</strong> This was inspired by <a href="https://taskmaster.fandom.com/wiki/Stand_on_one_leg_for_the_longest">the studio task in Series 5 Episode 4</a href> which involved a game of “Greg says, Alex says”.</p>
+<p><strong>Tenable:</strong> I had to rewrite this subpuzzle after Boris Johnson resigned because one of the lists was “The 10 most recent British prime ministers”.</p>
+<p><strong>Who Wants to be a Millionaire:</strong> This is my favourite sub-puzzle out of the 7 that I wrote, because it uses elements of the show very well and is still very accessible at the same time.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

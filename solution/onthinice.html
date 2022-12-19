@@ -1,0 +1,326 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: On Thin Ice - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/onthinice.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: On Thin Ice
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">SEWING MACHINE</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee
+
+    </h2>
+
+    
+    <p>We are presented with instructions to spell out strings of letters by moving on a set of
+grids that contain ice and snow. However, these strings of letters are not all present on the
+grids' initial state. From the “title” of each grid and the given letters, we should find out
+a way to fill each of the grids with letters so that it follows the clued pattern. If this is done
+correctly, for each grid there is a unique path that, when followed according to the
+instructions, spells out the requested string.</p>
+<p>Here are the solutions to each grid in the “ice skating exercises” section:</p>
+<p><strong>Brave the Elements</strong> (Spell out: UZMIARN)</p>
+<p>The grid needs to be filled with chemical element symbols (H, He, Li, Be…):</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_1_jzbe.1c19bfa9200c.png"></p>
+<p><strong>Flavourful Insertion</strong> (Spell out: TEENF)</p>
+<p>The flavour text that appears in the beginning of the puzzle is exactly 100 letters long, and can be written in this grid. This is also clued by fragments of words (“ice”, “winter” and “yourself”):</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_2_jzbe.f449ef87e244.png"></p>
+<p><strong>Incremental Madness</strong> (Spell out: QNYWQ)</p>
+<p>Starting at the top-left corner, the letters increase in value by 1, 2, 3 and so on for each following row or column, with modulo 26 in effect:</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_3_jzbe.d00824404f73.png"></p>
+<p><strong>NATO-Provided Assistance</strong> (Spell out: LFRLOTI)</p>
+<p>The NATO Phonetic Alphabet should be spelled out on this grid (as far as the grid size of 100 allows):</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_4_jzbe.350d9a285c5e.png"></p>
+<p><strong>Pascal's Array</strong> (Spell out: HAAMR)</p>
+<p>This grid is based on <a href="https://en.wikipedia.org/wiki/Pascal%27s_triangle">Pascal’s Triangle</a>. Each row of the triangle is represented diagonally ╱ on the square grid, starting at the top-left corner. As with Incremental Madness, modulo 26 applies:</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_5_jzbe.1e3605a4f3f8.png"></p>
+<p><strong>Spiral</strong> (Spell out: MPGC)</p>
+<p>The alphabet is written down in order, but it takes the path of a clockwise spiral, starting at
+the top-left corner:</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_6_jzbe.0ab60b933f14.png"></p>
+<p><strong>State</strong> (Spell out: CNPOMI)</p>
+<p>The grid needs to be filled with the 50 US state abbreviations, in alphabetical order by
+state:</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_7_jzbe.5108c9beefd5.png"></p>
+<p><strong>Type</strong> (Spell out: FDLKIP)
+The grid needs to be filled with letters in the same order that they appear on a QWERTY
+keyboard (especially clued by the top-left letter being a Q):</p>
+<p><img src="../static/puzzle_resources/onthinice/onthinice_sol_8_jzbe.f76155e32644.png"></p>
+<p><strong>Final Exercise</strong></p>
+<p>This is an icebarn logic puzzle, except that the arrow directions need to be borrowed from
+elsewhere (in this case, from the paths we've made in the ice skating exercise grids). In
+addition, some letters should appear on the ice, presumably also from same 8 grids.</p>
+<p>When we lay out all of the paths we've previously made in the ice over the icebarn grid,
+we can observe that each one travels over exactly one icebarn, which means we will have
+to borrow the letters from its respective grid and put them there. We will also translate the
+directions of the paths into arrow directions:</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_sol_1_jzbe.13bc6e62949e.png" width="45%">
+&emsp;
+<img src="../static/puzzle_resources/onthinice/icebarn_sol_2_jzbe.c96c7ed5d1bc.png" width="45%"></center></p>
+<p>The resulting icebarn puzzle has a unique solution, as follows (walkthrough in the <em>Appendix</em> section):</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_sol_3_jzbe.d94951e505bb.png"></center></p>
+<p>When we follow the path, the letters it crosses spell out “ANSSEWINGMACHINE” (the S at
+the intersection is counted twice). Therefore, the answer to the puzzle is <strong>SEWING
+MACHINE</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This was one of the first puzzles written for this hunt. It went through several iterations, though the core idea of “figure out how to fill a
+grid with letters” stayed. The initial version had rocks instead of snow, and you had to
+figure out the paths from 8 given starting locations and a pair of given directions. After
+testsolver feedback that this version did not quite deliver, I ended up reworking the puzzle
+from the ground up to include the final icebarn puzzle, and use the paths in a more
+interesting way.</p>
+<p>Thank you quatrevingtneuf for giving me some ideas for the letter grids (namely, flavor text, US
+states and Pascal’s triangle).</p>
+    
+
+    
+    
+    <h2 id="appendix">Appendix</h2>
+    <p><strong>Icebarn walkthrough</strong></p>
+<p>This walkthrough assumes that all arrow directions have been discovered (though in practice it’s probably possible to arrive at the final answer earlier by trial and error and/or seeing which paths spell out words).</p>
+<p>First, we’ll place line segments on all arrows. We’ll also place other “forced” line segments now (such that two segment starts or ends do not connect):</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_walkthrough_1_jzbe.f881ff7e18e7.png"></center></p>
+<p>We now have a line leading to the OUT cell, so we'll continue it to the end. Now, the only option for R4C9 is to go upward. In doing this, the line in R2C9 will “close”, which means the line above it will have to go all the way round. Also, we can draw the line going from R2C3 now:</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_walkthrough_2_jzbe.e5e151a2d0ba.png"></center></p>
+<p>The line from R5C2 should go down, because otherwise it results in a loop or a connection between two segment ends. The line in R10C5 should go right as well. Now, if a line went up from R8C1, it would be impossible to draw a line to R8C2 without creating a closed loop, so the line from R8C1 has to go down:</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_walkthrough_3_jzbe.7d33f79a0471.png"></center></p>
+<p>Now, a line can be drawn between R2C4 and R2C4, since there is now nothing that can connect to a new line in column 1. We keep going, and place additional line segments going up from R5C4. left from R4C6 (which is forced now), and down from R6C2:</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_walkthrough_4_jzbe.8e09dd014a7a.png"></center></p>
+<p>From R4C8 we will go 1 cell left (since we need to use all the line segments to form a single path), and then down 1 cell, then left (forced by R5C5). We can now place a line segment going up between R7C8 and R5C8, and find out that the line that goes into R7C10 comes from below, because otherwise it’d come from a path going right from R6C5, and result in an incomplete path:</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_walkthrough_5_jzbe.d33ffa852b5c.png"></center></p>
+<p>We now complete the icebarn solution from here by connecting the only line segment that isn’t yet on the main path:</p>
+<p><center><img src="../static/puzzle_resources/onthinice/icebarn_sol_3_jzbe.d94951e505bb.png"></center></p>
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

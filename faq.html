@@ -1,0 +1,253 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>FAQs - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="index.html">
+                            Home
+                        </a>
+                        <a href="rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                        <a class="selected-tab" href="faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>FAQs</h1>
+
+<main>
+    <div class="no-break">
+        <h4>Who's running this hunt?</h4>
+        <p>The ECs of /r/PictureGame (/r/PG for short) are a group of general puzzle enthusiasts that play <a href="https://www.reddit.com/r/PictureGame/">PictureGame on Reddit</a>. This Reddit game is generally focused on image identification, but from time to time, people like to post various puzzles there too. The ECs of /r/PG have been hunting together in some form for about 5 years now, and some of us have had the privilege of writing for various other hunts, including the Galactic Puzzle Hunt and the MIT Mystery Hunt. After a few false starts, we’ve finally decided to try our hand at running a full-fledged hunt.</p>
+    </div>
+    
+    <div class="no-break">
+        <h4>What's with the EC thing?</h4>
+        <p>EC stands for <i>Everything Conceivable</i>! It's a tradition on our team to have EC names. You can often find our EC team names when scrolling through the list of registered teams on other online hunts.</p>
+    </div>
+
+    <div class="no-break">
+        <h4>How long/difficult is the hunt?</h4>
+        <p>The hunt consists of somewhere between 20 and 30 puzzles. We believe the difficulty will be somewhat harder than Puzzle Potluck or Reddot, but easier than Huntinality 2.0. We expect an experienced team of six solvers to finish within a day.</p>
+    </div>
+
+    <div class="no-break">
+        <h4>When exactly happens when the hunt ends?</h4>
+        <p>When the hunt ends on <strong><time datetime="2022-10-17T00:00:00-04:00" data-format="%A, %B %-d at %-I:%M %p %Z">Monday, October 17 at 12:00 AM EDT</time></strong>, the scoreboard will be frozen and solutions for all the puzzles will be released, and we will prepare a wrap-up to be available soon after. However, if you have not finished and still want to experience the whole hunt, you’ll still be able to register new teams, submit answers on the website, and progress through the hunt until <strong><time datetime="2022-10-24T00:00:00-04:00" data-format="%A, %B %-d at %-I:%M %p %Z">Monday, October 24 at 12:00 AM EDT</time></strong>. The only difference is that you won’t be able to use hints after the hunt ends.</p>
+        <p>After <strong><time datetime="2022-10-24T00:00:00-04:00" data-format="%A, %B %-d at %-I:%M %p %Z">Monday, October 24 at 12:00 AM EDT</time></strong>, you can still do the puzzles and check your answers spoiler-free, but you will not be able to track your progress on the website.</p>
+    </div>
+    <div class="no-break">
+        <h4>How do I solve these puzzles?</h4>
+        <p>The puzzles in this hunt consist of a title, flavour text, and content. Generally, you won't find explicit instructions what to do with the puzzle content, but reading the title and flavour text may give you a hint for what to do. The ultimate goal is to extract an answer, which is generally a word or short phrase. A cursory understanding of common encodings (flag semaphore, braille, Morse code, A1Z26, and binary) is expected.</p>
+    </div>
+
+    <div class="no-break">
+        <h4>I think there&rsquo;s a mistake in this puzzle!</h4>
+        <p>Please describe the error in an email to <a href="cdn-cgi/l/email-protection.html#f9989d949097b99c9a8991d78a908d9c"><span class="__cf_email__" data-cfemail="7c1d181115123c191f0c14520f150819">[email&#160;protected]</span></a> and we&rsquo;ll try to correct it.</p>
+    </div>
+
+    <div class="no-break">
+        <h4>I&rsquo;m stuck on a puzzle. What should I do?</h4>
+        <p>Here are some general puzzle tips that might be useful:</p>
+        <ul>
+            <li>Thoroughly check the work that you&rsquo;ve already done. Fixing a small mistake or incorrect assumption can greatly help with getting unstuck.</li>
+            <li>Get fresh eyes on the puzzle, or conversely, take a break and look at something else.</li>
+            <li>Consider what information you haven&rsquo;t used yet.</li>
+            <li>It can be useful to put everything you have into your favorite search engine.</li>
+            <li><a target="_blank" href="https://www.mit.edu/~puzzle/resources/haveyoutried.pdf">Have you tried&hellip;</a></li>
+        </ul>
+        
+        <p>Remember that after hints are released, you can also use them to get a nudge in the right direction.</p>
+        
+    </div>
+
+    <div class="no-break">
+        <h4>Do you have a tip jar?</h4>
+        <p>Yes! Here&rsquo;s the link to <a target="_blank" href="https://www.paypal.com/paypalme/ecsofpg">our Paypal</a>.<br><br>We are deeply grateful for your support.</p>
+    </div>
+
+    <div class="no-break">
+        <h4>What is the privacy policy?</h4>
+        <p>We only collect email addresses from teams when they register or update their team members; only one email is required per team. Names can be pseudonyms; they are only used for display on team pages.</p>
+    </div>
+    
+    <div class="no-break">
+        <h4>I have a question that&rsquo;s not on this list!</h4>
+        <p>Contact us at <a href="cdn-cgi/l/email-protection.html#5c3d383135321c393f2c34722f352839"><span class="__cf_email__" data-cfemail="7a1b1e1713143a1f190a125409130e1f">[email&#160;protected]</span></a> and we&rsquo;ll do our best to answer it.</p>
+    </div>
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>

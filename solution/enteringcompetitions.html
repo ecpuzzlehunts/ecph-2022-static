@@ -1,0 +1,457 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Entering Competitions - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/enteringcompetitions.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Entering Competitions
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">MACRON</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+quatrevingtneuf
+
+    </h2>
+
+    
+    <p>In this puzzle, we are presented with what appears to be the Puzzle Hunt Calendar, plus a mystery 
+grid at the bottom. Of course, there aren't actually this many puzzle hunts coming up next year 
+(or will there be? we don't know yet!), so we may suspect that they clue something else.</p>
+<p>Many puzzlehunting teams have traditions when it comes to selecting a team name. For us, we like to pick 
+a name which fits the pattern E* C*. Indeed, just like our old team names, our hunt name, and this 
+puzzle's title, all of the fictitious hunts clue two-word phrases of the form E* C*. An example is even 
+given in the flavour text: the Puzzle Hunt Calendar is an <em>Extensive Compendium</em>. </p>
+<p>Some of the clues may seem a little underspecified at first, but once we solve some of the clues, 
+we find that the lengths of each E* C* pair do not repeat. This means that we can fill everything into 
+the grid given at the bottom. The lightest corner represents the shortest answer, with length of the 
+E word increasing rightward along the horizontal axis, and the length of C increasing downward along 
+the vertical axis. The clues and answers are given below, in their original order:</p>
+<table>
+<thead>
+<tr>
+<th>Hunt Clue</th>
+<th>EC Phrase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puzzle Hunt of Rome or Kyoto</td>
+<td>ETERNAL CITY</td>
+</tr>
+<tr>
+<td>Beauty Accessory Puzzle Hunt</td>
+<td>EYELASH CURLER</td>
+</tr>
+<tr>
+<td>Dreamy Vampire Puzzle Hunt</td>
+<td>EDWARD CULLEN</td>
+</tr>
+<tr>
+<td>MIT Residence Puzzle Hunt</td>
+<td>EAST CAMPUS</td>
+</tr>
+<tr>
+<td>A Puzzle Hunt of Beethoven's Composition, in E♭ Major</td>
+<td>EMPEROR CONCERTO</td>
+</tr>
+<tr>
+<td>γ Puzzle Hunt</td>
+<td>EULER'S CONSTANT</td>
+</tr>
+<tr>
+<td>Aquiline Talon Puzzle Hunt</td>
+<td>EAGLE CLAW</td>
+</tr>
+<tr>
+<td>Jamie Iannone's Puzzle Hunt</td>
+<td>EBAY CEO</td>
+</tr>
+<tr>
+<td>Foreign Feline Puzzle Hunt</td>
+<td>EXOTIC CAT</td>
+</tr>
+<tr>
+<td>CH<sub>3</sub>CH<sub>2</sub>CN Puzzle Hunt</td>
+<td>ETHYL CYANIDE</td>
+</tr>
+<tr>
+<td>Puzzle Hunt that's Something to Do at a Birthday Bash</td>
+<td>EAT CAKE</td>
+</tr>
+<tr>
+<td>Puzzle Hunt de La Manche</td>
+<td>ENGLISH CHANNEL</td>
+</tr>
+<tr>
+<td>Puzzle Hunt Like Some Rectangular Gems</td>
+<td>EMERALD CUT</td>
+</tr>
+<tr>
+<td>Bug Hunting Puzzle Hunt</td>
+<td>ERROR CHECKING</td>
+</tr>
+<tr>
+<td>Dynamic Puzzle Hunt</td>
+<td>EVER CHANGING</td>
+</tr>
+<tr>
+<td>Puzzle Hunt that's a Result of Hyperparathyroidism</td>
+<td>EXCESS CALCIUM</td>
+</tr>
+<tr>
+<td>Puzzle Hunt Outlier</td>
+<td>EDGE CASE</td>
+</tr>
+<tr>
+<td>Brida's Puzzle Hunt</td>
+<td>EMILY COX</td>
+</tr>
+<tr>
+<td>20/20 Vision Checker Puzzle Hunt</td>
+<td>EYE CHART</td>
+</tr>
+<tr>
+<td>Puzzle Hunt Reverberant Cavern</td>
+<td>ECHO CHAMBER</td>
+</tr>
+<tr>
+<td>It Contains a Dozen Puzzle Hunts</td>
+<td>EGG CARTON</td>
+</tr>
+<tr>
+<td>War Secret Puzzle Hunt</td>
+<td>ENIGMA CODE</td>
+</tr>
+<tr>
+<td>Sarcoscypha Puzzle Hunt</td>
+<td>ELF CUP</td>
+</tr>
+<tr>
+<td>Emergency Slide Puzzle Hunt</td>
+<td>ESCAPE CHUTE</td>
+</tr>
+<tr>
+<td>Microeconomic Model Puzzle Hunt</td>
+<td>ENGEL CURVE</td>
+</tr>
+<tr>
+<td>Children's Author Puzzle Hunt</td>
+<td>ERIC CARLE</td>
+</tr>
+<tr>
+<td>Puzzle Hunt Heat Period</td>
+<td>ESTROUS CYCLE</td>
+</tr>
+<tr>
+<td>Outlook Puzzle Hunt</td>
+<td>EMAIL CLIENT</td>
+</tr>
+<tr>
+<td>Puzzle Hunt Acknowledgments</td>
+<td>END CREDITS</td>
+</tr>
+<tr>
+<td>Puzzle Hunt Wax Removal Method</td>
+<td>EAR CANDLING</td>
+</tr>
+</tbody>
+</table>
+<p>Another thing to notice is the dates; none of the dates are more than 26 days apart. Converting the gaps 
+between dates to letters via A1Z26, we get the message, "WE ONLY DO THE HUNTS IF IT'S A WEEKEND". The 
+hunts are already conveniently arranged in rows of 5, so taking weekend hunts as 1 and the others as 0, 
+we can use 5-bit binary reading left to right to get our final answer:</p>
+<table>
+<thead>
+<tr>
+<th>C\E</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3</strong></td>
+<td>ELF CUP</td>
+<td><strong>EBAY CEO</strong></td>
+<td><strong>EMILY COX</strong></td>
+<td>EXOTIC CAT</td>
+<td><strong>EMERALD CUT</strong></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>EAT CAKE</td>
+<td>EDGE CASE</td>
+<td>EAGLE CLAW</td>
+<td>ENIGMA CODE</td>
+<td><strong>ETERNAL CITY</strong></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>EYE CHART</td>
+<td>ERIC CARLE</td>
+<td>ENGEL CURVE</td>
+<td><strong>ESCAPE CHUTE</strong></td>
+<td><strong>ESTROUS CYCLE</strong></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>EGG CARTON</strong></td>
+<td>EAST CAMPUS</td>
+<td>EMAIL CLIENT</td>
+<td><strong>EDWARD CULLEN</strong></td>
+<td>EYELASH CURLER</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>END CREDITS</td>
+<td><strong>ECHO CHAMBER</strong></td>
+<td><strong>ETHYL CYANIDE</strong></td>
+<td><strong>EXCESS CALCIUM</strong></td>
+<td><strong>ENGLISH CHANNEL</strong></td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>EAR CANDLING</td>
+<td><strong>EVER CHANGING</strong></td>
+<td><strong>ERROR CHECKING</strong></td>
+<td><strong>EULER'S CONSTANT</strong></td>
+<td>EMPEROR CONCERTO</td>
+</tr>
+</tbody>
+</table>
+<p>The final answer is <strong>MACRON</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>A few cheeky references in here: one, of course, to the MIT Mystery Hunt, a second to Teammate Puzzle 
+Hunt (Birthday Bash), and a third to Galactic Puzzle Hunt (20/20). For many of our team members, GPH was 
+our first exposure to the puzzle hunt world. Certainly, it was the first time a team composed of 
+self-described /r/PictureGame players ever participated in a puzzle hunt; we're very excited to have 
+come as far as we have!</p>
+<p>Regarding the spelling of Puzzle Hunt, this is what our team had to say about it when I asked them while 
+writing this puzzle:</p>
+<p><img src="../static/puzzle_resources/enteringcompetitions/howtospell.debb8f556c89.png"></p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

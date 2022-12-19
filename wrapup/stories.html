@@ -1,0 +1,280 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Stories - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../wrapup.html" class="btn">Back to wrap-up</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+<h1>Stories</h1>
+
+<p>Here are some stories that teams have shared with us. (Note: If you would like anything removed from here, please email us at <a href="../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="7617121b1f18361315061e58051f0213">[email&#160;protected]</a>)</p>
+
+<b><p>Story from Team 3.141592653589793238462643…:<br></b>
+At some point in the hunt, we were joking that our team name (which is a bunch of digits of pi) should've been a bunch of digits to e, to be in-keeping with the EC theme (e constant). 10 minutes later we found out that one of the answers in Entering Competitions was actually Euler's Constant.</p>
+
+<b><p>The tale of a lion, from team Amateur Hour:<br></b>
+In solving Garden Cleanup, once we had identified and sorted, and gotten the cluephrase asking us to overlap the image with the left side up, we couldn’t make progress at first. Then, one member of our team reflected instead of rotating the image, and we obtained the <a href="../static/images/wrapup/stories1.3dcb2e6416d7.png">following image.</a href></p>
+
+<p>At this point, two members of our team swore on their lives that this depicted a lion-like creature (face NW, bare feet SE), and we had to identify whatever it was. This got to the point where someone thought this was clearly Rafiki holding up Simba, someone else thought it was Aslan, and so on, until our team broke apart, burning through all guesses related to lion-like characters. If you can’t see it, here’s a cropped version that is <a href="../static/images/wrapup/stories2.ee25f7099ff4.png">one of our teammates’ profile picture now</a href>.</p>
+
+<p>At any rate, this puzzle truly broke us. This lion will haunt us forever, and will be the team mascot for years to come.</p>
+
+<b><p>Teams have found various creative ways to visualize the cubes in Much Assembly Required. Here is a story from Stressful Shapes:<br></b>
+At some point I had the genius idea of making the cubes in... Gmod... It did not go well. <a href="https://i.imgur.com/0Rtm89n.jpeg">Image 1</a href> <a href="https://i.imgur.com/JZnPcs4.png">Image 2</a href></p>
+
+<b><p>Arithmancers Voyaging Comfortably had things to say about Fresno:<br></b>
+When solving Butterfly catching, we incorrectly extracted the message "SEE GEN V'S BUG POKEMON", of which there are exactly 18. We spent a long time trying to associate these Pokémon to the cities we identified, and one of the most promising avenues felt like finding out where you could catch these Pokémon (Butterfly *Catching*). The wall we always hit with this thought was that not all of the bug Pokémon are catchable; some are only obtained through evolution.</p>
+
+<p>This prompted me to make a bad joke about Fresno, CA (I have nothing against you Fresno, really): ‘Okay, so if some of these Pokémon are evolutions, then some of our locations are evolutions. What evolves from Fresno? I assume Fresno is the lowest evolution.’</p>
+
+<b><p>Ecliptic Catgirls of the Caroline Schism, while solving Unreal Estate:<br></p></b>
+<img src="../static/images/wrapup/stories3.93c20ae53be1.png" width="70%">
+<img src="../static/images/wrapup/stories4.86fcf85cdadd.png">
+<br><br>
+
+<b><p>astronaughts ඞ got fully into the EC spirit, and made us an elaborate collage of the extremely creative names they gave us (we feel exceptionally complimented!):<br></b></p>
+<img src="../static/images/wrapup/stories5.997d5fb8fa63.png" width="70%">
+<br><br>
+
+<b><p>Weirdchamp United 2 (WUTs) wrote a poem about their journey:<br></b>
+Your hunt gave us four emotes in our discord server, Vietols, EggySteph, feelsMOMAn and AreNareItsSaves. Since "Weirdchamp" has its controversies, we are thinking of changing name to Weirdietols United to mark our first finished hunt.<br>
+Obligatory WUT-style poem (no puzzle involved, just a summary of our journey):</p>
+
+<p>Halley's Vietols</p>
+
+<p>Hey look, a new puzzle hunt is here,<br>
+we regrouped this weirdchamp team;<br>
+As the hunt starting date drew near,<br>
+we are hoping to realize the Weird Dream…</p>
+
+<p>Things were not looking great at start,<br>
+"what kind of phrases are these?"<br>
+We work-dled the words, part by part,<br>
+but why are there so many E. C.s?</p>
+
+<p>Solving a puzzle is like traveling en route,<br>
+Every aha moment is a stop.<br>
+But cryptics is never our strong suit,<br>
+we went up and down till the top.</p>
+
+<p>As the true colors started to reveal,<br>
+we gained access to the new round;<br>
+Some places have P-wind I can't feel,<br>
+That's where secret messages were found.</p>
+
+<p>Going through the ice is a bit tricky,<br>
+let's find where the butterflies are together.<br>
+Assembling a cube can get sticky,<br>
+tracing mathematicians is much better!</p>
+
+<p>Birds can hopefully find their nests,<br>
+artworks can hopefully find a home.<br>
+The gift boxes work as the title suggests,<br>
+but all roads still lead to Rome…</p>
+
+<p>We colored the seasons as the tension grew,<br>
+ever so close to the finish we craved.<br>
+Five minutes, four minutes, three… two…<br>
+ARE NARE ITS SAVES NOT SAVED</p>
+
+<p>It's been a nice journey for our team,<br>
+time to celebrate on our reddit accounts —<br>
+Thanks for giving us funny memes<br>
+and good luck in future hunts!</p>
+
+<b><p>Stories from Pioneers Observing Nifty Decidui<br></b>
+Our team rallied together for a final push in the final hours of the hunt. We unlocked Four Seasons Theorem with an hour or so left in the hunt, and being a group comprised of entirely Massive Math Nerds we were quite pleased with this development. While we didn't mange to Emend the Countryside in time, we did end up finishing under an hour later, making this the hardest hunt we have yet to complete, which we are all very proud of.</p>
+
+<p>In En Route I insisted on calling the station that has a name as long as the line it's on the Eigenstation, which my team hates me for. I regret nothing.</p>
+
+<p>In A Very Large Integer, we only actually solved four of the subpuzzles. Half our team spent a few minutes trying all 100 options.</p>
+
+<p>An image compilation: <a href="https://imgur.com/a/jTbYDal">https://imgur.com/a/jTbYDal</a href></p>
+
+
+<b></b>
+
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>

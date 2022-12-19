@@ -1,0 +1,423 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Star Accommodations - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/winter.html" class="btn">Back to Winter</a>
+
+
+
+<a href="../post-hunt-solve/staraccommodations.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/staraccommodations.html" class="btn">View solution</a>
+<a href="../stats/staraccommodations.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Star Accommodations
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    <div class="puzzle-erratum">
+        
+        On <time datetime="2022-10-13T16:02:47+00:00" data-format="%A, %B %-d at %-I:%M %p %Z">Thursday, October 13 at 12:02 PM EDT</time>,
+        the number of stars in James Burton's review was changed.
+    </div>
+    
+    
+    
+    
+
+    
+    
+    <p class="flavor">
+Reading your competitors' reviews is said to show the way to success, so you've been neatly filing them all away. Now to figure out the way to success...
+</p>
+<div markdown="0"><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Albert Chevalier</b></span><span style="color: darkgray; font-size: 80%"> • <i>5th April</i></span><p>⭐⭐⭐⭐</p><p>Yer won' Adam and Eve it! The mansion is par' ov a gian' poin'ed 'ooth!!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Basil Scarsella</b></span><span style="color: darkgray; font-size: 80%"> • <i>1st November</i></span><p>⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</p><p>This place is for nerds. Come and visit us instead - we represent power!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Charles Barry</b></span><span style="color: darkgray; font-size: 80%"> • <i>2nd August</i></span><p>⭐⭐⭐⭐</p><p>I swear this place is actually haunted. I get a looming sense of dread staying here. Over at my gentlemen's
+            clubs you can get haunted by gentlemen instead ;)</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Dixon Butler</b></span><span style="color: darkgray; font-size: 80%"> • <i>3rd July</i></span><p>⭐⭐⭐⭐⭐⭐⭐⭐</p><p>In a good way, there are no buses here.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>DrunkGamer1337</b></span><span style="color: darkgray; font-size: 80%"> • <i>7th June</i></span><p>⭐⭐⭐⭐⭐⭐⭐⭐</p><p>The only other thing here is what looks like an old, rundown, wine shop. Meanwhile, our place is so popular that
+            it even appeared in Call of Duty!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Edward Wilson</b></span><span style="color: darkgray; font-size: 80%"> • <i>2nd June</i></span><p>⭐⭐⭐⭐⭐⭐</p><p>The celestial temple is pretty good from an architectural point of view, I guess.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>George Berkley</b></span><span style="color: darkgray; font-size: 80%"> • <i>11th December</i></span><p>⭐⭐</p><p>Watch out for the vicious flying serpents! You can't go underground to hide from them over at my place, but
+            there aren't any flying serpents to hide from either!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>GoodBoiScottie</b></span><span style="color: darkgray; font-size: 80%"> • <i>8th December</i></span><p>⭐⭐⭐⭐⭐⭐</p><p>I will gladly give up space over at my place to build a dog sanctuary like the one found here - even the
+            former police station! I've already given up lots of space for larger buildings, but how can I say no to my
+            beloved Scottie Dog?</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Harry Castling</b></span><span style="color: darkgray; font-size: 80%"> • <i>1st August</i></span><p>⭐⭐⭐⭐⭐⭐⭐</p><p>The middle-most Summer mansion with the least creative (and confusing) name ever - drove me bananas.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Henry Coventry</b></span><span style="color: darkgray; font-size: 80%"> • <i>6th October</i></span><p>⭐⭐⭐</p><p>This place smells like a rotting heap of corpses; it's a one-way ride back home for me.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Henry Tanner</b></span><span style="color: darkgray; font-size: 80%"> • <i>11th September</i></span><p>⭐⭐⭐</p><p>Wow! This place has the same name as the third- (or second-) most famous shopping street over at my area - I
+            know because mine is the first!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Hugh Grosvenor</b></span><span style="color: darkgray; font-size: 80%"> • <i>4th October</i></span><p>⭐⭐⭐⭐⭐⭐⭐</p><p>While my place has the highest rent, I swear the cost is justified! Though perhaps I should consider having
+            an actual furry white tiger as a guard - the novelty may bring more customers.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>James Burton</b></span><span style="color: darkgray; font-size: 80%"> • <i>1st February</i></span><p>⭐⭐⭐⭐⭐⭐</p><p>It is a coincidence the second of the Northern mansions has the same name as the second animal of the year.
+            Come to my place instead - it is by no coincidence the second (or third) most famous shopping street.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>James Vane</b></span><span style="color: darkgray; font-size: 80%"> • <i>3rd January</i></span><p>⭐⭐</p><p>I am intimately familiar with having nothing but a shabby lodging. Looking at all of the other 27 mansions
+            neatly lined up in a circle, I can't help but resonate with the one mansion of empty ruins I am in.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>John Nash</b></span><span style="color: darkgray; font-size: 80%"> • <i>10th January</i></span><p>⭐⭐⭐</p><p>Apparently a famous charioteer lived in this mansion around the year 950 BC... If he was still alive, he
+            would have brought you to our place instead, which is the most visited!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Johnny Carson</b></span><span style="color: darkgray; font-size: 80%"> • <i>3rd March</i></span><p>⭐⭐⭐</p><p>Shiniest and biggest star of the lot but I still do not recommend it - my place is unpopular and is a dead end, but
+            somehow it is still more worth it!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Joseph Merrick</b></span><span style="color: darkgray; font-size: 80%"> • <i>15th September</i></span><p>⭐⭐⭐⭐⭐⭐⭐</p><p>Happily surprised when I got more than double what I expected. Back home, I was widely considered a freak and
+            stayed at one of the cheaper places, so this change of pace was a welcome one.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Leslie Green</b></span><span style="color: darkgray; font-size: 80%"> • <i>2nd April</i></span><p>⭐⭐⭐⭐</p><p>Confusing names - thought the mansion next to mine was the place I booked due to how it looked, but it turns out that the
+            mansions' names are Chinese! Also, if you are looking for somewhere quiet, check out my place!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>NoChoiceInWar</b></span><span style="color: darkgray; font-size: 80%"> • <i>7th November</i></span><p>⭐⭐⭐</p><p>They have a deity to deal with monsters. Not sure if that is better than using animals....not that we have
+            monsters here!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Passionate Muggle</b></span><span style="color: darkgray; font-size: 80%"> • <i>7th February</i></span><p>⭐⭐</p><p>This is like trying to get to platform nine and three quarters :/</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>PearLover2000</b></span><span style="color: darkgray; font-size: 80%"> • <i>8th January</i></span><p>⭐⭐⭐⭐</p><p>Compared to my place which is right next to a jail, this place is like...incomparably better.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Polly the Parrot</b></span><span style="color: darkgray; font-size: 80%"> • <i>5th March</i></span><p>⭐⭐</p><p>The first of the Eastern mansions, but not first in my heart! That'd be Ye Olde Cheshire Cheese - though it's
+            a pub!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Pubeertea Lads</b></span><span style="color: darkgray; font-size: 80%"> • <i>6th July</i></span><p>⭐⭐⭐⭐</p><p>While my place is the only one named after a building, at least I wasn't named after a vehicle!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Robert Sidney</b></span><span style="color: darkgray; font-size: 80%"> • <i>10th May</i></span><p>⭐⭐⭐⭐⭐⭐⭐⭐⭐</p><p>Meh. The mansion is near the back end, so the view is meh.</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Sarah Bentley</b></span><span style="color: darkgray; font-size: 80%"> • <i>6th May</i></span><p>⭐⭐⭐⭐</p><p>Literal feces. I already have to deal with it at work, but here too???</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Sherlock Holmes</b></span><span style="color: darkgray; font-size: 80%"> • <i>6th October</i></span><p>⭐⭐⭐⭐⭐⭐⭐⭐</p><p>Pssst! Over at my place, there is a pub named after me with great deals!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>The Government</b></span><span style="color: darkgray; font-size: 80%"> • <i>2nd March</i></span><p>⭐⭐⭐⭐</p><p>Be warned! Executions are still a thing here!</p></div><div style="background-color: whitesmoke; border-radius:10px; padding: 10px; margin: 8px;"><span style="font-size: 110%"><b>Thomas Bond</b></span><span style="color: darkgray; font-size: 80%"> • <i>3rd August</i></span><p>⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</p><p>I have to say, what they served didn't taste very good. I probably felt more satisfied just looking at the
+            art along my street.</p></div></div>
+<textarea id="clipboard-contents" readOnly>
+"Reading your competitors' reviews is said to show the way to success, so you've been neatly filing them all away. Now to figure out the way to success..."
+""
+
+"Albert Chevalier
+5th April
+⭐⭐⭐⭐
+
+Yer won' Adam and Eve it! The mansion is par' ov a gian' poin'ed 'ooth!!"
+"Basil Scarsella
+1st November
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+
+This place is for nerds. Come and visit us instead - we represent power!"
+"Charles Barry
+2nd August
+⭐⭐⭐⭐
+
+I swear this place is actually haunted. I get a looming sense of dread staying here. Over at my gentlemen's clubs you can get haunted by gentlemen instead ;)"
+"Dixon Butler
+3rd July
+⭐⭐⭐⭐⭐⭐⭐⭐
+
+In a good way, there are no buses here."
+"DrunkGamer1337
+7th June
+⭐⭐⭐⭐⭐⭐⭐⭐
+
+The only other thing here is what looks like an old, rundown, wine shop. Meanwhile, our place is so popular that it even appeared in Call of Duty!"
+"Edward Wilson
+2nd June
+⭐⭐⭐⭐⭐⭐
+
+The celestial temple is pretty good from an architectural point of view, I guess."
+"George Berkley
+11th December
+⭐⭐
+
+Watch out for the vicious flying serpents! You can't go underground to hide from them over at my place, but there aren't any flying serpents to hide from either!"
+"GoodBoiScottie
+8th December
+⭐⭐⭐⭐⭐⭐
+
+I will gladly give up space over at my place to build a dog sanctuary like the one found here - even the former police station! I've already given up lots of space for larger buildings, but how can I say no to my beloved Scottie Dog?"
+"Harry Castling
+1st August
+⭐⭐⭐⭐⭐⭐⭐
+
+The middle-most Summer mansion with the least creative (and confusing) name ever - drove me bananas."
+"Henry Coventry
+6th October
+⭐⭐⭐
+
+This place smells like a rotting heap of corpses; it's a one-way ride back home for me."
+"Henry Tanner
+11th September
+⭐⭐⭐
+
+Wow! This place has the same name as the third- (or second-) most famous shopping street over at my area - I know because mine is the first!"
+"Hugh Grosvenor
+4th October
+⭐⭐⭐⭐⭐⭐⭐
+
+While my place has the highest rent, I swear the cost is justified! Though perhaps I should consider having an actual furry white tiger as a guard - the novelty may bring more customers."
+"James Burton
+1st February
+⭐⭐⭐⭐⭐⭐
+
+It is a coincidence the second of the Northern mansions has the same name as the second animal of the year. Come to my place instead - it is by no coincidence the second (or third) most famous shopping street."
+"James Vane
+3rd January
+⭐⭐
+
+I am intimately familiar with having nothing but a shabby lodging. Looking at all of the other 27 mansionsneatly lined up in a circle, I can't help but resonate with the one mansion of empty ruins I am in."
+"John Nash
+10th January
+⭐⭐⭐
+
+Apparently a famous charioteer lived in this mansion around the year 950 BC... If he was still alive, he would have brought you to our place instead, which is the most visited!"
+"Johnny Carson
+3rd March
+⭐⭐⭐
+
+Shiniest and biggest star of the lot but I still do not recommend it - my place is unpopular and is a dead end, but somehow it is still more worth it!"
+"Joseph Merrick
+15th September
+⭐⭐⭐⭐⭐⭐⭐
+
+Happily surprised when I got more than double what I expected. Back home, I was widely considered a freak and stayed at one of the cheaper places, so this change of pace was a welcome one."
+"Leslie Green
+2nd April
+⭐⭐⭐⭐
+
+Confusing names - thought the mansion next to mine was the place I booked due to how it looked, but it turns out that the mansions' names are Chinese! Also, if you are looking for somewhere quiet, check out my place!"
+"NoChoiceInWar
+7th November
+⭐⭐⭐
+
+They have a deity to deal with monsters. Not sure if that is better than using animals....not that we have monsters here!"
+"Passionate Muggle
+7th February
+⭐⭐
+
+This is like trying to get to platform nine and three quarters :/"
+"PearLover2000
+8th January
+⭐⭐⭐⭐
+
+Compared to my place which is right next to a jail, this place is like...incomparably better."
+"Polly the Parrot
+5th March
+⭐⭐
+
+The first of the Eastern mansions, but not first in my heart! That'd be Ye Olde Cheshire Cheese - though it's a pub!"
+"Pubeertea Lads
+6th July
+⭐⭐⭐⭐
+
+While my place is the only one named after a building, at least I wasn't named after a vehicle!"
+"Robert Sidney
+10th May
+⭐⭐⭐⭐⭐⭐⭐⭐⭐
+
+Meh. The mansion is near the back end, so the view is meh."
+"Sarah Bentley
+6th May
+⭐⭐⭐⭐
+
+Literal feces. I already have to deal with it at work, but here too???"
+"Sherlock Holmes
+6th October
+⭐⭐⭐⭐⭐⭐⭐⭐
+
+Pssst! Over at my place, there is a pub named after me with great deals!"
+"The Government
+2nd March
+⭐⭐⭐⭐
+
+Be warned! Executions are still a thing here!"
+"Thomas Bond
+3rd August
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+
+I have to say, what they served didn't taste very good. I probably felt more satisfied just looking at the art along my street."
+</textarea>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+</html>

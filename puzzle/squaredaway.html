@@ -1,0 +1,275 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Squared Away - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/autumn.html" class="btn">Back to Autumn</a>
+
+
+
+<a href="../post-hunt-solve/squaredaway.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/squaredaway.html" class="btn">View solution</a>
+<a href="../stats/squaredaway.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Squared Away
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <div id="puzzle-contents-copyable">
+<p class="flavor">It's the season of Halloween, colorful leaves, and gathering crops. Clear the area of that, and what're you even left with?</p>
+<p><center><tt><div class="no-copy">
+    H&emsp;S&emsp;T&emsp;H&emsp;E&emsp;C&emsp;E&emsp;G&emsp;T&emsp;A&emsp;N&emsp;G&emsp;I&emsp;N&emsp;T<br />
+    G&emsp;T&emsp;A&emsp;A&emsp;R&emsp;E&emsp;C&emsp;I&emsp;W&emsp;I&emsp;S&emsp;N&emsp;O&emsp;S&emsp;R<br />
+    I&emsp;C&emsp;E&emsp;S&emsp;F&emsp;H&emsp;A&emsp;U&emsp;N&emsp;T&emsp;A&emsp;O&emsp;R&emsp;B&emsp;N<br />
+    F&emsp;O&emsp;O&emsp;I&emsp;C&emsp;R&emsp;M&emsp;A&emsp;O&emsp;G&emsp;G&emsp;R&emsp;F&emsp;S&emsp;A<br />
+    U&emsp;M&emsp;H&emsp;T&emsp;V&emsp;B&emsp;C&emsp;R&emsp;T&emsp;I&emsp;N&emsp;T&emsp;B&emsp;U&emsp;O<br />
+    A&emsp;T&emsp;I&emsp;R&emsp;N&emsp;G&emsp;R&emsp;O&emsp;H&emsp;E&emsp;E&emsp;K&emsp;O&emsp;E&emsp;R<br />
+    E&emsp;W&emsp;L&emsp;R&emsp;E&emsp;A&emsp;U&emsp;O&emsp;B&emsp;L&emsp;O&emsp;T&emsp;L&emsp;O&emsp;L<br />
+    Z&emsp;D&emsp;H&emsp;E&emsp;C&emsp;E&emsp;L&emsp;E&emsp;R&emsp;Y&emsp;I&emsp;R&emsp;R&emsp;M&emsp;S<br />
+    N&emsp;B&emsp;U&emsp;L&emsp;R&emsp;T&emsp;H&emsp;A&emsp;D&emsp;A&emsp;N&emsp;A&emsp;A&emsp;T&emsp;E<br />
+    F&emsp;O&emsp;Y&emsp;H&emsp;A&emsp;P&emsp;C&emsp;T&emsp;T&emsp;I&emsp;E&emsp;S&emsp;D&emsp;R&emsp;S<br />
+    E&emsp;B&emsp;O&emsp;L&emsp;E&emsp;S&emsp;E&emsp;P&emsp;I&emsp;A&emsp;I&emsp;M&emsp;E&emsp;P&emsp;R<br />
+    C&emsp;I&emsp;N&emsp;G&emsp;G&emsp;T&emsp;R&emsp;S&emsp;N&emsp;O&emsp;H&emsp;E&emsp;P&emsp;E&emsp;P<br />
+    S&emsp;F&emsp;M&emsp;O&emsp;I&emsp;A&emsp;N&emsp;A&emsp;O&emsp;B&emsp;W&emsp;R&emsp;M&emsp;P&emsp;H<br />
+    A&emsp;E&emsp;E&emsp;T&emsp;M&emsp;U&emsp;R&emsp;R&emsp;N&emsp;I&emsp;A&emsp;P&emsp;E&emsp;E&emsp;T<br />
+    L&emsp;O&emsp;L&emsp;T&emsp;S&emsp;M&emsp;N&emsp;Q&emsp;V&emsp;U&emsp;A&emsp;R&emsp;R&emsp;E&emsp;D
+  </p>
+</div>
+<p></tt></center></p>
+<div class="clipboard-only"><table><tbody><tr><td>H</td><td>S</td><td>T</td><td>H</td><td>E</td><td>C</td><td>E</td><td>G</td><td>T</td><td>A</td><td>N</td><td>G</td><td>I</td><td>N</td><td>T</td></tr><tr><td>G</td><td>T</td><td>A</td><td>A</td><td>R</td><td>E</td><td>C</td><td>I</td><td>W</td><td>I</td><td>S</td><td>N</td><td>O</td><td>S</td><td>R</td></tr><tr><td>I</td><td>C</td><td>E</td><td>S</td><td>F</td><td>H</td><td>A</td><td>U</td><td>N</td><td>T</td><td>A</td><td>O</td><td>R</td><td>B</td><td>N</td></tr><tr><td>F</td><td>O</td><td>O</td><td>I</td><td>C</td><td>R</td><td>M</td><td>A</td><td>O</td><td>G</td><td>G</td><td>R</td><td>F</td><td>S</td><td>A</td></tr><tr><td>U</td><td>M</td><td>H</td><td>T</td><td>V</td><td>B</td><td>C</td><td>R</td><td>T</td><td>I</td><td>N</td><td>T</td><td>B</td><td>U</td><td>O</td></tr><tr><td>A</td><td>T</td><td>I</td><td>R</td><td>N</td><td>G</td><td>R</td><td>O</td><td>H</td><td>E</td><td>E</td><td>K</td><td>O</td><td>E</td><td>R</td></tr><tr><td>E</td><td>W</td><td>L</td><td>R</td><td>E</td><td>A</td><td>U</td><td>O</td><td>B</td><td>L</td><td>O</td><td>T</td><td>L</td><td>O</td><td>L</td></tr><tr><td>Z</td><td>D</td><td>H</td><td>E</td><td>C</td><td>E</td><td>L</td><td>E</td><td>R</td><td>Y</td><td>I</td><td>R</td><td>R</td><td>M</td><td>S</td></tr><tr><td>N</td><td>B</td><td>U</td><td>L</td><td>R</td><td>T</td><td>H</td><td>A</td><td>D</td><td>A</td><td>N</td><td>A</td><td>A</td><td>T</td><td>E</td></tr><tr><td>F</td><td>O</td><td>Y</td><td>H</td><td>A</td><td>P</td><td>C</td><td>T</td><td>T</td><td>I</td><td>E</td><td>S</td><td>D</td><td>R</td><td>S</td></tr><tr><td>E</td><td>B</td><td>O</td><td>L</td><td>E</td><td>S</td><td>E</td><td>P</td><td>I</td><td>A</td><td>I</td><td>M</td><td>E</td><td>P</td><td>R</td></tr><tr><td>C</td><td>I</td><td>N</td><td>G</td><td>G</td><td>T</td><td>R</td><td>S</td><td>N</td><td>O</td><td>H</td><td>E</td><td>P</td><td>E</td><td>P</td></tr><tr><td>S</td><td>F</td><td>M</td><td>O</td><td>I</td><td>A</td><td>N</td><td>A</td><td>O</td><td>B</td><td>W</td><td>R</td><td>M</td><td>P</td><td>H</td></tr><tr><td>A</td><td>E</td><td>E</td><td>T</td><td>M</td><td>U</td><td>R</td><td>R</td><td>N</td><td>I</td><td>A</td><td>P</td><td>E</td><td>E</td><td>T</td></tr><tr><td>L</td><td>O</td><td>L</td><td>T</td><td>S</td><td>M</td><td>N</td><td>Q</td><td>V</td><td>U</td><td>A</td><td>R</td><td>R</td><td>E</td><td>D</td></tr></tbody></table></div>
+</div>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+</html>

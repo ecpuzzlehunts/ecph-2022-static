@@ -1,0 +1,556 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Exploring - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="index.html">
+                            Home
+                        </a>
+                        <a href="rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+<style>
+    .selected-round {
+        font-weight: bold;
+    }
+</style>
+
+
+<h1>Exploring</h1>
+
+
+
+
+
+
+<style>
+    .parent {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .map {
+        position: relative;        
+        width: 100%
+    }
+
+    .map-button{
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .map-button:hover{
+        transform: scale(1.03);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .puzzle4 {
+        position: absolute;
+        top: 66.05%;
+        left: 67.47%;
+        width: 21.36%;
+    }
+
+    .puzzle7 {
+        position: absolute;
+        top: 10.84%;
+        left: 68.15%;
+        width: 18.89%;
+    }
+
+    .puzzle3 {
+        position: absolute;
+        top: 67.10%;
+        left: 9.63%;
+        width: 25.68%;
+    }
+
+    .puzzle5 {
+        position: absolute;
+        top: 37.84%;
+        left: 9.21%;
+        width: 24.73%;
+    }
+
+    .puzzle1 {
+        position: absolute;
+        top: 11.00%;
+        left: 36.47%;
+        width: 25.21%;
+    }
+
+    .puzzle6 {
+        position: absolute;
+        top: 37.84%;
+        left: 65.05%;
+        width: 23.42%;
+    }
+
+    .puzzle2 {
+        position: absolute;
+        top: 66.89%;
+        left: 38.05%;
+        width: 26.36%;
+    }
+
+    .puzzle8 {
+        position: absolute;
+        top: 36.26%;
+        left: 37.42%;
+        width: 23.63%;
+    }
+
+    .puzzle4-flag {
+        position: absolute;
+        top: 84.15%;
+        left: 83.89%;
+        width: 5.42%;
+    }
+
+    .puzzle7-flag {
+        position: absolute;
+        top: 28.26%;
+        left: 83.05%;
+        width: 5.42%;
+    }
+
+    .puzzle3-flag {
+        position: absolute;
+        top: 84.42%;
+        left: 27.84%;
+        width: 5.42%;
+    }
+
+    .puzzle5-flag {
+        position: absolute;
+        top: 58.05%;
+        left: 31.57%;
+        width: 5.15%;
+    }
+
+    .puzzle1-flag {
+        position: absolute;
+        top: 28.15%;
+        left: 55.31%;
+        width: 5.42%;
+    }
+
+    .puzzle6-flag {
+        position: absolute;
+        top: 58.57%;
+        left: 86.84%;
+        width: 5.15%;
+    }
+
+    .puzzle2-flag {
+        position: absolute;
+        top: 83.31%;
+        left: 57.26%;
+        width: 5.42%;
+    }
+
+    .puzzle8-flag {
+        position: absolute;
+        top: 57.89%;
+        left: 60.68%;
+        width: 5.15%;
+    }
+    img {
+        max-width:100%;
+        max-height:100%;
+    }
+
+    .nav-to-next{
+        position: absolute;
+        top: 82%;
+        left: 79%;
+        right: -9%;
+        -webkit-filter: brightness(107%);
+        filter: brightness(107%);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        transform: rotate(-20deg);
+    }
+    .nav-to-next>img{
+        width: 100%;   
+    }
+    .nav-to-next:hover{  
+        right: -10%;      
+        transform: rotate(-20deg) scale(1.08);    
+    }
+</style>
+
+<div class="parent">
+    <div class="map">
+        <img src="static/images/exploring/mapcolor.bc777313d876.png"/>
+    
+    
+        
+            
+                <div class="puzzle1 map-button">
+                    <a href="puzzle/fieldnotes.html">                    
+                        <img src="static/images/exploring/icons/fieldnotes-icon.3d9aab3ec6a3.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle2 map-button">
+                    <a href="puzzle/roundtrip.html">                    
+                        <img src="static/images/exploring/icons/roundtrip-icon.9ac0f65097d3.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle3 map-button">
+                    <a href="puzzle/cobble.html">                    
+                        <img src="static/images/exploring/icons/cobble-icon.185a973298cb.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle4 map-button">
+                    <a href="puzzle/enteringcompetitions.html">                    
+                        <img src="static/images/exploring/icons/enteringcompetitions-icon.48efa9803f2d.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle5 map-button">
+                    <a href="puzzle/enroute.html">                    
+                        <img src="static/images/exploring/icons/enroute-icon.f85bb78e0d8f.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle6 map-button">
+                    <a href="puzzle/averylargeinteger.html">                    
+                        <img src="static/images/exploring/icons/averylargeinteger-icon.d3bc8b8b703a.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle7 map-button">
+                    <a href="puzzle/rockclimbing.html">                    
+                        <img src="static/images/exploring/icons/rockclimbing-icon.1d8a08979298.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+        
+            
+                <div class="puzzle8 map-button">
+                    <a href="puzzle/fadedaway.html">                    
+                        <img src="static/images/exploring/icons/fadedaway-icon.02b4ec3a0c50.png" />
+                    </a>
+                </div>
+            
+            
+        
+    
+
+        <a href="round/summer.html">   
+            <div class="nav-to-next"><img src="static/images/exploring/navtoseasons.aec99d39f393.png" alt="Go to Seasons"></div>
+        </a>
+    </div>
+</div>
+
+<div class="links_to_puzzles">
+    <center><div style="max-width:550px">
+        <table style="table-layout: fixed; width:100%"><tbody style="vertical-align: middle;">
+            
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/fieldnotes.html">Field Notes</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/roundtrip.html">Round Trip</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/cobble.html">Cobble</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/enteringcompetitions.html">Entering Competitions</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/enroute.html">En Route</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/averylargeinteger.html">A Very Large Integer</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/rockclimbing.html">Rock Climbing</a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+                    <tr width="100%">
+                        <td style="text-align: left;">            
+                            
+                            <a href="puzzle/fadedaway.html"><b>Faded Away</b></a>
+                            
+                        </td>
+                        <td style="text-align: right; width: 20ch;"></td>
+                    </tr>
+            
+            
+        </tbody></table>
+    </div></center>
+</div>
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

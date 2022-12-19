@@ -1,0 +1,373 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: En Route - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/enroute.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: En Route
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">BRABANCONNE</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+ev
+
+    </h2>
+
+    
+    <p>The appearance of the example image, in conjunction with the title, 
+should remind us of a rapid transit map. Each image clues the name of a rapid transit station; 
+each pair of stations is on the same line and network.</p>
+<p>We should then notice that the example image has a letter on each station, 
+and they spell out "EXAMPLE", the same as the only named station. This clues that for each pair, 
+we should find a station <em>en route</em> that has the same number of letters as there are stations 
+on the route (including the termini). These are unique for each pair. For example, 
+the route for the first pair (Bank - Mile End) has four stations (Bank, Liverpool Street, 
+Bethnal Green, Mile End), and the only station there that is four letters long is BANK.</p>
+<p>We then have a correspondence between stations and letters, and for each pair we 
+extract the letter corresponding to the station with the same length as the route. 
+For Bank - Mile End, B corresponds to Bank, A corresponds to Liverpool Street, 
+N corresponds to Bethnal Green, and K corresponds to Mile End, so we extract B.</p>
+<p>The original ordering has the extraction stations in alphabetical order. 
+The route lengths are unique and consecutive, so we should reorder the pairs 
+in order of increasing length from 4 to 14. 
+The extracted letters then spell out the answer, <strong>BRABANCONNE</strong>.</p>
+<p>The following table shows the clues after sorting:</p>
+<table>
+<thead>
+<tr>
+<th>Original Order</th>
+<th>Station 1</th>
+<th>Station 2</th>
+<th>Line</th>
+<th>Station count</th>
+<th>Extraction station</th>
+<th>Extracted letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bank</td>
+<td>Mile End</td>
+<td>Central Line (London Underground)</td>
+<td>4</td>
+<td>BANK</td>
+<td>B</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cortex</td>
+<td>Stadium</td>
+<td>Red and Blue Lines (St. Louis MetroLink)</td>
+<td>5</td>
+<td>GRAND</td>
+<td>R</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Bede</td>
+<td>Felling</td>
+<td>Yellow Line (Tyne and Wear Metro)</td>
+<td>6</td>
+<td>JARROW</td>
+<td>A</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Alma</td>
+<td>Montgomery</td>
+<td>Line 1 (Brussels Metro)</td>
+<td>7</td>
+<td>TOMBERG</td>
+<td>B</td>
+</tr>
+<tr>
+<td>2</td>
+<td>St Peter's Square</td>
+<td>Sale</td>
+<td>Altrincham - Bury and Altrincham - Piccadilly routes (Manchester Metrolink)</td>
+<td>8</td>
+<td>DANE ROAD</td>
+<td>A</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bay Terrace</td>
+<td>Clifton</td>
+<td>Staten Island Railway</td>
+<td>9</td>
+<td>GRANT CITY</td>
+<td>N</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Canberra</td>
+<td>Newton</td>
+<td>North South Line (Singapore MRT)</td>
+<td>10</td>
+<td>YIO CHU KANG</td>
+<td>C</td>
+</tr>
+<tr>
+<td>6</td>
+<td>California</td>
+<td>O'Hare</td>
+<td>Blue Line (Chicago "L")</td>
+<td>11</td>
+<td>LOGAN SQUARE</td>
+<td>O</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Oak</td>
+<td>Union Station</td>
+<td>W Line (Denver RTD Rail)</td>
+<td>12</td>
+<td>UNION STATION</td>
+<td>N</td>
+</tr>
+<tr>
+<td>8</td>
+<td>College</td>
+<td>Finch</td>
+<td>Line 1 Yonge–University (Toronto subway)</td>
+<td>13</td>
+<td>SHEPPARD-YONGE</td>
+<td>N</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Columbia</td>
+<td>Granville</td>
+<td>Expo Line (Vancouver SkyTrain)</td>
+<td>14</td>
+<td>NEW WESTMINSTER</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>It was fun finding pairs of these stations that could be clued with pictures, though some were pretty difficult to find (7/B and 12/N in particular). Prior versions of this puzzle had a lot of off-by-1 errors because counting is hard :(</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

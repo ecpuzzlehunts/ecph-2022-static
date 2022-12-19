@@ -1,0 +1,891 @@
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Tahoma";
+    font-family: "Poppins";
+    font-variant-ligatures: none;
+    line-height: 2.6rem;
+    font-size: 1.75rem;
+    overflow-wrap: break-word;
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media print {
+
+    nav,
+    .shortcuts,
+    #shortcuts {
+        display: none;
+    }
+}
+
+@media screen {
+    nav {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    body {
+        margin: 0px;
+        /* This gets rounded down and prevents margin collapsing in child elements */
+        padding: 0.05px;
+    }
+}
+
+.content {
+    /* This gets rounded down and prevents margin collapsing in child elements */
+    padding: 0.05px;
+}
+
+.nav-bar {
+    background-image: linear-gradient(#555, #000);
+    background-size: auto 40px;
+    background-repeat: repeat-x;
+    max-width: 100%;
+    height: auto;
+}
+
+.inner-column {
+    margin: auto;
+    width: 80%;
+    width: 80vw;
+    max-width: 960px;
+}
+
+.darken-bg {
+    /* Fallback color */
+    background-color: rgb(0, 0, 0);
+
+    /* Black w/opacity/see-through */
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.lighten-bg {
+    /* Fallback color */
+    background-color: rgb(255, 255, 255);
+
+    /* White w/opacity/see-through */
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.blur-bg {
+    backdrop-filter: blur(2px);
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+li {
+    list-style-position: outside;
+    margin-left: 1.5em;
+}
+
+ul>li {
+    list-style-type: disc;
+}
+
+textarea {
+    width: 100%;
+    min-height: 24ch;
+    font-family: monospace, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+h1 {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: "Caveat Brush";
+}
+
+h1>.solved-title-marker {
+    font-family: "Poppins";
+}
+
+h2 {
+    margin: 4rem 0;
+    font-family: "Kalam";
+}
+
+h3,
+h4 {
+    font-family: "Kalam";
+}
+
+main {
+    padding: 20px 30px;
+    position: relative;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.very-small {
+    font-size: 80%;
+}
+
+table.very-small td,
+table.very-small th {
+    padding: 0.4em;
+    line-height: 1.4;
+}
+
+code {
+    font-size: 80%;
+    max-width: 1000px;
+    overflow: scroll;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+a,
+.btn {
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0;
+    border: none;
+    font-family: inherit;
+    text-transform: none;
+    letter-spacing: 0;
+
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5rem;
+}
+
+form .btn {
+    height: 38px;
+    line-height: 38px;
+    font-size: 1.75rem;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    border-radius: 0;
+}
+
+figcaption {
+    text-align: center;
+}
+
+@media (min-width: 961px) {
+    label {
+        text-align: right;
+        height: 2em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* normally the label is right-aligned because it's in a column inside a
+     * row and left of the corresponding input, but sometimes it's just by
+     * itself in a row above the input (hints page) */
+    .row>label {
+        text-align: left;
+        justify-content: flex-start;
+    }
+}
+
+@media print {
+    main {
+        border-top: 1px solid #000;
+    }
+
+    .btn {
+        border: 1px solid currentColor;
+    }
+}
+
+@media screen {
+    main {
+        display: table;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: #000;
+    }
+
+    a {
+        transition: color 0.3s;
+    }
+
+    a:hover,
+    a:focus {
+        color: #aaa;
+    }
+
+    .btn {
+        transition: background-color 0.3s;
+        color: #f9f8f5;
+        background-color: #555;
+    }
+
+    .btn:hover,
+    .btn:focus {
+        color: #f9f8f5;
+        background-color: #aaa;
+    }
+
+    nav {
+        overflow: hidden;
+    }
+
+    .top-tabs {
+        display: flex;
+        white-space: nowrap;
+        justify-content: space-evenly;
+        font-size: 2rem;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .top-tabs a {
+        display: inline-flex;
+        position: relative;
+        padding: 10px 0 10px;
+        text-decoration: none;
+        color: #fff;
+        align-items: center;
+    }
+
+    .top-tabs a:hover,
+    .top-tabs a:focus {
+        color: #aaa;
+    }
+
+    .top-tabs .selected-tab {
+        font-weight: 700;
+    }
+
+    .top-actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .top-left-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-grow: 1;
+    }
+
+    .top-left-actions:blank {
+        display: none;
+    }
+
+    .top-right-actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-grow: 1;
+    }
+
+    .top-left-actions,
+    .top-right-actions {
+        line-height: 36px;
+        word-spacing: 8px;
+        min-height: 36px;
+        flex-wrap: wrap;
+    }
+
+    .top-left-actions>*,
+    .top-right-actions>* {
+        word-spacing: initial;
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .current-stat {
+        white-space: nowrap;
+        display: inline-block;
+        text-decoration: none;
+        vertical-align: bottom;
+    }
+
+    .current-stat-label {
+        font-size: 2.4rem;
+        vertical-align: middle;
+    }
+
+    .shortcuts {
+        border: 4px double #000;
+        background-color: white;
+        position: absolute;
+        padding: 1rem;
+        right: 60px;
+        min-width: auto;
+        z-index: 800;
+        display: none;
+    }
+
+    .shortcuts form {
+        margin: 0;
+    }
+
+    .shortcuts p {
+        width: 25rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        margin: 0 0 1rem;
+    }
+
+    #shortcuts {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    [for=shortcuts] {
+        display: inline;
+        cursor: pointer;
+    }
+
+    [for=shortcuts]:after {
+        content: "\25BC";
+    }
+
+    :checked~nav [for=shortcuts]:after {
+        content: "\25B2";
+    }
+
+    :checked~.shortcuts {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    html {
+        background-image: none;
+        font-size: calc((960px - 100vw) / 80 + 10px);
+    }
+
+    body {
+        margin: auto;
+        width: 100%;
+    }
+
+    .tray {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        margin: auto;
+        left: 0;
+        right: 0;
+        transform: translateY(calc(5px - 100%));
+        transition: transform .1s;
+        z-index: 1000;
+        padding: 2rem calc(150vw - 1160px) 1rem;
+    }
+
+    .tray:before {
+        content: "This is not a puzzle.";
+        text-align: center;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -100vh;
+        bottom: 0;
+        padding-top: 90vh;
+        background-color: #000;
+        color: #fff;
+    }
+
+    .tray:after {
+        content: "\2630";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        margin-top: -10px;
+        padding-top: 10px;
+        height: 64px;
+        cursor: grab;
+        color: #fff;
+        text-align: center;
+        font-size: 32px;
+        line-height: 40px;
+        background-image: linear-gradient(#000, #000);
+        background-size: 100% 48px;
+        background-repeat: no-repeat;
+        background-origin: content-box;
+    }
+
+    .tray div {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 0;
+        z-index: 0;
+    }
+
+    .top-tabs {
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0;
+        font-size: calc((960px - 100vw) / 16 + 20px);
+    }
+
+    .flavor {
+        margin-left: calc(100vw - 800px);
+        margin-right: calc(100vw - 800px);
+    }
+
+    .top-actions {
+        padding-top: 60px;
+    }
+}
+
+@media screen and (max-width: 960px) and (any-hover: hover) {
+    .tray:not(:hover) {
+        transform: translateY(-100%);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 12px;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    .tray {
+        padding: 2rem calc((100% - 90vw) / 2) 1rem;
+    }
+
+    .top-tabs {
+        font-size: 30px;
+    }
+
+    .flavor {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.hunt-icon {
+    vertical-align: middle;
+}
+
+.gph-list-table {
+    min-width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+}
+
+.gph-list-table td,
+.gph-list-table th {
+    padding: 4px 8px;
+    background-color: white;
+}
+
+.gph-list-table td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+@media screen {
+    .gph-list-table th {
+        border: none;
+        position: sticky;
+        top: 0;
+        box-shadow: inset 0 -1px 0 0 #000;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .gph-list-table th {
+        top: 4rem;
+    }
+}
+
+.no-break {
+    -webkit-column-break-inside: avoid;
+    /* Chrome, Safari */
+    page-break-inside: avoid;
+    /* Theoretically FF 20+ */
+    break-inside: avoid;
+    /* IE 11 */
+    display: table;
+    /* Actually FF 20+ */
+    width: 100%;
+}
+
+.submitted-text {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/*@media print {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm  mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+    .story-chunk {
+        border-bottom: 1px solid #111;
+    }
+}*/
+
+@media screen {
+    .story-chunk {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        border: 2px solid black;
+        padding: 15px;
+    }
+
+    .story-chunk a {
+        text-decoration: none;
+    }
+}
+
+.flavor {
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    font-style: italic;
+}
+
+.form-section {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.team-members-formset .delete-row {
+    float: right;
+}
+
+.errorlist {
+    padding: 10px;
+    border: 3px solid currentColor;
+    list-style-type: none;
+    color: #b21;
+    background-color: #fff;
+}
+
+.errorlist li {
+    margin-bottom: 0;
+    list-style-type: none;
+    text-indent: 0;
+    padding-left: 0;
+}
+
+.team-info-panel,
+.call-in-answer-panel,
+.solved-panel,
+.puzzle-stats-panel {
+    margin-bottom: 24px;
+}
+
+.call-in-answer-panel:last-child {
+    margin-bottom: 0;
+}
+
+.call-in-answer-panel .row {
+    margin: 1em 0;
+}
+
+.call-in-answer-panel .errorlist {
+    margin-bottom: 0;
+}
+
+.solved-panel {
+    color: #290;
+}
+
+.unsolved-panel {
+    color: #aaa;
+}
+
+.solved-title-marker {
+    font-size: 50%;
+    color: initial;
+}
+
+.solved-title-answer {
+    color: #290;
+}
+
+.stat-entry {
+    font-size: 2rem;
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+.current-team {
+    font-weight: bold;
+}
+
+.puzzle-erratum {
+    color: #c32;
+    margin-bottom: 10px;
+}
+
+.hint-table {
+    width: 100%;
+}
+
+.hint-table th,
+.hint-table td {
+    border: none;
+    padding: 0 15px;
+}
+
+.hint-table tr:first-child th,
+.hint-table tr:first-child td,
+.hint-table td[colspan] {
+    padding-top: 12px;
+}
+
+.hint-table tr:last-child th,
+.hint-table tr:last-child td {
+    padding-bottom: 12px;
+}
+
+.hint-table button {
+    margin: 0;
+}
+
+.hint-table hr {
+    border-color: currentColor;
+    opacity: 0.25;
+}
+
+.hint-table .submitted-text,
+.hint-table textarea {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.hint-controls {
+    margin-bottom: 2rem;
+}
+
+.hint-controls> :last-child {
+    float: right;
+}
+
+.hint-controls form,
+.hint-controls input {
+    margin: 0;
+}
+
+.puzzles-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.puzzles-list a {
+    text-decoration: none;
+}
+
+.puzzles-entry,
+.puzzles-spacer {
+    flex-grow: 1;
+    margin: 0 20px;
+    width: 40%;
+    box-sizing: border-box;
+}
+
+.puzzles-entry {
+    margin: 20px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #555;
+    position: relative;
+    padding: 20px;
+}
+
+.puzzles-link,
+.puzzles-new,
+.puzzles-answer,
+.puzzles-solution {
+    position: absolute;
+    line-height: 24px;
+    color: #fff;
+    background-color: transparent;
+    padding: 4px 8px;
+}
+
+.puzzles-link {
+    top: 10px;
+    left: 10px;
+    font-size: 2rem;
+}
+
+/* .puzzles-new { top: -16px; right: -12px; color: #aaa; } */
+.puzzles-answer {
+    bottom: 10px;
+    right: 10px;
+    color: #290
+}
+
+.puzzles-solution {
+    bottom: 10px;
+    left: 10px;
+}
+
+/*.puzzles-meta {
+    border-style: dotted;
+}*/
+
+.puzzles-inner {
+    font-size: 1.4rem;
+}
+
+.puzzles-inner b {
+    font-size: 1.6rem;
+}
+
+.note {
+    border: 1px solid #aaa;
+    padding: 0.5em;
+    margin-bottom: 2em;
+}
+
+.note strong {
+    color: #aaa;
+}
+
+@media screen {
+    .spoiler.solved-title-answer {
+        display: inline-block;
+        min-width: 200px;
+        text-align: left;
+    }
+
+    .spoiler:not(:hover) {
+        background-color: currentColor;
+    }
+}
+
+.copy-only {
+    display: none;
+}
+
+.clipboard-only {
+    display: none;
+}
+
+textarea#clipboard-contents {
+    /* Hide the text to copy. */
+    display: none;
+}
+
+button#clipboard-button {
+    position: fixed;
+    border-radius: 1em;
+    bottom: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    height: 2.5em;
+    padding: 0 0.8em;
+    float: right;
+    right: 1.5em;
+    text-align: center;
+    overflow: hidden;
+    max-width: 480px;
+    transition: max-width 300ms ease-in-out;
+    /* unused without animation */
+    word-break: break-all;
+}
+
+@media print {
+    .clipboard-button {
+        display: none;
+    }
+}
+
+@media screen {
+    time[title] {
+        text-decoration: underline dotted;
+        text-underline-position: under;
+        cursor: help;
+    }
+}
+
+.chart {
+    width: 100%;
+    height: 82px;
+    transform: scaleY(-1);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: -1;
+}
+
+.chart-area {
+    fill: #555;
+    opacity: 0.5;
+}
+
+.chart-line {
+    stroke: #000;
+    stroke-width: 0.25%;
+    fill: none;
+}
+
+@media print {
+    .chart {
+        display: none;
+    }
+}
+
+footer {
+    text-align: center;
+    opacity: 0.5;
+    font-size: 80%;
+    height: 30px;
+}
+
+@media print {
+    footer {
+        display: none;
+    }
+}

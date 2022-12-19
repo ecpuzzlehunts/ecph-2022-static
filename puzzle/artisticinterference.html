@@ -1,0 +1,274 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Artistic Interference - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/autumn.html" class="btn">Back to Autumn</a>
+
+
+
+<a href="../post-hunt-solve/artisticinterference.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/artisticinterference.html" class="btn">View solution</a>
+<a href="../stats/artisticinterference.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Artistic Interference
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <div id="puzzle-contents-copyable">
+<p class="flavor">Despite their unusual appearance, a shred of familiarity emanates from these images.</p>
+<p class="clipboard-only">[See original puzzle for images.]</p>
+<p><div style="text-align: center"><img src="../static/puzzle_resources/artisticinterference/01.34a941a7e6c5.png" width="80%"><br>
+    (2; 9→5)<br><br><img src="../static/puzzle_resources/artisticinterference/02.ef8b074ac0a9.png" width="80%"><br>
+    (5; 11→6)<br><br><img src="../static/puzzle_resources/artisticinterference/03.ca96332aaacb.png" width="80%"><br>
+    (3; 8→9)<br><br><img src="../static/puzzle_resources/artisticinterference/04.8dc498294f46.png" width="80%"><br>
+    (4; 4→10)<br><br><img src="../static/puzzle_resources/artisticinterference/05.9450485fc2d8.png" width="80%"><br>
+    (11; 11→6)<br><br><img src="../static/puzzle_resources/artisticinterference/06.ec21aaba0599.png" width="80%"><br>
+    (1; 7→6)<br><br><img src="../static/puzzle_resources/artisticinterference/07.42282c2fde67.png" width="80%"><br>
+    (2; 5→5)<br><br><img src="../static/puzzle_resources/artisticinterference/08.b900d877daaf.png" width="80%"><br>
+    (2; 7→5)<br><br><img src="../static/puzzle_resources/artisticinterference/09.a6dbc56cdedd.png" width="80%"><br>
+    (3; 6→4)<br><br><img src="../static/puzzle_resources/artisticinterference/10.296bbced903b.png" width="80%"><br>
+    (1; 5→3)<br><br><img src="../static/puzzle_resources/artisticinterference/11.c80b0e727ba4.png" width="80%"><br>
+    (2; 3→5)<br><br><img src="../static/puzzle_resources/artisticinterference/12.9f8a483f0835.png" width="80%"><br>
+    (1; 3→4)<br><br><img src="../static/puzzle_resources/artisticinterference/13.ab6be32c38ee.png" width="80%"><br>
+    (3; 4→4)<br><br><img src="../static/puzzle_resources/artisticinterference/14.df3591517386.png" width="80%"><br>
+    (4; 4→6)<br><br><img src="../static/puzzle_resources/artisticinterference/15.cbc49e2146fa.png" width="80%"><br>
+    (4; 4→7)<br><hr><u>J1</u>&nbsp;<u>B5</u> and <u>I2</u><br><u>A4</u> with <u>D2</u><br><u>O5</u> at <u>L4</u><br>
+    The <u>C3</u> and the <u>F3</u><br><u>K1</u>&nbsp;<u>H5</u> at the <u>N1</u><br><u>G3</u>&nbsp;<u>M4</u> on a <u>E1</u></p>
+</div>
+</div>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+</html>

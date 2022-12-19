@@ -1,0 +1,359 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Squared Away - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/squaredaway.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Squared Away
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">MIAMI WHITEWATER</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chuttiekang
+
+    </h2>
+
+    
+    <style>
+    hrd{
+        background-color: #f99;
+    }
+    hg{
+        background-color: #9f9;
+    }
+    hb{
+        background-color: #99f;
+    }
+    hc{
+        background-color: #9ff;
+    }
+    hm{
+        background-color: #f9f;
+    }
+    hy{
+        background-color: #ff9;
+    }
+</style>
+
+<p>This puzzle starts with a standard word search, albeit without an explicit list of words to search for.
+The relevant words are hinted by the flavour text; they are words related to Halloween, autumn leaf colours
+(i.e. reds, oranges, yellows, browns), and crops.</p>
+<p>For each category, there are two correct words, which overlap at one end. Given below is the grid,
+with Halloween in blue, colours in red, and crops in green:</p>
+<p><center><tt>
+    H&emsp;S&emsp;T&emsp;H&emsp;E&emsp;C&emsp;E&emsp;G&emsp;T&emsp;A&emsp;N&emsp;G&emsp;I&emsp;N&emsp;T<br />
+    G&emsp;T&emsp;A&emsp;A&emsp;R&emsp;E&emsp;C&emsp;I&emsp;W&emsp;I&emsp;S&emsp;N&emsp;O&emsp;S&emsp;R<br />
+    I&emsp;C&emsp;E&emsp;S&emsp;F&emsp;<hb>H</hb>&emsp;<hb>A</hb>&emsp;<hb>U</hb>&emsp;<hb>N</hb>&emsp;<hc>T</hc>&emsp;A&emsp;O&emsp;R&emsp;B&emsp;N<br />
+    F&emsp;O&emsp;O&emsp;I&emsp;<hb>C</hb>&emsp;R&emsp;M&emsp;A&emsp;<hg>O</hg>&emsp;G&emsp;G&emsp;R&emsp;F&emsp;S&emsp;A<br />
+    U&emsp;M&emsp;H&emsp;<hb>T</hb>&emsp;V&emsp;B&emsp;C&emsp;<hg>R</hg>&emsp;T&emsp;I&emsp;N&emsp;<hrd>T</hrd>&emsp;B&emsp;U&emsp;O<br />
+    A&emsp;T&emsp;<hb>I</hb>&emsp;R&emsp;N&emsp;G&emsp;<hg>R</hg>&emsp;O&emsp;H&emsp;E&emsp;<hrd>E</hrd>&emsp;K&emsp;O&emsp;E&emsp;R<br />
+    E&emsp;<hb>W</hb>&emsp;L&emsp;R&emsp;E&emsp;<hg>A</hg>&emsp;U&emsp;O&emsp;B&emsp;<hrd>L</hrd>&emsp;O&emsp;T&emsp;L&emsp;O&emsp;L<br />
+    Z&emsp;D&emsp;H&emsp;E&emsp;<hg>C</hg>&emsp;<hg>E</hg>&emsp;<hg>L</hg>&emsp;<hg>E</hg>&emsp;<hy>R</hy>&emsp;<hg>Y</hg>&emsp;I&emsp;R&emsp;R&emsp;M&emsp;S<br />
+    N&emsp;B&emsp;U&emsp;L&emsp;R&emsp;T&emsp;H&emsp;<hrd>A</hrd>&emsp;D&emsp;A&emsp;N&emsp;A&emsp;A&emsp;T&emsp;E<br />
+    F&emsp;O&emsp;Y&emsp;H&emsp;A&emsp;P&emsp;<hrd>C</hrd>&emsp;T&emsp;T&emsp;I&emsp;E&emsp;S&emsp;D&emsp;R&emsp;S<br />
+    E&emsp;B&emsp;O&emsp;L&emsp;E&emsp;<hrd>S</hrd>&emsp;<hrd>E</hrd>&emsp;<hrd>P</hrd>&emsp;<hrd>I</hrd>&emsp;<hrd>A</hrd>&emsp;I&emsp;M&emsp;E&emsp;P&emsp;R<br />
+    C&emsp;I&emsp;N&emsp;G&emsp;G&emsp;T&emsp;R&emsp;S&emsp;N&emsp;O&emsp;H&emsp;E&emsp;P&emsp;E&emsp;P<br />
+    S&emsp;F&emsp;M&emsp;O&emsp;I&emsp;A&emsp;N&emsp;A&emsp;O&emsp;B&emsp;W&emsp;R&emsp;M&emsp;P&emsp;H<br />
+    A&emsp;E&emsp;E&emsp;T&emsp;M&emsp;U&emsp;R&emsp;R&emsp;N&emsp;I&emsp;A&emsp;P&emsp;E&emsp;E&emsp;T<br />
+    L&emsp;O&emsp;L&emsp;T&emsp;S&emsp;M&emsp;N&emsp;Q&emsp;V&emsp;U&emsp;A&emsp;R&emsp;R&emsp;E&emsp;D
+</tt></center></p>
+<p>Taking away the words leaves a square number of letters, which suggests “re-squaring” the grid.
+Doing this four times results in these grids:</p>
+<p><center><tt>
+    H&emsp;S&emsp;T&emsp;H&emsp;E&emsp;C&emsp;E&emsp;G&emsp;<hrd>T</hrd>&emsp;<hrd>A</hrd>&emsp;<hrd>N</hrd>&emsp;G&emsp;I&emsp;N<br />
+    T&emsp;G&emsp;T&emsp;A&emsp;A&emsp;R&emsp;E&emsp;<hb>C</hb>&emsp;I&emsp;<hrd>W</hrd>&emsp;I&emsp;S&emsp;N&emsp;O<br />
+    S&emsp;R&emsp;I&emsp;C&emsp;E&emsp;S&emsp;F&emsp;A&emsp;<hm>O</hm>&emsp;R&emsp;B&emsp;N&emsp;F&emsp;O<br />
+    O&emsp;I&emsp;R&emsp;M&emsp;A&emsp;G&emsp;G&emsp;<hrd>R</hrd>&emsp;F&emsp;<hb>S</hb>&emsp;A&emsp;U&emsp;M&emsp;H<br />
+    V&emsp;B&emsp;C&emsp;T&emsp;I&emsp;N&emsp;<hrd>B</hrd>&emsp;U&emsp;O&emsp;A&emsp;<hb>T</hb>&emsp;R&emsp;N&emsp;G<br />
+    O&emsp;H&emsp;E&emsp;K&emsp;O&emsp;E&emsp;R&emsp;E&emsp;L&emsp;R&emsp;E&emsp;<hb>U</hb>&emsp;O&emsp;B<br />
+    O&emsp;T&emsp;L&emsp;O&emsp;L&emsp;Z&emsp;D&emsp;H&emsp;E&emsp;I&emsp;R&emsp;<hg>R</hg>&emsp;<hb>M</hb>&emsp;S<br />
+    N&emsp;B&emsp;U&emsp;L&emsp;R&emsp;T&emsp;H&emsp;D&emsp;A&emsp;N&emsp;<hg>A</hg>&emsp;<hg>A</hg>&emsp;T&emsp;<hb>E</hb><br />
+    F&emsp;O&emsp;Y&emsp;H&emsp;A&emsp;P&emsp;T&emsp;T&emsp;I&emsp;<hg>E</hg>&emsp;S&emsp;<hg>D</hg>&emsp;<hb>R</hb>&emsp;S<br />
+    E&emsp;B&emsp;O&emsp;L&emsp;E&emsp;I&emsp;M&emsp;E&emsp;<hg>P</hg>&emsp;R&emsp;C&emsp;<hc>I</hc>&emsp;N&emsp;G<br />
+    G&emsp;T&emsp;R&emsp;S&emsp;N&emsp;O&emsp;H&emsp;E&emsp;P&emsp;E&emsp;<hb>P</hb>&emsp;<hg>S</hg>&emsp;F&emsp;M<br />
+    O&emsp;I&emsp;A&emsp;N&emsp;A&emsp;O&emsp;B&emsp;W&emsp;R&emsp;<hb>M</hb>&emsp;P&emsp;<hg>H</hg>&emsp;A&emsp;E<br />
+    E&emsp;T&emsp;M&emsp;U&emsp;R&emsp;R&emsp;N&emsp;I&emsp;<hb>A</hb>&emsp;P&emsp;E&emsp;E&emsp;T&emsp;L<br />
+    O&emsp;L&emsp;T&emsp;S&emsp;M&emsp;N&emsp;Q&emsp;<hb>V</hb>&emsp;U&emsp;A&emsp;R&emsp;R&emsp;E&emsp;D
+</tt></center></p>
+<p>&emsp;</p>
+<p><center><tt>
+    H&emsp;<hrd>S</hrd>&emsp;T&emsp;H&emsp;E&emsp;C&emsp;E&emsp;G&emsp;G&emsp;I&emsp;N&emsp;<hb>T</hb>&emsp;G<br />
+    T&emsp;A&emsp;<hrd>A</hrd>&emsp;R&emsp;E&emsp;I&emsp;I&emsp;S&emsp;N&emsp;O&emsp;<hb>S</hb>&emsp;<hb>R</hb>&emsp;I<br />
+    <hg>C</hg>&emsp;E&emsp;S&emsp;<hrd>F</hrd>&emsp;A&emsp;R&emsp;B&emsp;N&emsp;F&emsp;<hb>O</hb>&emsp;O&emsp;<hb>I</hb>&emsp;R<br />
+    M&emsp;<hg>A</hg>&emsp;G&emsp;G&emsp;<hrd>F</hrd>&emsp;A&emsp;U&emsp;M&emsp;<hb>H</hb>&emsp;V&emsp;<hg>B</hg>&emsp;<hb>C</hb>&emsp;T<br />
+    I&emsp;N&emsp;<hg>U</hg>&emsp;O&emsp;A&emsp;<hrd>R</hrd>&emsp;N&emsp;<hb>G</hb>&emsp;O&emsp;H&emsp;<hg>E</hg>&emsp;<hb>K</hb>&emsp;O<br />
+    E&emsp;R&emsp;E&emsp;<hg>L</hg>&emsp;R&emsp;E&emsp;<hrd>O</hrd>&emsp;B&emsp;O&emsp;T&emsp;<hg>L</hg>&emsp;<hb>O</hb>&emsp;L<br />
+    Z&emsp;D&emsp;H&emsp;E&emsp;<hg>I</hg>&emsp;R&emsp;S&emsp;<hrd>N</hrd>&emsp;B&emsp;U&emsp;<hg>L</hg>&emsp;<hb>R</hb>&emsp;T<br />
+    H&emsp;D&emsp;A&emsp;N&emsp;T&emsp;<hg>F</hg>&emsp;<hrd>O</hrd>&emsp;Y&emsp;H&emsp;A&emsp;<hg>P</hg>&emsp;<hb>T</hb>&emsp;T<br />
+    I&emsp;S&emsp;S&emsp;E&emsp;B&emsp;<hrd>O</hrd>&emsp;<hg>L</hg>&emsp;E&emsp;I&emsp;M&emsp;<hg>E</hg>&emsp;<hb>R</hb>&emsp;C<br />
+    N&emsp;G&emsp;G&emsp;T&emsp;<hrd>R</hrd>&emsp;S&emsp;N&emsp;<hg>O</hg>&emsp;H&emsp;E&emsp;<hg>P</hg>&emsp;<hb>E</hb>&emsp;F<br />
+    M&emsp;O&emsp;I&emsp;<hrd>A</hrd>&emsp;N&emsp;A&emsp;O&emsp;B&emsp;<hg>W</hg>&emsp;R&emsp;<hg>P</hg>&emsp;<hb>A</hb>&emsp;E<br />
+    E&emsp;T&emsp;<hrd>M</hrd>&emsp;U&emsp;R&emsp;R&emsp;N&emsp;I&emsp;P&emsp;<hg>E</hg>&emsp;<hg>E</hg>&emsp;<hb>T</hb>&emsp;L<br />
+    O&emsp;L&emsp;T&emsp;S&emsp;M&emsp;N&emsp;Q&emsp;U&emsp;A&emsp;R&emsp;<hg>R</hg>&emsp;E&emsp;D
+</tt></center></p>
+<p>&emsp;</p>
+<p><center><tt><hrd>H</hrd>&emsp;T&emsp;H&emsp;E&emsp;C&emsp;<hb>E</hb>&emsp;<hb>G</hb>&emsp;<hb>G</hb>&emsp;<hb>I</hb>&emsp;<hb>N</hb>&emsp;<hb>G</hb><br />
+    T&emsp;<hrd>A</hrd>&emsp;R&emsp;E&emsp;<hb>I</hb>&emsp;I&emsp;S&emsp;N&emsp;O&emsp;I&emsp;<hg>E</hg><br />
+    S&emsp;A&emsp;<hrd>R</hrd>&emsp;<hb>B</hb>&emsp;N&emsp;F&emsp;O&emsp;R&emsp;M&emsp;<hg>G</hg>&emsp;<hrd>G</hrd><br />
+    A&emsp;U&emsp;<hb>M</hb>&emsp;<hrd>V</hrd>&emsp;T&emsp;I&emsp;N&emsp;O&emsp;<hg>A</hg>&emsp;N&emsp;<hrd>O</hrd><br />
+    H&emsp;<hb>O</hb>&emsp;E&emsp;R&emsp;<hrd>E</hrd>&emsp;R&emsp;E&emsp;<hg>B</hg>&emsp;O&emsp;T&emsp;<hrd>L</hrd>&ZeroWidthSpace;<br />
+    <hb>Z</hb>&emsp;D&emsp;H&emsp;E&emsp;R&emsp;<hrd>S</hrd>&emsp;<hg>B</hg>&emsp;U&emsp;T&emsp;H&emsp;<hrd>D</hrd><br />
+    A&emsp;N&emsp;T&emsp;Y&emsp;H&emsp;<hg>A</hg>&emsp;<hrd>T</hrd>&emsp;I&emsp;S&emsp;S&emsp;<hrd>E</hrd><br />
+    B&emsp;E&emsp;I&emsp;M&emsp;<hg>C</hg>&emsp;N&emsp;G&emsp;<hrd>G</hrd>&emsp;T&emsp;S&emsp;<hrd>N</hrd><br />
+    H&emsp;E&emsp;F&emsp;M&emsp;<hg>O</hg>&emsp;I&emsp;N&emsp;A&emsp;<hrd>O</hrd>&emsp;B&emsp;<hrd>R</hrd><br />
+    E&emsp;E&emsp;T&emsp;U&emsp;<hg>R</hg>&emsp;R&emsp;N&emsp;I&emsp;P&emsp;<hrd>L</hrd>&emsp;<hrd>O</hrd><br />
+    L&emsp;T&emsp;S&emsp;M&emsp;<hg>N</hg>&emsp;Q&emsp;U&emsp;A&emsp;R&emsp;E&emsp;<hrd>D</hrd></tt></center></p>
+<p>&emsp;</p>
+<p><center><tt>
+    T&emsp;H&emsp;E&emsp;<hb>C</hb>&emsp;<hrd>T</hrd>&emsp;R&emsp;E&emsp;I&emsp;S<br />
+    N&emsp;O&emsp;I&emsp;<hrd>S</hrd>&emsp;<hb>A</hb>&emsp;N&emsp;F&emsp;O&emsp;R<br />
+    M&emsp;A&emsp;<hrd>U</hrd>&emsp;T&emsp;I&emsp;<hb>N</hb>&emsp;O&emsp;N&emsp;H<br />
+    E&emsp;<hrd>R</hrd>&emsp;R&emsp;E&emsp;O&emsp;T&emsp;<hb>D</hb>&emsp;H&emsp;E<br />
+    R&emsp;<hrd>U</hrd>&emsp;T&emsp;H&emsp;A&emsp;N&emsp;T&emsp;<hb>Y</hb>&emsp;H<br />
+    I&emsp;<hrd>S</hrd>&emsp;S&emsp;B&emsp;E&emsp;I&emsp;<hb>M</hb>&emsp;N&emsp;G<br />
+    T&emsp;<hrd>S</hrd>&emsp;H&emsp;E&emsp;F&emsp;<hb>M</hb>&emsp;I&emsp;N&emsp;A<br />
+    <hg>B</hg>&emsp;<hy>E</hy>&emsp;<hg>E</hg>&emsp;<hg>T</hg>&emsp;<hc>U</hc>&emsp;<hg>R</hg>&emsp;<hg>N</hg>&emsp;<hg>I</hg>&emsp;<hg>P</hg><br />
+    L&emsp;<hrd>T</hrd>&emsp;S&emsp;<hb>M</hb>&emsp;Q&emsp;U&emsp;A&emsp;R&emsp;E
+</tt></center></p>
+<p>Removing the words in this last grid does not result in a square number of letters, and also reveals
+a confirmation message of “There is no information here other than this being the final square.”</p>
+<p>Interpreting the pairs of words in each category as semaphore gives the final answer, <strong>MIAMI WHITEWATER</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    
+The main mechanic of removing letters and re-squaring actually came to me in a dream! Unfortunately, it was a difficult time realizing said dream. I had to find words that fit the categories, and formed the relevant semaphore, and weren't too long (especially hard for the smaller grids), and that had the correct total letters. At least balancing all that taught me an important lesson in not constraining myself too much.
+
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

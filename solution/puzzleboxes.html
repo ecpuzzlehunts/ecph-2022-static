@@ -1,0 +1,894 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Puzzle Boxes - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/puzzleboxes.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Puzzle Boxes
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">TRANSFIGURATIONS</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee
+
+    </h2>
+
+    
+    <p>The puzzle consists of a long list of "pieces" (answers) and eight presents, which make up a mini-meta 
+collection. To solve the 8 "puzzle boxes", we must use the clues on each present, inspect the answers and sort them into their 
+appropriate metas. Once the answers are sorted, it should be possible to solve the metas, all while 8 
+"frozen" answers are left over. The meta answers, together with the frozen answers, will make up one 
+final metameta whose solution is the final answer to the puzzle.</p>
+<p>Each meta is themed after a common puzzle encoding, and the number of lines on each present ribbon 
+indicates the number of answers that feed into that meta. Here are their solutions, in the order in 
+which the presents are presented:</p>
+<h2>Present 1</h2>
+<p>Answers used by this meta:</p>
+<p><tt>DAMS<br />
+DARK<br />
+DART<br />
+DOOR<br />
+EARL<br />
+NEAR<br />
+OMAN<br />
+ONES<br />
+ZANY</tt></p>
+<p>This meta is based on braille, clued by the mention of "trouble seeing" and the 2-by-3 blocks. 
+Based on the fact that there are four 2-by-3 blocks in the image, and the fact that the answer lists contains a large number of four-letter-long answers, we should try to encode these answers as Braille. The middle row is highlighted in the image, which means we should take particular note of it. When we decode the braille dots in the middle row as binary (braille dot = 1), and order the answers alphabetically, we can spell out the answer <strong>BLOWN SAVE</strong>.</p>
+<p>(Finding the correct set of answers becomes easier if one notices that the first letter needs to have "01" in its middle braille row. This limits the answers to those that start with D, E, N, O, Y or Z, which eliminates GAUL, JUJU and STEP as possibilities.)</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Braille encoding</th>
+<th>Middle row as binary</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DAMS</td>
+<td>⠙⠁⠍⠎</td>
+<td>01000010</td>
+<td>B</td>
+</tr>
+<tr>
+<td>DARK</td>
+<td>⠙⠁⠗⠅</td>
+<td>01001100</td>
+<td>L</td>
+</tr>
+<tr>
+<td>DART</td>
+<td>⠙⠁⠗⠞</td>
+<td>01001111</td>
+<td>O</td>
+</tr>
+<tr>
+<td>DOOR</td>
+<td>⠙⠕⠕⠗</td>
+<td>01010111</td>
+<td>W</td>
+</tr>
+<tr>
+<td>EARL</td>
+<td>⠑⠁⠗⠇</td>
+<td>01001110</td>
+<td>N</td>
+</tr>
+<tr>
+<td>NEAR</td>
+<td>⠝⠑⠁⠗</td>
+<td>01010011</td>
+<td>S</td>
+</tr>
+<tr>
+<td>OMAN</td>
+<td>⠕⠍⠁⠝</td>
+<td>01000001</td>
+<td>A</td>
+</tr>
+<tr>
+<td>ONES</td>
+<td>⠕⠝⠑⠎</td>
+<td>01010110</td>
+<td>V</td>
+</tr>
+<tr>
+<td>ZANY</td>
+<td>⠵⠁⠝⠽</td>
+<td>01000101</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<h2>Present 2</h2>
+<p>Answers used by this meta:</p>
+<p><tt>ARABLE LAND<br />
+DOMENICO DOLCE<br />
+EXTREMELY LUSH<br />
+HATSUNE MIKU<br />
+INCREDIBLY TANKY<br />
+LOUIS BOTHA<br />
+TINY BIT</tt></p>
+<p>This meta is based on multi-tap, a text entry system for mobile phones. Every answer that feeds into 
+this meta consists of two words. If we take the second word of each answer, and trace the path made 
+by its letters on a phone keypad, the paths take the form of letters. The first words of the answers 
+have unique lengths, which means we can use this as our ordering. Sorted this way, the traced letters 
+spell out the answer <strong>CONTOUR</strong>. </p>
+<p><img src="../static/puzzle_resources/puzzleboxes/present_2_solution_rjiw.17a6596c0ae7.png" width="100%"><h2>Present 3</h2>
+Answers used by this meta:</p>
+<p><tt>ACQUIRED IMMUNITY<br />
+AISLE<br />
+CHESS<br />
+DRESS<br />
+ELVIS<br />
+GEORGE GERSHWIN<br />
+HARSH<br />
+RELATIONSHIP<br />
+RESIN<br />
+SEMIFINALISTS<br />
+SPRINGBOARD<br />
+WEAK INTERACTION</tt></p>
+<p>This meta is based on Morse code, clued by "dotted" and "dashes". Half of the answers used here have the same length of 5. If we try to encode them as Morse, we can notice that they have a lot of dots. 
+In fact, each answer only has two dashes. Furthermore, the combined number of dots and dashes is 
+unique for each answer, and they can be sorted such that the numbers are consecutive.</p>
+<p>The other half of the answers is clued on the right-hand side, with the clues being there solely to 
+help find the right answers from the lengthy list. These answers also have unique and consecutive 
+lengths, which can be matched with the number of dots and dashes of the other answers. Extract the 
+letters that overlap with the positions of the dashes for the answer <strong>PRESS FORWARD</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Five-letter answer</th>
+<th>Morse encoding</th>
+<th>Matching answer</th>
+<th>Length</th>
+<th>Extracted letters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESIN</td>
+<td><tt>.-. . ... .. -.</tt></td>
+<td>S<strong>P</strong>RINGBOA<strong>R</strong>D</td>
+<td>11</td>
+<td>PR</td>
+</tr>
+<tr>
+<td>AISLE</td>
+<td><tt>.- .. ... .-.. .</tt></td>
+<td>R<strong>E</strong>LATION<strong>S</strong>HIP</td>
+<td>12</td>
+<td>ES</td>
+</tr>
+<tr>
+<td>DRESS</td>
+<td><tt>-.. .-. . ... ...</tt></td>
+<td><strong>S</strong>EMI<strong>F</strong>INALISTS</td>
+<td>13</td>
+<td>SF</td>
+</tr>
+<tr>
+<td>ELVIS</td>
+<td><tt>. .-.. ...- .. ...</tt></td>
+<td>GE<strong>O</strong>RGE GE<strong>R</strong>SHWIN</td>
+<td>14</td>
+<td>OR</td>
+</tr>
+<tr>
+<td>CHESS</td>
+<td><tt>-.-. .... . ... ...</tt></td>
+<td><strong>W</strong>E<strong>A</strong>K INTERACTION</td>
+<td>15</td>
+<td>WA</td>
+</tr>
+<tr>
+<td>HARSH</td>
+<td><tt>.... .- .-. ... ....</tt></td>
+<td>ACQUI<strong>R</strong>E<strong>D</strong> IMMUNITY</td>
+<td>16</td>
+<td>RD</td>
+</tr>
+</tbody>
+</table>
+<h2>Present 4</h2>
+<p>Answers used by this meta:</p>
+<p><tt>DEVANAGARI<br />
+FRIGGA<br />
+GAUL<br />
+ISAAC<br />
+LG CUP<br />
+MORTGAGE</tt></p>
+<p>This meta is based on amino acid code. Each answer contains a codon (triplet of A/C/G/U) which can be 
+translated into an amino acid. Order the answers by the position in which the codon appears, and 
+extract the one-letter symbols of the amino acids to get the answer <strong>DANGER</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Amino acid</th>
+<th>One-letter symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GAU</strong>L</td>
+<td>Aspartic acid</td>
+<td>D</td>
+</tr>
+<tr>
+<td>L<strong>G CU</strong>P</td>
+<td>Alanine</td>
+<td>A</td>
+</tr>
+<tr>
+<td>IS<strong>AAC</strong></td>
+<td>Asparagine</td>
+<td>N</td>
+</tr>
+<tr>
+<td>FRI<strong>GGA</strong></td>
+<td>Glycine</td>
+<td>G</td>
+</tr>
+<tr>
+<td>MORT<strong>GAG</strong>E</td>
+<td>Glutamic acid</td>
+<td>E</td>
+</tr>
+<tr>
+<td>DEVAN<strong>AGA</strong>RI</td>
+<td>Arginine</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<h2>Present 5</h2>
+<p>Answers used by this meta:</p>
+<p><tt>ACETALDEHYDE<br />
+BATTLE OF TRAFALGAR<br />
+CONTEMPORARIES<br />
+DOGMATIC THEOLOGY<br />
+ELONGATE<br />
+FOREMOST<br />
+GLIADIN<br />
+HISTORIC VILLAGE<br />
+INCHEON<br />
+JEROME ROBBINS</tt></p>
+<p>This meta is based on the NATO phonetic alphabet. Each answer contains an anagram of a letter in the 
+NATO phonetic alphabet. The answers start with unique letters A-J, which we can use as the order. 
+The NATO phonetic alphabet letters spell out the answer <strong>DASHT RIVER</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACE<strong>TALDE</strong>HYDE*</td>
+<td><strong>D</strong>elta</td>
+</tr>
+<tr>
+<td>BATTLE OF TR<strong>AFAL</strong>GAR</td>
+<td><strong>A</strong>lfa</td>
+</tr>
+<tr>
+<td>CONTEMPO<strong>RARIES</strong></td>
+<td><strong>S</strong>ierra</td>
+</tr>
+<tr>
+<td>DOGMATIC <strong>THEOL</strong>OGY</td>
+<td><strong>H</strong>otel</td>
+</tr>
+<tr>
+<td>EL<strong>ONGAT</strong>E</td>
+<td><strong>T</strong>ango</td>
+</tr>
+<tr>
+<td>F<strong>OREMO</strong>ST</td>
+<td><strong>R</strong>omeo</td>
+</tr>
+<tr>
+<td>GL<strong>IADIN</strong></td>
+<td><strong>I</strong>ndia</td>
+</tr>
+<tr>
+<td>HIS<strong>TORIC V</strong>ILLAGE</td>
+<td><strong>V</strong>ictor</td>
+</tr>
+<tr>
+<td>IN<strong>CHEO</strong>N</td>
+<td><strong>E</strong>cho</td>
+</tr>
+<tr>
+<td>JER<strong>OME RO</strong>BBINS</td>
+<td><strong>R</strong>omeo</td>
+</tr>
+</tbody>
+</table>
+<p>*<em> The anagram in "ACETALDEHYDE" can use either the first or second E.</em></p>
+<h2>Present 6</h2>
+<p>Answers used by this meta:</p>
+<p><tt>BRAINWASH<br />
+COTSWOLD LINE<br />
+CYNWYD LINE<br />
+INWARD-FACING<br />
+JOHN WAYNE<br />
+SLOT MACHINE<br />
+SWIMMER<br />
+SWORD COAST</tt></p>
+<p>This meta is based on flag semaphore. Each of the answers used here has a pair of compass 
+directions (where each direction may be cardinal or ordinal), which can be translated into a semaphore letter. We can notice that the distance 
+between the two compass directions ("faraway places") is unique and ranges from 2-9, which means we 
+can use it to sort the letters to read out the answer <strong>CUMULATE</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Distance</th>
+<th>Semaphore letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BRAI<strong>NW</strong>A<strong>S</strong>H</td>
+<td>2</td>
+<td>C</td>
+</tr>
+<tr>
+<td>JOH<strong>N W</strong>AY<strong>NE</strong></td>
+<td>3</td>
+<td>U</td>
+</tr>
+<tr>
+<td><strong>SW</strong>IMM<strong>E</strong>R</td>
+<td>4</td>
+<td>M</td>
+</tr>
+<tr>
+<td>CY<strong>NW</strong>YD LI<strong>NE</strong></td>
+<td>5</td>
+<td>U</td>
+</tr>
+<tr>
+<td>COT<strong>SW</strong>OLD LI<strong>NE</strong></td>
+<td>6</td>
+<td>L</td>
+</tr>
+<tr>
+<td><strong>SW</strong>ORD COA<strong>S</strong>T</td>
+<td>7</td>
+<td>A</td>
+</tr>
+<tr>
+<td>I<strong>NW</strong>ARD-FACI<strong>N</strong>G</td>
+<td>8</td>
+<td>T</td>
+</tr>
+<tr>
+<td><strong>S</strong>LOT MACHI<strong>NE</strong></td>
+<td>9</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<h2>Present 7</h2>
+<p>Answers used by this meta:</p>
+<p><tt>ATE<br />
+CHAD JOHNSON<br />
+FEBRUARY<br />
+HERBIE<br />
+TRUNCATED ICOSAHEDRON<br />
+ULTIMATE QUESTION</tt></p>
+<p>This meta is based on chemical element symbols. This is clued by the present's flavour text, and also 
+slightly by the boxes on the right-hand side having the size of 1 or 2. We should look for answers 
+that relate to specific numbers when paired up with the clues. In clue order, these are:</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Matching answer</th>
+<th>Number</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a. Vertices</td>
+<td>TRUNCATED ICOSAHEDRON</td>
+<td>60</td>
+<td>A truncated icosahedron has 60 vertices.</td>
+</tr>
+<tr>
+<td>b. Answer</td>
+<td>ULTIMATE QUESTION</td>
+<td>42</td>
+<td>In <em>The Hitchhiker's Guide to the Galaxy</em>, the answer to the Ultimate Question of Life, the Universe, and Everything is 42.</td>
+</tr>
+<tr>
+<td>c. Lids and doors</td>
+<td>HERBIE</td>
+<td>53</td>
+<td>The number 53 appears on the doors and lids of Herbie, the Love Bug.</td>
+</tr>
+<tr>
+<td>d. Jersey</td>
+<td>CHAD JOHNSON</td>
+<td>85</td>
+<td>Chad Johnson's jersey number is 85. He was known as Chad Ochocinco ("eight five" in Spanish) during the 2009-2011 seasons.</td>
+</tr>
+<tr>
+<td>e. Days, commonly</td>
+<td>FEBRUARY</td>
+<td>28</td>
+<td>February has 28 days in common years.</td>
+</tr>
+<tr>
+<td>f. Sound-alike</td>
+<td>ATE</td>
+<td>8</td>
+<td>"Ate" and "eight" are homophones.</td>
+</tr>
+</tbody>
+</table>
+<p>The numbers should be treated as atomic numbers. The elements' symbols can now be put into the respective boxes, and their letters rearranged as shown in the image to spell out the answer <strong>DOMINATION</strong>.</p>
+<p><center><img src="../static/puzzle_resources/puzzleboxes/present_7_solution_rjiw.3afdb95475ca.png"></center><h2>Present 8</h2>
+Answers used by this meta:</p>
+<p><tt>ARENA<br />
+COY<br />
+JUJU<br />
+LAP<br />
+STEP<br />
+TERRA</tt></p>
+<p>This meta is based on the Caesar cipher. Each answer used by this meta can become a new word when 
+shifted. The shifted words can be used to find unique answers to the clues that match the given 
+blanks. But we're still not done - the letters from the red lines extract to the nonsensical 
+"MZOEOYTAUSBN". We must now use the fact the Puzzle Santa went "there and back again", and 
+Caesar shift once again. We should shift the letters of each clue answer by the same amount 
+that we originally shifted the answers, but in reverse (so that we're "back where we started"). 
+The newly-shifted letters spell out the answer <strong>VISIBLE LIGHT</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Shift</th>
+<th>Shifted answer</th>
+<th>Clue</th>
+<th>Clue answer</th>
+<th>Shifted clue answer</th>
+<th>Letters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARENA</td>
+<td>+17</td>
+<td>RIVER</td>
+<td>Largest _</td>
+<td>A<strong>M</strong>A<strong>Z</strong>ON</td>
+<td>J<strong>V</strong>J<strong>I</strong>XW</td>
+<td>VI</td>
+</tr>
+<tr>
+<td>STEP</td>
+<td>+22</td>
+<td>OPAL</td>
+<td>The largest _ was found here</td>
+<td>CO<strong>O</strong>B<strong>E</strong>R PEDY</td>
+<td>GS<strong>S</strong>F<strong>I</strong>V TIHC</td>
+<td>SI</td>
+</tr>
+<tr>
+<td>TERRA</td>
+<td>+13</td>
+<td>GREEN</td>
+<td>It makes plants _</td>
+<td>CHL<strong>O</strong>ROPH<strong>Y</strong>LL</td>
+<td>PUY<strong>B</strong>EBCU<strong>L</strong>YY</td>
+<td>BL</td>
+</tr>
+<tr>
+<td>LAP</td>
+<td>+15</td>
+<td>APE</td>
+<td>Brown _</td>
+<td>ORANGU<strong>TA</strong>N</td>
+<td>ZCLYRF<strong>EL</strong>Y</td>
+<td>EL</td>
+</tr>
+<tr>
+<td>COY</td>
+<td>+12</td>
+<td>OAK</td>
+<td>_ genus</td>
+<td>Q<strong>U</strong>ERCU<strong>S</strong></td>
+<td>E<strong>I</strong>SFQI<strong>G</strong></td>
+<td>IG</td>
+</tr>
+<tr>
+<td>JUJU</td>
+<td>+20</td>
+<td>DODO</td>
+<td>_ closest living relative</td>
+<td>NICO<strong>B</strong>AR PIGEO<strong>N</strong></td>
+<td>TOIU<strong>H</strong>GX VOMKU<strong>T</strong></td>
+<td>HT</td>
+</tr>
+</tbody>
+</table>
+<h2>The Metameta</h2>
+<p>To solve the metameta (and the puzzle) we will need to use both the frozen answers and the meta answers. 
+There is no shell this time: all information can be found in the answers.</p>
+<p>Each of the remaining frozen answers contains a double letter. The double letters are A-H, which means 
+we should use these to sort the answers:</p>
+<p><tt>
+REGIA AERONAUTICA<br />
+EBB AND FLOW<br />
+IONIC COMPOUND<br />
+NELSON RIDDLE<br />
+DUNG BEETLE<br />
+EARMUFFS<br />
+EASTER EGG<br />
+ROUGHHOUSE
+</tt></p>
+<p>Now, the first letters of the frozen answers read "REINDEER". This is a clue that will become relevant 
+once we look at our meta answers: BLOWN SAVE, CONTOUR, CUMULATE, DASHT RIVER, DANGER, DOMINATION, 
+PRESS FORWARD and VISIBLE LIGHT. Given this puzzle's Christmas theming, the said reindeer are none other than Santa's original eight! We can now note two 
+things:</p>
+<ul>
+<li>Each meta answer shares its first 2-3 letters with one of the reindeer.</li>
+<li>Santa's reindeer have a canonical order, in which they first appear in the 1823 poem <em>A Visit from St. Nicholas</em>. We can now sort the meta answers in the reindeer's order.</li>
+</ul>
+<p>With both the frozen answers and the meta answers sorted, we should now extract. When we collect a 
+bigram from each meta answer, in the same position as the double letter in the respective frozen
+answer, we can read out the final answer to the puzzle: <strong>TRANSFIGURATIONS</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Reindeer</th>
+<th>Meta answer</th>
+<th>Frozen answer</th>
+<th>Overlapping bigram</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dasher</td>
+<td>DASH<strong>T R</strong>IVER</td>
+<td>REGI<strong>A A</strong>ERONAUTICA</td>
+<td>TR</td>
+</tr>
+<tr>
+<td>Dancer</td>
+<td>D<strong>AN</strong>GER</td>
+<td>E<strong>BB</strong> AND FLOW</td>
+<td>AN</td>
+</tr>
+<tr>
+<td>Prancer</td>
+<td>PRES<strong>S F</strong>ORWARD</td>
+<td>IONI<strong>C C</strong>OMPOUND</td>
+<td>SF</td>
+</tr>
+<tr>
+<td>Vixen</td>
+<td>VISIBLE L<strong>IG</strong>HT</td>
+<td>NELSON RI<strong>DD</strong>LE</td>
+<td>IG</td>
+</tr>
+<tr>
+<td>Comet</td>
+<td>CONTO<strong>UR</strong></td>
+<td>DUNG B<strong>EE</strong>TLE</td>
+<td>UR</td>
+</tr>
+<tr>
+<td>Cupid</td>
+<td>CUMUL<strong>AT</strong>E</td>
+<td>EARMU<strong>FF</strong>S</td>
+<td>AT</td>
+</tr>
+<tr>
+<td>Donner</td>
+<td>DOMINAT<strong>IO</strong>N</td>
+<td>EASTER E<strong>GG</strong></td>
+<td>IO</td>
+</tr>
+<tr>
+<td>Blitzen</td>
+<td>BLOW<strong>N S</strong>AVE</td>
+<td>ROUG<strong>HH</strong>OUSE</td>
+<td>NS</td>
+</tr>
+</tbody>
+</table>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>I really like "meta-sorting" type puzzles, and wish they appeared more often in puzzle hunts.
+I began working on a puzzle for this answer shortly after it got unclaimed by a different author, 
+and noticed that we don't have a puzzle of this type yet. While brainstorming ideas for this answer, 
+I noticed that we do not have a meta-sorting puzzle, so I knew immediately what I wanted to write. 
+The metameta and the theme of Christmas and presents came about quickly, then I was stuck trying to 
+write 8 winter-themed metas.</p>
+<p>It was really hard to think of 8 separate metas that are all connected to winter. But while thinking of 
+ideas, the semaphore compass meta came to my mind, and I immediately decided to change direction, 
+and theme all of the metas around common puzzle encodings, which I feel is a much more cohesive and 
+easier-to-write-for theme. Also, at this point we had two puzzles with a very strong winter theme 
+(Ice Fishing and On Thin Ice), so I thought that the Christmas and present theme was just enough. </p>
+<p>In a hunt with a relatively small number of metas, I hope that this puzzle scratched some solvers' 
+meta itch. It was a really fun puzzle to construct, but also required a decent of effort. Surprisingly, the testsolves went super smoothly. With the first two solo tests being unspoiled and hintless, the puzzle required very few revisions. Hope that you liked Puzzle Santa's presents!</p>
+<hr />
+<p>To finish, here is a bonus present! This one was left over from when I was trying to make winter-themed 
+metas. Though perhaps it is easier without the meta-matching aspect, you can try it out if you want.</p>
+<style>
+.container {
+  position: relative;
+  color: black;
+}
+.left {
+  position: absolute;
+  top: 220px;
+  left: 93px;
+}
+.right {
+  position: absolute;
+  top: 220px;
+  left: 313px;
+} </style>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/bonus.d9a054a48b37.png"><div class="left"><b>Answers:</b><br><tt>AVE<br>
+    CAT<br>
+    CREAKER<br>
+    DREAM<br>
+    HICKEY<br>
+    PECK<br>
+    PULLETS<br>
+    RANK<br>
+    SLEET<br>
+    TUBE</tt></div><div class="right"><p style="font-size:13px"><b>Things encountered or done:</b><br>
+    During facilitation?<br>
+    During a hailstorm?<br>
+    In areas larger than 50,000 km²?<br>
+    In areas smaller than 50,000 km²?<br>
+    With a puck?<br>
+    100,000 years ago?<br>
+    While figure skating?<br>
+    While listening to rap?<br>
+    Using a sharp tool?<br>
+    While eating?</p></div></div>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

@@ -1,0 +1,684 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Star Accommodations - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/staraccommodations.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Star Accommodations
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">STREET FUNDRAISING</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+rubyleehs
+
+    </h2>
+
+    
+    <p>At first glance, solvers are presented with 28 reviews of accommodations. Closer analysis of the reviews and their authors will reveal most the named authors are English and are linked to the city of London. Combined with the fact that a famous historical London pub "Ye Olde Cheshire Cheese" was directly named in one of the clues, and the reference to Kings Cross Station in "platform nine and three quarters", we should be clued in that the city of London is important. Eventually, we should realize the reviews reference the properties in (the international variant of) Monopoly. 
+The named authors of the reviews all have a close connection to the Monopoly properties outside the board game and the reviews are written from their point of view.</p>
+<p>However, many of the clues contain strange phrases that are unrelated to the Monopoly properties (e.g. vicious flying serpents, Chinese mansion names, rotting heap of corpses, seasonal/directional mansions). Careful searches with these phrases should lead us to discover they are related to the Chinese constellation system - aptly named "The Twenty-Eight Mansions". With these, we should realize each review should be paired with a Monopoly property along with a "Mansion". The reviews clue the names of the constellations along with the asterisms within them. To help further disambiguate the Mansion pairings, the review month references which season the constellation appears in, and the number of stars given in each review is equal to the numbers of stars in the constellation</p>
+<p>An alternative path to figure out these 2 sets is to search for sets of 28 - which are pretty rare. Or realizing the title "Star Accommodations" is a pun/double definition cluing both sets.</p>
+<p>In the given order, the pairings are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th align="center">Monopoly Property</th>
+<th align="center">Chinese Mansion</th>
+<th align="center">Translated Chinese Mansion</th>
+<th align="center">Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td align="center">Old Kent Road</td>
+<td align="center">氐</td>
+<td align="center">Root</td>
+<td align="center">A famous song by <a href="https://en.wikipedia.org/wiki/Albert_Chevalier">Albert Chevalier</a> is "Wot cher!, or, Knocked 'em in the Old Kent Road", sang in cockney rhyming slang; Translating the clue gives "You won't believe it! The mansion is part of a giant pointed tooth", cluing Root - a part of a tooth.</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="center">Electric Company</td>
+<td align="center">奎</td>
+<td align="center">Legs</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/Basil_Scarsella">Basil Scarsella</a> is the current CEO of UK Power Networks, which provide power to London; In East Asian cultures, the Legs Mansion represents wisdom, scholarship and literature. It is also the only mansion with 16 stars.</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="center">Pall Mall</td>
+<td align="center">鬼</td>
+<td align="center">Ghost</td>
+<td align="center">Pall Mall is known for the various gentlemen's clubs built there in the 19th and early 20th centuries. <a href="https://en.wikipedia.org/wiki/Charles_Barry">Charles Barry</a> designed the Travellers Club and the Reform Club located there; Haunted references the Ghost Mansion.</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="center">Marlborough Street</td>
+<td align="center">井</td>
+<td align="center">Well</td>
+<td align="center">The Marlborough Street Magistrates Court was designed by <a href="https://en.wikipedia.org/wiki/John_Dixon_Butler">Dixon Butler</a>. Also, no buses run along Marlborough Street; In a good way is a crossword clue for Well.</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="center">Piccadilly</td>
+<td align="center">柳</td>
+<td align="center">Willow</td>
+<td align="center">Piccadilly is the second campaign level in Call of Duty: Modern Warfare; The old wine shop refers to the Banner of a Wine Shop asterism in the Willow Mansion.</td>
+</tr>
+<tr>
+<td>6</td>
+<td align="center">Liverpool Street Station</td>
+<td align="center">張</td>
+<td align="center">Extended Net</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/Edward_Wilson_(engineer)">Edward Wilson</a> designed the Liverpool Street Station; Celestial Temple is an asterism of the Extended Net Mansion.</td>
+</tr>
+<tr>
+<td>7</td>
+<td align="center">Fenchurch St Station</td>
+<td align="center">室</td>
+<td align="center">Encampment</td>
+<td align="center">The Fenchurch St Station was partially designed by <a href="https://en.wikipedia.org/wiki/George_Berkley_(engineer)">George Berkley</a> and is the only Monopoly Station to not connect to the London Underground transit system; Flying Serpent is an asterism of the Encampment Mansion.</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="center">Bow Street</td>
+<td align="center">斗</td>
+<td align="center">(Southern) Dipper</td>
+<td align="center">Scottie Dog is considered the most-loved Monopoly player token. Many of the original Bow street buildings have been replaced and the former police station is referencing what is now the <a href="https://en.wikipedia.org/wiki/Bow_Street_Police_Museum">Bow Street Police Museum</a>.</td>
+</tr>
+<tr>
+<td>9</td>
+<td align="center">Strand</td>
+<td align="center">星</td>
+<td align="center">Star</td>
+<td align="center">A famous song by <a href="https://en.wikipedia.org/wiki/Harry_Castling">Harry Castling</a> is <a href="https://en.wikipedia.org/wiki/Let%27s_All_Go_Down_the_Strand">"Let's All Go Down the Strand"</a> has the refrain "have a banana!"; The name is confusing/not creative because the Star Mansion is made up of multiple stars.</td>
+</tr>
+<tr>
+<td>10</td>
+<td align="center">Coventry Street</td>
+<td align="center">胃</td>
+<td align="center">Stomach</td>
+<td align="center">Coventry Street is a one-way street named after <a href="https://en.wikipedia.org/wiki/Henry_Coventry">Henry Coventry</a>; Heap of corpses is an asterism of the Stomach Mansion.</td>
+</tr>
+<tr>
+<td>11</td>
+<td align="center">Oxford Street</td>
+<td align="center">婁</td>
+<td align="center">Bond</td>
+<td align="center">The most popular shopping street in London is Oxford Street; This is followed by Bond Street referencing the Bond Mansion.</td>
+</tr>
+<tr>
+<td>12</td>
+<td align="center">Mayfair</td>
+<td align="center">昴</td>
+<td align="center">Hairy Head</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/Hugh_Grosvenor,_1st_Duke_of_Westminster">Hugh Grosvenor</a> was considered the richest man in Britain and owned the land in Mayfair. Mayfair is also the property with the highest rent in Monopoly; The Hairy Head Mansion is part of the <a href="https://en.wikipedia.org/wiki/White_Tiger_(mythology)">White Tiger</a> - one of the Four Symbols of the Chinese constellations. The mansion is further clued by the furry description given to the tiger.</td>
+</tr>
+<tr>
+<td>13</td>
+<td align="center">Regent Street</td>
+<td align="center">牛</td>
+<td align="center">Ox</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/James_Burton_(property_developer)">James Burton</a> was the most successful property developer of Regency and designed much of Regent Street - a popular shopping street; The Ox is the 2nd animal in the Chinese Zodiac.</td>
+</tr>
+<tr>
+<td>14</td>
+<td align="center">Euston Road</td>
+<td align="center">虛</td>
+<td align="center">Emptiness</td>
+<td align="center">In the novel <a href="https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray">The Picture of Dorian Gray</a>, James Vane lives in shabby lodgings on Euston Road; Emptiness asterism represents empty ruins; the rest of the clue helps hint towards the Twenty-Eight Mansions.</td>
+</tr>
+<tr>
+<td>15</td>
+<td align="center">Trafalgar Square</td>
+<td align="center">危</td>
+<td align="center">Rooftop</td>
+<td align="center">Trafalgar Square was originally designed by <a href="https://en.wikipedia.org/wiki/John_Nash_(architect)">John Nash</a> and is the most visited property on Monopoly; The charioteer referenced is <a href="https://en.wikipedia.org/wiki/Zaofu">Zaofu</a>, which is also an asterism of the Rooftop Mansion.</td>
+</tr>
+<tr>
+<td>16</td>
+<td align="center">Vine Street</td>
+<td align="center">心</td>
+<td align="center">Heart</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/The_Johnny_Carson_Show">The Johnny Carson Show</a> is produced in Vine Street Theater (though located in Los Angeles), the actual street in London is <a href="https://en.wikipedia.org/wiki/Vine_Street,_London#Events_and_incidents">unpopular due to various incidents</a>; The brightest star of all the mansions is <a href="https://en.wikipedia.org/wiki/Alpha_Scorpii">α Sco</a> which is also the determinative star of the Heart Mansion.</td>
+</tr>
+<tr>
+<td>17</td>
+<td align="center">Whitechapel Road</td>
+<td align="center">参</td>
+<td align="center">Three Stars</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/Joseph_Merrick">Joseph Merrick</a> lived on Whitechapel Road; Getting more than double references to how the Three Stars Mansion actually have 7 stars.</td>
+</tr>
+<tr>
+<td>18</td>
+<td align="center">Marylebone Station</td>
+<td align="center">房</td>
+<td align="center">Room</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/Leslie_Green">Leslie Green</a> designed the Marylebone Station tiling patterns; The Chinese Hanyu Pinyin/pronunciation for "Room" is "Fáng", and is adjacent to the "Root" mansion which is clued to look like a fang.</td>
+</tr>
+<tr>
+<td>19</td>
+<td align="center">Park Lane</td>
+<td align="center">觜</td>
+<td align="center">Turtle Beak</td>
+<td align="center">NoChoiceInWar and the animals reference the <a href="https://en.wikipedia.org/wiki/Animals_in_War_Memorial">Animals in War Memorial</a> located on Park Lane; The deity is referencing the asterism "Deity in charge of monsters" that is part of the Turtle Beak Mansion.</td>
+</tr>
+<tr>
+<td>20</td>
+<td align="center">Kings Cross Station</td>
+<td align="center">壁</td>
+<td align="center">Wall</td>
+<td align="center">Platform nine and three quarters is a platform at King's Cross Station in the Harry Potter series requiring them to run through a Wall to get to it.</td>
+</tr>
+<tr>
+<td>21</td>
+<td align="center">Pentonville Road</td>
+<td align="center">女</td>
+<td align="center">Girl</td>
+<td align="center">On the Monopoly board, Pentonville Road is adjacent to the Jail; I tried to pick a username that is as Girl-ish as possible without negatively stereotyping anything. PearLover2000 was chosen because it also clued the "Pearls on Ladies' Wear" asterism.</td>
+</tr>
+<tr>
+<td>22</td>
+<td align="center">Fleet Street</td>
+<td align="center">角</td>
+<td align="center">Horn</td>
+<td align="center">Horn is the first Eastern Mansion; Ye Olde Cheshire Cheese is a pub on Fleet Street that had a famous grey parrot named Polly.</td>
+</tr>
+<tr>
+<td>23</td>
+<td align="center">The Angel Islington</td>
+<td align="center">軫</td>
+<td align="center">Chariot</td>
+<td align="center">The Angel Islington is a pub that is also the only Monopoly property named after a building; Chariot is the only Mansion named after a vehicle.</td>
+</tr>
+<tr>
+<td>24</td>
+<td align="center">Leicester Square</td>
+<td align="center">尾</td>
+<td align="center">Tail</td>
+<td align="center"><a href="https://en.wikipedia.org/wiki/Robert_Sidney,_2nd_Earl_of_Leicester">Robert Sidney</a> is the 2nd Earl of Leicester; Near the back-end clues Tail - which also is the only mansion with 9 stars.</td>
+</tr>
+<tr>
+<td>25</td>
+<td align="center">Water Works</td>
+<td align="center">箕</td>
+<td align="center">Winnowing Basket</td>
+<td align="center">Sarah Bentley is the current CEO of Thames Water - the company in charge of managing wastewater in London; The Winnowing Basket asterism represents the Azure Dragon dung.</td>
+</tr>
+<tr>
+<td>26</td>
+<td align="center">Northumberland Avenue</td>
+<td align="center">畢</td>
+<td align="center">Net</td>
+<td align="center">Sherlock Holmes Pub is located on Northumberland Avenue; "Pssst" references the Whisper asterism in the Net Mansion.</td>
+</tr>
+<tr>
+<td>27</td>
+<td align="center">Whitehall</td>
+<td align="center">亢</td>
+<td align="center">Neck</td>
+<td align="center">Necks are what you cut during executions/beheadings; A metonym for the UK government is Whitehall.</td>
+</tr>
+<tr>
+<td>28</td>
+<td align="center">Bond Street</td>
+<td align="center">翼</td>
+<td align="center">Wings</td>
+<td align="center">Bond Street was named after <a href="https://en.wikipedia.org/wiki/Sir_Thomas_Bond,_1st_Baronet">Thomas Bond</a> and was known for its fine art dealers/society; The dish served was referencing (buffalo/chicken) Wings Mansion, but can be deduced via the only Mansion with 22 stars.</td>
+</tr>
+</tbody>
+</table>
+<p>Sorting the pairs by the natural order for the mansions and indexing the review day into the Monopoly property names obtains:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th align="center">Monopoly Property</th>
+<th align="center">Chinese Mansion</th>
+<th align="center">Translated Chinese Mansion</th>
+<th align="center">Indexed Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td align="center">Fleet Street</td>
+<td align="center">角</td>
+<td align="center">Horn</td>
+<td align="center">T</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="center">Whitehall</td>
+<td align="center">亢</td>
+<td align="center">Neck</td>
+<td align="center">H</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="center">Old Kent Road</td>
+<td align="center">氐</td>
+<td align="center">Root</td>
+<td align="center">E</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="center">Marylebone Station</td>
+<td align="center">房</td>
+<td align="center">Room</td>
+<td align="center">A</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="center">Vine Street</td>
+<td align="center">心</td>
+<td align="center">Heart</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>6</td>
+<td align="center">Leicester Square</td>
+<td align="center">尾</td>
+<td align="center">Tail</td>
+<td align="center">S</td>
+</tr>
+<tr>
+<td>7</td>
+<td align="center">Water Works</td>
+<td align="center">箕</td>
+<td align="center">Winnowing Basket</td>
+<td align="center">W</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="center">Bow Street</td>
+<td align="center">斗</td>
+<td align="center">(Southern) Dipper</td>
+<td align="center">E</td>
+</tr>
+<tr>
+<td>9</td>
+<td align="center">Regent Street</td>
+<td align="center">牛</td>
+<td align="center">Ox</td>
+<td align="center">R</td>
+</tr>
+<tr>
+<td>10</td>
+<td align="center">Pentonville Road</td>
+<td align="center">女</td>
+<td align="center">Girl</td>
+<td align="center">I</td>
+</tr>
+<tr>
+<td>11</td>
+<td align="center">Euston Road</td>
+<td align="center">虛</td>
+<td align="center">Emptiness</td>
+<td align="center">S</td>
+</tr>
+<tr>
+<td>12</td>
+<td align="center">Trafalgar Square</td>
+<td align="center">危</td>
+<td align="center">Rooftop</td>
+<td align="center">S</td>
+</tr>
+<tr>
+<td>13</td>
+<td align="center">Fenchurch St Station</td>
+<td align="center">室</td>
+<td align="center">Encampment</td>
+<td align="center">T</td>
+</tr>
+<tr>
+<td>14</td>
+<td align="center">Kings Cross Station</td>
+<td align="center">壁</td>
+<td align="center">Wall</td>
+<td align="center">R</td>
+</tr>
+<tr>
+<td>15</td>
+<td align="center">Electric Company</td>
+<td align="center">奎</td>
+<td align="center">Legs</td>
+<td align="center">E</td>
+</tr>
+<tr>
+<td>16</td>
+<td align="center">Oxford Street</td>
+<td align="center">婁</td>
+<td align="center">Bond</td>
+<td align="center">E</td>
+</tr>
+<tr>
+<td>17</td>
+<td align="center">Coventry Street</td>
+<td align="center">胃</td>
+<td align="center">Stomach</td>
+<td align="center">T</td>
+</tr>
+<tr>
+<td>18</td>
+<td align="center">Mayfair</td>
+<td align="center">昴</td>
+<td align="center">Hairy Head</td>
+<td align="center">F</td>
+</tr>
+<tr>
+<td>19</td>
+<td align="center">Northumberland Avenue</td>
+<td align="center">畢</td>
+<td align="center">Net</td>
+<td align="center">U</td>
+</tr>
+<tr>
+<td>20</td>
+<td align="center">Park Lane</td>
+<td align="center">觜</td>
+<td align="center">Turtle Beak</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>21</td>
+<td align="center">Whitechapel Road</td>
+<td align="center">参</td>
+<td align="center">Three Stars</td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td>22</td>
+<td align="center">Marlborough Street</td>
+<td align="center">井</td>
+<td align="center">Well</td>
+<td align="center">R</td>
+</tr>
+<tr>
+<td>23</td>
+<td align="center">Pall Mall</td>
+<td align="center">鬼</td>
+<td align="center">Ghost</td>
+<td align="center">A</td>
+</tr>
+<tr>
+<td>24</td>
+<td align="center">Piccadilly</td>
+<td align="center">柳</td>
+<td align="center">Willow</td>
+<td align="center">I</td>
+</tr>
+<tr>
+<td>25</td>
+<td align="center">Strand</td>
+<td align="center">星</td>
+<td align="center">Star</td>
+<td align="center">S</td>
+</tr>
+<tr>
+<td>26</td>
+<td align="center">Liverpool Street Station</td>
+<td align="center">張</td>
+<td align="center">Extended Net</td>
+<td align="center">I</td>
+</tr>
+<tr>
+<td>27</td>
+<td align="center">Bond Street</td>
+<td align="center">翼</td>
+<td align="center">Wings</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>28</td>
+<td align="center">The Angel Islington</td>
+<td align="center">軫</td>
+<td align="center">Chariot</td>
+<td align="center">G</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore extracting the phrase <strong>THE ANSWER IS STREET FUNDRAISING</strong> and the answer <strong>STREET FUNDRAISING</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Originally, this puzzle was much harder. I wanted the solve paths for both sets to feel different. 
+The original version gave much harder clues for the Monopoly properties, requiring more step-by-step elimination of choices and deduction. 
+The solve path for the Constellation Mansions leaned much more heavily towards wordplay and discovery regarding the history or aspects of each of the mansions. 
+However, this proved more difficult than expected for test solvers while being un-fun (a lot of reading was necessary).</p>
+<p>Additionally, the answer to the puzzle was originally "ASTRONAUT TRAINING", but was changed to the current one to better fit the meta.
+Combined, this led to many clues being rewritten, resulting in over 1/3rd of the clues being changed or outright rewritten.
+Despite everything, it was a fun process making this puzzle.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

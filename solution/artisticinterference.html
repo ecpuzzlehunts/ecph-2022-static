@@ -1,0 +1,408 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Artistic Interference - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/artisticinterference.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Artistic Interference
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">MUSEUM OF MODERN ART</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee, empyreu, Enia, and quatrevingtneuf
+
+    </h2>
+
+    
+    <p>In this puzzle, we are presented with some unusual works of art. We might notice some similarity between some of the images and famous paintings, but also notable difference. That's because the art has been generated by an AI. All works of art in this puzzle are based on famous paintings, but one word in each has been changed. To help us find out what's the original word and what's the new word, enumerations are provided for both. </p>
+<p>There is also one additional number associated with each image, presumably used as an index. We'll use it to index into the original words (this is especially disambiguated by the index of 11 into "composition" in the fifth painting).</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>Artwork</th>
+<th>Old word</th>
+<th>New word</th>
+<th>Number</th>
+<th>Index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A Sunday Afternoon on the Island of La Grande Jatte</td>
+<td>AFTERNOON</td>
+<td>NIGHT</td>
+<td>2</td>
+<td>F</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Self-Portrait with Thorn Necklace and Hummingbird</td>
+<td>HUMMINGBIRD</td>
+<td>HOUSES</td>
+<td>5</td>
+<td>I</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Wanderer above the Sea of Fog</td>
+<td>WANDERER</td>
+<td>FARMHOUSE</td>
+<td>3</td>
+<td>N</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Hand with Reflecting Sphere</td>
+<td>HAND</td>
+<td>TABLECLOTH</td>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Composition with Red, Blue and Yellow</td>
+<td>COMPOSITION</td>
+<td>WINDOW</td>
+<td>11</td>
+<td>N</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Girl with a Pearl Earring</td>
+<td>EARRING</td>
+<td>BRIDGE</td>
+<td>1</td>
+<td>E</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Swans Reflecting Elephants</td>
+<td>SWANS</td>
+<td>WOMEN</td>
+<td>2</td>
+<td>W</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Girl with Balloon</td>
+<td>BALLOON</td>
+<td>ROSES</td>
+<td>2</td>
+<td>A</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Circles in a Circle</td>
+<td>CIRCLE</td>
+<td>DOOR</td>
+<td>3</td>
+<td>R</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Three Studies of a Male's Back</td>
+<td>THREE</td>
+<td>TWO</td>
+<td>1</td>
+<td>T</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Two Sisters (On the Terrace)</td>
+<td>TWO</td>
+<td>THREE</td>
+<td>2</td>
+<td>W</td>
+</tr>
+<tr>
+<td>12</td>
+<td>The Old Guitarist</td>
+<td>OLD</td>
+<td>GIRL</td>
+<td>1</td>
+<td>O</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Little Girl in a Blue Armchair</td>
+<td>GIRL</td>
+<td>BALL</td>
+<td>4</td>
+<td>R</td>
+</tr>
+<tr>
+<td>14</td>
+<td>The Duck Pond</td>
+<td>DUCK</td>
+<td>SPRING</td>
+<td>4</td>
+<td>K</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Campbell's Soup Cans</td>
+<td>CANS</td>
+<td>FACTORY</td>
+<td>4</td>
+<td>S</td>
+</tr>
+</tbody>
+</table>
+<p>Indexing gives the cluephrase "FIND NEW ARTWORKS".</p>
+<p>We can now check out the 6 lines at the bottom of the puzzle page. There are 15 letter-number pairs and 15 changed words, which suggests fitting them in somehow. With the cluephrase suggesting artworks, we can try to find new paintings that have the words we found in their titles (each time replacing a letter-number pair with one of the post-change words). And we can indeed make 6 new paintings with the words:</p>
+<p>FARMHOUSE WINDOW and DOOR<br>
+GIRL with BALL<br>
+HOUSES at NIGHT<br>
+The FACTORY and the BRIDGE<br>
+THREE WOMEN at the SPRING<br>
+TWO ROSES on a TABLECLOTH</p>
+<p>We should also notice that the letters A-O are all unique and consecutive, which means we should use these to order the extract letters. The numbers will be used to index into the words. This gives the phrase LOCATION OF THESE.</p>
+<p>The clue suggests looking up the location of the paintings (and that location will be the final answer to the puzzle). The six new paintings that we found are all located in the <strong>MUSEUM OF MODERN ART</strong>!</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This was one of the last puzzles written, and it was strongly inspired by its answer. It was only a few days before our intended hunt announcement date, when we were still a feeder short. So quatrevingtneuf suggested the idea of creating an AI puzzle. We brainstormed this for a while until landing on the current idea, and then the four of us started working on it, including our very own AI-art aficionado Enia. We spent a few hours finding artworks and getting the AI to generate the images. It took a decent amount of effort (and memory) but it was fun.</p>
+<p>The images were all made using Stable Diffusion img2img, except for the Composition with Red, Blue and Yellow, which was made using DALL·E 2. </p>
+<p>Naturally, this has also resulted in a large amount of images that were rejected. Here is a small selection of them for your viewing pleasure:
+<center>
+<strong>The Great Ball Off Kanagawa</strong><br><img src="../static/puzzle_resources/artisticinterference/rejectedimage01.7fc5902f73fc.png" width="60%"></p>
+<p><strong>The ball in a blue armchair that is so little that you cannot see it</strong><br><img src="../static/puzzle_resources/artisticinterference/rejectedimage02.a4c3ec910047.png" width="60%"></p>
+<p><strong>Autumn Landscape with Three Trees (attempting to imitate the style of Van Gogh)</strong><br><img src="../static/puzzle_resources/artisticinterference/rejectedimage03.1f15d2cb5c8c.png" width="60%"></p>
+<p><strong>The Woman Guitarist (in the style of Picasso)</strong><br><img src="../static/puzzle_resources/artisticinterference/rejectedimage04.c6ffa979d901.png" width="60%"></p>
+<p><strong>The (Five-Legged) Starry Deer #1</strong><br><img src="../static/puzzle_resources/artisticinterference/rejectedimage05.411faaec7ea6.png" width="60%"></p>
+<p><strong>The Starry Deer #2 (more like "Sad Deer with a Starry Background")</strong><br><img src="../static/puzzle_resources/artisticinterference/rejectedimage06.4c7324c37fbe.png" width="60%"></center></p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

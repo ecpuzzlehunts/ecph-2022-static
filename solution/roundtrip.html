@@ -1,0 +1,464 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Round Trip - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/roundtrip.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Round Trip
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">REPLOT BRIDGE</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee
+
+    </h2>
+
+    
+    <p>We are presented with a set of 12 images, each containing a map and some (monochrome) satellite imagery, and 12 additional text clues. Naturally, we should attempt to identify the circled locations. Each of the 12 images contains two clues to the same location. The clue on the left is a map with a pin pointing at the location of the satellite imagery. The maps can be identified as real-world locations, with many including recognizable places such as the British Isles or Great Lakes. The pictured satellite imagery can be found by zooming in on the pin location in a site such as Google Maps or satellites.pro.</p>
+<p>Once one or more of the circled locations are identified, we should notice a common theme: All of them have a colour in their name (even though all the pictures have no colour). This is also corroborated by the flavor text. Here are the names and coordinates of all 12 coloured locations, in the order in which they are presented:</p>
+<table>
+<thead>
+<tr>
+<th>Location</th>
+<th>Coordinates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure</strong> the Bosphorus</td>
+<td>41.030358, 28.98832</td>
+</tr>
+<tr>
+<td><strong>Blue</strong> Lagoon, Iceland</td>
+<td>63.87913, -22.44607</td>
+</tr>
+<tr>
+<td>Grande <strong>Chartreuse</strong></td>
+<td>45.36352, 5.79367</td>
+</tr>
+<tr>
+<td><strong>Cyan</strong>gugu</td>
+<td>-2.48318, 28.89637</td>
+</tr>
+<tr>
+<td><strong>Green</strong>wich Peninsula</td>
+<td>51.49226, 0.01014</td>
+</tr>
+<tr>
+<td><strong>Magenta</strong>, Lombardy</td>
+<td>45.46397, 8.88463</td>
+</tr>
+<tr>
+<td><strong>Orange</strong>, France</td>
+<td>44.13379, 4.80515</td>
+</tr>
+<tr>
+<td><strong>Red</strong> Deer, Alberta</td>
+<td>52.26933, -113.80876</td>
+</tr>
+<tr>
+<td><strong>Rose</strong> Hill, Manhattan</td>
+<td>40.74256, -73.98351</td>
+</tr>
+<tr>
+<td><strong>Spring Green</strong>, Wisconsin</td>
+<td>43.17612, -90.06852</td>
+</tr>
+<tr>
+<td><strong>Violet</strong> Town</td>
+<td>-36.63845, 145.71724</td>
+</tr>
+<tr>
+<td><strong>Yellow</strong>knife</td>
+<td>62.45224, -114.37844</td>
+</tr>
+</tbody>
+</table>
+<p>Since the locations are presented in alphabetical order by colour, we should find a logical way to re-order them. In addition to colour, the flavor text also includes the uncommon word "wheeling". Together with "colour", this is a clue to the concept of a <a href=https://en.wikipedia.org/wiki/Color_wheel>colour wheel</a>. While there are multiple existing colour wheel models, the 12 colours named in the locations we found are all part of the 12-colour <a href=https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/RBG_color_wheel.svg/600px-RBG_color_wheel.svg.png>RGB colour wheel</a>.</p>
+<p>This gives us a natural ordering of the coloured locations, which is also cyclic:</p>
+<p><strong>Red</strong> Deer, Alberta</p>
+<p><strong>Orange</strong>, France</p>
+<p><strong>Yellow</strong>knife</p>
+<p>Grande <strong>Chartreuse</strong></p>
+<p><strong>Green</strong>wich Peninsula</p>
+<p><strong>Spring Green</strong>, Wisconsin</p>
+<p><strong>Cyan</strong>gugu</p>
+<p><strong>Azure</strong> the Bosphorus</p>
+<p><strong>Blue</strong> Lagoon, Iceland</p>
+<p><strong>Violet</strong> Town</p>
+<p><strong>Magenta</strong>, Lombardy</p>
+<p><strong>Rose</strong> Hill, Manhattan</p>
+<p>We should now also solve the text clues. The clues are alphabetized as well, and each of them of them clues a unique location. In clue order, these are:</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Clue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lake Butte des Morts</td>
+<td>The name of this body of water means "Mound of the Dead" in French. (4,5,3,5)</td>
+</tr>
+<tr>
+<td>Gulf of Burgas</td>
+<td>There are several islands in the southern part of this Black Sea bay, including St. Anastasia Island and St. Ivan Island. (4,2,6)</td>
+</tr>
+<tr>
+<td>Milan Cathedral</td>
+<td>This building, which took nearly six centuries to construct, is the largest religious building in Italy. (5,9)</td>
+</tr>
+<tr>
+<td>Martigny</td>
+<td>This city, which lies in the Rhône Valley in Switzerland, is connected by road to Chamonix in France and to Aosta in Italy. (8)</td>
+</tr>
+<tr>
+<td>Bahariya Oasis</td>
+<td>This depression in the Western Desert of Egypt, which has a major agricultural sector, includes the necropolis known as the Valley of the Golden Mummies. (8,5)</td>
+</tr>
+<tr>
+<td>Chartres</td>
+<td>This French city is the capital of the Eure-et-Loir department, and is famous for its cathedral. (8)</td>
+</tr>
+<tr>
+<td>Whitehope Heights</td>
+<td>This hill in Scotland, which rises 637 meters above sea level, lies on the border between the Dumfries and Galloway and Scottish Borders council areas. (9,7)</td>
+</tr>
+<tr>
+<td>Ōshima</td>
+<td>This island is connected to the larger island of Shikoku via the Kurushima Kaikyō Bridge. (6)</td>
+</tr>
+<tr>
+<td>Isle of Portland</td>
+<td>This island, which lies in the English Channel, is connected to Great Britain via Chesil Beach. (4,2,8)</td>
+</tr>
+<tr>
+<td>Port Elgin</td>
+<td>This Ontario town was originally named Normanton. (4,5)</td>
+</tr>
+<tr>
+<td>Charles de Gaulle Airport</td>
+<td>This place is the largest of its kind in France, and serves as the hub of Air France, the country's flag carrier. (7,2,6,7)</td>
+</tr>
+<tr>
+<td>Thetford Mines</td>
+<td>This Quebec city was founded in 1876 after the discovery of large asbestos deposits in the area. (8,5)</td>
+</tr>
+</tbody>
+</table>
+<p>Each of the clued locations lies somewhere along the path between 2 coloured locations that are adjacent on the colour wheel. The paths are all "as the crow flies" (i.e. the shortest distance between two locations on the Earth's surface).</p>
+<p><img src="../static/puzzle_resources/roundtrip/5f8278bcb6.5f8278bcb61f.png" width = "100%"></p>
+<p>Using the departure hours on each of the images, we should finally index into the location along the path between the pictured location and the next one in the cycle. Starting (and ending) in <strong>Red</strong> Deer, we can read out the final answer, <strong>REPLOT BRIDGE</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Coloured location</th>
+<th>Departure hour</th>
+<th>Next location along the path</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Red</strong> Deer, Alberta</td>
+<td>9</td>
+<td>Isle of Portland</td>
+<td>R</td>
+</tr>
+<tr>
+<td><strong>Orange</strong>, France</td>
+<td>7</td>
+<td>Chartres</td>
+<td>E</td>
+</tr>
+<tr>
+<td><strong>Yellow</strong>knife</td>
+<td>8</td>
+<td>Whitehope Heights</td>
+<td>P</td>
+</tr>
+<tr>
+<td>Grande <strong>Chartreuse</strong></td>
+<td>5</td>
+<td>Charles de Gaulle Airport</td>
+<td>L</td>
+</tr>
+<tr>
+<td><strong>Green</strong>wich Peninsula</td>
+<td>14</td>
+<td>Lake Butte des Morts</td>
+<td>O</td>
+</tr>
+<tr>
+<td><strong>Spring Green</strong>, Wisconsin</td>
+<td>4</td>
+<td>Thetford Mines</td>
+<td>T</td>
+</tr>
+<tr>
+<td><strong>Cyan</strong>gugu</td>
+<td>1</td>
+<td>Bahariya Oasis</td>
+<td>B</td>
+</tr>
+<tr>
+<td><strong>Azure</strong> the Bosphorus</td>
+<td>9</td>
+<td>Gulf of Burgas</td>
+<td>R</td>
+</tr>
+<tr>
+<td><strong>Blue</strong> Lagoon, Iceland</td>
+<td>4</td>
+<td>Ōshima</td>
+<td>I</td>
+</tr>
+<tr>
+<td><strong>Violet</strong> Town</td>
+<td>11</td>
+<td>Milan Cathedral</td>
+<td>D</td>
+</tr>
+<tr>
+<td><strong>Magenta</strong>, Lombardy</td>
+<td>6</td>
+<td>Martigny</td>
+<td>G</td>
+</tr>
+<tr>
+<td><strong>Rose</strong> Hill, Manhattan</td>
+<td>5</td>
+<td>Port Elgin</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>While the puzzle Round Trip itself went fairly straightforwardly through testing (with all testsolves not requiring hints), this answer has a rather long and gory history, with an unprecedentedly large number of ideas failing at either the writing or testing stage. It ended up being the last puzzle to be finished in the intro round.</p>
+<p>It was originally assigned to a different author, who wanted to write a Finnish-related puzzle (since Replot Bridge is located in Finland), but for various reasons they were unable to finish the puzzle and it was eventually abandoned. After a while, we tried brainstorming some new ideas for this answer, <a href="https://www.youtube.com/watch?v=R7BiKZbKffk">while keeping the Finland theme</a href>. However, none of these made it, and after a puzzle of mine failed testsolving, I killed it and declared the answer "cursed" (and would like to extend my apologies to the testsolvers who had to endure that puzzle).</p>
+<p>Thankfully, our story has a happy ending. Five days after unclaiming, I had the thought that since the answer is 12 letters long, I can use a colour wheel, which has 12 colours when you include primary, secondary and tertiary colours. I could also make this especially thematic to the intro round (as a colourless colour puzzle). I spent a while thinking of how I could incorporate the colour wheel, and a week after unclaiming the answer I tried searching for colour-related locations, and luckily there were locations for each member of the 12-colour RGB colour wheel. I then excitedly reclaimed the answer, chose the name Round Trip and went on to implement the puzzle.</p>
+<p>And at last, the puzzle Round Trip went through internal testsolving. And these went very smoothly, with none of the testers requesting hints, and giving the puzzle a higher fun rating than my previous scrapped puzzle received. And with these done, the intro round puzzles were declared finished. I ended up being very happy with this puzzle, both with its theming and it being a geography puzzle. It's also been a very valuable lesson to me, and shows the need for better editing and idea vetting in the future. I hope that we will be able to rework some of the rejected ideas for use in future puzzles. </p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

@@ -1,0 +1,842 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Hunt Stats - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="index.html">
+                            Home
+                        </a>
+                        <a href="rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="wrapup.html" class="btn">Back to wrap-up</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+.meta {
+    font-style: italic;
+}
+</style>
+
+<h1>Hunt Stats</h1>
+
+<main>
+    <div class="row puzzle-stats-panel">
+        <div class="row">
+            <div class="six columns">
+                <div class="stat-entry">Total guesses: <span class="stat-value">10322</span></div>
+            </div>
+            <div class="six columns">
+                <div class="stat-entry">Total solves: <span class="stat-value">3430</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <div class="stat-entry">Total participants: <span class="stat-value">916</span></div>
+            </div>
+            <div class="six columns">
+                <div class="stat-entry">Total teams: <span class="stat-value">389</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six columns">
+                <div class="stat-entry">Hints asked: <span class="stat-value">2215</span></div>
+            </div>
+            <div class="six columns">
+                <div class="stat-entry">Metas solved: <span class="stat-value">353</span></div>
+            </div>
+        </div>
+    </div>
+
+    <table class="sortable gph-list-table">
+        <tr>
+            <th>Puzzle</th>
+            <th title="Total number of correct answers">Solves</th>
+            <th title="Total number of answer attempts">Guesses</th>
+            <th title="Total number of hints requested">Hints</th>
+            <th title="Total number of non-backsolves">Forward solves</th>
+            <th title="Forward solve after using no hints on this puzzle">0&#8288;-&#8288;hint forward</th>
+            <th title="Forward solve after using one hint on this puzzle">1&#8288;-&#8288;hint forward</th>
+            <th title="Forward solve after using multiple hints on this puzzle">2&#8288;+&#8288;-&#8288;hint forward</th>
+            <th title="Solved after the round meta or within five minutes of it">Back solves</th>
+            <th title="Made at least one guess but none were correct">No solve</th>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="1" ><a href="stats/fieldnotes.html">Field Notes</a></td>
+            
+            <td >304</td>
+            
+            <td >464</td>
+            
+            <td >54</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(304 / 304 / 2));">304</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(287 / 304 / 2));">287</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(16 / 304 / 2));">16</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 304 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 304 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 304 / 2));">0</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="2" ><a href="stats/roundtrip.html">Round Trip</a></td>
+            
+            <td >221</td>
+            
+            <td >444</td>
+            
+            <td >113</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(217 / 221 / 2));">217</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(180 / 221 / 2));">180</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(35 / 221 / 2));">35</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 221 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(4 / 221 / 2));">4</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(10 / 221 / 2));">10</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="3" ><a href="stats/cobble.html">Cobble</a></td>
+            
+            <td >264</td>
+            
+            <td >434</td>
+            
+            <td >96</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(263 / 264 / 2));">263</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(236 / 264 / 2));">236</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(24 / 264 / 2));">24</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(3 / 264 / 2));">3</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 264 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 264 / 2));">0</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="4" ><a href="stats/enteringcompetitions.html">Entering Competitions</a></td>
+            
+            <td >177</td>
+            
+            <td >519</td>
+            
+            <td >191</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(158 / 177 / 2));">158</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(82 / 177 / 2));">82</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(68 / 177 / 2));">68</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(8 / 177 / 2));">8</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(19 / 177 / 2));">19</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(13 / 177 / 2));">13</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="5" ><a href="stats/enroute.html">En Route</a></td>
+            
+            <td >171</td>
+            
+            <td >437</td>
+            
+            <td >135</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(157 / 171 / 2));">157</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(104 / 171 / 2));">104</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(49 / 171 / 2));">49</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(4 / 171 / 2));">4</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(14 / 171 / 2));">14</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(13 / 171 / 2));">13</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="6" ><a href="stats/averylargeinteger.html">A Very Large Integer</a></td>
+            
+            <td >195</td>
+            
+            <td >417</td>
+            
+            <td >68</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(194 / 195 / 2));">194</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(165 / 195 / 2));">165</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(28 / 195 / 2));">28</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 195 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 195 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(5 / 195 / 2));">5</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="7" ><a href="stats/rockclimbing.html">Rock Climbing</a></td>
+            
+            <td >96</td>
+            
+            <td >213</td>
+            
+            <td >89</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(59 / 96 / 2));">59</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(39 / 96 / 2));">39</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(17 / 96 / 2));">17</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(3 / 96 / 2));">3</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(37 / 96 / 2));">37</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(9 / 96 / 2));">9</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="8" class="meta"><a href="stats/fadedaway.html">Faded Away</a></td>
+            
+            <td >181</td>
+            
+            <td >585</td>
+            
+            <td >157</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(181 / 181 / 2));">181</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(116 / 181 / 2));">116</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(56 / 181 / 2));">56</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(9 / 181 / 2));">9</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 181 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 181 / 2));">1</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="9" ><a href="stats/journalovertakeages.html">Journal Overtakeages</a></td>
+            
+            <td >147</td>
+            
+            <td >376</td>
+            
+            <td >218</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(145 / 147 / 2));">145</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(37 / 147 / 2));">37</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(103 / 147 / 2));">103</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(5 / 147 / 2));">5</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 147 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(3 / 147 / 2));">3</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="10" ><a href="stats/stainedglass.html">Stained Glass</a></td>
+            
+            <td >85</td>
+            
+            <td >354</td>
+            
+            <td >136</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(60 / 85 / 2));">60</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(14 / 85 / 2));">14</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(41 / 85 / 2));">41</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(5 / 85 / 2));">5</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(25 / 85 / 2));">25</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(12 / 85 / 2));">12</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="11" ><a href="stats/squaredaway.html">Squared Away</a></td>
+            
+            <td >149</td>
+            
+            <td >247</td>
+            
+            <td >79</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(147 / 149 / 2));">147</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(102 / 149 / 2));">102</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(43 / 149 / 2));">43</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 149 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 149 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 149 / 2));">1</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="12" ><a href="stats/icefishing.html">Ice Fishing</a></td>
+            
+            <td >151</td>
+            
+            <td >563</td>
+            
+            <td >97</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(151 / 151 / 2));">151</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(93 / 151 / 2));">93</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(54 / 151 / 2));">54</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(4 / 151 / 2));">4</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 151 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 151 / 2));">1</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="13" ><a href="stats/gardencleanup.html">Garden Cleanup</a></td>
+            
+            <td >117</td>
+            
+            <td >416</td>
+            
+            <td >167</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(115 / 117 / 2));">115</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(56 / 117 / 2));">56</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(50 / 117 / 2));">50</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(9 / 117 / 2));">9</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 117 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(8 / 117 / 2));">8</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="14" ><a href="stats/toohot.html">Too Hot!</a></td>
+            
+            <td >116</td>
+            
+            <td >188</td>
+            
+            <td >34</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(114 / 116 / 2));">114</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(104 / 116 / 2));">104</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(9 / 116 / 2));">9</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 116 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 116 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 116 / 2));">2</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="15" ><a href="stats/backtoschool.html">Back to School</a></td>
+            
+            <td >84</td>
+            
+            <td >1833</td>
+            
+            <td >130</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(73 / 84 / 2));">73</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(34 / 84 / 2));">34</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(29 / 84 / 2));">29</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(10 / 84 / 2));">10</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(11 / 84 / 2));">11</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(45 / 84 / 2));">45</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="16" ><a href="stats/onthinice.html">On Thin Ice</a></td>
+            
+            <td >117</td>
+            
+            <td >161</td>
+            
+            <td >21</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(115 / 117 / 2));">115</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(104 / 117 / 2));">104</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(10 / 117 / 2));">10</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 117 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 117 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 117 / 2));">1</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="17" ><a href="stats/muchassemblyrequired.html">Much Assembly Required</a></td>
+            
+            <td >87</td>
+            
+            <td >209</td>
+            
+            <td >104</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(67 / 87 / 2));">67</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(39 / 87 / 2));">39</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(21 / 87 / 2));">21</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(7 / 87 / 2));">7</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(20 / 87 / 2));">20</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 87 / 2));">2</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="18" ><a href="stats/summercamp.html">Summer Camp</a></td>
+            
+            <td >109</td>
+            
+            <td >158</td>
+            
+            <td >13</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(107 / 109 / 2));">107</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(97 / 109 / 2));">97</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(10 / 109 / 2));">10</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 109 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 109 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 109 / 2));">1</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="19" ><a href="stats/butterflycatching.html">Butterfly Catching</a></td>
+            
+            <td >91</td>
+            
+            <td >343</td>
+            
+            <td >32</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(83 / 91 / 2));">83</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(67 / 91 / 2));">67</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(16 / 91 / 2));">16</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 91 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(8 / 91 / 2));">8</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(6 / 91 / 2));">6</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="20" ><a href="stats/puzzleboxes.html">Puzzle Boxes</a></td>
+            
+            <td >88</td>
+            
+            <td >722</td>
+            
+            <td >55</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(87 / 88 / 2));">87</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(59 / 88 / 2));">59</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(26 / 88 / 2));">26</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 88 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 88 / 2));">1</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(8 / 88 / 2));">8</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="21" ><a href="stats/cryptoornithology.html">Cryptoornithology</a></td>
+            
+            <td >86</td>
+            
+            <td >145</td>
+            
+            <td >7</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(78 / 86 / 2));">78</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(73 / 86 / 2));">73</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(5 / 86 / 2));">5</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 86 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(8 / 86 / 2));">8</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 86 / 2));">2</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="22" ><a href="stats/unrealestate.html">Unreal Estate</a></td>
+            
+            <td >80</td>
+            
+            <td >203</td>
+            
+            <td >27</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(74 / 80 / 2));">74</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(58 / 80 / 2));">58</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(16 / 80 / 2));">16</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 80 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(6 / 80 / 2));">6</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(3 / 80 / 2));">3</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="23" ><a href="stats/artisticinterference.html">Artistic Interference</a></td>
+            
+            <td >87</td>
+            
+            <td >235</td>
+            
+            <td >29</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(85 / 87 / 2));">85</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(66 / 87 / 2));">66</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(19 / 87 / 2));">19</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 87 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 87 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(1 / 87 / 2));">1</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="24" ><a href="stats/staraccommodations.html">Star Accommodations</a></td>
+            
+            <td >55</td>
+            
+            <td >286</td>
+            
+            <td >59</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(41 / 55 / 2));">41</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(23 / 55 / 2));">23</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(14 / 55 / 2));">14</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(4 / 55 / 2));">4</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(14 / 55 / 2));">14</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(22 / 55 / 2));">22</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="25" class="meta"><a href="stats/thefourseasontheorem.html">The Four Season Theorem</a></td>
+            
+            <td >89</td>
+            
+            <td >185</td>
+            
+            <td >45</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(89 / 89 / 2));">89</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(65 / 89 / 2));">65</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(21 / 89 / 2));">21</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(3 / 89 / 2));">3</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 89 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 89 / 2));">2</td>
+            
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="26" class="meta"><a href="stats/emendingthecountryside.html">Emending the Countryside</a></td>
+            
+            <td >83</td>
+            
+            <td >185</td>
+            
+            <td >59</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(83 / 83 / 2));">83</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(43 / 83 / 2));">43</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(38 / 83 / 2));">38</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 83 / 2));">2</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(0 / 83 / 2));">0</td>
+            
+            <td style="background-color: rgba(255, 255, 255, calc(2 / 83 / 2));">2</td>
+            
+        </tr>
+        
+    </table>
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

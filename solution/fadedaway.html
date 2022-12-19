@@ -1,0 +1,371 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Faded Away - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/fadedaway.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Faded Away
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">NO TIME OR SEASON</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+quatrevingtneuf
+
+    </h2>
+
+    
+    <p>In this puzzle, solvers are presented with a series of gradients, from some colour on the left, to black or white on the right. We can start by looking at the feeder answers for this metapuzzle; each of these answers can be tied to a specific country, which is corroborated by the flavourtext ("all over the world").</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>Characteristic</th>
+<th>Country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BRABANCONNE</td>
+<td>National anthem</td>
+<td>Belgium</td>
+</tr>
+<tr>
+<td>FUJI</td>
+<td>Tallest mountain</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td>MACRON</td>
+<td>Current president</td>
+<td>France</td>
+</tr>
+<tr>
+<td>PO</td>
+<td>Longest river</td>
+<td>Italy</td>
+</tr>
+<tr>
+<td>SOCOTRA</td>
+<td>Largest island</td>
+<td>Yemen</td>
+</tr>
+<tr>
+<td>REPLOT BRIDGE</td>
+<td>Longest bridge</td>
+<td>Finland</td>
+</tr>
+<tr>
+<td>ZLOTY</td>
+<td>Current currency</td>
+<td>Poland</td>
+</tr>
+</tbody>
+</table>
+<p>Considering the gradients, solvers may eventually discover that each country associated with an answer can be paired with another country's flag such that "fading" a colour to white or black transforms the latter into the former. The blanks are listed in alphabetical order by re-coloured flag country, to aid with identification.</p>
+<table>
+<thead>
+<tr>
+<th>"Faded" Country</th>
+<th><img src="../static/puzzle_resources/fadedaway/checkered_czvp.45542a6acebd.png" height = 36px></th>
+<th>Answer</th>
+<th>"Original" Country</th>
+<th><img src="../static/puzzle_resources/fadedaway/rainbow_czvp.597b2e6af7c5.png" height = 36px></th>
+<th>Blanks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Japan</td>
+<td><img src="../static/puzzle_resources/fadedaway/japan_czvp.e6e0e3a219cf.png" height = 36px></td>
+<td>Fuji</td>
+<td>Bangladesh</td>
+<td><img src="../static/puzzle_resources/fadedaway/bangladesh_czvp.adee5b8c4fa1.png" height = 36px></td>
+<td>Tazing Dong</td>
+</tr>
+<tr>
+<td>Belgium</td>
+<td><img src="../static/puzzle_resources/fadedaway/belgium_czvp.255e9da1cf88.png" height = 36px></td>
+<td>Brabanconne</td>
+<td>Chad</td>
+<td><img src="../static/puzzle_resources/fadedaway/chad_czvp.0b0b2ea0995c.png" height = 36px></td>
+<td>Tchadienne</td>
+</tr>
+<tr>
+<td>Poland</td>
+<td><img src="../static/puzzle_resources/fadedaway/poland_czvp.9b78eda789ab.png" height = 36px></td>
+<td>Zloty</td>
+<td>Chile</td>
+<td><img src="../static/puzzle_resources/fadedaway/chile_czvp.5eeac79f02d2.png" height = 36px></td>
+<td>Peso</td>
+</tr>
+<tr>
+<td>Yemen</td>
+<td><img src="../static/puzzle_resources/fadedaway/yemen_czvp.47a1ef9f0ec5.png" height = 36px></td>
+<td>Socotra</td>
+<td>Hungary</td>
+<td><img src="../static/puzzle_resources/fadedaway/hungary_czvp.bcfedc5d9556.png" height = 36px></td>
+<td>Szigetkoz</td>
+</tr>
+<tr>
+<td>Italy</td>
+<td><img src="../static/puzzle_resources/fadedaway/italy_czvp.b0b0947c755d.png" height = 36px></td>
+<td>Po</td>
+<td>Mali</td>
+<td><img src="../static/puzzle_resources/fadedaway/mali_czvp.ef1bd3b98672.png" height = 36px></td>
+<td>Niger</td>
+</tr>
+<tr>
+<td>Finland</td>
+<td><img src="../static/puzzle_resources/fadedaway/finland_czvp.f75689b90fb6.png" height = 36px></td>
+<td>Replot Bridge</td>
+<td>Norway</td>
+<td><img src="../static/puzzle_resources/fadedaway/norway_czvp.82e42b913f82.png" height = 36px></td>
+<td>Drammen Bridge</td>
+</tr>
+<tr>
+<td>France</td>
+<td><img src="../static/puzzle_resources/fadedaway/france_czvp.9328c1a1267d.png" height = 36px></td>
+<td>Macron</td>
+<td>Romania</td>
+<td><img src="../static/puzzle_resources/fadedaway/romania_czvp.65d578f98594.png" height = 36px></td>
+<td>Iohannis</td>
+</tr>
+</tbody>
+</table>
+<p>After taking the numbered letters in order, we get our final answer: <strong>NO TIME OR SEASON</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This metapuzzle was written in late February 2022, early in the development of this puzzlehunt.
+At that time, we hadn't thought about a release date for this hunt yet. In constructing this metapuzzle,
+we inadvertently gave ourselves a soft deadline: MACRON was up for re-election in April 2022, and
+if not re-elected, would be leaving office in early May 2022. Fortunately for us, after the first runoff, 
+it was down to either Macron or Le Pen, and both answers were easy to fit into that particular feeder 
+puzzle. Melenchon would have been considerably trickier to accommodate.</p>
+<p>Our woes didn't end there. There is a surprising lack of consensus online regarding the tallest peak in 
+Bangladesh (to be honest, finding the tallest peak in such a flat country is already of some amusement to 
+this author). We ultimately opted for the peak cited as being the tallest on Wikipedia, despite not being 
+able to track down quality sources to verify that claim. The largest island in Hungary is not nearly as 
+contentious, but this information is not straightforward to find. We ended up editing Wikipedia for this 
+to hopefully reduce solver frustration.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

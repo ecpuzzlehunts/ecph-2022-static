@@ -1,0 +1,471 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Sloopertroop - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a class="selected-tab" href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+.meta {
+    font-style: italic;
+}
+
+.team-members {
+    margin-top: 24px;
+}
+
+@media (min-width: 550px) {
+    .team-members {
+        margin-top: 0;
+    }
+}
+
+.team-info-panel h4 {
+    margin-bottom: 0;
+}
+
+.free {
+    color: #aaa;
+}
+
+.free td:last-child:before {
+    content: "(";
+}
+
+.free td:last-child:after {
+    content: ")";
+}
+</style>
+
+<h1>Sloopertroop</h1>
+
+<main>
+    <div class="team-info-panel">
+        <div class="row">
+            <div class="six columns">
+                <h4>Stats</h4>
+                <div class="stat-entry">Rank: <span class="stat-value">95</span></div>
+                <div class="stat-entry">Puzzles solved: <span class="stat-value">17</span></div>
+                
+            </div>
+            <div class="six columns">
+                <div class="team-members">
+                    <h4>Team Members:</h4>
+                    <div class="stat-entry">
+                        
+                        Kristen, 
+                        
+                        Kevin, 
+                        
+                        Jimmy, 
+                        
+                        Adriano
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <svg class="chart blur-bg" viewbox="0 0 734400.0 26" preserveAspectRatio="none">
+        <path d="M 734400.0 0 L 0 0
+        
+        L 0.0 1
+        L 14403.504645 1
+        
+        L 14403.504645 2
+        L 14747.052338 2
+        
+        L 14747.052338 3
+        L 32979.782119 3
+        
+        L 32979.782119 4
+        L 48447.452627 4
+        
+        L 48447.452627 5
+        L 183375.909938 5
+        
+        L 183375.909938 6
+        L 206885.867927 6
+        
+        L 206885.867927 7
+        L 283158.988968 7
+        
+        L 283158.988968 8
+        L 298170.032291 8
+        
+        L 298170.032291 9
+        L 390084.861678 9
+        
+        L 390084.861678 10
+        L 400159.396673 10
+        
+        L 400159.396673 11
+        L 546153.783519 11
+        
+        L 546153.783519 12
+        L 557007.56457 12
+        
+        L 557007.56457 13
+        L 568786.947959 13
+        
+        L 568786.947959 14
+        L 595076.698886 14
+        
+        L 595076.698886 15
+        L 634560.268323 15
+        
+        L 634560.268323 16
+        L 693657.077689 16
+        
+        L 693657.077689 17
+        L 704905.504939 17
+        
+        L 704905.504939 18
+        L 734400.0 18
+        
+        " class="chart-area"></path>
+        
+        <path d="M 283158.988968 0 L 283158.988968 26" class="chart-line"></path>
+        
+    </svg>
+    <table class="sortable gph-list-table blur-bg">
+        <col style="width: 40%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <col style="width: 10%">
+        <col style="width: 20%">
+        <tr>
+            <th>Puzzle</th>
+            <th>Incorrect guesses</th>
+            <th>Unlock time (EDT)</th>
+            <th>Time to solve</th>
+            <th>Solve time (EDT)</th>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Cobble"><a href="../puzzle/cobble.html">Cobble</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1665262800.0"><time datetime="2022-10-08T16:00:00+00:00" data-format="%b %-d, %H:%M">Oct 8, 12:00</time></td>
+            <td sorttable_customkey="14403.504645">4h0m</td>
+            <td sorttable_customkey="1665277203.0"><time datetime="2022-10-08T20:00:03.504645+00:00" data-format="%b %-d, %H:%M">Oct 8, 16:00</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Field Notes"><a href="../puzzle/fieldnotes.html">Field Notes</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1665262800.0"><time datetime="2022-10-08T16:00:00+00:00" data-format="%b %-d, %H:%M">Oct 8, 12:00</time></td>
+            <td sorttable_customkey="14747.052338">4h5m</td>
+            <td sorttable_customkey="1665277547.0"><time datetime="2022-10-08T20:05:47.052338+00:00" data-format="%b %-d, %H:%M">Oct 8, 16:05</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Round Trip"><a href="../puzzle/roundtrip.html">Round Trip</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1665262800.0"><time datetime="2022-10-08T16:00:00+00:00" data-format="%b %-d, %H:%M">Oct 8, 12:00</time></td>
+            <td sorttable_customkey="32979.782119">9h9m</td>
+            <td sorttable_customkey="1665295779.0"><time datetime="2022-10-09T01:09:39.782119+00:00" data-format="%b %-d, %H:%M">Oct 8, 21:09</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="A Very Large Integer"><a href="../puzzle/averylargeinteger.html">A Very Large Integer</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1665295780.0"><time datetime="2022-10-09T01:09:40.201637+00:00" data-format="%b %-d, %H:%M">Oct 8, 21:09</time></td>
+            <td sorttable_customkey="15467.25099">4h17m</td>
+            <td sorttable_customkey="1665311247.0"><time datetime="2022-10-09T05:27:27.452627+00:00" data-format="%b %-d, %H:%M">Oct 9, 01:27</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Entering Competitions"><a href="../puzzle/enteringcompetitions.html">Entering Competitions</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1665277204.0"><time datetime="2022-10-08T20:00:04.346232+00:00" data-format="%b %-d, %H:%M">Oct 8, 16:00</time></td>
+            <td sorttable_customkey="168971.563706">46h56m</td>
+            <td sorttable_customkey="1665446175.0"><time datetime="2022-10-10T18:56:15.909938+00:00" data-format="%b %-d, %H:%M">Oct 10, 14:56</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="En Route"><a href="../puzzle/enroute.html">En Route</a></td>
+            <td>6</td>
+            <td sorttable_customkey="1665277547.0"><time datetime="2022-10-08T20:05:47.594661+00:00" data-format="%b %-d, %H:%M">Oct 8, 16:05</time></td>
+            <td sorttable_customkey="192138.273266">53h22m</td>
+            <td sorttable_customkey="1665469685.0"><time datetime="2022-10-11T01:28:05.867927+00:00" data-format="%b %-d, %H:%M">Oct 10, 21:28</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Faded Away" class="meta"><a href="../puzzle/fadedaway.html">Faded Away</a></td>
+            <td>7</td>
+            <td sorttable_customkey="1665446176.0"><time datetime="2022-10-10T18:56:16.400751+00:00" data-format="%b %-d, %H:%M">Oct 10, 14:56</time></td>
+            <td sorttable_customkey="99782.588217">27h43m</td>
+            <td sorttable_customkey="1665545958.0"><time datetime="2022-10-11T22:39:18.988968+00:00" data-format="%b %-d, %H:%M">Oct 11, 18:39</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Squared Away"><a href="../puzzle/squaredaway.html">Squared Away</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1665545959.0"><time datetime="2022-10-11T22:39:19.517667+00:00" data-format="%b %-d, %H:%M">Oct 11, 18:39</time></td>
+            <td sorttable_customkey="15010.514624">4h10m</td>
+            <td sorttable_customkey="1665560970.0"><time datetime="2022-10-12T02:49:30.032291+00:00" data-format="%b %-d, %H:%M">Oct 11, 22:49</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Journal Overtakeages"><a href="../puzzle/journalovertakeages.html">Journal Overtakeages</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1665545959.0"><time datetime="2022-10-11T22:39:19.517667+00:00" data-format="%b %-d, %H:%M">Oct 11, 18:39</time></td>
+            <td sorttable_customkey="106925.344011">29h42m</td>
+            <td sorttable_customkey="1665652884.0"><time datetime="2022-10-13T04:21:24.861678+00:00" data-format="%b %-d, %H:%M">Oct 13, 00:21</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Ice Fishing"><a href="../puzzle/icefishing.html">Ice Fishing</a></td>
+            <td>4</td>
+            <td sorttable_customkey="1665545959.0"><time datetime="2022-10-11T22:39:19.517667+00:00" data-format="%b %-d, %H:%M">Oct 11, 18:39</time></td>
+            <td sorttable_customkey="116999.879006">32h29m</td>
+            <td sorttable_customkey="1665662959.0"><time datetime="2022-10-13T07:09:19.396673+00:00" data-format="%b %-d, %H:%M">Oct 13, 03:09</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Garden Cleanup"><a href="../puzzle/gardencleanup.html">Garden Cleanup</a></td>
+            <td>1</td>
+            <td sorttable_customkey="1665560970.0"><time datetime="2022-10-12T02:49:30.492566+00:00" data-format="%b %-d, %H:%M">Oct 11, 22:49</time></td>
+            <td sorttable_customkey="247983.290953">68h53m</td>
+            <td sorttable_customkey="1665808953.0"><time datetime="2022-10-14T23:42:33.783519+00:00" data-format="%b %-d, %H:%M">Oct 14, 19:42</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="On Thin Ice"><a href="../puzzle/onthinice.html">On Thin Ice</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1665808954.0"><time datetime="2022-10-14T23:42:34.348697+00:00" data-format="%b %-d, %H:%M">Oct 14, 19:42</time></td>
+            <td sorttable_customkey="10853.215873">3h0m</td>
+            <td sorttable_customkey="1665819807.0"><time datetime="2022-10-15T02:43:27.564570+00:00" data-format="%b %-d, %H:%M">Oct 14, 22:43</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Summer Camp"><a href="../puzzle/summercamp.html">Summer Camp</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1665819808.0"><time datetime="2022-10-15T02:43:28.018693+00:00" data-format="%b %-d, %H:%M">Oct 14, 22:43</time></td>
+            <td sorttable_customkey="11778.929266">3h16m</td>
+            <td sorttable_customkey="1665831586.0"><time datetime="2022-10-15T05:59:46.947959+00:00" data-format="%b %-d, %H:%M">Oct 15, 01:59</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Stained Glass"><a href="../puzzle/stainedglass.html">Stained Glass</a></td>
+            <td>3</td>
+            <td sorttable_customkey="1665545959.0"><time datetime="2022-10-11T22:39:19.517667+00:00" data-format="%b %-d, %H:%M">Oct 11, 18:39</time></td>
+            <td sorttable_customkey="311917.181219">86h38m</td>
+            <td sorttable_customkey="1665857876.0"><time datetime="2022-10-15T13:17:56.698886+00:00" data-format="%b %-d, %H:%M">Oct 15, 09:17</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Butterfly Catching"><a href="../puzzle/butterflycatching.html">Butterfly Catching</a></td>
+            <td>6</td>
+            <td sorttable_customkey="1665831587.0"><time datetime="2022-10-15T05:59:47.487849+00:00" data-format="%b %-d, %H:%M">Oct 15, 01:59</time></td>
+            <td sorttable_customkey="65772.780474">18h16m</td>
+            <td sorttable_customkey="1665897360.0"><time datetime="2022-10-16T00:16:00.268323+00:00" data-format="%b %-d, %H:%M">Oct 15, 20:16</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Puzzle Boxes"><a href="../puzzle/puzzleboxes.html">Puzzle Boxes</a></td>
+            <td>11</td>
+            <td sorttable_customkey="1665857877.0"><time datetime="2022-10-15T13:17:57.400625+00:00" data-format="%b %-d, %H:%M">Oct 15, 09:17</time></td>
+            <td sorttable_customkey="98579.677064">27h22m</td>
+            <td sorttable_customkey="1665956457.0"><time datetime="2022-10-16T16:40:57.077689+00:00" data-format="%b %-d, %H:%M">Oct 16, 12:40</time></td>
+        </tr>
+        
+        <tr>
+            <td sorttable_customkey="Artistic Interference"><a href="../puzzle/artisticinterference.html">Artistic Interference</a></td>
+            <td>0</td>
+            <td sorttable_customkey="1665956457.0"><time datetime="2022-10-16T16:40:57.529254+00:00" data-format="%b %-d, %H:%M">Oct 16, 12:40</time></td>
+            <td sorttable_customkey="11247.975685">3h7m</td>
+            <td sorttable_customkey="1665967705.0"><time datetime="2022-10-16T19:48:25.504939+00:00" data-format="%b %-d, %H:%M">Oct 16, 15:48</time></td>
+        </tr>
+        
+    </table>
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

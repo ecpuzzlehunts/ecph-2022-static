@@ -1,0 +1,345 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Story - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="index.html">
+                            Home
+                        </a>
+                        <a href="rules.html">
+                            Rules
+                        </a>
+                        
+                        <a class="selected-tab" href="story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>Story</h1>
+
+<main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    We’re going on a trip to the countryside! After being cooped up inside all week, spending a weekend breathing in the fresh air and savoring the brilliant vistas is just what the doctor ordered. Pack some snacks and don’t forget to hydrate!
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    We’ve set out on our trek through the country, but something seems a bit… off? Use the map to explore the countryside and see if you can figure out what’s happening.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    And indeed! All things we’ve seen so far seemed strangely drab and bland, as though they’ve <a href="puzzle/fadedaway.html"><strong>faded away</strong></a>. If we can bring some things back to their former state, maybe we can figure out what went wrong!
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    <p>It seems like all the strange things we’ve been observing are happening for <span class="answer spoiler"><strong>NO TIME OR SEASON</strong></span>; the four seasons have disappeared!</p>
+    
+    <p>The entire world has been plunged into a drab and lifeless state. No refreshing petrichor after a spring rain, no golden glow of sunbeams on a late summer night, no crisp, cool breeze on an autumn morning, and no prismatic patterns of ice after a winter snow.</p>
+    
+    <p>Hope is not lost; we can recover some fragments of the four seasons. If we collect enough fragments, maybe we’ll be able to piece the <a href="round/summer.html"><strong>seasons</strong></a> back together and bring colour back to the countryside.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    At last, it appears that we are closer than ever to finding a way to bring back the seasons! But we will need to work out how. Perhaps <a href="puzzle/thefourseasontheorem.html"><strong>the Four Season Theorem</strong></a> holds all the answers.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    Of course! What we need to help bring the seasons back together is a bit of seasoning <span class="answer spoiler"><strong>SALT</strong></span>! With our newfound knowledge, it’s time to look back on where we’ve been to <a href="puzzle/emendingthecountryside.html"><strong>Emend the Countryside</strong></a>!
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="no-break story-chunk">
+    <p>After spicing things up with some <span class="answer spoiler"><strong>SALT</strong></span>, we found that <span class="answer spoiler"><strong>A STITCH IN THYME SAVES FOUR</strong></span>; the four seasons have been returned to their original state - maybe even livelier than before!</p>
+    
+    <p>We go outside once again. The sweet fragrance of cherry blossoms fills the air, followed by bright rays of sunlight piercing the canopy, colourful leaves borne by a cool breeze, and a very gentle, short-lasting snowfall. Signals from each of the Four Seasons indicate their reparation.</p>
+
+    <p>The woods look bright and vivid once again, and the dazzling array of colours lifts our hearts. We set up camp, and hear the striking of pebbles by the gushing stream as we relax by the campfire at last.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

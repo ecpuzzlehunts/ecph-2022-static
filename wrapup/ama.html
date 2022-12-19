@@ -1,0 +1,295 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Questions & Answers - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../wrapup.html" class="btn">Back to wrap-up</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+<h1>Questions & Answers</h1>
+<p><i>Some of the questions have been slightly edited for clarity.</i></p>
+
+<h4>General ECPH questions</h4>
+<p><b>In what order did you write/create the theme, meta puzzles, and the runaround?</b><br>
+The Seasons theme was conceived first, and the Four Season Theorem puzzle was created shortly after. Only in February, when we started working on this hunt for real, did we decide on the other themes (countryside and colour) and Faded Away was written. The runaround was the last puzzle to be completed.</p>
+
+<p><b>Are the similarities between this hunt and GPH22 purely coincidental?</b><br>
+With regard to the seasons round, yes, pure coincidence. These were written independently long before either hunt’s release.</p>
+
+<p>As for individual puzzle style, we find a lot of the same things amusing as they do, which probably accounts for more similarities in that regard.</p>
+
+<p><b>How scared were you when you got to the seasons round of GPH this year? Did it change anything about this hunt?</b><br>
+Not so much scared, just perhaps a bit disappointed - we had put off our release date for so long, so the theme scoop felt almost self-inflicted. Thankfully, the theming was distinct enough that we didn’t feel too worried about releasing our hunt as intended. If anything, seeing that round was the kick we needed to get our show on the road!</p>
+
+<p>We’ve also compared this thematic overlap to the Antz vs A Bug’s Life situation. Up to you to decide who’s who in this situation…</p>
+
+<p><b>What do you all collectively think was your favourite puzzle in the hunt?</b><br>
+chimpaznee: I think that Faded Away was a very nice meta idea! I am also a strange person who likes printing puzzles, which means I enjoyed testsolving Stained Glass, even if I struggled to correctly fold the flexagon.<br>
+quatrevingtneuf: Faded Away is probably my favourite metapuzzle I’ve written. As for feeders, I thought Round Trip and Butterfly Catching were pretty slick.</p>
+
+<p><b>Did the difficulty of the Hunt align with your perceived difficulty of it? We thought it was much harder than advertised originally.</b><br>
+I think everyone, including us, agrees that the hunt turned out significantly harder than expected. You can read more about this in the "Reflections" section.</p>
+
+<p><b>Which puzzles played much easier or harder than you anticipated?</b><br>
+Easier: Butterfly Catching, because we thought that niche PictureGame/geoguessing skills would be required to solve a lot of these images.<br>
+Harder: Journal Overtakeages, by a lot. There were multiple sticking points that weren’t caught in testsolving.</p>
+
+<p><b>What was the most constrained answer?</b><br> 
+IGNIMBRITE and MIAMI WHITEWATER were probably the most unusual answers, as they both contributed 4 letters to the final meta configuration. In theory, if we really wanted to, we could have reconfigured the grid the ease up on these constraints, but we decided this ultimately wasn’t worth the effort. The Exploring round was even less constrained, though we did generally try to select answers that could have interpretations other than their geographical ones (PO could be the character, MACRON could be the typographical symbol, FUJI could be the apple).</p>
+
+<p><b>Most constrained flavourtext?</b><br>
+On Thin Ice’s flavourtext was doubly constrained: It had to be exactly 100 letters long to fit in one of the grids, and also contain several of the final answer’s letters. Like most other flavour texts, it also had to contain a “Na”-able word for Emending the Countryside.</p>
+
+<p><b>How big was the writing staff?</b><br>
+We had 10 puzzle authors, and a few more testsolvers. See the credits for a full list.</p>
+
+<p><b>How British are you as a team? (Asking because of "VERNACULARISATION", "...BOND CENTRE," "savouring", etc.)</b><br>
+While the site uses Canadian English (an homage to the original EC) we have representatives from all over the place, and our writing team is fairly evenly split between users of US and UK English. VERNACULARISING would normally be spelled with Z to most Canadians, but the puzzle was written with an additional constraint (that ended up not being used) which forced the S instead.</p>
+
+<p><b>Will you do another hunt?</b><br>
+See the “Future” section. The answer is “possibly”!</p>
+
+<h4>Hinting</h4>
+<p><b>How did you decide to give free follow up hints? How many hints did you end up having to answer?</b><br>
+We accepted almost all follow-up hints and even changed some teams’ second hints to follow-ups. We ended up answering 2215 hints. See <a href="../stats.html">the Stats page</a href> for more stats.</p>
+
+<p>We suspect that we were quite a bit more generous with follow-ups than most other organizers; we changed the follow-up button from "This wasn't helpful" to "Ask for a follow-up hint" mid-hunt for this reason.</p>
+
+<p><b>Do you find it tiring answering hint requests?</b><br>
+No, not really (though some answerers lost a bit of sleep). We know how important hints are for most teams and we enjoyed helping teams get unstuck. It’s even better when we get to snoop on teams’ sheets 👀</p>
+
+<p><b>How many hints had EC word pairs in them?</b><br>
+A lot of them! Many hints included several EC phrases (with “Confused” being a common C-word across them). EC phrases were an especially frequent sight in Entering Competitions (both in the requests, and our responses).</p>
+
+
+<h4>Specific puzzles</h4>
+<p><b>How were you crazy enough to write two massive minipuzzle puzzles?</b><br>
+eanacra: When I proposed the structure of Back to School, I was not aware of what Puzzle Boxes was about.</p>
+
+<p><b>What do you think is the best way to construct 27 cubes?</b><br>
+quatrevingtneuf: sheetz 4 lyf<br>
+chimpaznee: While testsolving Much Assembly Required, I divided a piece of graph paper into 27 cube nets and wrote all the letters on them. I think I would have been much faster if I had a set of wooden cubes at hand.<br>
+ev:  Besides physical construction or 3D modeling, the clearest design I saw when answering hints was ghostbloods's sheet (which I referred to many times to answer later hints, and which we adapted for the PDF in the official solution.)</p>
+
+<p><b>Did any of the Much Assembly Required testsolvers physically assemble the metacube?</b><br>
+chimpaznee: I put it together using graph paper and a lot of tape.</p>
+
+<p><b>The Four Season Theorem didn't seem to constrain its feeders too tightly, were there any more good rejected answers besides the ones in the Author's Notes?</b><br>
+Two answers that were changed before the hunt was released were “ADVERTISING SPACE” for Butterfly Catching and “ASTRONAUT TRAINING” for Star Accommodations. The former was guessed 3 times as a backsolve attempt.</p>
+
+<h4>Other puzzle hunt questions</h4>
+<p><b>How do you feel about GPH?</b><br>
+For many of us, GPH 2017 was our first introduction to the puzzlehunt world, so we have a special place in our hearts for GPH. The spirit of pushing boundaries and innovating on mechanics and structures is something we’ve always admired about their work. We hope to carry that spirit into the writing of our own hunts.
+
+<p><b>What was your favourite puzzle hunt of all times?</b><br>
+chimpaznee: <a href="https://2021.teammatehunt.com/">Matt & Emma's Carnival Conundrum</a href> still holds a special place in my heart to this day.<br>
+chuttiekang: The mild-to-moderately unhinged experience I had during the Caltech Puzzle Hunt will forever stay with me.<br>
+quatrevingtneuf: I am obviously biased, but I think <a href="https://puzzles.mit.edu/2021/">MITMH 2021</a href> was pretty special. Of the hunts I didn’t have my fingers in, perhaps <a href="https://2019.galacticpuzzlehunt.com/">GPH 2019</a href>.</p>
+
+<p><b>Is it more fun to finish a puzzlehunt in a weekend or in a week?</b><br>
+Different teams have different objectives. Even within our team, we have some members who prefer to solve quickly, and others who prefer a casual pace that allows them to see more of the hunt themselves. There is no wrong way to enjoy a puzzlehunt!</p>
+
+<p>chimpaznee: It takes several months to finish a puzzle hunt.</p>
+
+<p><b>Is this how British people feel when hunts are written by Americans?</b><br>
+Canadians feel equally attacked by both.</p>
+
+<h4>Miscellaneous</h4>
+<p><b>How good are the hunt authors at r/picturegame? I imagine extremely good, based off all the geography puzzles and all in this hunt.</b><br>
+We have several all-time top 25 players on the writing team, but many of us are actually not very active on PictureGame anymore. Dedicating too much time to puzzles…</p>
+
+<p><b>In two words or fewer, how do you feel about jam doughnuts?</b><br>
+Enticing cuisine!</p>
+
+<p><b>At the risk of being one of approximately everyone asking this question, what's your favourite season?</b><br>
+chimpaznee: It’s a toss-up between autumn and spring for me.<br>
+chuttiekang: Autumn or winter. Alas, I am not built for SoCal weather.<br>
+quatrevingtneuf: Summer, unequivocally. I am not built for the rains of the Pacific Northwest.</p>
+
+<p><b>And also... favorite Vtuber?</b><br>
+rubyleehs: Kobo-chan hands down <br>
+Zimonze: Nekomata Okayu 🍙</p>
+
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

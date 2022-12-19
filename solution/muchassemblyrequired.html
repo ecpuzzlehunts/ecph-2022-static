@@ -1,0 +1,274 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Much Assembly Required - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/muchassemblyrequired.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Much Assembly Required
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">PSEUDONYMS</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+SeptaCube
+
+    </h2>
+
+    
+    <p>There is a list of Across and Down entries, but they are all gibberish. We can try to treat this as a fill-in, but there is no diagram, and there are even a few unknown entries! So how do we get a start?</p>
+<p>We can count the number of letters in all entries. Without the ???? entries, the letter count of the Down entries is lower than the Across entries by 16, which means that it is likely that each ???? entry is four letters long. Also, there is only one Across entry that is eight letters long. By assuming that the resulting grid should be symmetrical (like a regular crossword grid), the entry "SAOYRRWC" must be in the centre. This entry also has the letter Y, which only appears in the Down entry "YILP", so we can make them cross, and black out 6 cells (ends of SAOYRRWC, ends of YILP, and the 180-degree rotation of the latter).</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/fill-in-started_cbuj.5c21b4877644.png"></center></p>
+<p>From here, we can keep building the rest of the grid, starting from the centre and going outwards. There is a unique way to do this, even with the presence of 8 unknowns:</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/fill-in-completed_kqbx.0c2a808d2a67.png"></center></p>
+<p>The unknown entries are actually English words. By starting from the top-right and following the path, these read out an instruction with two parts: MAKE GRID INTO CUBE NETS; SAME FACE MEET.</p>
+<p>For the first part, MAKE GRID INTO CUBE NETS, we will need to find a way to divide the grid into cube nets. Again, there is a unique way to do this. For this step, it is useful to count the number of cube nets the solution would have. That number is 27. Because it is an odd number, this means that there will be a cube net at the very centre. We can start from it and work our way outwards. Like in the fill-in step, the cube net division has rotational symmetry (the colour choices in this image are arbitrary):</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/nets_wmxo.bedb9f1577db.png"></center></p>
+<p>For the second part, SAME FACE MEET, we will need to assemble something with our cubes, such that faces with the same letter meet. The number of nets (27) suggests building a 3x3x3 cube. A daunting task, but it is nevertheless possible. There are several ways to approach this, including modelling it on sheets, coding out the logic, or recreating the cubes on graph paper.</p>
+<p>A step-by-step walkthrough is available at the Appendix, but a key realization to get started is that one of the cubes has the letters FJLQXZ. Each of these letters only has one other cube face to pair up with. Three of these cubes have a letter that only appears once (H/U/Y) on their opposite face, with all 3 cubes meeting at a corner. That means the FJLQXZ cube has to be at the centre.</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/cube_fjlqxz_wauj.7e7d0961732a.png" width="40%"></center></p>
+<p>From there, we can complete the 3x3x3 cube in a unique way. This is the result (3 of the faces of the completed cube, and its net):</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/cube_completed_dhip.695eecf6910d.png" width="40%"><br><img src="../static/puzzle_resources/muchassemblyrequired/cube_completed_net_qkiy.c4ccde5e2886.png"></center></p>
+<p>Once we finish assembling the cube, we can play around with it, and look to see if it reads out anything. Starting along one of the edges, we can read "MARK TWAIN". We keep reading in the same direction to finish the cluephrase: MARK TWAIN, DR SEUSS AND MARY WESTMACOTT (TEN). These are all examples of <strong>PSEUDONYMS</strong>.</p>
+
+    
+    
+
+    
+    
+    <h2 id="appendix">Appendix</h2>
+    <p>Here's an image-based walkthrough for one possible solve path for assembling the 3x3x3 cube. </p>
+<p>You can also download a PDF of this solution with more detail <a href="../static/puzzle_resources/muchassemblyrequired/cube_logic_zvjk.0900285b0b7f.pdf">here</a>.</p>
+<p>First, we'll lay out the FJLQXZ cube in the centre:</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/sol01_iuxb.7e7d0961732a.png" width="40%"></center></p>
+<p>We will follow up by gradually assembling the cube. The next step involves noticing that the other J cube has the uncommon letters G and V. After that, we can gradually build up the cube:</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/sol02_vosl.4e87db4674b6.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol03_wojz.f9fa7492d1d0.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol04_adjk.77b2df142977.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol05_ozqh.db8a85e82b4f.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol06_puhs.71b03ca87e35.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol07_wmhk.6f851a9bfdbc.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol08_hocx.ec5bb225a475.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol09_rekf.a4ba911f75c3.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol10_akgf.c5473f8c1bad.png" width="40%"></center><center><img src="../static/puzzle_resources/muchassemblyrequired/sol11_mxcy.471fa98108fc.png" width="40%"></center></p>
+<p>And finally, we can place the last 3 cubelets to complete the cube:</p>
+<p><center><img src="../static/puzzle_resources/muchassemblyrequired/sol12_ijqd.89234d7ebaf6.png" width="40%"></center></p>
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

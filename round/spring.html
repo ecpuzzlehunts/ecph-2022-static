@@ -1,0 +1,864 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>The Seasons - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+<style>
+    .selected-round {
+        font-weight: bold;
+    }
+</style>
+
+
+<h1>The Seasons</h1>
+
+
+
+
+
+
+<style>
+    #banner {
+        position: relative;
+        display: flex;
+        margin-bottom: 5%;
+        width: 100%;
+        outline:12px solid black;
+    }
+    #banner>img {
+        -webkit-filter: brightness(100%);
+    }
+
+    #banner>img:hover {
+        -webkit-filter: brightness(107%);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .spring {
+        top: 0%;
+        left: 0%;
+        width: 25%;
+        overflow:auto;
+    }
+    .spring:hover {
+        background-color: #3eca4215;
+    }
+
+    .summer {
+        top: 0%;
+        left: 25%;
+        width: 25%;
+        overflow:auto;
+    }
+    .summer:hover {
+        background-color: #ffbd0015;
+    }
+    
+    .autumn {
+        top: 0%;
+        left: 50%;
+        width: 25%;
+        overflow:auto;
+    }
+    .autumn:hover {
+        background-color: #e7774d15;
+    }
+
+    .winter {
+        top: 0%;
+        left: 75%;
+        width: 25%;
+        overflow:auto;
+    }
+    .winter:hover {
+        background-color: #6aa5bf15;
+    }
+
+    .season-title{
+        height:auto;
+        margin-bottom: 2em;
+        max-width: 700px;
+        align: center;
+        margin-left: auto;
+	    margin-right: auto;
+        text-align: center;
+    }
+
+    .season-title>img{
+        width: 75%;
+        height:auto;
+        max-width: 700px;
+        transform: scale(1.15);
+    }
+
+    .season-section{
+        display: none;
+        margin-left: auto;
+	    margin-right: auto;
+        text-align: center;
+    }
+
+    .season-list{
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .season-button, .seasons-meta-button{        
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+        -webkit-filter: brightness(100%);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+    }
+    .seasons-meta-wrapper{
+        width: 65%;
+        margin-top: 4em;
+        margin-bottom: 4em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .seasons-meta-button{   
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .season-button>img, .seasons-meta-button>img{
+        max-width: 100%;  
+    }
+    .shadow-color-animated{
+        animation-name: dropShadowPalette;
+        animation-duration: 30s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes dropShadowPalette {
+        0% {
+            -webkit-filter: drop-shadow(0.5em 0.25em 0 #92ceca88) drop-shadow(-0.25em -0.25em 0 #92ceca88);
+            filter: drop-shadow(0.5em 0.25em 0 #92ceca88) drop-shadow(-0.25em -0.25em 0 #92ceca88);
+        }
+        45% {
+            -webkit-filter: drop-shadow(0.5em 0.25em 0 #82f87d88) drop-shadow(-0.25em -0.25em 0 #82f87d88);
+            filter: drop-shadow(0.5em 0.25em 0 #82f87d88) drop-shadow(-0.25em -0.25em 0 #82f87d88);
+        }
+        66% {
+            -webkit-filter: drop-shadow(0.5em 0.25em 0 #ffe14e88) drop-shadow(-0.25em -0.25em 0 #ffe14e88);
+            filter: drop-shadow(0.5em 0.25em 0 #ffe14e88) drop-shadow(-0.25em -0.25em 0 #ffe14e88);
+        }
+        100% {
+            -webkit-filter: drop-shadow(0.5em 0.25em 0 #e8a26288) drop-shadow(-0.25em -0.25em 0 #e8a26288);
+            filter: drop-shadow(0.5em 0.25em 0 #e8a26288) drop-shadow(-0.25em -0.25em 0 #e8a26288);
+        }
+    }
+
+    .season-button:hover, .seasons-meta-button:hover{
+        -webkit-filter: brightness(107%);
+        transform: scale(1.03);
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; 
+    }
+
+    .slideshow{
+        width: 80%;
+        display: table;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-top: 4em;
+        margin-bottom: 3em;
+    }
+
+    .slideshow-content{
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .slideshow-header{
+        display: table-row; 
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .slideshow-nav{
+        display: table-cell;
+        width: 5%;        
+        height:100%;
+        vertical-align: middle;
+        -webkit-filter: brightness(100%);
+
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    .slideshow-nav>img{
+        max-width: 80px;
+    }
+
+    .slideshow-nav:hover{
+        -webkit-filter: brightness(107%);
+        transform: scale(1.06);
+    }
+
+    .puzzle-answer {
+        font-size: min(max(4vmin,2vmax),150%);
+        background-color: white;
+        text-decoration: none !important;
+        border: 5px solid black;
+        border-bottom-left-radius: 10px;
+        border-top: 0;
+        width: fit-content;
+        margin: -10px auto 8px auto;
+        padding: 5px;
+        border-bottom-right-radius: 10px;
+        max-width: 75%;
+        line-height: 1;
+        color: green;
+    }
+
+    .season-list > a, .seasons-meta-wrapper > a {
+        text-decoration: none;
+    }
+
+    .nav-to-intro{
+        position: absolute;
+        top: 70%;
+        left: -5%;
+        right: 94%;
+        -webkit-filter: brightness(107%);
+        
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+    }
+    .nav-to-intro>img{
+        width: 100%;   
+    }
+    .nav-to-intro:hover{        
+        left: -7%;    
+    }
+
+</style>
+
+
+
+<div class="seasons-meta-wrapper">
+    
+        
+            <a href="../puzzle/thefourseasontheorem.html"><div class="seasons-meta-button">                    
+                
+                    
+                        <img src="../static/images/seasons/buttons/thefourseasontheorem-s.e7f4a2e57abc.png"  alt="The Four Season Theorem"/>
+                    
+                
+            </div></a>
+        
+    
+        
+            <a href="../puzzle/emendingthecountryside.html"><div class="seasons-meta-button">                    
+                
+                    
+                        <img src="../static/images/seasons/buttons/emendingthecountryside-s.ecf5803842dd.png"  alt="Emending the Countryside"/>
+                    
+                
+            </div></a>
+        
+    
+    </div>
+
+<div id="banner" class="blur-bg">
+    
+        
+            
+                
+                    <img class=spring alt="Spring" src="../static/images/seasons/banner/spring4.40def79b7de5.png" onclick="goSeason('spring')"/>
+                
+            
+        
+            
+                
+                    <img class=summer alt="Summer" src="../static/images/seasons/banner/summer4.63f0d17baf94.png" onclick="goSeason('summer')"/>
+                
+            
+        
+            
+                
+                    <img class=autumn alt="Autumn" src="../static/images/seasons/banner/autumn4.af904d1edc4e.png" onclick="goSeason('autumn')"/>
+                
+            
+        
+            
+                
+                    <img class=winter alt="Winter" src="../static/images/seasons/banner/winter4.9c9dfa43a59f.png" onclick="goSeason('winter')"/>
+                
+            
+        
+    
+    <a href="../puzzles.html">   
+        <div class="nav-to-intro"><img src="../static/images/seasons/buttons/navtointro.7cfc1533e479.png" alt="Back to intro"></div>
+    </a>
+</div>
+
+<div class="slideshow">
+    
+                    
+            <div class="season-section">
+                <div class="slideshow-header">
+                    <div class="slideshow-nav" onclick="plusSeason(-1)">
+                        <img src="../static/images/seasons/buttons/arrow-left.b73675f2a01c.png" alt="left arrow">
+                    </div>
+                    
+                        <div class="season-title"><img src="../static/images/seasons/titles/spring.381850a9fba8.png" alt=Spring></div>
+                    
+                    <div class="slideshow-nav" onclick="plusSeason(+1)">
+                        <img src="../static/images/seasons/buttons/arrow-right.708a29959498.png" alt="right arrow">
+                    </div>
+                </div>
+
+                <div class="slideshow-content">
+                    <div class="season-list">
+                        
+                            
+                                <a href="../puzzle/journalovertakeages.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/journalovertakeages-s.ed71b6d804ee.png"  alt="Journal Overtakeages"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/gardencleanup.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/gardencleanup-s.411bec9d295e.png"  alt="Garden Cleanup"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/muchassemblyrequired.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/muchassemblyrequired-s.102ba4abb6a9.png"  alt="Much Assembly Required"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/cryptoornithology.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/cryptoornithology-s.c53af7811863.png"  alt="Cryptoornithology"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                        
+                    </div>   
+                </div>
+            </div>
+                    
+            <div class="season-section">
+                <div class="slideshow-header">
+                    <div class="slideshow-nav" onclick="plusSeason(-1)">
+                        <img src="../static/images/seasons/buttons/arrow-left.b73675f2a01c.png" alt="left arrow">
+                    </div>
+                    
+                        <div class="season-title"><img src="../static/images/seasons/titles/summer.52863fdb1418.png" alt=Summer></div>
+                    
+                    <div class="slideshow-nav" onclick="plusSeason(+1)">
+                        <img src="../static/images/seasons/buttons/arrow-right.708a29959498.png" alt="right arrow">
+                    </div>
+                </div>
+
+                <div class="slideshow-content">
+                    <div class="season-list">
+                        
+                            
+                                <a href="../puzzle/stainedglass.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/stainedglass-s.580665bac81c.png"  alt="Stained Glass"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/toohot.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/toohot-s.944f5fef3a4a.png"  alt="Too Hot!"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/summercamp.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/summercamp-s.ab79af9e88a3.png"  alt="Summer Camp"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/unrealestate.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/unrealestate-s.71b8c341b8a6.png"  alt="Unreal Estate"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                        
+                    </div>   
+                </div>
+            </div>
+                    
+            <div class="season-section">
+                <div class="slideshow-header">
+                    <div class="slideshow-nav" onclick="plusSeason(-1)">
+                        <img src="../static/images/seasons/buttons/arrow-left.b73675f2a01c.png" alt="left arrow">
+                    </div>
+                    
+                        <div class="season-title"><img src="../static/images/seasons/titles/autumn.f3e5a761046b.png" alt=Autumn></div>
+                    
+                    <div class="slideshow-nav" onclick="plusSeason(+1)">
+                        <img src="../static/images/seasons/buttons/arrow-right.708a29959498.png" alt="right arrow">
+                    </div>
+                </div>
+
+                <div class="slideshow-content">
+                    <div class="season-list">
+                        
+                            
+                                <a href="../puzzle/squaredaway.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/squaredaway-s.1894f40124a5.png"  alt="Squared Away"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/backtoschool.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/backtoschool-s.352b48b89fce.png"  alt="Back to School"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/butterflycatching.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/butterflycatching-s.50d6b9ccee79.png"  alt="Butterfly Catching"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/artisticinterference.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/artisticinterference-s.8ab7f269d11f.png"  alt="Artistic Interference"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                        
+                    </div>   
+                </div>
+            </div>
+                    
+            <div class="season-section">
+                <div class="slideshow-header">
+                    <div class="slideshow-nav" onclick="plusSeason(-1)">
+                        <img src="../static/images/seasons/buttons/arrow-left.b73675f2a01c.png" alt="left arrow">
+                    </div>
+                    
+                        <div class="season-title"><img src="../static/images/seasons/titles/winter.26a8bc87d09e.png" alt=Winter></div>
+                    
+                    <div class="slideshow-nav" onclick="plusSeason(+1)">
+                        <img src="../static/images/seasons/buttons/arrow-right.708a29959498.png" alt="right arrow">
+                    </div>
+                </div>
+
+                <div class="slideshow-content">
+                    <div class="season-list">
+                        
+                            
+                                <a href="../puzzle/icefishing.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/icefishing-s.486fbd1bdd31.png"  alt="Ice Fishing"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/onthinice.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/onthinice-s.ea4ae0170adf.png"  alt="On Thin Ice"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/puzzleboxes.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/puzzleboxes-s.b20180d896b2.png"  alt="Puzzle Boxes"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                                <a href="../puzzle/staraccommodations.html">
+                                    <div class="season-button">
+                                        
+                                            
+                                                <img src="../static/images/seasons/buttons/staraccommodations-s.5da7101d8bee.png"  alt="Star Accommodations"/>
+                                            
+                                        
+                                    </div>
+                                </a>
+                            
+                        
+                    </div>   
+                </div>
+            </div>
+        
+    
+</div>
+
+
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+<script>
+    onHashChange()
+    window.addEventListener('hashchange', onHashChange)
+
+    function onHashChange(){
+        var season = window.location.hash.slice(1);
+        if(season == null || season.length <= 0) season = getCookie('season');
+        if(season == null || season.length <= 0) season = 'spring'
+           
+        goSeason(season);
+    }
+
+    function plusSeason(n) {
+        showSeason(slideIndex += n);
+    }
+
+    function seasonToIndex(str){
+        switch(str) {
+            case "summer":
+                return 1;
+            case "autumn":
+                return 2;
+            case "winter":
+                return 3;
+            default:
+                return 0;
+        }
+    }
+
+    function indexToSeason(index){
+        let season_names = ["spring", "summer", "autumn", "winter"]
+        if (index < 0) index = 3;
+        else if (index > 3) index = 0
+        
+        return season_names[index]    
+    }
+
+    function goSeason(str){
+        slideIndex = seasonToIndex(str);
+        showSeason(slideIndex);
+    }
+
+    function showSeason(n) {
+        let seasonSections = document.getElementsByClassName("season-section");
+        let seasonBanner = document.getElementById("banner").getElementsByTagName("img");
+        let colors = ["#3eca4240", "#ffbd0040", "#e7774d40", "#6aa5bf40"]
+
+        if (n < 0) n = 3;
+        else if (n> 3) n= 0
+        
+        slideIndex = n;
+        setCookie('season', indexToSeason(slideIndex))
+        if (window.location.hash) {
+            window.location.hash = indexToSeason(slideIndex)
+        } else {
+            window.location.replace('#' + indexToSeason(slideIndex))
+        }
+        for (let i = 0; i < seasonSections.length; i++) {
+            seasonSections[i].style.display = "none";
+            seasonBanner[i].removeAttribute('style');         
+        }
+        seasonSections[slideIndex].style.display = "block";  
+        seasonBanner[slideIndex].style.backgroundColor = colors[slideIndex]
+    }
+
+    function setCookie(name,value,days=7) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+</script>
+
+</html>

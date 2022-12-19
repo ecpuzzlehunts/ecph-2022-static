@@ -1,0 +1,449 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Emending the Countryside - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/emendingthecountryside.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Emending the Countryside
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">A STITCH IN THYME SAVES FOUR</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chuttiekang, chimpaznee, phenomist, and quatrevingtneuf
+
+    </h2>
+
+    
+    <p>The final puzzle of the hunt takes us through some familiar places.</p>
+<p>The puzzle consists of short clues and long clues with numbers, arranged in a checkerboard pattern. While we'll quickly find out that the short clues are too vague to solve on their own, the long clues should soon remind us of the puzzles we've previously solved. Specifically, there are 23 clues like this, and each of them describes one of the 23 feeder puzzles in the hunt. However, each of these descriptions has a word that doesn't seem to fit with the rest of the sentence.</p>
+<p>It is possible to emend these descriptions by applying a certain transformation to each of the unfitting words such that they make sense - by changing one of the letters to "CL". The numbers next to these clues indicate Caesar shifts. By taking the letters that got changed, and shifting them appropriately, we can get a helpful clue by reading them in the given order:</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Puzzle</th>
+<th>Cl word</th>
+<th>Letter</th>
+<th>Shift</th>
+<th>New letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>We <strong>defined</strong> Autumn's offerings and gathered up what was left.</td>
+<td>Squared Away</td>
+<td>DECLINED</td>
+<td>F</td>
+<td>+12</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Although they were <strong>refuses</strong>, we were able to track down some fanciful feathered friends.</td>
+<td>Cryptoornithology</td>
+<td>RECLUSES</td>
+<td>F</td>
+<td>-1</td>
+<td>E</td>
+</tr>
+<tr>
+<td>We walked down a path consisting of <strong>dusters</strong> of smooth stones.</td>
+<td>Cobble</td>
+<td>CLUSTERS</td>
+<td>D</td>
+<td>-3</td>
+<td>A</td>
+</tr>
+<tr>
+<td>We went on a <strong>cynic</strong> excursion.</td>
+<td>Round Trip</td>
+<td>CYCLIC</td>
+<td>N</td>
+<td>-10</td>
+<td>D</td>
+</tr>
+<tr>
+<td>We observed the wildlife. What a <strong>spectate</strong>!</td>
+<td>Field Notes</td>
+<td>SPECTACLE</td>
+<td>T</td>
+<td>-11</td>
+<td>I</td>
+</tr>
+<tr>
+<td>On a <strong>dear</strong> day, we observed the sunlight pass through decorative windows.</td>
+<td>Stained Glass</td>
+<td>CLEAR</td>
+<td>D</td>
+<td>+10</td>
+<td>N</td>
+</tr>
+<tr>
+<td>We saw the creative things <strong>loud</strong> computing is capable of.</td>
+<td>Artistic Interference</td>
+<td>CLOUD</td>
+<td>L</td>
+<td>+3</td>
+<td>O</td>
+</tr>
+<tr>
+<td>We got to know some names from a math <strong>sub</strong>.</td>
+<td>Summer Camp</td>
+<td>CLUB</td>
+<td>S</td>
+<td>-1</td>
+<td>R</td>
+</tr>
+<tr>
+<td>We put things together, and then everything <strong>picked</strong>!</td>
+<td>Much Assembly Required</td>
+<td>CLICKED</td>
+<td>P</td>
+<td>-12</td>
+<td>D</td>
+</tr>
+<tr>
+<td>We sorted through some items lying in a <strong>buttered</strong> garden.</td>
+<td>Garden Cleanup</td>
+<td>CLUTTERED</td>
+<td>B</td>
+<td>+3</td>
+<td>E</td>
+</tr>
+<tr>
+<td>We <strong>hung</strong> to our nets and trapped some flying insects.</td>
+<td>Butterfly Catching</td>
+<td>CLUNG</td>
+<td>H</td>
+<td>+10</td>
+<td>R</td>
+</tr>
+<tr>
+<td>We went to register for various puzzle hunts before signups <strong>posed</strong>!</td>
+<td>Entering Competitions</td>
+<td>CLOSED</td>
+<td>P</td>
+<td>+12</td>
+<td>B</td>
+</tr>
+<tr>
+<td>We went hunting for creatures, some of which have <strong>jaspers</strong>.</td>
+<td>Ice Fishing</td>
+<td>CLASPERS</td>
+<td>J</td>
+<td>-11</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>We solved some <strong>hues</strong> in a traveller's logs.</td>
+<td>Journal Overtakeages</td>
+<td>CLUES</td>
+<td>H</td>
+<td>-6</td>
+<td>B</td>
+</tr>
+<tr>
+<td>We reached the <strong>pinnates</strong> of peaks.</td>
+<td>Rock Climbing</td>
+<td>PINNACLES</td>
+<td>T</td>
+<td>-5</td>
+<td>O</td>
+</tr>
+<tr>
+<td>We finished our outdoor exercise with a gelid <strong>confusion</strong>.</td>
+<td>On Thin Ice</td>
+<td>CONCLUSION</td>
+<td>F</td>
+<td>+8</td>
+<td>N</td>
+</tr>
+<tr>
+<td>The roads were <strong>logged</strong>, so we used another mode of transport.</td>
+<td>En Route</td>
+<td>CLOGGED</td>
+<td>L</td>
+<td>-8</td>
+<td>D</td>
+</tr>
+<tr>
+<td>We <strong>refined</strong> in our seats and looked at a complete graph made by our new friends.</td>
+<td>Unreal Estate</td>
+<td>RECLINED</td>
+<td>F</td>
+<td>-3</td>
+<td>C</td>
+</tr>
+<tr>
+<td>We encountered a number that is ridiculously big. It was quite the <strong>debate</strong>!</td>
+<td>A Very Large Integer</td>
+<td>DEBACLE</td>
+<td>T</td>
+<td>+11</td>
+<td>E</td>
+</tr>
+<tr>
+<td>We read the reviews left by people with lots of business <strong>pout</strong>.</td>
+<td>Star Accommodations</td>
+<td>CLOUT</td>
+<td>P</td>
+<td>-2</td>
+<td>N</td>
+</tr>
+<tr>
+<td>It was time for more <strong>masses</strong>, and some trivia quizzes.</td>
+<td>Back to School</td>
+<td>CLASSES</td>
+<td>M</td>
+<td>+7</td>
+<td>T</td>
+</tr>
+<tr>
+<td>We found some presents under our tree - it was a Christmas <strong>mirage</strong>!</td>
+<td>Puzzle Boxes</td>
+<td>MIRACLE</td>
+<td>G</td>
+<td>+11</td>
+<td>R</td>
+</tr>
+<tr>
+<td>We discovered precious things "in the rough", to borrow a <strong>niche</strong>.</td>
+<td>Too Hot!</td>
+<td>CLICHE</td>
+<td>N</td>
+<td>-9</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<p>Taking the shifted letters gives us the clue "READ IN ORDER BY BOND CENTRE". Together with the presence of "Cl" words, as well as the checkerboard layout of the grid, and the answer to <em>The Four Season Theorem</em> (SALT), this should remind us of the chemical structure of salt, NaCl. With the cells cluing puzzles all having a "CL" word, this suggests that the remaining cells should have "Na" words. Also, the fact that the previous puzzles are being clued here suggests that we should revisit them.</p>
+<p>And that's where we will be able to find our Na words. But where exactly do our "tasteful advice" and "ingredients" lie? With careful examination, we should be able to find a word in the flavour text of each puzzle which can have one of its letters replaced with Na. Each of these words can be used to answer one of the small clues on the grid. In all cases, the clue is adjacent to the puzzle description, which allows us to both disambiguate which clue corresponds to which answer, and which word in the flavour text is transformed (in the case of puzzles that have multiple Na-able words).</p>
+<p>The letters that got changed, when read in order by bond centre, will give us the final puzzle answer:</p>
+<p><center><img src="../static/puzzle_resources/emendingthecountryside/Emending_the_Countryside_solution_image_fdpq.c247087944f7.png" width="80%"></center></p>
+<p>The final answer is <strong>A STITCH IN THYME SAVES FOUR</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This was the final puzzle made for the hunt. The puzzle, themed as a runaround revisiting the previous puzzles, was conceived after the two-round structure of the hunt was finalized, partially because the Four Season Theorem's answer, SALT, was still not a satisfying conclusion to our story. However, it was still useful as a device in our story. With the seasoning salt, we were finally able to emend the countryside, and by using one piece from each puzzle, we learned that A STITCH IN THYME SAVES FOUR and brought the countryside and seasons back to life. Also, the addition of this puzzle bumped our puzzle count up to 26, which is a very significant number to puzzlers, because it is the number of letters in the English alphabet.</p>
+<p>The idea for this puzzle was based on salt's formula and molecular structure, with the usage of flavour text specifically being tied to "seasoning". Luckily, it wasn't too hard to find Na words that give all the letters we need, though we had to retouch most flavour texts to accommodate the words, and use some strange words, like "naunts" and "nare". The cluephrase from the Cl words was given with Caesar shifts, because it was impossible to find enough vowels that change to Cl to make valid words. We also had to make sure to remove ambiguities as to which Na word to use from which flavour text. That's where the domino-matching component of the puzzle comes into play.</p>
+<p>We were aiming for this puzzle to be a nice finish to the hunt, and with moderate difficulty. However, testsolvers have found it harder than expected, so we decided to give a stronger clue in the flavour text (namely, "tasteful advice"), and give an explicit notice that answers are not used. Still, we hope that you enjoyed emending the countryside. Thank you so much for participating in our hunt!</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

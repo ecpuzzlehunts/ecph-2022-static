@@ -1,0 +1,343 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Rock Climbing - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/rockclimbing.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Rock Climbing
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">FUJI</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+quatrevingtneuf
+
+    </h2>
+
+    
+    <p>In this puzzle, solvers are presented with a series of cryptic crossword clues, along with an
+orthographic view of a 5x10 grid. Solvers should begin by solving the clues; the definitions in each
+clue are underlined in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Answer</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>neglect to make time (6)</td>
+<td>FORGET</td>
+<td>FORGE (make) + T (time)</td>
+</tr>
+<tr>
+<td>monster's overpowered: start to struggle following endless pattern (7)</td>
+<td>CYCLOPS</td>
+<td>OP + S(truggle) following CYCL(-e)</td>
+</tr>
+<tr>
+<td>keep up with new lost language (7)</td>
+<td>TAGALOG</td>
+<td>TAG ALONG (keep up) where N (new) is lost</td>
+</tr>
+<tr>
+<td>past reports of worker showed signs of fatigue (6)</td>
+<td>BEYOND</td>
+<td>hom. “bee yawned”</td>
+</tr>
+<tr>
+<td>develop alliance to protect gemstone (4)</td>
+<td>OPAL</td>
+<td>hidden; develOP ALliance</td>
+</tr>
+<tr>
+<td>spread out goals in two different directions (6)</td>
+<td>SPARSE</td>
+<td>PARS (goals) in S and E</td>
+</tr>
+<tr>
+<td>destroy depot or weapon (7)</td>
+<td>TORPEDO</td>
+<td>anag. DEPOT OR</td>
+</tr>
+<tr>
+<td>alternate acronym of the nhl member (6)</td>
+<td>COYOTE</td>
+<td>alternating letters in aCrOnYm Of ThE</td>
+</tr>
+<tr>
+<td>tough guy embraces thankless outsiders (5)</td>
+<td>GUTSY</td>
+<td>GUY embraces TS (outside letters of thankless)</td>
+</tr>
+<tr>
+<td>pause in a runner's workout, it's said (5)</td>
+<td>LAPSE</td>
+<td>hom. LAPS</td>
+</tr>
+<tr>
+<td>as an example, chad's western music (7)</td>
+<td>COUNTRY</td>
+<td>ddef</td>
+</tr>
+<tr>
+<td>backstrokes' pace? (4)</td>
+<td>STEP</td>
+<td>elision; PETS (strokes) reversed</td>
+</tr>
+<tr>
+<td>to get down, hold back+shift→→↓ (7)</td>
+<td>DEPRESS</td>
+<td>REPRESS, R (right) becomes D (down)</td>
+</tr>
+<tr>
+<td>cripple to deteriorate after a block (6)</td>
+<td>DAMAGE</td>
+<td>AGE after DAM</td>
+</tr>
+<tr>
+<td>possibly enter audio port (3)</td>
+<td>KEY</td>
+<td>hom. “quay”</td>
+</tr>
+</tbody>
+</table>
+<p>As they are, these clues do not fit into their rows; they all have too many letters. Solvers may
+notice that all the clues are given in only lowercase letters; even terms that should be capitalized
+like Chad and NHL are left in lowercase. This, along with “ascending and descending” in the flavourtext,
+suggest that we should consider lowercase letters with ascenders and descenders. Indeed, we notice that
+not only do all the words contain letters with ascenders and/or descenders, there are exactly ten letters
+in each triplet that don't have either. We should fill the grid by “ascending” when encountering a letter
+with an ascender, “descending” when encountering a letter with a descender, and moving along the row when
+the letter has neither. The final result looks like this:</p>
+<p><center><img src="../static/puzzle_resources/rockclimbing/rockclimbing_soln_grid_dqsy.e4de775cf276.png"></center></p>
+<p>Viewing only the raised cells, we can read our final answer directly off the grid: <strong>FUJI</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>A great source of agony when constructing this puzzle was deciding whether or not "i" counts as
+a letter with an ascender. In my (probably wrong) opinion, the tittle doesn't qualify as an ascender
+for puzzle purposes, but just to be safe, I avoided the letter altogether. I look forward to your
+emails telling me that I'm wrong.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

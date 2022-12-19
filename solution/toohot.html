@@ -1,0 +1,544 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Too Hot! - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/toohot.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Too Hot!
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">IGNIMBRITE</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chuttiekang
+
+    </h2>
+
+    
+    <p>The puzzle consists of sets of one or two English phonemes represented in the <a href="https://en.wikipedia.org/wiki/International_Phonetic_Alphabet">International Phonetic Alphabet</a>. The phoneme groups in each line are presented in "alphabetical order" by the form of the symbol, with Greek letters coming at the end. Note that here <a href="https://en.wikipedia.org/wiki/Affricate">affricates</a> and <a href="https://en.wikipedia.org/wiki/Diphthong">diphthongs</a> count as one, and that transcriptions are in American English pronunciation. The phoneme sets in each line can be rearranged to make two words. For consistency, single phonemes are always at the end of a word. In each group, two crossword clues can be formed by taking one word from each line. The answers to these clues match the enumerations in parentheses.</p>
+<table>
+<thead>
+<tr>
+<th>Given</th>
+<th>Word 1 IPA</th>
+<th>Word 1</th>
+<th>Word 2 IPA</th>
+<th>Word 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>əl əɹ fl lɛ sə stʃ ʌt</td>
+<td>fl ʌt əɹ</td>
+<td>flutter</td>
+<td>sə lɛ stʃ əl</td>
+<td>celestial</td>
+</tr>
+<tr>
+<td>ɑb dʒɛ k kt laɪ</td>
+<td>laɪ k</td>
+<td>like</td>
+<td>ɑb dʒɛ kt</td>
+<td>object</td>
+</tr>
+<tr>
+<td>ən ŋz s saɪ wɪ</td>
+<td>wɪ ŋz</td>
+<td>wings</td>
+<td>saɪ ən s</td>
+<td>science</td>
+</tr>
+<tr>
+<td>ən ieɪ kj kɹ ŋ tɪ ub</td>
+<td>kj ub ən</td>
+<td>Cuban</td>
+<td>kɹ ieɪ tɪ ŋ</td>
+<td>creating</td>
+</tr>
+<tr>
+<td>bæ koʊ l tə wʊ</td>
+<td>tə bæ koʊ</td>
+<td>tobacco</td>
+<td>wʊ l</td>
+<td>wool</td>
+</tr>
+<tr>
+<td>ɑd ək ɪŋ kl oʊð pɹ t</td>
+<td>pɹ ɑd ək t</td>
+<td>product</td>
+<td>kl oʊð ɪŋ</td>
+<td>clothing</td>
+</tr>
+<tr>
+<td>dʃ it laɪ ɹɛ sp t</td>
+<td>laɪ t</td>
+<td>light</td>
+<td>sp ɹɛ dʃ it</td>
+<td>spreadsheet</td>
+</tr>
+<tr>
+<td>ɑn kw m m oʊɡ pɹ ɹæ tə</td>
+<td>kw ɑn tə m</td>
+<td>quantum</td>
+<td>pɹ oʊɡ ɹæ m</td>
+<td>program</td>
+</tr>
+<tr>
+<td>mæ s sɛ t</td>
+<td>mæ s</td>
+<td>mass</td>
+<td>sɛ t</td>
+<td>set</td>
+</tr>
+<tr>
+<td>ɑn beɪ s</td>
+<td>beɪ s</td>
+<td>base</td>
+<td>ɑn</td>
+<td>on</td>
+</tr>
+<tr>
+<td>əɹ faɪ ju nɪ t</td>
+<td>ju nɪ t</td>
+<td>unit</td>
+<td>faɪ əɹ</td>
+<td>fire</td>
+</tr>
+<tr>
+<td>æɹ əb hɛ kə l lɪ sk</td>
+<td>hɛ lɪ kə l</td>
+<td>helical</td>
+<td>sk æɹ əb</td>
+<td>scarab</td>
+</tr>
+<tr>
+<td>əl fɔ mp ɹ sɪ</td>
+<td>sɪ mp əl</td>
+<td>simple</td>
+<td>fɔ ɹ</td>
+<td>for</td>
+</tr>
+<tr>
+<td>əl ɪɡ mə mp n ʃi zæ</td>
+<td>mə ʃi n</td>
+<td>machine</td>
+<td>ɪɡ zæ mp əl</td>
+<td>example</td>
+</tr>
+<tr>
+<td>eɪm ən əz ɛp fɹ ɪʃ pɹ ɹk wɜ</td>
+<td>fɹ eɪm wɜ ɹk</td>
+<td>framework</td>
+<td>pɹ ɛp əz ɪʃ ən</td>
+<td>preposition</td>
+</tr>
+<tr>
+<td>ðæ mi nɪ ŋ t</td>
+<td>ðæ t</td>
+<td>that</td>
+<td>mi nɪ ŋ</td>
+<td>meaning</td>
+</tr>
+<tr>
+<td>əɹ kæ loʊ n</td>
+<td>kæ n</td>
+<td>can</td>
+<td>loʊ əɹ</td>
+<td>lower</td>
+</tr>
+<tr>
+<td>ft n pə ʃə ʃɪ zɪ</td>
+<td>ʃɪ ft</td>
+<td>shift</td>
+<td>pə zɪ ʃə n</td>
+<td>position</td>
+</tr>
+<tr>
+<td>æt əm lɔ z</td>
+<td>æt əm</td>
+<td>atom</td>
+<td>lɔ z</td>
+<td>laws</td>
+</tr>
+<tr>
+<td>ʌv wɪ θ</td>
+<td>wɪ θ</td>
+<td>with</td>
+<td>ʌv</td>
+<td>of</td>
+</tr>
+<tr>
+<td>bɑ dɪ fə ks ŋ ɹɪ ɹoʊ tɪ</td>
+<td>dɪ fə ɹɪ ŋ</td>
+<td>differing</td>
+<td>ɹoʊ bɑ tɪ ks</td>
+<td>robotics</td>
+</tr>
+<tr>
+<td>ɑn ɔθ əɹ nu tɹ z</td>
+<td>nu tɹ ɑn z</td>
+<td>neutrons</td>
+<td>ɔθ əɹ</td>
+<td>author</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Clue 1</th>
+<th>Answer</th>
+<th>Clue 2</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flutter like wings</td>
+<td>FLAP</td>
+<td>celestial object science</td>
+<td>ASTRONOMY</td>
+</tr>
+<tr>
+<td>Cuban tobacco product</td>
+<td>CIGAR</td>
+<td>creating wool clothing</td>
+<td>KNITTING</td>
+</tr>
+<tr>
+<td>light quantum</td>
+<td>PHOTON</td>
+<td>spreadsheet program</td>
+<td>EXCEL</td>
+</tr>
+<tr>
+<td>mass base unit</td>
+<td>KILOGRAM</td>
+<td>set on fire</td>
+<td>BURN</td>
+</tr>
+<tr>
+<td>helical simple machine</td>
+<td>SCREW</td>
+<td>scarab, for example</td>
+<td>BEETLE</td>
+</tr>
+<tr>
+<td>framework that can shift</td>
+<td>PARADIGM</td>
+<td>preposition meaning lower position</td>
+<td>UNDER</td>
+</tr>
+<tr>
+<td>atom with differing neutrons</td>
+<td>ISOTOPE</td>
+<td>laws of robotics author</td>
+<td>ASIMOV</td>
+</tr>
+</tbody>
+</table>
+<p>Taking the end of the first clue answer and the start of the second clue answer gives the
+name of a gem, phonetically. This is hinted at in the flavortext (“they were said to carry some real gems in there”). Finally, indexing (using the numbers in brackets) into the gem names, again
+phonetically, sounds out the answer <strong>IGNIMBRITE</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Clue Answers</th>
+<th>Gem</th>
+<th>Index(es)</th>
+<th>Extracted Phoneme(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F[LAP AS]TRONOMY</td>
+<td>læpɪs (lapis)</td>
+<td>4</td>
+<td>ɪ</td>
+</tr>
+<tr>
+<td>CI[GAR KNIT]TING</td>
+<td>ɡɑɹnɪt (garnet)</td>
+<td>1</td>
+<td>ɡ</td>
+</tr>
+<tr>
+<td>PHOT[ON EX]CEL</td>
+<td>ɒnɪks (onyx)</td>
+<td>2,3</td>
+<td>nɪ</td>
+</tr>
+<tr>
+<td>KILOGR[AM BUR]N</td>
+<td>æmbəɹ (amber)</td>
+<td>2,3</td>
+<td>mb</td>
+</tr>
+<tr>
+<td>SC[REW BEE]TLE</td>
+<td>ɹubi (ruby)</td>
+<td>1</td>
+<td>ɹ</td>
+</tr>
+<tr>
+<td>PARA[DIGM UND]ER</td>
+<td>daɪmənd (diamond)</td>
+<td>2</td>
+<td>aɪ</td>
+</tr>
+<tr>
+<td>ISO[TOPE AS]IMOV</td>
+<td>toʊpæz (topaz)</td>
+<td>1</td>
+<td>t</td>
+</tr>
+</tbody>
+</table>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>First, apologies to the non-Americans; hopefully the transcriptions weren't too terrible.</p>
+<p>This puzzle went through several changes during writing. The original presentation of the mixed clues 
+was traditional anagrams (e.g. ACEEEFILLLRSTTTU for FLUTTER/CELESTIAL), and the original extraction was 
+letter indexing into the gem names. Then I got the suggestion to lean more into the phonetics aspect 
+(which was already present in the hidden gems). Extremely fortunately, the phonetic extraction formed 
+after changing some indexes and reordering. Going from letters to IPA was trickier, and I ultimately 
+decided on pairs of phonemes after realizing how difficult it would be if they were all separate.</p>
+<p>Here are some clue pairs that didn't make it into the final puzzle:</p>
+<ul>
+<li>helicopter colloquially/thunder partner</li>
+<li>potato type or color/third-largest Nevada city</li>
+<li>rhombus-shaped heraldic charge/artificial sweetener branded Equal</li>
+</ul>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

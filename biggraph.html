@@ -1,0 +1,368 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Biggraph - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="index.html">
+                            Home
+                        </a>
+                        <a href="rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="wrapup.html" class="btn">Back to wrap-up</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+<style>
+.tooltip-colored-circle {
+	/* echarts:util/format.ts */
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+	height: 10px;
+	width: 10px;
+	border-radius: 10px;
+}
+
+.fullwidth{
+    position: absolute; 
+    left: 5%; 
+    right: 5%;
+}
+</style>
+<div class='fullwidth'>
+    <div id="biggraph" style="min-height: 400px;"></div>
+</div>
+
+<!-- heavily inspired by CTFd (via paradox puzzlehunt) -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.1.1/dist/echarts.min.js" integrity="sha256-Yhe8c0oOs2dPYVQKLAi1aBB9uhr7yMmh67ukoWBqDuU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+echarts.init(document.getElementById('biggraph')).setOption({
+	title: {
+		left: "center",
+		text: "Top 30 Teams",
+	},
+	tooltip: {
+		trigger: "axis",
+		axisPointer: {
+			type: "cross"
+		}
+	},
+	legend: {
+		type: "scroll",
+		orient: "horizontal",
+		align: "left",
+		bottom: 35,
+		data: [
+			
+				"አ ETHIOPIC CAMPFIRE",
+			
+				"Eastcampus Cruft of r/puzzlers_galactic",
+			
+				"Eponymous Clues of r/PuzzlersGalactic",
+			
+				"Ephemeris Calculators of the Coraline Schism",
+			
+				"ൠ MALAYALAM LETTER LOOK AT THIS COOL BUG",
+			
+				"I Cook Eggs",
+			
+				"Being good at finding a certain coordinate in a picture game is valuable, but I think I’ll take the 200+ collective years of professional countryside exploration experience",
+			
+				"/u/embarrassedclupea 🎏",
+			
+				"Ecliptic Catgirls of the Caroline Schism",
+			
+				"[URGENT] EMERGENCY CRITICAL ET CETERA",
+			
+				"Travelers Seeking Best Inn for the Entire Colony",
+			
+				"outdoorscamper",
+			
+				"Impossibly Organized Hiker",
+			
+				"MystikFact",
+			
+				"17th Switchback",
+			
+				"Nature Enjoyment Season",
+			
+				"Yardinality",
+			
+				"Given the Outdoor Setting It Is Unlikely to Be Projectyl",
+			
+				"Mobius Strippers",
+			
+				"ghostbloods",
+			
+				"Eternity Challenges of r/antimatterdimensions",
+			
+				"MiaoMiaoMiao",
+			
+				"🟥🟧🟨🟩🟦🟪🟫⬛⬜",
+			
+				"cam[pi]ng",
+			
+				"ECosysTEM Adventure",
+			
+				"pluru",
+			
+				"Enormous Chamber 1",
+			
+				"Teddy Set Go",
+			
+				"The Blob Wizards 🔮🧙",
+			
+				"PonX",
+			
+		],
+	},
+	toolbox: {
+		feature: {
+			dataZoom: {
+				yAxisIndex: "none"
+			},
+			saveAsImage: {}
+		}
+	},
+	grid: {
+		containLabel: true
+	},
+	xAxis: [
+		{
+			type: "time",
+			boundaryGap: false,
+			data: []
+		}
+	],
+	yAxis: [
+		{
+			type: "value"
+		}
+	],
+	dataZoom: [
+		{
+			id: "dataZoomX",
+			type: "slider",
+			xAxisIndex: [0],
+			filterMode: "filter",
+			height: 20,
+			top: 35,
+			fillerColor: "rgba(233, 236, 241, 0.4)"
+		}
+	],
+	tooltip: {
+		formatter: function(params) {
+			var teamName = params.seriesName;
+
+			var date = params.data[0];
+			var score = params.data[1];
+			var info = params.data[2];
+
+			// team name and color;
+			var div1 = document.createElement('div');
+			var span = document.createElement('span');
+			span.className = 'tooltip-colored-circle';
+			span.style.backgroundColor = params.color;
+			div1.appendChild(span);
+			div1.appendChild(document.createTextNode(teamName));
+
+			var div2 = document.createElement('div');
+			var sl = document.createElement('small');
+			sl.textContent = 'Solved: '
+			div2.appendChild(sl);
+			div2.appendChild(document.createTextNode(info));
+			var ns = document.createElement('strong');
+			ns.textContent = ' → ' + score;
+			div2.appendChild(ns);
+
+			var div3 = document.createElement('div');
+			div3.textContent = date.toLocaleString();
+
+			var div = document.createElement('div');
+			div.appendChild(div1);
+			div.appendChild(div2);
+			div.appendChild(div3);
+			return div.outerHTML;
+		},
+	},
+	series: [
+		{ name: "አ ETHIOPIC CAMPFIRE", type: "line", itemStyle: { normal: { color: "hsl(340, 95%, 47%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245809903.785), 1, 'Cobble', 0], [new Date(1665245855878.4102), 2, 'Field Notes', 0], [new Date(1665247074538.7559), 3, 'Entering Competitions', 0], [new Date(1665247897034.07), 4, 'A Very Large Integer', 0], [new Date(1665248962635.608), 5, 'Rock Climbing', 0], [new Date(1665251321284.73), 6, 'En Route', 0], [new Date(1665251421614.981), 7, 'Faded Away', 1], [new Date(1665252513937.989), 8, 'Squared Away', 0], [new Date(1665255463380.312), 9, 'Garden Cleanup', 0], [new Date(1665256078695.287), 10, 'Journal Overtakeages', 0], [new Date(1665260838535.736), 11, 'Back to School', 0], [new Date(1665262193884.033), 12, 'On Thin Ice', 0], [new Date(1665266477821.747), 13, 'Summer Camp', 0], [new Date(1665267711432.966), 14, 'Too Hot!', 0], [new Date(1665270906717.591), 15, 'Puzzle Boxes', 0], [new Date(1665271204464.504), 16, 'Ice Fishing', 0], [new Date(1665273129037.936), 17, 'Much Assembly Required', 0], [new Date(1665277753667.337), 18, 'Unreal Estate', 0], [new Date(1665281024521.022), 19, 'Artistic Interference', 0], [new Date(1665282789820.212), 20, 'The Four Season Theorem', 1], [new Date(1665283956165.611), 21, 'Emending the Countryside', 1], [new Date(1665284838092.458), 22, 'Cryptoornithology', 0], [new Date(1665286817378.0369), 23, 'Star Accommodations', 0], [new Date(1665294671156.208), 24, 'Butterfly Catching', 0], [new Date(1665297711991.604), 25, 'Round Trip', 0], [new Date(1665298968097.589), 26, 'Stained Glass', 0], ], }, { name: "Eastcampus Cruft of r/puzzlers_galactic", type: "line", itemStyle: { normal: { color: "hsl(68, 78%, 53%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245331786.8472), 1, 'Field Notes', 0], [new Date(1665247531646.447), 2, 'Entering Competitions', 0], [new Date(1665247974397.787), 3, 'Cobble', 0], [new Date(1665251038468.7031), 4, 'A Very Large Integer', 0], [new Date(1665251202783.8098), 5, 'Round Trip', 0], [new Date(1665252283349.979), 6, 'En Route', 0], [new Date(1665253000701.206), 7, 'Faded Away', 1], [new Date(1665259077488.204), 8, 'Ice Fishing', 0], [new Date(1665260982575.682), 9, 'Squared Away', 0], [new Date(1665263794192.564), 10, 'Garden Cleanup', 0], [new Date(1665265275894.655), 11, 'Too Hot!', 0], [new Date(1665266868020.589), 12, 'On Thin Ice', 0], [new Date(1665270281184.4312), 13, 'Summer Camp', 0], [new Date(1665277409485.6812), 14, 'Back to School', 0], [new Date(1665282262746.3738), 15, 'Puzzle Boxes', 0], [new Date(1665287633486.49), 16, 'Butterfly Catching', 0], [new Date(1665287702931.169), 17, 'Journal Overtakeages', 0], [new Date(1665290128487.8271), 18, 'Artistic Interference', 0], [new Date(1665291858005.8442), 19, 'Cryptoornithology', 0], [new Date(1665292869663.544), 20, 'Much Assembly Required', 0], [new Date(1665292910216.8691), 21, 'The Four Season Theorem', 1], [new Date(1665295019790.424), 22, 'Emending the Countryside', 1], ], }, { name: "Eponymous Clues of r/PuzzlersGalactic", type: "line", itemStyle: { normal: { color: "hsl(216, 93%, 48%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245535585.1182), 1, 'Field Notes', 0], [new Date(1665247256209.538), 2, 'Cobble', 0], [new Date(1665248750300.693), 3, 'Round Trip', 0], [new Date(1665250323294.558), 4, 'A Very Large Integer', 0], [new Date(1665252334526.928), 5, 'Rock Climbing', 0], [new Date(1665253276299.2), 6, 'Faded Away', 1], [new Date(1665254696854.937), 7, 'Journal Overtakeages', 0], [new Date(1665257621279.156), 8, 'Ice Fishing', 0], [new Date(1665263317974.404), 9, 'Garden Cleanup', 0], [new Date(1665266376292.1592), 10, 'Too Hot!', 0], [new Date(1665268753502.961), 11, 'On Thin Ice', 0], [new Date(1665269018701.088), 12, 'Squared Away', 0], [new Date(1665277084846.0059), 13, 'Back to School', 0], [new Date(1665288697423.166), 14, 'Puzzle Boxes', 0], [new Date(1665291386916.876), 15, 'Unreal Estate', 0], [new Date(1665298050430.002), 16, 'Summer Camp', 0], [new Date(1665302327089.894), 17, 'Cryptoornithology', 0], [new Date(1665304142081.1328), 18, 'Artistic Interference', 0], [new Date(1665306843862.921), 19, 'Much Assembly Required', 0], [new Date(1665307022527.2231), 20, 'The Four Season Theorem', 1], [new Date(1665310557609.573), 21, 'Emending the Countryside', 1], [new Date(1665311910254.577), 22, 'Stained Glass', 0], ], }, { name: "Ephemeris Calculators of the Coraline Schism", type: "line", itemStyle: { normal: { color: "hsl(111, 80%, 51%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245519072.67), 1, 'Field Notes', 0], [new Date(1665248010851.866), 2, 'Cobble', 0], [new Date(1665248090221.698), 3, 'Round Trip', 0], [new Date(1665249906438.927), 4, 'A Very Large Integer', 0], [new Date(1665252284687.8008), 5, 'En Route', 0], [new Date(1665253733165.8499), 6, 'Faded Away', 1], [new Date(1665256918468.6611), 7, 'Entering Competitions', 0], [new Date(1665260931231.305), 8, 'Ice Fishing', 0], [new Date(1665262611226.368), 9, 'Squared Away', 0], [new Date(1665264769189.0571), 10, 'Journal Overtakeages', 0], [new Date(1665274783345.761), 11, 'Too Hot!', 0], [new Date(1665277238398.997), 12, 'On Thin Ice', 0], [new Date(1665280494810.698), 13, 'Summer Camp', 0], [new Date(1665285555565.255), 14, 'Much Assembly Required', 0], [new Date(1665292494487.26), 15, 'Puzzle Boxes', 0], [new Date(1665301567007.519), 16, 'Unreal Estate', 0], [new Date(1665308172879.628), 17, 'Butterfly Catching', 0], [new Date(1665313275314.101), 18, 'Artistic Interference', 0], [new Date(1665319209908.202), 19, 'Back to School', 0], [new Date(1665321062422.796), 20, 'The Four Season Theorem', 1], [new Date(1665327144643.1191), 21, 'Emending the Countryside', 1], [new Date(1665354739553.687), 22, 'Rock Climbing', 0], [new Date(1665365871278.7932), 23, 'Cryptoornithology', 0], [new Date(1665423059838.377), 24, 'Garden Cleanup', 0], [new Date(1665430764433.731), 25, 'Stained Glass', 0], [new Date(1665434163072.813), 26, 'Star Accommodations', 0], ], }, { name: "ൠ MALAYALAM LETTER LOOK AT THIS COOL BUG", type: "line", itemStyle: { normal: { color: "hsl(18, 89%, 51%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246646643.99), 1, 'Cobble', 0], [new Date(1665247728388.4932), 2, 'Field Notes', 0], [new Date(1665249660819.927), 3, 'Round Trip', 0], [new Date(1665251176145.598), 4, 'A Very Large Integer', 0], [new Date(1665252500332.3281), 5, 'Rock Climbing', 0], [new Date(1665252943610.028), 6, 'Entering Competitions', 0], [new Date(1665255418990.9958), 7, 'En Route', 0], [new Date(1665256906931.2998), 8, 'Faded Away', 1], [new Date(1665261535661.7651), 9, 'Ice Fishing', 0], [new Date(1665262968425.4749), 10, 'Squared Away', 0], [new Date(1665269122680.8528), 11, 'Too Hot!', 0], [new Date(1665280110169.439), 12, 'Journal Overtakeages', 0], [new Date(1665285110133.416), 13, 'On Thin Ice', 0], [new Date(1665288277074.991), 14, 'Summer Camp', 0], [new Date(1665297533742.564), 15, 'Much Assembly Required', 0], [new Date(1665309720463.2039), 16, 'Puzzle Boxes', 0], [new Date(1665324232486.541), 17, 'Butterfly Catching', 0], [new Date(1665330081966.0908), 18, 'Artistic Interference', 0], [new Date(1665332273670.847), 19, 'Cryptoornithology', 0], [new Date(1665337381656.307), 20, 'Star Accommodations', 0], [new Date(1665341092009.543), 21, 'Unreal Estate', 0], [new Date(1665341602758.8242), 22, 'The Four Season Theorem', 1], [new Date(1665346884492.451), 23, 'Emending the Countryside', 1], [new Date(1665698024789.692), 24, 'Stained Glass', 0], ], }, { name: "I Cook Eggs", type: "line", itemStyle: { normal: { color: "hsl(159, 82%, 54%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245635236.075), 1, 'Field Notes', 0], [new Date(1665246139907.763), 2, 'Cobble', 0], [new Date(1665248238913.156), 3, 'Entering Competitions', 0], [new Date(1665251331049.8682), 4, 'Round Trip', 0], [new Date(1665252297700.732), 5, 'Rock Climbing', 0], [new Date(1665253535428.0332), 6, 'Faded Away', 1], [new Date(1665255850888.4512), 7, 'Squared Away', 0], [new Date(1665265161209.018), 8, 'Ice Fishing', 0], [new Date(1665267394861.308), 9, 'Garden Cleanup', 0], [new Date(1665270425576.246), 10, 'Back to School', 0], [new Date(1665271818247.65), 11, 'On Thin Ice', 0], [new Date(1665273331957.169), 12, 'Summer Camp', 0], [new Date(1665275485375.222), 13, 'Butterfly Catching', 0], [new Date(1665277201440.238), 14, 'Puzzle Boxes', 0], [new Date(1665301277717.104), 15, 'Journal Overtakeages', 0], [new Date(1665302460850.227), 16, 'Artistic Interference', 0], [new Date(1665305364804.512), 17, 'Star Accommodations', 0], [new Date(1665322241822.357), 18, 'Too Hot!', 0], [new Date(1665326534921.887), 19, 'The Four Season Theorem', 1], [new Date(1665348502706.9321), 20, 'Emending the Countryside', 1], [new Date(1665596163264.101), 21, 'A Very Large Integer', 0], [new Date(1665850137950.373), 22, 'Cryptoornithology', 0], [new Date(1665850928626.292), 23, 'Much Assembly Required', 0], [new Date(1665851147338.633), 24, 'Stained Glass', 0], ], }, { name: "Being good at finding a certain coordinate in a picture game is valuable, but I think I’ll take the 200+ collective years of professional countryside exploration experience", type: "line", itemStyle: { normal: { color: "hsl(240, 79%, 49%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245796189.6008), 1, 'Field Notes', 0], [new Date(1665248873626.958), 2, 'Entering Competitions', 0], [new Date(1665249023118.274), 3, 'Cobble', 0], [new Date(1665250278497.57), 4, 'Round Trip', 0], [new Date(1665251224886.561), 5, 'A Very Large Integer', 0], [new Date(1665256688388.561), 6, 'En Route', 0], [new Date(1665257652171.865), 7, 'Faded Away', 1], [new Date(1665258965868.04), 8, 'Squared Away', 0], [new Date(1665267419440.9622), 9, 'Ice Fishing', 0], [new Date(1665270726680.5269), 10, 'Garden Cleanup', 0], [new Date(1665276754210.6099), 11, 'Too Hot!', 0], [new Date(1665280648834.4), 12, 'On Thin Ice', 0], [new Date(1665284086520.903), 13, 'Summer Camp', 0], [new Date(1665289523480.145), 14, 'Butterfly Catching', 0], [new Date(1665291778813.855), 15, 'Stained Glass', 0], [new Date(1665299295153.6418), 16, 'Puzzle Boxes', 0], [new Date(1665300773189.279), 17, 'Cryptoornithology', 0], [new Date(1665302748314.853), 18, 'Artistic Interference', 0], [new Date(1665339459574.328), 19, 'Back to School', 0], [new Date(1665347308819.1372), 20, 'Star Accommodations', 0], [new Date(1665347495429.61), 21, 'The Four Season Theorem', 1], [new Date(1665347627832.252), 22, 'Much Assembly Required', 0], [new Date(1665353016362.275), 23, 'Emending the Countryside', 1], [new Date(1665353843264.3882), 24, 'Journal Overtakeages', 0], [new Date(1665356506421.3108), 25, 'Unreal Estate', 0], [new Date(1665358025106.773), 26, 'Rock Climbing', 0], ], }, { name: "/u/embarrassedclupea 🎏", type: "line", itemStyle: { normal: { color: "hsl(263, 95%, 50%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245385328.229), 1, 'Field Notes', 0], [new Date(1665248551644.254), 2, 'Round Trip', 0], [new Date(1665251639314.62), 3, 'Cobble', 0], [new Date(1665254223857.252), 4, 'Entering Competitions', 0], [new Date(1665254805307.303), 5, 'A Very Large Integer', 0], [new Date(1665256776724.8052), 6, 'Faded Away', 1], [new Date(1665262033509.061), 7, 'Ice Fishing', 0], [new Date(1665270156450.8518), 8, 'Journal Overtakeages', 0], [new Date(1665275356341.721), 9, 'Too Hot!', 0], [new Date(1665287463753.594), 10, 'Back to School', 0], [new Date(1665299652840.8052), 11, 'Squared Away', 0], [new Date(1665302727194.337), 12, 'On Thin Ice', 0], [new Date(1665310321250.7478), 13, 'Butterfly Catching', 0], [new Date(1665317201738.655), 14, 'Summer Camp', 0], [new Date(1665321425626.2952), 15, 'Puzzle Boxes', 0], [new Date(1665324450569.637), 16, 'Artistic Interference', 0], [new Date(1665328919131.012), 17, 'Cryptoornithology', 0], [new Date(1665341619876.564), 18, 'Unreal Estate', 0], [new Date(1665356166438.8682), 19, 'Star Accommodations', 0], [new Date(1665356739409.123), 20, 'Much Assembly Required', 0], [new Date(1665356915614.499), 21, 'The Four Season Theorem', 1], [new Date(1665371695355.358), 22, 'Emending the Countryside', 1], [new Date(1665428787676.22), 23, 'Garden Cleanup', 0], ], }, { name: "Ecliptic Catgirls of the Caroline Schism", type: "line", itemStyle: { normal: { color: "hsl(4, 82%, 47%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245968566.3381), 1, 'Field Notes', 0], [new Date(1665248999571.086), 2, 'Cobble', 0], [new Date(1665253274962.76), 3, 'Round Trip', 0], [new Date(1665255497931.152), 4, 'A Very Large Integer', 0], [new Date(1665256826531.08), 5, 'Entering Competitions', 0], [new Date(1665259622980.8208), 6, 'Faded Away', 1], [new Date(1665264678133.655), 7, 'Ice Fishing', 0], [new Date(1665265976363.075), 8, 'Squared Away', 0], [new Date(1665267576730.897), 9, 'Rock Climbing', 0], [new Date(1665269034394.4048), 10, 'Too Hot!', 0], [new Date(1665278487512.117), 11, 'Garden Cleanup', 0], [new Date(1665287999469.794), 12, 'Much Assembly Required', 0], [new Date(1665290983204.001), 13, 'On Thin Ice', 0], [new Date(1665294291186.8132), 14, 'Summer Camp', 0], [new Date(1665304257424.481), 15, 'Puzzle Boxes', 0], [new Date(1665314229206.752), 16, 'Butterfly Catching', 0], [new Date(1665334108088.2349), 17, 'Unreal Estate', 0], [new Date(1665349060385.706), 18, 'Journal Overtakeages', 0], [new Date(1665350097963.615), 19, 'Artistic Interference', 0], [new Date(1665351409074.4531), 20, 'Back to School', 0], [new Date(1665352491161.7961), 21, 'The Four Season Theorem', 1], [new Date(1665352623600.769), 22, 'Stained Glass', 0], [new Date(1665419791516.5068), 23, 'Emending the Countryside', 1], [new Date(1665431096799.0361), 24, 'En Route', 0], [new Date(1665941809270.0032), 25, 'Cryptoornithology', 0], [new Date(1665946215695.488), 26, 'Star Accommodations', 0], ], }, { name: "[URGENT] EMERGENCY CRITICAL ET CETERA", type: "line", itemStyle: { normal: { color: "hsl(272, 81%, 44%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246566030.499), 1, 'Field Notes', 0], [new Date(1665249435043.218), 2, 'Cobble', 0], [new Date(1665251523592.0789), 3, 'Entering Competitions', 0], [new Date(1665254288292.831), 4, 'A Very Large Integer', 0], [new Date(1665262629979.575), 5, 'Round Trip', 0], [new Date(1665266631657.95), 6, 'En Route', 0], [new Date(1665269884412.738), 7, 'Faded Away', 1], [new Date(1665294922526.4631), 8, 'Ice Fishing', 0], [new Date(1665307499100.291), 9, 'Journal Overtakeages', 0], [new Date(1665309729613.22), 10, 'Garden Cleanup', 0], [new Date(1665317244614.422), 11, 'Squared Away', 0], [new Date(1665336838366.563), 12, 'Much Assembly Required', 0], [new Date(1665342141272.4421), 13, 'On Thin Ice', 0], [new Date(1665346534901.618), 14, 'Summer Camp', 0], [new Date(1665386188904.5369), 15, 'Butterfly Catching', 0], [new Date(1665395755973.443), 16, 'Cryptoornithology', 0], [new Date(1665403416562.129), 17, 'Artistic Interference', 0], [new Date(1665408655606.146), 18, 'Puzzle Boxes', 0], [new Date(1665411375166.891), 19, 'Too Hot!', 0], [new Date(1665422538710.871), 20, 'Unreal Estate', 0], [new Date(1665425628151.244), 21, 'The Four Season Theorem', 1], [new Date(1665431719017.553), 22, 'Emending the Countryside', 1], [new Date(1665431945394.823), 23, 'Stained Glass', 0], [new Date(1665432426510.151), 24, 'Back to School', 0], [new Date(1665463142802.781), 25, 'Rock Climbing', 0], [new Date(1665570219238.3372), 26, 'Star Accommodations', 0], ], }, { name: "Travelers Seeking Best Inn for the Entire Colony", type: "line", itemStyle: { normal: { color: "hsl(306, 84%, 57%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245475988.1821), 1, 'Field Notes', 0], [new Date(1665246740225.045), 2, 'Cobble', 0], [new Date(1665253542204.539), 3, 'Round Trip', 0], [new Date(1665255665398.948), 4, 'A Very Large Integer', 0], [new Date(1665266944813.869), 5, 'Rock Climbing', 0], [new Date(1665274170483.966), 6, 'En Route', 0], [new Date(1665304701277.3271), 7, 'Faded Away', 1], [new Date(1665320410244.6821), 8, 'Ice Fishing', 0], [new Date(1665326246987.818), 9, 'Garden Cleanup', 0], [new Date(1665329847754.9), 10, 'Squared Away', 0], [new Date(1665330325138.0369), 11, 'Journal Overtakeages', 0], [new Date(1665335220189.331), 12, 'On Thin Ice', 0], [new Date(1665337232227.6199), 13, 'Summer Camp', 0], [new Date(1665382890940.0789), 14, 'Much Assembly Required', 0], [new Date(1665405780947.9092), 15, 'Puzzle Boxes', 0], [new Date(1665410315214.818), 16, 'Cryptoornithology', 0], [new Date(1665415234750.129), 17, 'Unreal Estate', 0], [new Date(1665419069484.56), 18, 'Artistic Interference', 0], [new Date(1665425260128.226), 19, 'Too Hot!', 0], [new Date(1665427535123.404), 20, 'Back to School', 0], [new Date(1665428348149.803), 21, 'The Four Season Theorem', 1], [new Date(1665429482780.8262), 22, 'Stained Glass', 0], [new Date(1665431825569.617), 23, 'Emending the Countryside', 1], [new Date(1665433554533.582), 24, 'Entering Competitions', 0], [new Date(1665442655923.848), 25, 'Star Accommodations', 0], [new Date(1665500930905.447), 26, 'Butterfly Catching', 0], ], }, { name: "outdoorscamper", type: "line", itemStyle: { normal: { color: "hsl(205, 88%, 56%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245757377.738), 1, 'Field Notes', 0], [new Date(1665248558609.376), 2, 'Cobble', 0], [new Date(1665251460630.883), 3, 'En Route', 0], [new Date(1665257490837.559), 4, 'A Very Large Integer', 0], [new Date(1665266283444.36), 5, 'Round Trip', 0], [new Date(1665271369311.303), 6, 'Rock Climbing', 0], [new Date(1665271485655.946), 7, 'Faded Away', 1], [new Date(1665277006799.154), 8, 'Squared Away', 0], [new Date(1665284950131.979), 9, 'Garden Cleanup', 0], [new Date(1665287165133.416), 10, 'Too Hot!', 0], [new Date(1665290181813.721), 11, 'Journal Overtakeages', 0], [new Date(1665294954626.534), 12, 'On Thin Ice', 0], [new Date(1665338606334.324), 13, 'Ice Fishing', 0], [new Date(1665343845392.631), 14, 'Summer Camp', 0], [new Date(1665358031596.431), 15, 'Butterfly Catching', 0], [new Date(1665363581944.566), 16, 'Puzzle Boxes', 0], [new Date(1665377619094.744), 17, 'Cryptoornithology', 0], [new Date(1665379617658.135), 18, 'Back to School', 0], [new Date(1665424131780.0752), 19, 'Artistic Interference', 0], [new Date(1665433473570.3572), 20, 'Much Assembly Required', 0], [new Date(1665433815626.693), 21, 'The Four Season Theorem', 1], [new Date(1665438130879.2751), 22, 'Emending the Countryside', 1], [new Date(1665438447223.5461), 23, 'Stained Glass', 0], [new Date(1666058962976.1902), 24, 'Unreal Estate', 0], [new Date(1666059013680.25), 25, 'Star Accommodations', 0], ], }, { name: "Impossibly Organized Hiker", type: "line", itemStyle: { normal: { color: "hsl(249, 88%, 58%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245361156.741), 1, 'Field Notes', 0], [new Date(1665246774913.248), 2, 'Round Trip', 0], [new Date(1665251617550.802), 3, 'Entering Competitions', 0], [new Date(1665253686031.584), 4, 'A Very Large Integer', 0], [new Date(1665257214848.232), 5, 'En Route', 0], [new Date(1665258768655.8782), 6, 'Faded Away', 1], [new Date(1665262580717.993), 7, 'Squared Away', 0], [new Date(1665270150905.7888), 8, 'Ice Fishing', 0], [new Date(1665287760915.8462), 9, 'Too Hot!', 0], [new Date(1665341035829.853), 10, 'Garden Cleanup', 0], [new Date(1665344574896.846), 11, 'On Thin Ice', 0], [new Date(1665347822474.8271), 12, 'Summer Camp', 0], [new Date(1665360918788.227), 13, 'Much Assembly Required', 0], [new Date(1665378695458.503), 14, 'Puzzle Boxes', 0], [new Date(1665384755833.8472), 15, 'Unreal Estate', 0], [new Date(1665390796086.8152), 16, 'Cryptoornithology', 0], [new Date(1665426164936.644), 17, 'Star Accommodations', 0], [new Date(1665433512680.439), 18, 'Artistic Interference', 0], [new Date(1665438769355.715), 19, 'Stained Glass', 0], [new Date(1665439696451.865), 20, 'The Four Season Theorem', 1], [new Date(1665445452647.394), 21, 'Emending the Countryside', 1], ], }, { name: "MystikFact", type: "line", itemStyle: { normal: { color: "hsl(211, 96%, 53%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246684322.345), 1, 'Cobble', 0], [new Date(1665247269591.9731), 2, 'Field Notes', 0], [new Date(1665249706945.436), 3, 'En Route', 0], [new Date(1665252029488.473), 4, 'A Very Large Integer', 0], [new Date(1665253358601.031), 5, 'Round Trip', 0], [new Date(1665258978584.077), 6, 'Faded Away', 1], [new Date(1665269855086.583), 7, 'Ice Fishing', 0], [new Date(1665274147997.417), 8, 'Squared Away', 0], [new Date(1665277922621.4622), 9, 'Journal Overtakeages', 0], [new Date(1665284077569.684), 10, 'Garden Cleanup', 0], [new Date(1665289093614.6902), 11, 'Back to School', 0], [new Date(1665291352312.458), 12, 'On Thin Ice', 0], [new Date(1665327195086.488), 13, 'Summer Camp', 0], [new Date(1665338025187.863), 14, 'Puzzle Boxes', 0], [new Date(1665343050775.359), 15, 'Unreal Estate', 0], [new Date(1665345185953.519), 16, 'Cryptoornithology', 0], [new Date(1665356442866.907), 17, 'Too Hot!', 0], [new Date(1665370100925.1658), 18, 'Butterfly Catching', 0], [new Date(1665387281398.623), 19, 'Much Assembly Required', 0], [new Date(1665401113788.379), 20, 'The Four Season Theorem', 1], [new Date(1665449724213.0808), 21, 'Emending the Countryside', 1], ], }, { name: "17th Switchback", type: "line", itemStyle: { normal: { color: "hsl(185, 94%, 41%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245705822.802), 1, 'Field Notes', 0], [new Date(1665249170807.008), 2, 'Cobble', 0], [new Date(1665254661033.578), 3, 'En Route', 0], [new Date(1665256829147.79), 4, 'A Very Large Integer', 0], [new Date(1665261460577.286), 5, 'Rock Climbing', 0], [new Date(1665268207720.71), 6, 'Round Trip', 0], [new Date(1665268553899.597), 7, 'Faded Away', 1], [new Date(1665292004903.786), 8, 'Squared Away', 0], [new Date(1665299490481.4119), 9, 'Garden Cleanup', 0], [new Date(1665325438559.603), 10, 'Stained Glass', 0], [new Date(1665333950826.913), 11, 'Ice Fishing', 0], [new Date(1665354605438.583), 12, 'On Thin Ice', 0], [new Date(1665364135374.106), 13, 'Summer Camp', 0], [new Date(1665419248360.291), 14, 'Journal Overtakeages', 0], [new Date(1665423388877.9832), 15, 'Much Assembly Required', 0], [new Date(1665433959987.148), 16, 'Puzzle Boxes', 0], [new Date(1665436595732.506), 17, 'Artistic Interference', 0], [new Date(1665439765517.526), 18, 'Butterfly Catching', 0], [new Date(1665444426900.4321), 19, 'Cryptoornithology', 0], [new Date(1665448807079.347), 20, 'The Four Season Theorem', 1], [new Date(1665449032876.478), 21, 'Too Hot!', 0], [new Date(1665449127245.08), 22, 'Back to School', 0], [new Date(1665454319227.844), 23, 'Emending the Countryside', 1], [new Date(1665456796750.873), 24, 'Unreal Estate', 0], [new Date(1665520764386.462), 25, 'Entering Competitions', 0], [new Date(1665528558157.736), 26, 'Star Accommodations', 0], ], }, { name: "Nature Enjoyment Season", type: "line", itemStyle: { normal: { color: "hsl(195, 94%, 42%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245363419.912), 1, 'Field Notes', 0], [new Date(1665246239421.3318), 2, 'Cobble', 0], [new Date(1665248886061.018), 3, 'Round Trip', 0], [new Date(1665250893230.031), 4, 'A Very Large Integer', 0], [new Date(1665253808387.037), 5, 'Entering Competitions', 0], [new Date(1665256188502.2632), 6, 'Faded Away', 1], [new Date(1665261919340.862), 7, 'Ice Fishing', 0], [new Date(1665272118770.968), 8, 'Squared Away', 0], [new Date(1665276486883.961), 9, 'Too Hot!', 0], [new Date(1665347992720.277), 10, 'Garden Cleanup', 0], [new Date(1665350712549.352), 11, 'On Thin Ice', 0], [new Date(1665353987351.623), 12, 'Summer Camp', 0], [new Date(1665374918755.0261), 13, 'Butterfly Catching', 0], [new Date(1665383869524.992), 14, 'Puzzle Boxes', 0], [new Date(1665390467292.365), 15, 'Cryptoornithology', 0], [new Date(1665397608391.684), 16, 'Much Assembly Required', 0], [new Date(1665421164096.7158), 17, 'Artistic Interference', 0], [new Date(1665443308709.7312), 18, 'Unreal Estate', 0], [new Date(1665455000050.644), 19, 'Back to School', 0], [new Date(1665455400570.049), 20, 'The Four Season Theorem', 1], [new Date(1665457461274.524), 21, 'Emending the Countryside', 1], ], }, { name: "Yardinality", type: "line", itemStyle: { normal: { color: "hsl(276, 96%, 47%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246530104.368), 1, 'Cobble', 0], [new Date(1665246741148.3008), 2, 'Field Notes', 0], [new Date(1665254213442.053), 3, 'Round Trip', 0], [new Date(1665255249071.5798), 4, 'En Route', 0], [new Date(1665258086424.86), 5, 'A Very Large Integer', 0], [new Date(1665265617535.964), 6, 'Faded Away', 1], [new Date(1665286805004.584), 7, 'Ice Fishing', 0], [new Date(1665294102156.806), 8, 'Garden Cleanup', 0], [new Date(1665296365023.054), 9, 'Rock Climbing', 0], [new Date(1665296695336.739), 10, 'Too Hot!', 0], [new Date(1665296947777.529), 11, 'Entering Competitions', 0], [new Date(1665350712896.061), 12, 'Journal Overtakeages', 0], [new Date(1665360102707.822), 13, 'On Thin Ice', 0], [new Date(1665365546895.087), 14, 'Summer Camp', 0], [new Date(1665371261779.309), 15, 'Butterfly Catching', 0], [new Date(1665383264809.855), 16, 'Puzzle Boxes', 0], [new Date(1665386721288.3452), 17, 'Cryptoornithology', 0], [new Date(1665393430393.464), 18, 'Unreal Estate', 0], [new Date(1665403752996.3281), 19, 'Star Accommodations', 0], [new Date(1665431052139.7942), 20, 'Back to School', 0], [new Date(1665458419107.763), 21, 'Much Assembly Required', 0], [new Date(1665459812735.617), 22, 'Stained Glass', 0], [new Date(1665460225249.089), 23, 'Artistic Interference', 0], [new Date(1665460304564.168), 24, 'The Four Season Theorem', 1], [new Date(1665463569163.802), 25, 'Squared Away', 0], [new Date(1665465173169.239), 26, 'Emending the Countryside', 1], ], }, { name: "Given the Outdoor Setting It Is Unlikely to Be Projectyl", type: "line", itemStyle: { normal: { color: "hsl(200, 84%, 58%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246362369.6548), 1, 'Field Notes', 0], [new Date(1665253598027.049), 2, 'Round Trip', 0], [new Date(1665258854018.7969), 3, 'En Route', 0], [new Date(1665261616563.2788), 4, 'A Very Large Integer', 0], [new Date(1665270519320.7942), 5, 'Rock Climbing', 0], [new Date(1665272634480.725), 6, 'Faded Away', 1], [new Date(1665272841457.8372), 7, 'Cobble', 0], [new Date(1665274831221.791), 8, 'Journal Overtakeages', 0], [new Date(1665283818880.073), 9, 'Squared Away', 0], [new Date(1665287145844.636), 10, 'Too Hot!', 0], [new Date(1665297026915.859), 11, 'Stained Glass', 0], [new Date(1665300542383.852), 12, 'On Thin Ice', 0], [new Date(1665313465418.031), 13, 'Ice Fishing', 0], [new Date(1665389528298.934), 14, 'Butterfly Catching', 0], [new Date(1665396337822.491), 15, 'Puzzle Boxes', 0], [new Date(1665399843402.955), 16, 'Cryptoornithology', 0], [new Date(1665430632559.657), 17, 'Unreal Estate', 0], [new Date(1665436069639.41), 18, 'Artistic Interference', 0], [new Date(1665454450816.041), 19, 'Star Accommodations', 0], [new Date(1665463979386.604), 20, 'Back to School', 0], [new Date(1665467052517.804), 21, 'The Four Season Theorem', 1], [new Date(1665470957685.761), 22, 'Emending the Countryside', 1], ], }, { name: "Mobius Strippers", type: "line", itemStyle: { normal: { color: "hsl(261, 99%, 42%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245933354.63), 1, 'Field Notes', 0], [new Date(1665249876945.931), 2, 'Cobble', 0], [new Date(1665252340022.6729), 3, 'Entering Competitions', 0], [new Date(1665254636103.135), 4, 'A Very Large Integer', 0], [new Date(1665257868060.966), 5, 'Round Trip', 0], [new Date(1665260008319.4421), 6, 'Faded Away', 1], [new Date(1665272830073.107), 7, 'Squared Away', 0], [new Date(1665278368618.702), 8, 'Journal Overtakeages', 0], [new Date(1665281536344.389), 9, 'Too Hot!', 0], [new Date(1665343381456.604), 10, 'Ice Fishing', 0], [new Date(1665347744806.288), 11, 'On Thin Ice', 0], [new Date(1665371225047.3708), 12, 'Much Assembly Required', 0], [new Date(1665377441702.462), 13, 'Summer Camp', 0], [new Date(1665437010899.28), 14, 'Puzzle Boxes', 0], [new Date(1665445678777.206), 15, 'Cryptoornithology', 0], [new Date(1665448445935.251), 16, 'Artistic Interference', 0], [new Date(1665453466827.407), 17, 'Butterfly Catching', 0], [new Date(1665458333363.442), 18, 'Stained Glass', 0], [new Date(1665482849548.99), 19, 'The Four Season Theorem', 1], [new Date(1665491312472.399), 20, 'Emending the Countryside', 1], [new Date(1665517579772.4458), 21, 'En Route', 0], ], }, { name: "ghostbloods", type: "line", itemStyle: { normal: { color: "hsl(128, 80%, 58%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665247460126.279), 1, 'Field Notes', 0], [new Date(1665251198428.303), 2, 'Cobble', 0], [new Date(1665257586738.7441), 3, 'Round Trip', 0], [new Date(1665258127917.868), 4, 'En Route', 0], [new Date(1665260224988.542), 5, 'A Very Large Integer', 0], [new Date(1665266736033.191), 6, 'Entering Competitions', 0], [new Date(1665267038295.367), 7, 'Faded Away', 1], [new Date(1665277962710.819), 8, 'Ice Fishing', 0], [new Date(1665288514093.851), 9, 'Squared Away', 0], [new Date(1665294125651.196), 10, 'Rock Climbing', 0], [new Date(1665327214675.962), 11, 'Garden Cleanup', 0], [new Date(1665338777091.014), 12, 'Journal Overtakeages', 0], [new Date(1665344724432.7031), 13, 'On Thin Ice', 0], [new Date(1665352603217.581), 14, 'Summer Camp', 0], [new Date(1665360554895.01), 15, 'Butterfly Catching', 0], [new Date(1665376379763.795), 16, 'Puzzle Boxes', 0], [new Date(1665384880652.3672), 17, 'Cryptoornithology', 0], [new Date(1665387415818.013), 18, 'Artistic Interference', 0], [new Date(1665452955208.977), 19, 'Unreal Estate', 0], [new Date(1665457318403.5461), 20, 'Much Assembly Required', 0], [new Date(1665457992306.289), 21, 'Stained Glass', 0], [new Date(1665460213453.1191), 22, 'The Four Season Theorem', 1], [new Date(1665506518069.594), 23, 'Emending the Countryside', 1], ], }, { name: "Eternity Challenges of r/antimatterdimensions", type: "line", itemStyle: { normal: { color: "hsl(266, 91%, 44%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246314922.102), 1, 'Field Notes', 0], [new Date(1665248253363.401), 2, 'Cobble', 0], [new Date(1665255464682.447), 3, 'Round Trip', 0], [new Date(1665257768251.979), 4, 'A Very Large Integer', 0], [new Date(1665262271173.5088), 5, 'Entering Competitions', 0], [new Date(1665264528904.577), 6, 'Faded Away', 1], [new Date(1665280623051.824), 7, 'Squared Away', 0], [new Date(1665290608028.1228), 8, 'En Route', 0], [new Date(1665290755868.264), 9, 'Rock Climbing', 0], [new Date(1665321319434.925), 10, 'Garden Cleanup', 0], [new Date(1665327558761.056), 11, 'Too Hot!', 0], [new Date(1665335812296.0242), 12, 'Ice Fishing', 0], [new Date(1665340733943.462), 13, 'On Thin Ice', 0], [new Date(1665345349853.466), 14, 'Summer Camp', 0], [new Date(1665376952136.043), 15, 'Butterfly Catching', 0], [new Date(1665383065955.351), 16, 'Puzzle Boxes', 0], [new Date(1665414673026.0342), 17, 'Cryptoornithology', 0], [new Date(1665421861046.578), 18, 'Unreal Estate', 0], [new Date(1665425129666.44), 19, 'Much Assembly Required', 0], [new Date(1665432067483.709), 20, 'Journal Overtakeages', 0], [new Date(1665505198654.378), 21, 'Back to School', 0], [new Date(1665505762742.5908), 22, 'The Four Season Theorem', 1], [new Date(1665511312525.617), 23, 'Emending the Countryside', 1], ], }, { name: "MiaoMiaoMiao", type: "line", itemStyle: { normal: { color: "hsl(158, 85%, 47%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665248510164.273), 1, 'Cobble', 0], [new Date(1665277366287.167), 2, 'Field Notes', 0], [new Date(1665285633824.9011), 3, 'En Route', 0], [new Date(1665296807127.229), 4, 'Round Trip', 0], [new Date(1665301791513.727), 5, 'A Very Large Integer', 0], [new Date(1665305010833.6921), 6, 'Faded Away', 1], [new Date(1665328520770.152), 7, 'Ice Fishing', 0], [new Date(1665328758247.7751), 8, 'Entering Competitions', 0], [new Date(1665365189473.381), 9, 'Garden Cleanup', 0], [new Date(1665375430923.565), 10, 'Too Hot!', 0], [new Date(1665419897229.013), 11, 'Journal Overtakeages', 0], [new Date(1665423625475.115), 12, 'On Thin Ice', 0], [new Date(1665427892168.966), 13, 'Summer Camp', 0], [new Date(1665439895625.5479), 14, 'Butterfly Catching', 0], [new Date(1665452470975.374), 15, 'Puzzle Boxes', 0], [new Date(1665460132629.054), 16, 'Cryptoornithology', 0], [new Date(1665465903851.2148), 17, 'Artistic Interference', 0], [new Date(1665469858357.013), 18, 'Unreal Estate', 0], [new Date(1665479948351.95), 19, 'Squared Away', 0], [new Date(1665508460549.0972), 20, 'Much Assembly Required', 0], [new Date(1665508552532.1091), 21, 'The Four Season Theorem', 1], [new Date(1665515921429.9), 22, 'Emending the Countryside', 1], [new Date(1665556666136.2761), 23, 'Rock Climbing', 0], [new Date(1665584659513.341), 24, 'Star Accommodations', 0], [new Date(1665590061582.896), 25, 'Back to School', 0], [new Date(1665608928534.531), 26, 'Stained Glass', 0], ], }, { name: "🟥🟧🟨🟩🟦🟪🟫⬛⬜", type: "line", itemStyle: { normal: { color: "hsl(205, 89%, 56%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246102020.9219), 1, 'Cobble', 0], [new Date(1665246919772.024), 2, 'Field Notes', 0], [new Date(1665250403265.1628), 3, 'En Route', 0], [new Date(1665255733575.176), 4, 'A Very Large Integer', 0], [new Date(1665259346585.106), 5, 'Rock Climbing', 0], [new Date(1665265517582.8782), 6, 'Faded Away', 1], [new Date(1665268503761.504), 7, 'Squared Away', 0], [new Date(1665280954244.11), 8, 'Ice Fishing', 0], [new Date(1665288967478.909), 9, 'Garden Cleanup', 0], [new Date(1665297220625.778), 10, 'Journal Overtakeages', 0], [new Date(1665300596210.362), 11, 'On Thin Ice', 0], [new Date(1665336204201.67), 12, 'Stained Glass', 0], [new Date(1665377797524.544), 13, 'Summer Camp', 0], [new Date(1665433086086.982), 14, 'Puzzle Boxes', 0], [new Date(1665436550402.853), 15, 'Cryptoornithology', 0], [new Date(1665465161925.2888), 16, 'Artistic Interference', 0], [new Date(1665469138673.2212), 17, 'Unreal Estate', 0], [new Date(1665471885857.1812), 18, 'Butterfly Catching', 0], [new Date(1665513877994.981), 19, 'Too Hot!', 0], [new Date(1665517758086.893), 20, 'The Four Season Theorem', 1], [new Date(1665521654433.002), 21, 'Emending the Countryside', 1], [new Date(1665522904156.27), 22, 'Much Assembly Required', 0], ], }, { name: "cam[pi]ng", type: "line", itemStyle: { normal: { color: "hsl(41, 89%, 53%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665248841039.9758), 1, 'Cobble', 0], [new Date(1665251206880.2432), 2, 'Round Trip', 0], [new Date(1665254180342.471), 3, 'Field Notes', 0], [new Date(1665258715617.034), 4, 'En Route', 0], [new Date(1665259363433.321), 5, 'A Very Large Integer', 0], [new Date(1665263181125.429), 6, 'Faded Away', 1], [new Date(1665275273956.433), 7, 'Squared Away', 0], [new Date(1665287290753.385), 8, 'Journal Overtakeages', 0], [new Date(1665290295894.1199), 9, 'Too Hot!', 0], [new Date(1665291759344.742), 10, 'Garden Cleanup', 0], [new Date(1665294789470.9958), 11, 'On Thin Ice', 0], [new Date(1665299289954.78), 12, 'Summer Camp', 0], [new Date(1665335686631.582), 13, 'Ice Fishing', 0], [new Date(1665365820763.63), 14, 'Butterfly Catching', 0], [new Date(1665373170465.6848), 15, 'Cryptoornithology', 0], [new Date(1665379081137.6199), 16, 'Artistic Interference', 0], [new Date(1665427682991.837), 17, 'Much Assembly Required', 0], [new Date(1665435574679.7532), 18, 'Puzzle Boxes', 0], [new Date(1665454484387.1318), 19, 'Stained Glass', 0], [new Date(1665502758919.7048), 20, 'Unreal Estate', 0], [new Date(1665504925533.0352), 21, 'The Four Season Theorem', 1], [new Date(1665505761412.3262), 22, 'Back to School', 0], [new Date(1665522459853.2988), 23, 'Emending the Countryside', 1], ], }, { name: "ECosysTEM Adventure", type: "line", itemStyle: { normal: { color: "hsl(336, 87%, 56%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245537495.382), 1, 'Field Notes', 0], [new Date(1665246746087.034), 2, 'Cobble', 0], [new Date(1665248792377.857), 3, 'Round Trip', 0], [new Date(1665250811937.792), 4, 'A Very Large Integer', 0], [new Date(1665252550974.873), 5, 'Entering Competitions', 0], [new Date(1665254439172.3052), 6, 'Faded Away', 1], [new Date(1665259213826.655), 7, 'Ice Fishing', 0], [new Date(1665260143926.07), 8, 'Squared Away', 0], [new Date(1665268113404.277), 9, 'Garden Cleanup', 0], [new Date(1665302984647.5479), 10, 'En Route', 0], [new Date(1665352094009.9312), 11, 'Journal Overtakeages', 0], [new Date(1665355393544.291), 12, 'On Thin Ice', 0], [new Date(1665358122421.988), 13, 'Summer Camp', 0], [new Date(1665359679314.176), 14, 'Rock Climbing', 0], [new Date(1665367360771.819), 15, 'Butterfly Catching', 0], [new Date(1665373683762.961), 16, 'Puzzle Boxes', 0], [new Date(1665378062799.571), 17, 'Cryptoornithology', 0], [new Date(1665381955640.712), 18, 'Artistic Interference', 0], [new Date(1665397835390.497), 19, 'Unreal Estate', 0], [new Date(1665465835541.553), 20, 'Star Accommodations', 0], [new Date(1665473806677.024), 21, 'Much Assembly Required', 0], [new Date(1665474201614.959), 22, 'The Four Season Theorem', 1], [new Date(1665527611993.195), 23, 'Emending the Countryside', 1], [new Date(1665534420649.591), 24, 'Back to School', 0], [new Date(1665557818777.318), 25, 'Too Hot!', 0], [new Date(1665557963893.3352), 26, 'Stained Glass', 0], ], }, { name: "pluru", type: "line", itemStyle: { normal: { color: "hsl(148, 82%, 50%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245819765.5051), 1, 'Field Notes', 0], [new Date(1665249853234.123), 2, 'Cobble', 0], [new Date(1665262103071.158), 3, 'Round Trip', 0], [new Date(1665264980771.446), 4, 'A Very Large Integer', 0], [new Date(1665272857460.757), 5, 'Rock Climbing', 0], [new Date(1665275140175.762), 6, 'Faded Away', 1], [new Date(1665289685045.852), 7, 'Ice Fishing', 0], [new Date(1665294435575.744), 8, 'Garden Cleanup', 0], [new Date(1665299146486.0251), 9, 'Too Hot!', 0], [new Date(1665349947480.788), 10, 'Journal Overtakeages', 0], [new Date(1665360112479.178), 11, 'Entering Competitions', 0], [new Date(1665361359439.496), 12, 'En Route', 0], [new Date(1665374280748.312), 13, 'Back to School', 0], [new Date(1665423660055.1519), 14, 'Summer Camp', 0], [new Date(1665446166877.9968), 15, 'On Thin Ice', 0], [new Date(1665448034374.5798), 16, 'Butterfly Catching', 0], [new Date(1665466932205.54), 17, 'Puzzle Boxes', 0], [new Date(1665523522095.211), 18, 'Cryptoornithology', 0], [new Date(1665527708844.834), 19, 'Squared Away', 0], [new Date(1665528902102.7378), 20, 'Artistic Interference', 0], [new Date(1665533074942.917), 21, 'The Four Season Theorem', 1], [new Date(1665539144545.989), 22, 'Emending the Countryside', 1], ], }, { name: "Enormous Chamber 1", type: "line", itemStyle: { normal: { color: "hsl(59, 92%, 44%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665267311977.201), 1, 'Field Notes', 0], [new Date(1665269442907.813), 2, 'Cobble', 0], [new Date(1665287398161.864), 3, 'Round Trip', 0], [new Date(1665291183891.656), 4, 'A Very Large Integer', 0], [new Date(1665295322642.982), 5, 'Entering Competitions', 0], [new Date(1665346307664.9858), 6, 'Faded Away', 1], [new Date(1665346758112.9739), 7, 'Rock Climbing', 0], [new Date(1665382207785.6318), 8, 'Squared Away', 0], [new Date(1665442137506.698), 9, 'Journal Overtakeages', 0], [new Date(1665449190831.754), 10, 'Too Hot!', 0], [new Date(1665477999759.117), 11, 'Garden Cleanup', 0], [new Date(1665480241900.7512), 12, 'On Thin Ice', 0], [new Date(1665482291552.281), 13, 'Summer Camp', 0], [new Date(1665483311402.029), 14, 'Ice Fishing', 0], [new Date(1665537469720.726), 15, 'Back to School', 0], [new Date(1665540685882.5632), 16, 'Unreal Estate', 0], [new Date(1665542351660.5989), 17, 'Stained Glass', 0], [new Date(1665547201741.451), 18, 'Puzzle Boxes', 0], [new Date(1665555730549.76), 19, 'Much Assembly Required', 0], [new Date(1665558444122.73), 20, 'The Four Season Theorem', 1], [new Date(1665563593664.753), 21, 'Emending the Countryside', 1], [new Date(1665565979226.8628), 22, 'En Route', 0], [new Date(1665637482362.192), 23, 'Butterfly Catching', 0], [new Date(1665643070979.644), 24, 'Cryptoornithology', 0], [new Date(1665650195437.72), 25, 'Artistic Interference', 0], [new Date(1665955926795.651), 26, 'Star Accommodations', 0], ], }, { name: "Teddy Set Go", type: "line", itemStyle: { normal: { color: "hsl(214, 91%, 59%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665247561542.603), 1, 'Field Notes', 0], [new Date(1665248474378.47), 2, 'Cobble', 0], [new Date(1665250541573.131), 3, 'Round Trip', 0], [new Date(1665259921079.309), 4, 'A Very Large Integer', 0], [new Date(1665260163300.125), 5, 'En Route', 0], [new Date(1665277217339.437), 6, 'Entering Competitions', 0], [new Date(1665281140433.1702), 7, 'Faded Away', 1], [new Date(1665291621424.953), 8, 'Ice Fishing', 0], [new Date(1665304554751.409), 9, 'Squared Away', 0], [new Date(1665337675622.406), 10, 'Garden Cleanup', 0], [new Date(1665346617452.504), 11, 'Journal Overtakeages', 0], [new Date(1665377197121.929), 12, 'Much Assembly Required', 0], [new Date(1665382422908.855), 13, 'Back to School', 0], [new Date(1665390996856.51), 14, 'Butterfly Catching', 0], [new Date(1665448305196.311), 15, 'Too Hot!', 0], [new Date(1665470748160.6392), 16, 'Puzzle Boxes', 0], [new Date(1665521847004.926), 17, 'Cryptoornithology', 0], [new Date(1665528576931.854), 18, 'Artistic Interference', 0], [new Date(1665545815536.9539), 19, 'Unreal Estate', 0], [new Date(1665560028564.122), 20, 'Summer Camp', 0], [new Date(1665563100686.958), 21, 'The Four Season Theorem', 1], [new Date(1665565717494.643), 22, 'On Thin Ice', 0], [new Date(1665568655259.1528), 23, 'Emending the Countryside', 1], ], }, { name: "The Blob Wizards 🔮🧙", type: "line", itemStyle: { normal: { color: "hsl(279, 81%, 47%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665245488763.402), 1, 'Field Notes', 0], [new Date(1665253976508.177), 2, 'Round Trip', 0], [new Date(1665256381916.024), 3, 'En Route', 0], [new Date(1665258369821.027), 4, 'A Very Large Integer', 0], [new Date(1665259490126.4639), 5, 'Rock Climbing', 0], [new Date(1665262341708.3489), 6, 'Cobble', 0], [new Date(1665265325571.269), 7, 'Faded Away', 1], [new Date(1665311396344.775), 8, 'Squared Away', 0], [new Date(1665318009026.795), 9, 'Garden Cleanup', 0], [new Date(1665321590006.758), 10, 'Too Hot!', 0], [new Date(1665333993673.265), 11, 'Ice Fishing', 0], [new Date(1665339201081.476), 12, 'On Thin Ice', 0], [new Date(1665401266648.792), 13, 'Much Assembly Required', 0], [new Date(1665412528140.473), 14, 'Back to School', 0], [new Date(1665425462055.998), 15, 'Journal Overtakeages', 0], [new Date(1665433927612.304), 16, 'Cryptoornithology', 0], [new Date(1665441774466.517), 17, 'Puzzle Boxes', 0], [new Date(1665505210772.5361), 18, 'Butterfly Catching', 0], [new Date(1665512551895.484), 19, 'Summer Camp', 0], [new Date(1665525648278.7458), 20, 'Unreal Estate', 0], [new Date(1665530244634.897), 21, 'The Four Season Theorem', 1], [new Date(1665575993622.232), 22, 'Emending the Countryside', 1], ], }, { name: "PonX", type: "line", itemStyle: { normal: { color: "hsl(89, 96%, 44%)", } }, symbolSize: function(data) { return data[3] ? 10 : 4; }, data: [ [new Date(1665246165574.927), 1, 'Field Notes', 0], [new Date(1665248681810.962), 2, 'Cobble', 0], [new Date(1665254877883.6328), 3, 'Entering Competitions', 0], [new Date(1665257238444.346), 4, 'A Very Large Integer', 0], [new Date(1665260998765.1938), 5, 'Round Trip', 0], [new Date(1665264875318.913), 6, 'Faded Away', 1], [new Date(1665291247152.4438), 7, 'Ice Fishing', 0], [new Date(1665325417784.73), 8, 'Journal Overtakeages', 0], [new Date(1665329120147.865), 9, 'Too Hot!', 0], [new Date(1665332939690.0789), 10, 'Squared Away', 0], [new Date(1665342698712.049), 11, 'On Thin Ice', 0], [new Date(1665347902099.8052), 12, 'Summer Camp', 0], [new Date(1665386417141.651), 13, 'Stained Glass', 0], [new Date(1665430309169.964), 14, 'Puzzle Boxes', 0], [new Date(1665439500871.988), 15, 'Cryptoornithology', 0], [new Date(1665459305652.555), 16, 'Garden Cleanup', 0], [new Date(1665469290750.969), 17, 'Artistic Interference', 0], [new Date(1665482991283.4858), 18, 'Unreal Estate', 0], [new Date(1665552909845.019), 19, 'Star Accommodations', 0], [new Date(1665564148990.087), 20, 'Much Assembly Required', 0], [new Date(1665564634076.061), 21, 'The Four Season Theorem', 1], [new Date(1665583751118.9019), 22, 'Emending the Countryside', 1], [new Date(1665610466236.1528), 23, 'En Route', 0], [new Date(1665778342769.5488), 24, 'Butterfly Catching', 0], [new Date(1665902374630.539), 25, 'Rock Climbing', 0], [new Date(1665907383360.426), 26, 'Back to School', 0], ], },
+	],
+});
+</script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

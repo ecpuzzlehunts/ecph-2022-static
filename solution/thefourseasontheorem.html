@@ -1,0 +1,265 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: The Four Season Theorem - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/thefourseasontheorem.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: The Four Season Theorem
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">SALT</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee, empyreu, and Enia
+
+    </h2>
+
+    
+    <p><strong><em>This solution page contains the answers to all of the feeders in the Seasons round, and the author's notes discuss other aspects of several of them.</em></strong></p>
+<hr />
+<p>This metapuzzle uses all 16 answers from the Seasons round.</p>
+<p>From looking up "four...theorem" or recognizing it, we must realize that the rules of the <a href=https://en.wikipedia.org/wiki/Four_color_theorem>Four Colour Theorem</a> apply here - the grid is to be colored such that no two adjacent regions have the same colour, and it is possible to do this with four colours.
+Still, the puzzle is far from uniquely solvable in this state, and we will need the answers. We can observe that there are four puzzles from each season, and the answer lengths can be matched with the region sizes, which means that we will need to fill in four regions with each season's colours. We can use the answer lengths to further determine what options exist for each region. (e.g. an answer of length 10 will go in one of the two size 10 regions. Likewise, if we have both length 10 answers, we can narrow down the options for the size 10 regions to the answers' two seasons). Additionally, in order for the solution to be unique, we may need to assume that there are no two answers from the same season that have the same length. Otherwise, it will be ambiguous which answer is assigned to which region. </p>
+<p>With this length constraint, it is possible to find a unique solution even with a few answers missing, but without it, there's still a unique solution for certain subsets that contain the vast majority of answers. By using the answer lengths, combined with which season each answer came from, we should find the one way to colour (season?) the grid. After solving the logic puzzle, the answers can be entered into their respective regions in reading order:</p>
+<p><img src="../static/puzzle_resources/thefourseasontheorem/fst_solution_01_raiy.d340686132b1.png"></p>
+<p>After filling in the answers, we can proceed to stare at the result!</p>
+<p>With the flavour text mentioning the season fragments, and the overall season theme of this round, we should try to look for seasons in the resulting grid.
+And indeed, the seasons can be found in the grid, wordsearch-style, though most of them twist around. The easiest one to notice is probably "WINTER" which reads in a straight line in row 9.</p>
+<p>After carefully searching, we should be able to find 2 occurrences of each season, with each pair of occurrences of the same season being adjacent:</p>
+<p><img src="../static/puzzle_resources/thefourseasontheorem/fst_solution_02_raiy.e3f0d024a6cb.png"></p>
+<p>The newly-found seasons take the shapes of letters. Reading these, in the seasons' order, they spell out the final answer, the seasoning <strong>SALT</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p><em>(written by chimpaznee)</em></p>
+<p>This was the first puzzle written for this hunt.</p>
+<p>The earliest version of this meta has been written all the way back in May 2021, while we were brainstorming themes for a puzzle hunt. The Four Seasons theme was suggested early, and we all liked it. This meta was originally intended for a different project than Exploring the Countryside, which was eventually abandoned. On February 3, 2022, we decided to re-use this meta in some form for a new puzzle hunt, and thus this hunt was born.</p>
+<p><strong>On the construction of this meta:</strong></p>
+<p>The grid and list of answers have seen many alterations. The earliest version had excellent answers such as "PLACE UNDER MAGMA" and "WITHOUT OXYGEN", but after testing it, we managed to alter it to include a more accepable list of answers, and then started writing puzzles.</p>
+<p>The second major alteration came when we decided to re-appropriate this meta for Exploring the Countryside. In February 2022, while testing it out, we noticed a couple of letter shapes that were not ideal, as well as a couple of red herrings. We then made minor changes to the grid and finalized the list of answers.
+We did decide to also give authors a bit of liberty when choosing an answer, with only the letters used by the seasons being set. We'd also reject answers that created red herrings. For example, we originally wanted to use the answer INTERACTIVE ART in place of INDECENT POETRY, but that resulted in an alternative, and undesirable, way to find "WINTER" on the grid.</p>
+<p>However, some ambiguities have still slipped through. For example, there was still an alternative path for the second "winter", and an ambiguity for the second "autumn", which haven't been checked carefully enough.
+Fortunately, we managed to get rid of these by changing the shape of the grid, and only one answer has been changed - the answer for Star Accommodations, which luckily was among the easiest puzzles to apply last-minute changes to. (this was at the point where most puzzles have already been written.)</p>
+<p><strong>On the construction of the feeders:</strong></p>
+<p>We have set ourselves an additional construction constraint: Since knowing the answer length alone is almost as helpful as knowing the actual answers, we decided that most of the answer lengths in the Seasons round should not be immediately apparent, by using cluephrases or other things that are not one-to-one extractions. 
+Most of the puzzles in the Seasons round ended up following this constraint in some form (or trying), with the sole exception of Unreal Estate.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

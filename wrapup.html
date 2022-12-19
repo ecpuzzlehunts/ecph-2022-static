@@ -1,0 +1,935 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Wrap-Up - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="static/js/tray.ac18af883297.js"></script>
+    <script src="static/js/notify.7898a6be1e40.js"></script>
+    <script src="static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+        <style>
+    .background {
+            background-image: url(static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+    
+<aside id="slow-scroll">
+
+</aside>
+
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="index.html">
+                            Home
+                        </a>
+                        <a href="rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a href="puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="teams.html">
+                            Teams
+                        </a>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="wrapup/finishers.html" class="btn">Finishers</a>
+<a href="bigboard.html" class="btn">Bigboard</a>
+<a href="biggraph.html" class="btn">Biggraph</a>
+<a href="stats.html" class="btn">Stats</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+    aside {
+        display: none;
+    }
+
+    @media screen and (min-width: calc(961px * 1.3)) {
+        aside {
+            display: block;
+            position: fixed;
+            top: 120px;
+            width: calc((100% - 961px)/2 + 25px);
+            width: calc((100vw - 961px)/2 + 25px);
+            left: -35px;
+        }
+
+        aside div {
+            color: #ae4160;
+            cursor: pointer;
+            overflow-wrap: break-word;
+        }
+
+        aside :hover {
+            text-decoration: underline;
+        }
+
+        aside .highlight {
+            font-weight: bold;
+        }
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!--
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-moment/1.0.0/chartjs-adapter-moment.min.js"></script>
+-->
+<h1>Wrap-Up</h1>
+
+<div id="wrapup">
+    <h3>Overview</h3>
+    <p>Thank you for everyone who has participated in our hunt! Congratulations to the 83 teams that have solved
+        Emending the Countryside and finished the hunt. Special congratulations to <b>አ ETHIOPIC CAMPFIRE</b> for being
+        the first team to Emend the Countryside, doing so in just 10 hours and 52 minutes.</p>
+
+    <p>Following them, the teams in the next three places are <b>Eastcampus Cruft of r/puzzlers_galactic</b>,
+        <b>Eponymous Clues of r/PuzzlersGalactic</b> and <b>Ephemeris Calculators of the Coraline Schism</b>, all
+        finishing within the first day of the hunt.
+    </p>
+
+    <p>Out of the 384 teams registered:
+    <ul>
+        <li>308 have solved at least one puzzle
+        <li>181 have solved Faded Away and moved to the Seasons round
+        <li>23 have solved all 26 puzzles
+    </ul>
+    </p>
+
+    <p>We would also like to give special shoutouts to these teams:
+    <ul>
+        <li><b>Eastcampus Cruft of r/puzzlers_galactic</b> for the first solve of the hunt, solving Field Notes in just
+            8 minutes and 51 seconds.
+        <li><b>አ ETHIOPIC CAMPFIRE</b> for being the first team to solve Faded Away and move to the Seasons round, doing
+            so just 1 hour and 50 minutes after the hunt start.
+        <li><b>Weirdchamp United 2 (WUTs)</b> for being the last team to finish, just 1 minute before the hunt ended.
+    </ul>
+    </p>
+
+    <p><b><i>The rest of the wrap-up contains spoilers for various puzzles.</i></b></p>
+
+    <h3>Plot Summary</h3>
+    <p>The hunt was presented as a relaxing trip through nature, but quickly it was revealed that something was wrong. Two weeks before the hunt began, the logo on the home page slowly began to fade to greyscale. When the first few puzzles were unlocked, they all appeared in greyscale. Solving the Exploring meta, Faded Away, revealed that the colour disappeared <span class="answer spoiler">for NO TIME OR SEASON</span>; we needed to restore the seasons to bring the colour back.</p>
+
+    <p>The Seasons round similarly opened in black and white, with one puzzle from each season available to start. Solving a puzzle in a season restored some of the colour in the banner at the top. Once teams solved enough puzzles, the meta, The Four Season Theorem, was unlocked, where teams would use the fragments of the seasons to discover that we needed <span class="answer spoiler">some seasoning SALT</span> to help bring things back together.</p>
+    <p>The hunt concluded with Emending the Countryside, wherein teams revisited the feeder puzzles to look for <span class="answer spoiler">some salt</span> in the “tasteful advice” provided with the puzzles - the flavourtext! Teams came to the conclusion that <span class="answer spoiler">A STITCH IN THYME SAVES FOUR</span> - the four seasons, that is. Colour was restored to the countryside!</p>
+
+
+    <h3>Writing Process</h3>
+    <h4>History and Timeline</h4>
+    <p>Back in 2020, the ECs of /r/PG were discussing making a hunt of our own. We had a theme nailed down, a few tentative metas written, and a server where we’d discussed our ideas. Unfortunately, nothing ever actually came of these ideas and the server quickly became inactive. We shut it down after a few months of no real discussion, and decided to put a pin in it; maybe we’d try again at a later date.</p>
+
+    <p>Subsequently, around mid-2021, chimpaznee, empyreu and Enia wrote the Four Season Theorem’s first iteration, while brainstorming themes for a puzzle hunt. It was originally intended to be used for a different project from Exploring the Countryside, which was eventually abandoned as well.</p>
+
+    <p>Some more ECPH discussion sprouted up following the 2022 Mystery Hunt, and we decided to bring up our old abandoned Four Seasons hunt to the rest of the ECs. The theme idea stuck, and a few more people came aboard to help out. The Discord server we used to plan the hunt was created in early February 2022, and the Four Season Theorem meta was re-purposed for this hunt.</p>
+
+    <p>With the main season theme established, some of the people that came aboard later on started filling in gaps in the main round. We quickly realized that we wanted to produce some more backstory to set up the premise of the hunt. Many hunts nowadays involve an “intro round” of sorts, so we did the same, both to tee up the story and to create the opportunity to include some easier puzzles at the start. The intro meta was written by quatrevingtneuf in mid-February, and rounded out the puzzle count for the hunt.</p>
+
+    <p>Incidentally, the way the intro meta was written at the time placed a soft time constraint on the hunt. For reasons you can explore on the <a href="solution/fadedaway.html">solution page of <i>Faded Away</i></a href>, it was ideal to finish putting the hunt together in just a few months. Frantic puzzle writing began in earnest.</p>
+
+    <p>As our soft deadline came and went, it was evident that we were starting to lose some steam. Several puzzles sat around stagnating or unwritten, and the looming challenge of “the technical side” wasn’t going away. Haunted by our history of having to let go of projects partway through, we enlisted some additional testsolvers from /r/PG to help push more puzzles over the finish line.</p>
+
+    <p>The final kick we needed came from <a href="https://2022.galacticpuzzlehunt.com/puzzles">GPH 2022</a href>. When we saw that one of their rounds (Hibernating and Flying South) had a seasons theme, we were admittedly a bit crestfallen, but it was exactly the motivation we needed to announce our hunt. Of course, we couldn't back out anymore after that, and you know the rest!</p>
+
+    
+    <h4>Goals, Motivations and Process</h4>
+    
+    <p>One of the main goals of our hunt was <s>advertising PictureGame</s> incorporating some puzzles with a distinct PictureGame feel. Butterfly Catching is the obvious example in this regard, but other puzzles such as Round Trip and Faded Away that rewarded geography knowledge were also part of this objective. We also wanted to give less experienced writers a chance to get puzzles into the hunt - though all of us have created puzzle-y things before (for PictureGame and other applications), this was the first time most authors got a puzzle into a “real puzzlehunt”. Congratulations to everyone in this category!</p>
+
+    <p>The Four Season Theorem was written first, and Faded Away was written shortly after. We kept track of puzzle writing and testsolving progress in separate Discord channels (though we are probably on the cusp of needing to use a tool like <a href="https://github.com/galacticpuzzlehunt/puzzlord">Puzzlord</a href>). In line with our colourful theming, Discord channels for puzzles progressed from ⚫️ (not written) to 🔵 (fully postprodded). The finale, Emending the Countryside, was written comparatively late, but the flavourtext edits needed were minor, so we were able to work on this into the end of the hunt without much consequence.</p>
+
+    <p>During the writing process, whenever a puzzle entered testsolving, we would announce it in our testsolving coordination channel. Most of the time, testsolves were done individually, simply due to availability issues. This process was repeated several times per puzzle, and puzzles often ended up needing revisions based on testsolver feedback. The goal was for each puzzle to receive two unspoiled testsolves. However, the small size of the writing team meant that this was often hard to achieve, and several puzzles did not receive their second clean testsolve until our full run-through shortly before the hunt began.</p>
+
+    <p>The full hunt testsolve ran October 2-3. With respect to difficulty, our original goal was to provide an experience that was a little more casual for elite teams, with a meaningful midway goal for smaller teams (Faded Away). After the full testsolve, it became clear that our hunt was much more difficult than we thought, so we updated the FAQ, and also applied several nerfs to various puzzles. Thank you so much to Max Murin, Benji, Sushi, Max, Ryan and Bryce for selflessly volunteering!</p>
+
+    <p>We chose to release The Four Season Theorem after 12 Seasons round solves. This was close to, but slightly higher than, the minimum number of feeders it was solved with during testing, and felt like an appropriate percentage of forward solves. Because knowing the lengths of answers for each puzzle facilitated solving, we tried to obscure answer lengths where possible using cluephrases/answerphrases (e.g. Journal Overtakeages, Ice Fishing, Star Accommodations) or less transparent extraction mechanics (e.g. Garden Cleanup, Stained Glass). This led to a lot of cluephrases being called in (top five shown below):</p>
+
+    KNOTHOUR            93<br>
+    PLUCKEDKEYBOARDS    52<br>
+    FINDNEWARTWORKS    25<br>
+    PWINDOFCASEOCULARS    22<br>
+    PANDAORTELETUBBY    21<br><br>
+
+    <h3>Art and design</h3>
+    <p>Our biggest goal for the art was for it to complement the story. Early in development, we decided on a recolouring motif to parallel the restoration of the seasons. In addition, the four seasons theme naturally lends itself to a four-color palette. These guiding principles shaped nearly every piece of art. Our resident artist, chuttiekang, details her process below:</p>
+
+    <p>“Some of the first things I made were the homepage art, Exploring map, Seasons banner, and Seasons wordmarks. I did individual puzzle icons/buttons as their respective puzzles came out of testsolving. For this, I just asked the authors what they wanted. A shoutout goes to chimpaznee for providing some rough drafts! I also worked on miscellaneous assets like the favicon and round navigation buttons as the web team requested them.</p>
+
+    <p>“Keeping with our principles, I used four(ish) main colors in the title art. As extra foreshadowing, it slowly faded during the two weeks before launch. During the hunt, each Seasons round solve brought a bit of the color back. I also made <a href="https://drive.google.com/file/d/1suoMvKHEvZLlzVOvSA3yt9neWk3nr_ik/view">an alternate greyscale version</a href> that ended up going unused due to its high contrast.</p>
+
+    <p>“For the Exploring round, I opted for the obvious choice of a map. The eight icons plus ‘Exploring the Countryside’ slot neatly into its grid. During the hunt, the map changed to a desaturated color version after solving The Four Season Theorem and to a more vibrant one after solving Emending the Countryside.</p>
+
+    <p>“I probably spent more time/energy on the Seasons banner than anything else, since it encapsulates the main ideas of the hunt. A shoutout goes to Zimonze for the <a href="static/images/wrapup/art1.69b8ce2410d9.png">original mockup</a href>.</p>
+
+    <p>“The first version I made featured outlines like those in the Exploring round, but <a href="static/images/wrapup/art2.e879911095ce.png">the resulting ‘holes’ of transparency are somewhat bothersome</a href>.</p>
+
+    <p>“During the hunt, the banner prominently illustrated teams' progress. It <a href="static/images/wrapup/art3.f27b62038c5f.png">started off with only labels and dark hills, and each solve added a new color in the respective season's slice</a href>.</p>
+
+    <p>“The recoloring appears again in the puzzle buttons and tiling page background. I made a greyscale and a full-color button for every puzzle. During the hunt, these indicated the puzzles' solve states. As for the background, it's actually four backgrounds. During the hunt, each faded in independently, similar to the banner. A shoutout goes to rubyleehs for making this work when I thought it would be impossible/prohibitively tedious.</p>
+
+    <p>“Thank you to the ECs who gave feedback and suggestions, without which the art wouldn't have turned out nearly as well. Thank you to the EC web team for putting everything together and making it presentable. And of course, thank you to all the solvers who gave such lovely compliments. It feels nice to ‘give back’ to the puzzlehunting community.”</p>
+
+    <h3>Operations</h3>
+    <h4>Technical Details</h4>
+    <p>Pretty much none of us had any web dev experience before ECPH. In fact, in our 2020 discussions, we even considered hosting with a Discord bot (since making a website and framework would take a lot of learning). Thankfully, with the advent of resources like <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a href>, we felt much better equipped to dive into the process.</p>
+
+    <p>The backend and frontend for running the hunt was modified from gph-site, which used Django. Most of the initial modifications were done during GPH 2022 and the week after (rubyleehs had freed up the entire week for GPH and our team finished significantly faster than expected). These modifications were made before the art of the website had been pinned down completely, so it was mostly to allow more freedom in what we could do. These changes later allowed us to do the changing Seasons window and the dynamic background color depending on the number of solved puzzles in each season, which were done via image replacement and multiple overlaid backgrounds respectively.</p>
+
+    <p>We did run into a few hiccups when setting up the website. In particular, it turns out that PythonAnywhere (our web hosting platform) does not support websockets, which are used to send on-site notifications to all members of a team and for the hint-answering interface, so we ended up having to disable that functionality.</p> 
+
+    <p>Additionally, it turns out our email provider has an anti-spam rate limiting policy which we were not aware of, so our @ecph.site email was disabled after our first email blast (one hour before the hunt). We tried Google Groups, but that didn't let us add 100+ recipients at once either (who knew that providers don't want random people to be able to mass-send indiscriminate messages to hundreds of people for free?) As a result, we hastily implemented an "announcement" system to the site that would display a message in the shortcut bar. Thankfully, during the hunt, we were able to complete a verification process that cleared the rate-limiting restriction, so we should be fine in the future.</p>
+
+    <p>We added a few quality-of-life improvements to the site, the most impactful being the copy-to-clipboard button, for which we used <a href="https://2020.teammatehunt.com/clipboard">teammate's excellent code</a href>. We also added a system that would let us mass-send erratum emails; thankfully, it wasn't needed much, but we did narrowly avoid disaster a couple times (see the author’s notes for <i>A Very Large Integer</i> and <i>Faded Away</i> for juicy details on that front).</p>
+
+    <h4>Hints</h4>
+    <p>We initially planned on giving teams two hints per day, with the first two being limited to the first round, but as we found the hunt to be harder than expected, we modified this to have only one limited hint and to give all teams 4 hints on the last day.</p>
+
+    <p>While hinting, we tried to tune our nudges to the hint request. We tried to balance our hints to help teams get unstuck, but not to steal the aha from them. We also confirmed/denied clue answers and logic puzzle steps for the puzzles that had these. While hinting, we also tried to match the tone of the request. For example, if a hint request was written in rhyme, we would rhyme a hint back. Many teams sent in hint requests filled with EC phrases</p>
+
+    <p>We have members around the globe, so we were able to keep an eye on hints at all times. Most of the hints were claimed within seconds of appearing, but sometimes we were slightly overwhelmed, which could result in a hint sitting for several minutes. Fortunately, we never felt like we couldn’t keep up with the incoming requests: our median hint delay was just <b>2 mins, 51 sec</b>, with 90% of hints being answered in <b>6:44</b> or less, and <b>97.26%</b> in under 10 minutes. A mere five hints took longer than 20 minutes, with the longest coming in at <b>25:13</b>.</p>
+
+    <p>We have also made a document containing canned hints for each puzzle, which we used as a guide for writing the custom hints. While we found the document more useful early on, during the later days of the hunt we’d often find ourselves copying previous hint responses for commonly-requested puzzle steps.</p>
+
+    <p>Our hinting policy involved generous allowance of follow-up hints, and we sometimes even changed new hints to follow-ups. For this reason, there were relatively few forward solves that required using 2+ hints.</p>
+
+
+    <h3>Statistics</h3>
+    <p>For general statistics, see the <a href="wrapup/finishers.html">Finishers</a href>, <a href="bigboard.html">Bigboard</a href>, <a href="biggraph.html">Biggraph</a href> and <a href="stats.html">Stats</a href> pages.</p>
+    
+    <h4>Solves and Guesses</h4>
+    <b>Solves and Guesses per Puzzle</b>
+    <div><canvas id="solves-and-guesses-per-puzzle"></canvas></div>
+    <p>Backsolves were approximated as any feeder solved after or less than five minutes before its meta, and may not be
+        an accurate measurement for real backsolves from meta information.</p>
+        
+        Teams with the fewest incorrect guesses, among finishers (not counting guesses made after the hunt ended):<br>
+
+        5 - Callie’s Enterprise<br>
+        7 - ൠ MALAYALAM LETTER LOOK AT THIS COOL BUG, Dogs Bound By Rules<br>
+        9 - SnapDragon<br>
+        11 - አ ETHIOPIC CAMPFIRE<br>
+        13 - Being good at finding a certain coordinate in a picture game is valuable, but I think I’ll take the 200+ collective years of professional countryside exploration experience<br>
+        14 - Impossibly Organized Hiker, Given the Outdoor Setting It Is Unlikely to Be Projectyl<br><br>
+        
+        Teams with the most incorrect guesses (not counting guesses made after the hunt ended):<br>
+
+        142 - Amateur Hour<br>
+        126 - Les Gaulois<br>
+        117 - Identify Sort Incorrect Solve?<br>
+        116 - MiaoMiaoMiao<br>
+        111 - Yardinality, Slitherlinks and Ladders, RetreatteamA<br>
+        94 - Edamame Chums of /r/ProxyGalactoseglucose, Team Runpeng<br><br>
+
+    <b>Fastest Solve per Puzzle</b>
+    <div><canvas id="fastest-solve-per-puzzle"></canvas></div>
+    <p>Note: The fastest unhinted solve of Stained Glass was 6h46m, by Given the Outdoor Setting It Is Unlikely to Be
+        Projectyl.</p>
+    <h4>Hints</h4>
+    
+    <p>We answered a total of 2215 hint requests. The most hinted puzzle was Journal Overtakeages (218), while the least hinted puzzle was Cryptoornithology (7).</p>
+    <b>Hints per puzzle</b>
+    <div><canvas id="hints-per-puzzle"></canvas></div>  
+
+    <p>In addition, we would like to congratulate the following 15 teams for not using any hints by the time they finished the hunt:</p>
+
+    - አ ETHIOPIC CAMPFIRE<br>
+    - Eastcampus Cruft of r/puzzlers_galactic<br>
+    - Eponymous Clues of r/PuzzlersGalactic<br>
+    - Ephemeris Calculators of the Coraline Schism<br>
+   -  ൠ MALAYALAM LETTER LOOK AT THIS COOL BUG<br>
+    - I Cook Eggs<br>
+    - Being good at finding a certain coordinate in a picture game is valuable, but I think I’ll take the 200+ collective years of professional countryside exploration experience<br>
+    - /u/embarrassedclupea<br>
+    - [URGENT] EMERGENCY CRITICAL ET CETERA<br>
+    - MystikFact<br>
+    - Nature Enjoyment Season<br>
+    - Given the Outdoor Setting It Is Unlikely to Be Projectyl<br>
+    - ECosysTEM Adventure<br>
+    - Ten Apples 🍎<br>
+    - Virgoing On A Trip Complexity<br><br>
+
+    <p>Special shout-out to <b>Virgoing On A Trip</b> Complexity for solving until the last day, and still finishing without using any hints.</p>
+    
+    <p>During the hunt, we ran a race to see which person could answer the most hints. Congrats to hinting champion ev for
+    topping the chart with a whopping 515 responses!</p>
+    <div><canvas id="hints-answered" style="width:50%"></canvas></div>
+
+
+    <h3>Reflections</h3>
+    <h4>Puzzles</h4>
+    <p>During testsolving, we asked all testsolvers to rate puzzle difficulty from 1-6. Broadly speaking, we wanted to avoid having any puzzles that were a 1 or a 6, with the Exploring round averaging 2-3 and the Seasons round averaging 3-5. One thing that we didn’t track as closely was puzzle solve time, which is a stat that we’ll pay closer attention to going forward.</p>
+
+    <p>We think that we generally achieved a good balance of puzzle types. However, we might have had one too many puzzles that include many smaller minipuzzles. On the other hand, some notable absences include pure Nikoli-grid logic puzzles, interactive puzzles, and puzzles that use hyper-specific external references. We are happy with the amount of geography puzzles we managed to include, which we felt is a good amount, but not so many that the hunt feels inundated with them.</p>
+
+    <p>Due to differing perspectives on the use of partial confirmations (such as “Keep going!” messages on submitting a relevant non-answer part of a puzzle) from the answer checker, our use of these partials was sometimes inconsistent. In hindsight, there were a couple we should have included (e.g. PLUCKED KEYBOARDS for Stained Glass), and we should have added “(four wds)” in Artistic Interference. However, in general, we are satisfied to not include partial confirmations for phrases that do not look like answers (e.g. PANDA OR TELETUBBY, a clear cluephrase) or phrases that have clearly defined steps associated with them (e.g. KNOT HOUR, which goes with the _ x _ provided at the bottom of the puzzle).</p>
+
+    <h4>Difficulty</h4>
+    <p>The hunt was much more difficult than we predicted. We believe that this is attributable mainly to our puzzles early in the Seasons round playing harder than anticipated, the relatively narrow puzzle width that resulted, and that some puzzles were rather long. This early bottleneck was exacerbated by us placing the bane of the puzzlehunter’s existence, a printout puzzle, early in the Seasons round as well.</p>
+
+    <p>Below is a chart of the relative length/difficulty of some major puzzle hunt events from 2022 and late 2021 (originally from <a href="https://2022.huntinality.com/wrapup#goals-and-reflections">the Huntinality 2.0 wrapup</a>, slightly updated). Our hunt landed somewhere between Huntinality 2.0 and Silph Puzzle Hunt:</p>
+
+    <div><canvas id="difficulty"></canvas></div>
+    
+    <p>*Note that the CMU hunt was only open for 29.5 hours.</p>
+    
+    <h4>Unlocks</h4>
+    <p>We discussed several options for unlocking puzzles in the Seasons round, including:<br>
+    - Unlocking puzzles in each season separately, as if they were separate rounds.<br>
+    - Assigning values to puzzles to calculate unlocks (similar to “DEEP”).<br>
+    - A fixed unlock order.<br>
+    In the end, we opted for the last of these options. The cyclic order of the seasons made it convenient to set up the unlock order.</p>
+
+    <p>When deciding on the puzzle order, we considered several factors:<br>
+    - On one hand, we didn’t want to put all the hardest puzzles at the start, since this would get teams stuck early.<br>
+    - On the other hand, putting the hardest puzzles at the end meant that most of them would end up getting skipped and/or backsolved.<br>
+    - We wanted to put some larger puzzles (notably, Back to School) early in the order so that teams would have something to work on in parallel.<br>
+    - If puzzles had some similar characteristics (e.g. physical assembly in Stained Glass and Much Assembly Required) we tried to keep some space in between them.<br>
+    - Finally, we wanted to ensure that some of our flagship puzzles (such as Butterfly Catching) were placed in a position where they were less likely to be missed.<br>
+    The result was that for the Exploring round, puzzles more or less got ordered from easiest to hardest, whereas for the Seasons round, we ended up frontloading it with some slightly harder puzzles. As previously mentioned, some of those puzzles played harder than expected.</p>
+
+    <p>We decided to not have timed unlocks for this hunt. We believed that this would detract from the theming, and intended to compensate for it with a generous hinting policy. Timed unlocks remain controversial; some of our survey respondents were glad we didn’t have them, while many others lamented their absence. If we run another hunt in the future, we’ll consider implementing optional timed unlocks (like GPH 2022) to allow teams to choose the pace that they experience the hunt at.</p>
+
+
+    <h3>Future</h3>
+    
+    <p>The question remains: Will there be another ECPH?</p>
+
+    <p>While it is a big possibility, there is one thing we’re sure about, and it’s that after running this hunt, we need a break! We have raised the idea of running another EC puzzlehunt in the future, and already have some ideas for puzzles and themes, so we’ll see! We learned a lot from writing and running this puzzle hunt, so we’ll try to carry that learning forward if we decide to write a second EC puzzlehunt.</p>
+
+    <p>If you’re interested in participating in more puzzlehunts in the future, these hunts will run soon:</p>
+
+    <p>- <a href="https://puzzlehunt.club.cc.cmu.edu/">CMU Puzzle Hunt</a href> (Nov 19-20)<br>
+    - <a href="https://www.pandamagazine.com/island9/">Puzzle Boat 9</a href> (Dec 3, $100 per team)<br>
+    - <a href="https://mitmh2023.com/">MIT Mystery Hunt 2023</a href> (Jan 13, authored by teammate)</p>
+
+    Also keep an eye on the <a href="http://puzzlehuntcalendar.com/">Puzzle Hunt Calendar</a href> (the real one this time)!</p>
+
+    <h3>Credits</h3>
+    <p><b>Meta authors</b>: quatrevingtneuf, empyreu, chimpaznee, Enia</p>
+    <p><b>Puzzle Authors</b>: chimpaznee, chuttiekang, eanacra, empyreu, Enia, ev, phenomist, quatrevingtneuf,
+        rubyleehs, SeptaCube</p>
+    <p><b>Art</b>: chuttiekang</p>
+    <p><b>Web team</b>: rubyleehs, ev, eanacra</p>
+    <p><b>Testsolvers</b>: Cardinality sub-team (Benji, Sushi, Max, Ryan, Bryce), Max Murin, msl001, Zimonze, 81, Zoë, and most
+        puzzle authors</p>
+
+    <h3>Fun stuff</h3>
+    
+    <p>Here are some fun things:<br><br>
+    
+    - <a href="wrapup/stories.html">Stories you sent us</a href><br>
+    - <a href="wrapup/ama.html">Answers to questions you sent us in the post-hunt survey</a href><br><br>
+    
+    Note that this section is rife with puzzle spoilers.</p>
+    
+    <h4>Butterfly Sanctuary</h4>
+    </p>We have included a slide show featuring the wing patterns submitted by teams who’ve forward-solved Butterfly Catching:</p>
+    
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTjHDr2inmHaYvBspU0Qteoisxb8rlnHVDF_Ff2ZYLZxQ5QvaZoMMmbUdJvPMKRjDSJjQSYUNmF6c-h/embed" frameborder="0" width="100%" height="569px" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <br><br>
+    <h4>Notable Guesses</h4>
+    <p>Here are incorrect guesses on various puzzles that we have found funny or otherwise interesting:</p>
+    
+    <p>Field Notes:<br>
+    <b>PARANORMALTUBBY</b> - Pepsimen</p>
+
+    <p>Round Trip:<br>
+    <b>GLOBETROTTER</b> - Edamame Chums of /r/ProxyGalactoseglucose<br>
+    <b>TICKETTORIDE</b> -  The Intermittent Puzzlers<br>
+    <b>REDHOTBRIDGE</b> - pranjal<br>
+    <b>REALEMPTYBRIDGE</b> - #litkitchen</p>
+
+    <p>Entering Competitions:<br>
+    <b>THISISLITERALLYTHEFIRSTTIMEMEDECIDINGTORANDOMLYDOAZHASEVERWORKED</b> - :praytreeck:<br><br>
+
+    Some teams opted to submit EC phrases, including:<br>
+    <b>EC</b> - Eastcampus Cruft of r/puzzlers_galactic, CantaloupeZilch<br>
+    <b>EXCEPTIONALLYCONFUSED</b> and <b>ELVISCOSTELLO</b> - The Lexingtons<br>
+    <b>EVERYTHINGCONCEIVABLE</b> - A Delightful Amble through Nature (verbatim from the FAQ)<br>
+    <b>ELECTRONICCOMPANY</b> - (☞°ヮ°)☞</p>
+
+    <p>En Route:<br>
+    <b>GOOGLEENPASSANT</b> - Weirdchamp United 2 (WUTs)</p>
+
+    <p>Faded Away:<br>
+    <b>ROTATINGQUOKKA</b> - :praytreeck:<br>
+    <b>NOSIGNOFSEASON</b> - አ ETHIOPIC CAMPFIRE, The Flemish Baroque Paintings (this would also be a thematically-fitting answer!)<br>
+    <b>SOCIALCOHESION</b> - /u/embarrassedclupea 🎏, Identify Sort Incorrect Solve?</p>
+
+    <p>Journal Overtakeages:<br>
+    <b>PACEOFSOLARWINDFOCUS</b> - 🐼 Puzzled Pandas 🐼</p>
+
+    <p>Squared Away:<br>
+    <b>EWW</b> - Team Sam, Birdwatching Individually</p>
+
+    <p>Ice Fishing:<br>
+    <b>HOTTUNA</b> - Time Vultures<br>
+    <b>KNOTMUCH</b> - a MaD rain<br>
+    <b>ONEFISHTWOFISHREDFISHBLUEFISH</b> - Edamame Chums of /r/ProxyGalactoseglucose</p>
+
+    <p>Garden Cleanup<br>
+    <b>PULVERIZEDCOAL</b> - Ephemeris Calculators of the Coraline Schism<br>
+    <b>OVERLAYHAIRCUT</b> - Amateur Hour</p>
+
+    <p>Too Hot!<br>
+    <b>MYBIGUNIT</b> - Damaged Freight</p>
+
+    <p>Back to School:<br>
+    <b>IMPASTO</b> - 3 teams<br>
+    <b>SCREWYOULITTLEALEXHORNE</b> - I Cook Eggs (they guessed that immediately after guessing <b>REDHERRING</b> from the assistants’ instructions in the Taskmaster subpuzzle)<br>
+    <b>CATFISHINBLACKBEANSAUCE</b> - ghostbloods<br>
+    <b>SOY</b>, then immediately <b>DISAPPOINTMENTISIMMEASURABLE</b> - Edamame Chums of /r/ProxyGalactoseglucose<br>
+    <b>THEPERIODICTABLEWOULDBECOOLERIFASTATINEDIDNTEXIST</b> - I Cook Eggs</p>
+
+    <p>On Thin Ice:<br>
+    <b>ZAMBONI</b> - weeklies.enigmatics.org</p>
+
+    <p>Much Assembly Required:<br>
+    <b>BASEDONTHISPUZZLEIHAVETOCONCLUDETHATISPENTTHEENTIRETYOFKINDERGARTENEATINGPASTE</b> - Mobius Strippers<br>
+    <b>CHUNKYSTEW</b> - Yardinality, MiaoMiaoMiao</p>
+
+    <p>Summer Camp:<br>
+    <b>NOMATHTHANKYOU</b> - I Cook Eggs</p>
+
+    <p>Butterfly Catching:<br>
+    <b>BEARGNAWINGPATTERN</b> and <b>DEERGNAWINGPATTERN</b> - MiaoMiaoMiao</p>
+
+    <p>Puzzle Boxes:<br>
+    <b>G</b> - Ephemeris Calculators of the Coraline Schism<br>
+    <b>LASTTRIMESTER</b> - The Wombats<br>
+    <b>OURMRWRENN</b> - 10 teams<br>
+    <b>ALLIWANTFORCHRISTMASISYOU</b> - Exhusband Chenrui</p>
+
+    <p>Cryptoornithology<br>
+    <b>CARDINAL</b> - Eternity Challenges of r/antimatterdimensions</p>
+
+    <p>Unreal Estate:<br>
+    <b>DOGGOLINGO</b> - Unencrypted</p>
+
+    <p>Star Accommodations<br>
+    <b>ITISNOTSURPRISING</b> -  🐆 Cheatahs 🐆<br>
+    <b>STREETFUNERALHOME</b> - C-nic Environments</p>
+
+    <p>The Four Season Theorem<br>
+    <b>VIVALDI</b> - 🐆 Cheatahs 🐆<br>
+    <b>TOTALLANDSCAPING</b> - 3 teams</p>
+
+    <p>Emending the Countryside<br>
+    <b>EXPLOSIONOFFLAVOURTEXT</b> - 17th Switchback<br>
+    <b>PEPPER</b> - Exploiting the City</p>
+
+    <p>(Warning: GPH 2022 spoiler ahead)<br>
+    In addition, Weirdchamp United 2 (WUTs) submitted <span class="answer spoiler">HALLEYSCOMET</span> to 18 different puzzles (everything after Faded Away).</p>
+    
+    <b>Field Notes teletubby guesses</b><br>
+    <p><b>TINKY-WINKY</b> - 21<br>
+    <b>DIPSY</b> - 19<br>
+    <b>LAA-LAA</b> - 9<br>
+    <b>PO</b> (+correct!) - 304</p>
+    <b>A Very Large Integer locations</b><br>
+    <div class="flourish-embed flourish-map" data-src="visualisation/11500727">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+    <b>Letters represented by the llama in Garden Cleanup</b><br>
+    <div><canvas id="garden-cleanup" style="width:50%"></canvas></div>
+    <center><img src="static/images/wrapup/llama.3faf7940a3ef.png" width="50%"></center>
+    <b>Pokémon in Butterfly Catching</b><br>
+    <center><img src="static/images/wrapup/pokémon.7bdaa29d1175.png" width="90%"></center>
+</div>
+
+<script>
+    var xValues = ["Field Notes", "Round Trip", "Cobble", "Entering Competitions", "En Route", "A Very Large Integer", "Rock Climbing", "Faded Away", "Journal Overtakeages", "Stained Glass", "Squared Away", "Ice Fishing", "Garden Cleanup", "Too Hot!", "Back to School", "On Thin Ice", "Much Assembly Required", "Summer Camp", "Butterfly Catching", "Puzzle Boxes", "Cryptoornithology", "Unreal Estate", "Artistic Interference", "Star Accommodations", "The Four Season Theorem", "Emending the Countryside"];
+    var yValues = [
+        {
+            label: 'Forward solves',
+            data: [304, 217, 263, 158, 157, 194, 59, 181, 145, 60, 147, 151, 115, 114, 73, 115, 67, 107, 83, 87, 78, 74, 85, 41, 89, 83],
+            backgroundColor: "blue",
+        },
+        {
+            label: 'Backsolves',
+            data: [0, 4, 1, 19, 14, 1, 37, 0, 2, 25, 2, 0, 2, 2, 11, 2, 20, 2, 8, 1, 8, 6, 2, 14, 0, 0],
+            backgroundColor: "red",
+        },
+        {
+            label: 'Incorrect guesses',
+            data: [160, 223, 170, 342, 266, 222, 117, 404, 229, 269, 98, 412, 299, 72, 1749, 44, 122, 49, 252, 634, 59, 123, 148, 231, 96, 102],
+            backgroundColor: 'green',
+        },
+    ]
+    var barColors = "#378aff";
+
+    new Chart("solves-and-guesses-per-puzzle", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: yValues
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                }],
+                yAxes: [{
+                    stacked: true,
+                }]
+            }
+        }
+    });
+</script>
+
+<script>
+    var xValues = ["Field Notes", "Round Trip", "Cobble", "Entering Competitions", "En Route", "A Very Large Integer", "Rock Climbing", "Faded Away", "Journal Overtakeages", "Stained Glass", "Squared Away", "Ice Fishing", "Garden Cleanup", "Too Hot!", "Back to School", "On Thin Ice", "Much Assembly Required", "Summer Camp", "Butterfly Catching", "Puzzle Boxes", "Cryptoornithology", "Unreal Estate", "Artistic Interference", "Star Accommodations", "The Four Season Theorem", "Emending the Countryside"];
+    var yValues = [8.85, 32.90, 16.82, 21.05, 40.07, 13.70, 16.10, 15.68, 23.67, 376.00, 18.18, 63.00, 49.13, 32.78, 50.50, 22.57, 158.00, 25.22, 35.87, 28.58, 57.58, 44.80, 19.70, 48.38, 17.52, 19.42];
+    var barColors = ["#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "green", "green"];
+    var teams = ["Eastcampus Cruft of r/puzzlers_galactic", "Impossibly Organized Hiker", "አ ETHIOPIC CAMPFIRE", "አ ETHIOPIC CAMPFIRE", "The Blob Wizards 🔮🧙", "አ ETHIOPIC CAMPFIRE", "I Cook Eggs", "Eponymous Clues of r/PuzzlersGalactic", "Eponymous Clues of r/PuzzlersGalactic", "Weirdchamp United 2 (WUTs)", "አ ETHIOPIC CAMPFIRE", "The Eastralian Cruciverbalists of r/Underscore", "አ ETHIOPIC CAMPFIRE", "Yuki", "I Cook Eggs", "አ ETHIOPIC CAMPFIRE", "Ecliptic Catgirls of the Caroline Schism", "I Cook Eggs", "I Cook Eggs", "I Cook Eggs", "Yardinality", "Eponymous Clues of r/PuzzlersGalactic", "I Cook Eggs", "I Cook Eggs", "Eastcampus Cruft of r/puzzlers_galactic", "አ ETHIOPIC CAMPFIRE"];
+    var parsedTimes = ["8m51s", "32m54s", "16m49s", "21m3s", "40m4s", "13m42s", "16m6s", "15m41s", "23m40s", "6h6m", "18m11s", "1h1m", "49m8s", "32m47s", "50m30s", "22m34s", "2h15m", "25m13s", "35m52s", "28m35s", "57m35s", "44m48s", "19m42s", "48m23s", "17m31s", "19m25s"];
+    new Chart("fastest-solve-per-puzzle", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Fastest solve (minutes)",
+                        fontStyle: "bold"
+                    }
+                }]
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (context)
+                    {
+                        return `${teams[context.index]}: ${parsedTimes[context.index]}`;
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var xValues = ["ev", "chimpaznee", "quatrevingtneuf", "eanacra", "empyreu", "Zimonze", "phenomist", "81", "msl001", "Enia", "rubyleehs", "Zoë"];
+    var yValues = [515, 414, 378, 365, 301, 111, 67, 56, 24, 9, 3, 1];
+    var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145",
+        "#ffec21",
+        "#378aff",
+        "#ffa32f",
+        "#f54f52",
+        "#93f03b",
+        "#9552ea",
+        "#000000"
+    ];
+
+    new Chart("hints-answered", {
+        type: "doughnut",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        }
+    });
+</script>
+
+<script>
+    var xValues = ["Field Notes", "Round Trip", "Cobble", "Entering Competitions", "En Route", "A Very Large Integer", "Rock Climbing", "Faded Away", "Journal Overtakeages", "Stained Glass", "Squared Away", "Ice Fishing", "Garden Cleanup", "Too Hot!", "Back to School", "On Thin Ice", "Much Assembly Required", "Summer Camp", "Butterfly Catching", "Puzzle Boxes", "Cryptoornithology", "Unreal Estate", "Artistic Interference", "Star Accommodations", "The Four Season Theorem", "Emending the Countryside"];
+    var yValues = [54, 113, 96, 191, 135, 68, 89, 157, 218, 136, 79, 97, 167, 34, 130, 21, 104, 13, 32, 55, 7, 27, 29, 59, 45, 59];
+    var barColors = ["#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "#3eca42", "#ffbd00", "#e7774d", "#6aa5bf", "green", "green"];
+
+    new Chart("hints-per-puzzle", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+        }
+    });
+</script>
+
+<script>
+    new Chart("difficulty", {
+        type: "bubble",
+        data: {
+            datasets: [
+                {
+                    label: "CMU - This is Not a Puzzle Hunt",
+                    data: [{
+                        x: 3.91,
+                        y: 45,
+                        r: 24
+                    }],
+                    backgroundColor: "#b91d4790"
+                },
+                {
+                    label: "ECPH",
+                    data: [{
+                        x: 10.87,
+                        y: 8,
+                        r: 26
+                    }],
+                    backgroundColor: "#00aba990"
+                },
+                {
+                    label: "GPH 2022",
+                    data: [{
+                        x: 26.72,
+                        y: 2,
+                        r: 43
+                    }],
+                    backgroundColor: "#2b579790"
+                },
+                {
+                    label: "Hunt20",
+                    data: [{
+                        x: 2.4,
+                        y: 101,
+                        r: 20
+                    }],
+                    backgroundColor: "#1e714590"
+                },
+                {
+                    label: "Huntinality 2.0",
+                    data: [{
+                        x: 8.9,
+                        y: 21,
+                        r: 39
+                    }],
+                    backgroundColor: "#f54f5290"
+                },
+                {
+                    label: "Puzzle Potluck 4",
+                    data: [{
+                        x: 4.45,
+                        y: 143,
+                        r: 14
+                    }],
+                    backgroundColor: "#ffec2190"
+                },
+                {
+                    label: "Puzzle Rojak",
+                    data: [{
+                        x: 7.45,
+                        y: 24,
+                        r: 32
+                    }],
+                    backgroundColor: "#378aff90"
+                },
+                {
+                    label: "QoDE",
+                    data: [{
+                        x: 12.31,
+                        y: 4,
+                        r: 48
+                    }],
+                    backgroundColor: "#ffa32f90"
+                },
+                {
+                    label: "Silph Puzzle Hunt",
+                    data: [{
+                        x: 13.28,
+                        y: 8,
+                        r: 38
+                    }],
+                    backgroundColor: "#e8c3b990"
+                },
+                {
+                    label: "Teammate 2021",
+                    data: [{
+                        x: 26.21,
+                        y: 5,
+                        r: 48
+                    }],
+                    backgroundColor: "#93f03b90"
+                },
+                {
+                    label: "Reddot 2022",
+                    data: [{
+                        x: 4.48,
+                        y: 58,
+                        r: 21
+                    }],
+                    backgroundColor: "#9552ea90"
+                }
+            ]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Fastest Finish in Hours",
+                        fontStyle: "bold"
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Finishers in First 2 Days",
+                        fontStyle: "bold"
+                    }
+                }]
+            },
+            tooltips: {
+                callbacks: {
+                    title: function(context, data){ return data["datasets"][context[0]["datasetIndex"]]["label"];},
+                    beforeLabel: function (context, data){ 
+                        return `Fastest finish: ${data["datasets"][context["datasetIndex"]]["data"][0]["x"]} hours`;
+                    },
+                    label: function (context, data){
+                        return `Finishers in first 2 days: ${data["datasets"][context["datasetIndex"]]["data"][0]["y"]}`;
+                    },
+                    afterLabel: function (context, data){ 
+                        return `Number of puzzles: ${data["datasets"][context["datasetIndex"]]["data"][0]["r"]}`;
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    var xValues = ["A", "B", "H", "I", "LL", "LLAMA", "[null]", "NW", "S", "X"];
+    var yValues = [7, 6, 4, 1, 1, 4, 6, 1, 8, 1];
+    var barColors = "#378aff";
+    new Chart("garden-cleanup", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        },
+    });
+</script>
+
+<script>
+    const heads = [...$('#wrapup > h1,h2,h3,h4,h5,h6')].map(head => [head, $('<div>')
+        .text("• " + head.textContent)
+        .css('padding-left', head.tagName.substr(1) + 'em')
+        .click(() => head.scrollIntoView())
+        .appendTo('aside')]);
+    function highlight()
+    {
+        const rects = heads.map(([head]) => head.getBoundingClientRect());
+        heads.forEach(([head, link], i) => link.toggleClass('highlight',
+            (!rects[i + 1] || rects[i + 1].top > 0) && rects[i].top < innerHeight));
+    }
+    document.addEventListener('scroll', highlight, { passive: true });
+    highlight();
+</script>
+
+<script>
+
+    function slowscroll()
+    {
+        let s = document.getElementById("slow-scroll");
+        let asideHeight = s.clientHeight;
+        let winHeight = window.innerHeight;
+
+        if (asideHeight < winHeight - 120)
+        {
+            s.style.top = "120px";
+        }
+        else
+        {
+            let scrollTop = window.scrollY;
+            let docHeight = document.body.offsetHeight;
+            let scrollPercent = scrollTop / (docHeight - winHeight);
+            let ch = document.getElementById("wrapup").clientHeight;
+            let amountToMove = 120 + asideHeight - winHeight;
+            let yPos = 120 - scrollPercent * amountToMove;
+            s.style.top = yPos + "px";
+        }
+    }
+
+    window.addEventListener("scroll", function ()
+    {
+        slowscroll();
+    });
+</script>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Journal Overtakeages - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/spring.html" class="btn">Back to Spring</a>
+
+
+
+<a href="../post-hunt-solve/journalovertakeages.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/journalovertakeages.html" class="btn">View solution</a>
+<a href="../stats/journalovertakeages.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Journal Overtakeages
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <div id="puzzle-contents-copyable">
+<p class="flavor">I documented all my thoughts during my spring break vacation, though I scrambled to get down the countries.</p>
+<p>4/6: A US Marine approached me.<br />
+The look on his face was <em>terrible, like a wolf</em>, but he assured me that I'll be safe from any <em>hazard</em>.</p>
+<p>5/4: Boarded a plane.<br />
+After it landed, I decided to <em>skulk</em> around the local markets, looking for a good <em>container for soup</em> to buy.</p>
+<p>5/4: I also hike a lot!<br />
+I could <em>talk</em> a lot about it and never <em>cease</em> doing it.</p>
+<p>5/5: I played baseball with a cub from the bear shelter.<br />
+It would <em>throw the ball</em> at me, and I'd bat. After that, I went to <em>cleanse</em> myself of the grime in the nearest hot springs.</p>
+<p>4/4: I put my new suit in a closet.<br />
+Then I went to a museum to observe works from an <em>avant-garde art movement</em>. They've got this <em>magical energy</em>.</p>
+<p>6/5: I saw an army man at the military history museum.<br />
+I also thought it was much <em>more creative</em> than my last visit. Just yesterday, they put a new painting on display, featuring a <em>long, sharp projectile</em> and a bow.</p>
+<p>4/5: I'm a serial photographer.<br />
+Today I <em>took a picture</em> of a <em>group of insects</em>.</p>
+<p>5/4: It will rain later today.<br />
+This is an opportunity to watch the locals engage in a painful tradition: a <em>dance that includes bending under a bar</em> while stepping on <em>plastic toy bricks</em> while it is pouring.</p>
+<p>6/5: Made a mistaken turn while driving.<br />
+But it turned out good, as I met the <em>star of Tapeheads</em> on the way! I think my love for him has just been <em>raised to the third power</em>.</p>
+<p>4/5: My left leg pains me today.<br />
+And also it is <em>freezing</em> outside. Good thing the birds are <em>confined</em> indoors and safe.</p>
+<p>5/6: No awry situation distresses me.<br />
+In bad days, I like to sit down, listen to music from <em>the band that made the "Numa Numa" song</em>, and eat a <em>citrus fruit</em>.</p>
+<p>4/4: One excessive sun ray is of no concern to me.<br />
+I <em>was on horseback</em> for many hours, taking in the day's heat with my <em>exposed</em> skin.</p>
+<p>5/6: Relaxing in a garden is a pleasant activity.<br />
+A very good way to <em>start</em> the day is to listen to my favourite <em>song from The Defamation of Strickland Banks</em> while doing it.</p>
+<p>4/4: There was a lot of noise at the bar!<br />
+That's just the <em>truth</em>, and unfortunately a <em>shortcoming</em> of the otherwise perfect night I had.</p>
+<p>7/4: Today I hit a cactus.<br />
+I think my <em>screaming</em> could be heard from very far away, so I <em>am going to</em> try to keep shut in the future.</p>
+</div>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        <!-- We recommend using Twemoji or similar for unicode characters (but
+        don't want to complicate this example) -->
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+</html>

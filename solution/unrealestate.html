@@ -1,0 +1,387 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Unreal Estate - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/unrealestate.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Unreal Estate
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">VERNACULARISING</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee and phenomist
+
+    </h2>
+
+    
+    <p>The puzzle contains a large number of images, which we should identify. Each image represents a word, and they are given in alphabetical order, which helps disambiguate them:</p>
+<p>BOAR, BREAD, CELL, CLEVER, CLUBS, COFFIN, COMPASS, DEAR, DIAMONDS, EMBER, FIRE, FOUR, GLASS, GRATUITY, HARBOR, JIB, PASS, PIANO, PIGEON, POND, POSTAGE, ROTATE, SALT, SEA, SELLING, SLIME, SQUEEZE, TWO, VOICE, WAIT.</p>
+<p>Now comes the meat of the puzzle. There are six national flags above the diagram, which may be taken to represent languages.
+The six flags are, in fact, given in alphabetical order by language, rather than country. They represent six languages that use the Latin script: Danish, Dutch, French, Indonesian, Italian and Romanian.
+The diagram under the flags is a <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/5-simplex_graph.svg/800px-5-simplex_graph.svg.png">K6 complete graph</a href>, with 6 nodes and 15 edges. The number of nodes matches the number of languages, and there are 30 images and 15 edges, which suggests trying to somehow pair them up.</p>
+<p>We can now try translating some of the words to the six languages. It turns out that some pairs of words are spelled the same way in different languages. For example, the Indonesian word for "BREAD" and the Romanian word for "ROTATE" are both "ROTI". This phenomenon, where a word looks or sounds identical or similar in different languages but has a different meaning in each language, is known as "false friends" (this is also alluded to by "Estate" in the title being an Italian false friend for "Summer"). With each node in the diagram representing a language, and each edge representing a false friend, it is possible to find a false friend for each of the 15 possible pairings of the 6 languages in the puzzle:</p>
+<table>
+<thead>
+<tr>
+<th>Language 1</th>
+<th>Word 1</th>
+<th>Language 2</th>
+<th>Word 2</th>
+<th>False friend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Danish</td>
+<td>SLIME</td>
+<td>Dutch</td>
+<td>CLEVER</td>
+<td>SLIM</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>WAIT</td>
+<td>French</td>
+<td>SELLING</td>
+<td>VENTE</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>PIANO</td>
+<td>Indonesian</td>
+<td>CLUBS (suit)</td>
+<td>KLAVER</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>PIGEON</td>
+<td>Italian</td>
+<td>TWO</td>
+<td>DUE</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>GLASS</td>
+<td>Romanian</td>
+<td>VOICE</td>
+<td>GLAS</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>COMPASS (tool)</td>
+<td>French</td>
+<td>PASS</td>
+<td>PASSER</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>SQUEEZE</td>
+<td>Indonesian</td>
+<td>GRATUITY</td>
+<td>PERSEN</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>POSTAGE</td>
+<td>Italian</td>
+<td>HARBOR</td>
+<td>PORTO</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>FOUR</td>
+<td>Romanian</td>
+<td>BOAR</td>
+<td>VIER</td>
+</tr>
+<tr>
+<td>French</td>
+<td>SALT</td>
+<td>Indonesian</td>
+<td>CELL</td>
+<td>SEL</td>
+</tr>
+<tr>
+<td>French</td>
+<td>POND</td>
+<td>Italian</td>
+<td>SEA</td>
+<td>MARE</td>
+</tr>
+<tr>
+<td>French</td>
+<td>JIB</td>
+<td>Romanian</td>
+<td>FIRE</td>
+<td>FOC</td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>EMBER</td>
+<td>Italian</td>
+<td>COFFIN</td>
+<td>BARA</td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>BREAD</td>
+<td>Romanian</td>
+<td>ROTATE</td>
+<td>ROTI</td>
+</tr>
+<tr>
+<td>Italian</td>
+<td>DEAR</td>
+<td>Romanian</td>
+<td>DIAMONDS (suit)</td>
+<td>CARO</td>
+</tr>
+</tbody>
+</table>
+<p>By taking the number of spaces on each edge into account, there is a unique way to put the words in the diagram, such that each node has five words in the same language coming out of it. The word direction is disambiguated by the orientations of the numbers and by the changing width of the edges:</p>
+<p><img src="../static/puzzle_resources/unrealestate/f1cf2fd5c8.9165da2bd59d.png" width="100%"></p>
+<p>The letters in the numbered cells spell out the final answer <strong>VERNACULARISING</strong> - which is what solvers had to do in order to solve this puzzle (by translating the initial words to the respective languages).</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>This was the last Summer puzzle to be written. The initial conception of it came as a result of a theming challenge. We dwelled on the idea of false friend puzzle for a while (with "estate" being Italian for "summer), and after pondering over this for a bit we came up with the concept of finding all possible pairings between 6 languages (and conveniently, the answer length of 15 fit exactly for this).</p>
+<p>Finding the pairs of words was a fairly difficult task, which took several man-hours without using a script. We did eventually manage to find at least one false friend for every language pair. There are some words that have an ambiguous pairing (like "GLAS" being "GLASS" in both Danish and Dutch), but these are disambiguated by the other pairs that appear in the puzzle. However, there was one particular egregious ambiguity that managed to turn up in an earlier testsolving version of the puzzle: APPLE/CALL, which can be translated as both "APEL" in Indonesian/Romanian or "APPEL" in Dutch/French. We thought that it would be no fun for teams that discover the "wrong" translation first, and replaced that pair with "ROTI".</p>
+<p>There were still some ambiguities that slipped through nevertheless that we would've liked to avoid. The worst of this was the fact that "KLAVER" in Indonesian is actually borrowed from Dutch. We haven't realized this until this was too late, and we're sorry if your team got tripped up by this. In hindsight, we should've probably also selected a more diverse set of languages.</p>
+<p>Here are some other notable false friends we discovered that did not make the cut:</p>
+<p>MAND: MAN (Danish) / BASKET (Dutch)</p>
+<p>PONT: FERRY (Dutch) / BRIDGE (French)</p>
+<p>SEPT: SEVEN (French) / SEPTUM (Romanian)</p>
+<p>VALLE: WHEY (Danish) / DALE (Italian)</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

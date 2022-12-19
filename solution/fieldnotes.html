@@ -1,0 +1,434 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Field Notes - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/fieldnotes.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Field Notes
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">PO</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee
+
+    </h2>
+
+    
+    <p>We are presented with what looks like a series of “sightseeing reports” about wildlife. However, some of them include strange things, like mermaids and wizards, that do not exist in the real world. Upon looking up keywords from some of the descriptions, we should realize that they are about fictional characters: specifically, fictional animals. To aid identification, the characters are ordered alphabetically:</p>
+<table>
+<thead>
+<tr>
+<th>"Observation" clue</th>
+<th>Character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I saw a very large...</td>
+<td>BALOO</td>
+</tr>
+<tr>
+<td>I could hear a fat insect...</td>
+<td>BARRY B BENSON</td>
+</tr>
+<tr>
+<td>I could only see this creature intermittently...</td>
+<td>CHESHIRE CAT</td>
+</tr>
+<tr>
+<td>I saw a bird wearing a blue cap...</td>
+<td>DEWEY</td>
+</tr>
+<tr>
+<td>I saw a pachyderm use its huge ears to fly over the trees!</td>
+<td>DUMBO</td>
+</tr>
+<tr>
+<td>I shifted my view to the ocean...</td>
+<td>FLOUNDER</td>
+</tr>
+<tr>
+<td>It was a clay-like canine creature...</td>
+<td>GROMIT</td>
+</tr>
+<tr>
+<td>I saw a lagomorph wearing blue clothes and a badge.</td>
+<td>JUDY HOPPS</td>
+</tr>
+<tr>
+<td>I saw an obese reptile standing on two legs...</td>
+<td>KING K ROOL</td>
+</tr>
+<tr>
+<td>It looked like a large, green creature, part of a group of four...</td>
+<td>MICHELANGELO</td>
+</tr>
+<tr>
+<td>I saw a rodent cooking a pleasant-smelling vegetable dish.</td>
+<td>REMY</td>
+</tr>
+<tr>
+<td>I saw a saber-toothed animal holding a large acorn.</td>
+<td>SCRAT</td>
+</tr>
+<tr>
+<td>I saw a large equine beast gallop across the hills...</td>
+<td>SHADOWFAX</td>
+</tr>
+<tr>
+<td>I could not believe my eyes - today I saw the King of the Jungle...</td>
+<td>SIMBA</td>
+</tr>
+<tr>
+<td>I saw a vulpine creature running away...</td>
+<td>SWIPER</td>
+</tr>
+<tr>
+<td>I saw a magical equine beast roam the hills...</td>
+<td>TWILIGHT SPARKLE</td>
+</tr>
+</tbody>
+</table>
+<p>The other half of the puzzle (“field guide excerpts”) is comprised of “behaviour descriptors”. A careful internet search, reinforced by the animal theme of the puzzle, should prompt us to realize that these descriptions are all references to idioms containing animals (e.g. “endless, pointless pursuit” can be searched to get “rat race”). The fact that the number of characters in the puzzle is the same as the number of animal idioms suggests that we should find a way to pair them up. It turns out that the characters belong to the same species / kind of animal as all the animal idioms (which means we were successful in “hitting every item in the field guide”.). We can proceed to match up each character with its animal idiom, and use the "most active" times to index into their names. The fact that the characters are given alphabetically suggests we should use the given order of the idioms:</p>
+<table>
+<thead>
+<tr>
+<th>Animal Idiom</th>
+<th>Character</th>
+<th>#</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SILVER <strong>FOX</strong></td>
+<td>Swiper</td>
+<td>4</td>
+<td>P</td>
+</tr>
+<tr>
+<td><strong>BEAR</strong> HUG</td>
+<td>Baloo</td>
+<td>2</td>
+<td>A</td>
+</tr>
+<tr>
+<td>TURN <strong>TURTLE</strong></td>
+<td>Michelangelo</td>
+<td>8</td>
+<td>N</td>
+</tr>
+<tr>
+<td>HOLD YOUR <strong>HORSES</strong></td>
+<td>Shadowfax</td>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td><strong>SQUIRREL</strong> AWAY</td>
+<td>Scrat</td>
+<td>4</td>
+<td>A</td>
+</tr>
+<tr>
+<td><strong>RABBIT</strong> HOLE</td>
+<td>Judy Hopps</td>
+<td>6</td>
+<td>O</td>
+</tr>
+<tr>
+<td><strong>FISH</strong> OUT OF WATER</td>
+<td>Flounder</td>
+<td>8</td>
+<td>R</td>
+</tr>
+<tr>
+<td><strong>DOG</strong> DAYS</td>
+<td>Gromit</td>
+<td>6</td>
+<td>T</td>
+</tr>
+<tr>
+<td>LET THE <strong>CAT</strong> OUT OF THE BAG</td>
+<td>Cheshire Cat</td>
+<td>3</td>
+<td>E</td>
+</tr>
+<tr>
+<td><strong>CROCODILE</strong> TEARS</td>
+<td>King K Rool</td>
+<td>9</td>
+<td>L</td>
+</tr>
+<tr>
+<td><strong>RAT</strong> RACE</td>
+<td>Remy</td>
+<td>2</td>
+<td>E</td>
+</tr>
+<tr>
+<td>ONE-TRICK <strong>PONY</strong></td>
+<td>Twilight Sparkle</td>
+<td>1</td>
+<td>T</td>
+</tr>
+<tr>
+<td><strong>ELEPHANT</strong> IN THE ROOM</td>
+<td>Dumbo</td>
+<td>2</td>
+<td>U</td>
+</tr>
+<tr>
+<td>BUSY <strong>BEE</strong></td>
+<td>Barry B Benson</td>
+<td>1</td>
+<td>B</td>
+</tr>
+<tr>
+<td><strong>LION</strong>'S SHARE</td>
+<td>Simba</td>
+<td>4</td>
+<td>B</td>
+</tr>
+<tr>
+<td>SITTING <strong>DUCK</strong></td>
+<td>Dewey</td>
+<td>5</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>Indexing gives the final cluephrase PANDA OR TELETUBBY. There is one name that belongs to both a Teletubby and a fictional panda, and that is <strong>PO</strong>, the final answer.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>I wish I could do something more interesting here, but I think it is okay to write something
+relatively simple to be among the hunt's opener puzzles. With that said, I hope that the
+animal idiom portion (and matching characters to idioms) were at least somewhat
+interesting!</p>
+<p>In the original version of the puzzle, characters and animal idioms were not separated, but
+each character had a different animal's idiom attached to them, which means you had to form a cycle, and
+extract using the thing that appears next in cycle. That version flopped in testsolving
+(because of the multiple indexing options) and I'm generally happy with the revised version
+of the puzzle.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

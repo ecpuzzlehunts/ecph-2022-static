@@ -1,0 +1,479 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Journal Overtakeages - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/journalovertakeages.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Journal Overtakeages
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">PAIR OF BINOCULARS</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chuttiekang and chimpaznee
+
+    </h2>
+
+    
+    <p>Each journal entry has two italicized parts. These can be solved as crossword-style clues.
+Though some of them are ambiguous at first, we should soon realize that the answers to the
+clues have a special property: each pair of words actually contains a pair of
+synonyms. For instance, the first pair of clues resolves to D<strong>IRE</strong> and D<strong>ANGER</strong>. This is
+hinted at by the puzzle title (Overtakeages/Passages). The letters that aren't part of the
+synonym pair are identical across both words, so we should take note of them.
+Furthermore, the “dates” serve as enumerations to the clue answers.</p>
+<p>Here are the solutions to all the clues:</p>
+<table>
+<thead>
+<tr>
+<th>"Date"</th>
+<th>Clue 1</th>
+<th>Answer 1</th>
+<th>Clue 2</th>
+<th>Answer 2</th>
+<th>Leftover letter(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4/6</td>
+<td>terrible, like a wolf</td>
+<td>D<strong>IRE</strong></td>
+<td>hazard</td>
+<td>D<strong>ANGER</strong></td>
+<td>D</td>
+</tr>
+<tr>
+<td>5/4</td>
+<td>skulk</td>
+<td><strong>PROW</strong>L</td>
+<td>container for soup</td>
+<td><strong>BOW</strong>L</td>
+<td>L</td>
+</tr>
+<tr>
+<td>5/4</td>
+<td>talk</td>
+<td>S<strong>PEAK</strong></td>
+<td>cease</td>
+<td>S<strong>TOP</strong></td>
+<td>S</td>
+</tr>
+<tr>
+<td>5/5</td>
+<td>throw the ball</td>
+<td>P<strong>ITCH</strong></td>
+<td>cleanse</td>
+<td>P<strong>URGE</strong></td>
+<td>P</td>
+</tr>
+<tr>
+<td>4/4</td>
+<td>avant-garde art movement</td>
+<td><strong>DAD</strong>A</td>
+<td>magical energy</td>
+<td><strong>MAN</strong>A</td>
+<td>A</td>
+</tr>
+<tr>
+<td>6/5</td>
+<td>more creative</td>
+<td>AR<strong>TIER</strong></td>
+<td>long, sharp projectile</td>
+<td>AR<strong>ROW</strong></td>
+<td>AR</td>
+</tr>
+<tr>
+<td>4/5</td>
+<td>took a picture</td>
+<td>S<strong>HOT</strong></td>
+<td>group of insects</td>
+<td>S<strong>WARM</strong></td>
+<td>S</td>
+</tr>
+<tr>
+<td>5/4</td>
+<td>dance that includes bending under a bar</td>
+<td><strong>LIMB</strong>O</td>
+<td>plastic toy bricks</td>
+<td><strong>LEG</strong>O</td>
+<td>O</td>
+</tr>
+<tr>
+<td>6/5</td>
+<td>star of Tapeheads</td>
+<td>CU<strong>SACK</strong></td>
+<td>raised to the third power</td>
+<td>CU<strong>BED</strong></td>
+<td>CU</td>
+</tr>
+<tr>
+<td>4/5</td>
+<td>freezing</td>
+<td>C<strong>OLD</strong></td>
+<td>confined</td>
+<td>C<strong>AGED</strong></td>
+<td>C</td>
+</tr>
+<tr>
+<td>5/6</td>
+<td>the band that made the "Numa Numa" song</td>
+<td>O<strong>ZONE</strong></td>
+<td>citrus fruit</td>
+<td>O<strong>RANGE</strong></td>
+<td>O</td>
+</tr>
+<tr>
+<td>4/4</td>
+<td>was on horseback</td>
+<td><strong>ROD</strong>E</td>
+<td>exposed</td>
+<td><strong>BAR</strong>E</td>
+<td>E</td>
+</tr>
+<tr>
+<td>5/6</td>
+<td>start</td>
+<td><strong>BEG</strong>IN</td>
+<td>song from The Defamation of Strickland Banks</td>
+<td><strong>PRAY</strong>IN</td>
+<td>IN</td>
+</tr>
+<tr>
+<td>4/4</td>
+<td>truth</td>
+<td>F<strong>ACT</strong></td>
+<td>shortcoming</td>
+<td>F<strong>LAW</strong></td>
+<td>F</td>
+</tr>
+<tr>
+<td>7/4</td>
+<td>screaming</td>
+<td>W<strong>AILING</strong></td>
+<td>am going to</td>
+<td>W<strong>ILL</strong></td>
+<td>W</td>
+</tr>
+</tbody>
+</table>
+<p>The letters don't seem to spell out anything meaningful yet! But seeing that the journal
+entries are all alphabetical, we should find a way to sort them.</p>
+<p>If we look at the first sentence of each entry (which is separated from the rest, and has yet
+to be used), with the aid of “though I scrambled to get down the countries.” from the
+flavor text, we should notice that each of them contains an anagram of a country:</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>Country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A <strong>US Marine</strong> approached me.</td>
+<td>Suriname</td>
+</tr>
+<tr>
+<td>Boarded a <strong>plane</strong>.</td>
+<td>Nepal</td>
+</tr>
+<tr>
+<td>I <strong>also</strong> hike a lot!</td>
+<td>Laos</td>
+</tr>
+<tr>
+<td>I played baseball with <strong>a cub</strong> from the bear shelter.</td>
+<td>Cuba</td>
+</tr>
+<tr>
+<td>I put my new <strong>suit in a</strong> closet.</td>
+<td>Tunisia</td>
+</tr>
+<tr>
+<td>I saw an <strong>army man</strong> at the military history museum.</td>
+<td>Myanmar</td>
+</tr>
+<tr>
+<td>I'm a <strong>serial</strong> photographer.</td>
+<td>Israel</td>
+</tr>
+<tr>
+<td>It will <strong>rain</strong> later today.</td>
+<td>Iran</td>
+</tr>
+<tr>
+<td>Made a <strong>mistaken turn</strong> while driving</td>
+<td>Turkmenistan</td>
+</tr>
+<tr>
+<td>My left leg <strong>pains</strong> me today</td>
+<td>Spain</td>
+</tr>
+<tr>
+<td><strong>No awry</strong> situation distresses me.</td>
+<td>Norway</td>
+</tr>
+<tr>
+<td>On excessive sun <strong>ray is</strong> of no concern to me.</td>
+<td>Syria</td>
+</tr>
+<tr>
+<td>Relaxing in <strong>a garden</strong> is a pleasant activity.</td>
+<td>Grenada</td>
+</tr>
+<tr>
+<td>There was a lot of <strong>noise at</strong> the bar!</td>
+<td>Estonia</td>
+</tr>
+<tr>
+<td>Today <strong>I hit a</strong> cactus</td>
+<td>Haiti</td>
+</tr>
+</tbody>
+</table>
+<p>We can now use the countries to plot the letters on a world map:</p>
+<p><center><img src="../static/puzzle_resources/journalovertakeages/journal_overtakeages_sol_map_bgze.07efc5dd318b.png" width="100%"></center></p>
+<p>In this new ordering of the letters, we can read out “PWIND OF CASEOCULARS”. We can
+use the synonym substitution mechanism to convert “WIND” to “AIR” and “CASE” to “BIN”
+to make valid words. In doing so, we arrive at the final answer, a <strong>PAIR OF BINOCULARS</strong>,
+which is an item commonly carried while travelling around the world.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>chimpaznee: This puzzle gave us a real challenge when it came to theming it. The sorting mechanism went through a large number of versions, including using national flowers, and we went through at least 2 different country maps before arriving at the current one. In hindsight, I think a more compelling order would have been to put the synonym pairs in 2 different journal entries and have them form a cycle, but I think that it would have been more difficult to both discover the pairs and parse the final cluephrase, and it would also require rewriting all entries. </p>
+<p>One thing I'm happy with, though, is the decision to italicize the clue bits, which allowed us to have some creative liberty with the entries.</p>
+<p>During the hunt, this puzzle tripped up a much large number of teams than we expected. There were two main sticking points: The fact that the letters need to be put on the map, and the final cluephrase being very hard to parse. Unfortunately, the glaring problems weren't caught in testsolving. If your team got confused by this puzzle - sorry! </p>
+<p>In hindsight, we should have definitely worked harder to make the puzzle more elegant, as it seemed to have separate ideas crammed together in an inelegant way (hidden synonyms, and country anagrams).</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

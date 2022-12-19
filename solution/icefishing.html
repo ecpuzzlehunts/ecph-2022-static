@@ -1,0 +1,427 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Ice Fishing - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/icefishing.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Ice Fishing
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">NAUTICAL MILE</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+quatrevingtneuf
+
+    </h2>
+
+    
+    <p>The main gimmick behind this diagramless crossword is that each instance of the ice cube emoji represents 
+a "hole" (a "<a href="https://en.wikipedia.org/wiki/Counter_(typography)">closed counter</a>" in typography) that
+we need to make. This includes letters such as a, b, and d, as well as numbers such as 4, 6, and 9. 
+Characters with multiple counters, such as B or 8, are represented by multiple ice cube emojis. The 
+numbers are a good way to confirm this mechanic. Note that for this puzzle, g is considered to have a single 
+"hole", though some fonts render it as having two. Some clues are fairly easy to fill in, but others may 
+require some guesswork. After "making holes" in all the clues, we should arrive at a solved grid that 
+looks like this:</p>
+<p><img src="../static/puzzle_resources/icefishing/icefishinggridsoln_qjym.1e0176bff7e8.png"></p>
+<p>There are a couple suspicious clues in there: 31-Across and 60-Down suggest that something with gills 
+with a length of at least 4 is hidden in the grid. Indeed, there are several words hidden diagonally in 
+the grid that are one letter off of types of fish (these are highlighted in the grid above). These are 
+listed below, in order of where the changed letter appears in the grid.</p>
+<table>
+<thead>
+<tr>
+<th>Hidden Word</th>
+<th>Fish</th>
+<th>Changed Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PILE</td>
+<td>PIKE</td>
+<td>K</td>
+</tr>
+<tr>
+<td>TUBA</td>
+<td>TUNA</td>
+<td>N</td>
+</tr>
+<tr>
+<td>LEACH</td>
+<td>LOACH</td>
+<td>O</td>
+</tr>
+<tr>
+<td>GROUT</td>
+<td>TROUT</td>
+<td>T</td>
+</tr>
+<tr>
+<td>SPARK</td>
+<td>SHARK</td>
+<td>H</td>
+</tr>
+<tr>
+<td>SALE</td>
+<td>SOLE</td>
+<td>O</td>
+</tr>
+<tr>
+<td>MALLET</td>
+<td>MULLET</td>
+<td>U</td>
+</tr>
+<tr>
+<td>CHAT</td>
+<td>CHAR</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<p>These two words fit in the blanks given at the bottom: travelling at one KNOT for one HOUR gives one 
+<strong>NAUTICAL MILE</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Originally, I wanted to incorporate more clues with non-Latin characters, especially those with a large 
+number of "holes". In the end, I decided it was probably unfair to do this more than once or twice, but in 
+case you have any appetite for such clues, here are some rejected examples:</p>
+<ul>
+<li>🧊, 2, 🧊, 🧊, 🧊🧊, 🧊tc.</li>
+<li>C🧊mm🧊n 🧊🧊🧊iti🧊n t🧊 🧊🧊🧊🧊🧊🧊汁</li>
+<li>Curr🧊ncy r🧊🧊r🧊s🧊nt🧊🧊 🧊y 🧊🧊🧊🧊</li>
+<li>🧊🧊🧊🧊🧊🧊, f🧊r 🧊n🧊</li>
+<li>🧊🧊 🧊🧊🧊, f🧊rm🧊lly</li>
+</ul>
+    
+
+    
+    
+    <h2 id="appendix">Appendix</h2>
+    <style>
+  .u {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+</style>
+
+<p>Here is a list of clues with the ice removed:</p>
+<div markdown="0"><b>Across</b><br>
+1. Joy<br>
+5. Soy product<br>
+9. Shoelace part<br>
+14. It follows "drop" in a trio<br>
+15. <span class="u">___</span> gum<br>
+16. Dare alternative<br>
+17. Bails out<br>
+18. Aura<br>
+19. Kaaba location<br>
+20. Groom<br>
+22. Billie <span class="u">___</span><br>
+24. Bangkok currency<br>
+25. Movie about dating AI<br>
+26. The last one had a daughter named Olga<br>
+28. <span class="u">___</span> box<br>
+30. Sound of uncertainty<br>
+31. Breathing structure of what's hidden in this grid<br>
+33. 1/96 of a pt.<br>
+36. Particle represented by the letter before ρ<br>
+39. Not odd<br>
+41. She got a 56-down 64 years ago<br>
+43. An, indefinitely?<br>
+45. Resolve, as acne<br>
+47. Measurement going around<br>
+48. Repeat<br>
+50. Reddit events, briefly<br>
+51. "<span class="u">___</span> Beso" (song by Paul Anka)<br>
+52. Not hard<br>
+54. Pulse meas.<br>
+56. One that goes "hoo"<br>
+57. A butte that’s wider<br>
+59. Belay device made by BD<br>
+62. High degrees<br>
+65. Jessica <span class="u">___</span><br>
+67. New <span class="u">___</span><br>
+69. Rebel<br>
+71. Org. for airport codes<br>
+73. Small pie<br>
+74. Radial counterpart<br>
+75. The "Preston Twins", for two<br>
+76. Birch or oak<br>
+77. <span class="u">___</span> board<br>
+78. Operates<br>
+79. <span class="u">___</span> room (illusion)<br><br><b>Down</b><br>
+1. Bar, for example<br>
+2. Po : Italy :: <span class="u">___</span> : France<br>
+3. Born earlier<br>
+4. Conditional code word<br>
+5. Rail system that goes to Brest (abbr.)<br>
+6. <span class="u">___</span> board<br>
+7. Noted egg maker<br>
+8. CH4N2O<br>
+9. PIN point?<br>
+10. Bird that dives<br>
+11. Movie where Bruno is ignored<br>
+12. Deboss<br>
+13. 51-across, in English<br>
+21. Highest (degree)<br>
+23. Nada<br>
+27. Author Silverstein<br>
+28. Board game with a sextet<br>
+30. 32-down, for example<br>
+32. See 30-down<br>
+33. Obama's first began in '09<br>
+34. Penguin predator<br>
+35. Dots on a die<br>
+36. Book part<br>
+37. It's close to a pupil<br>
+38. 51-across alternative?<br>
+40. Alternative to scoops<br>
+42. Palindromic title<br>
+44. Action for gum<br>
+46. Lets fly<br>
+49. Rides, perhaps<br>
+53. In the style of<br>
+55. Tampon alternative<br>
+56. O, to NATO<br>
+58. Label read by Alice<br>
+59. Raise the <span class="u">___</span>!<br>
+60. The hidden things are longer than this<br>
+61. Adds to a bibliography<br>
+62. Judge on Bake Off<br>
+63. Captain's place<br>
+64. One from Aalborg<br>
+66. In <span class="u">___</span> of<br>
+68. Singer James<br>
+70. Take a stab at<br>
+72. Booty<br></div>
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

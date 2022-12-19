@@ -1,0 +1,392 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Puzzle Boxes - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/winter.html" class="btn">Back to Winter</a>
+
+
+
+<a href="../post-hunt-solve/puzzleboxes.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/puzzleboxes.html" class="btn">View solution</a>
+<a href="../stats/puzzleboxes.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Puzzle Boxes
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <p class="flavor">Puzzle Santa has left a bunch of Puzzle Boxes under your Puzzle Christmas tree! To open
+them, you ought to use the following pieces, though 8 of them are frozen and won’t be
+used until the very end.</p>
+<style>
+.container {
+  position: relative;
+  color: black;
+}
+.left {
+  position: absolute;
+  top: 250px;
+  left: 33px;
+}
+.topleft {
+  position: absolute;
+  top: 220px;
+  left: 33px;
+}
+.bottomleft {
+  position: absolute;
+  top: 303px;
+  left: 33px;
+}
+.topright {
+  position: absolute;
+  top: 250px;
+  left: 325px;
+}
+.right {
+  position: absolute;
+  top: 300px;
+  left: 325px;
+}
+.bottomright {
+  position: absolute;
+  top: 335px;
+  left: 325px;
+}
+ha{
+    color: #f00;
+    font-weight: bold;
+}
+</style>
+<p><tt></p>
+<div class="row" style="background-color:#DDDDDD;"><div class="column" style="width: 1%;"></div><div class="column" style="width: 29%;"><p style="font-size:17px"><br>
+            ACETALDEHYDE<br>
+            ACQUIRED IMMUNITY<br>
+            AISLE<br>
+            ARABLE LAND<br>
+            ARENA<br>
+            ATE<br>
+            BATTLE OF TRAFALGAR<br>
+            BRAINWASH<br>
+            CHAD JOHNSON<br>
+            CHESS<br>
+            CONTEMPORARIES<br>
+            COTSWOLD LINE<br>
+            COY<br>
+            CYNWYD LINE<br>
+            DAMS<br>
+            DARK<br>
+            DART<br>
+            DEVANAGARI<br>
+            DOGMATIC THEOLOGY<br>
+            DOMENICO DOLCE<br>
+            DOOR<br>
+            DRESS<br>
+            DUNG BEETLE<br>
+            EARL<br></p></div><div class="column" style="width: 29%;"><p style="font-size:17px"><br>
+            EARMUFFS<br>
+            EASTER EGG<br>
+            EBB AND FLOW<br>
+            ELONGATE<br>
+            ELVIS<br>
+            EXTREMELY LUSH<br>
+            FEBRUARY<br>
+            FOREMOST<br>
+            FRIGGA<br>
+            GAUL<br>
+            GEORGE GERSHWIN<br>
+            GLIADIN<br>
+            HARSH<br>
+            HATSUNE MIKU<br>
+            HERBIE<br>
+            HISTORIC VILLAGE<br>
+            INCHEON<br>
+            INCREDIBLY TANKY<br>
+            INWARD-FACING<br>
+            IONIC COMPOUND<br>
+            ISAAC<br>
+            JEROME ROBBINS<br>
+            JOHN WAYNE<br>
+            JUJU<br></p></div><div class="column" style="width: 29%;"><p style="font-size:17px"><br>
+            LAP<br>
+            LG CUP<br>
+            LOUIS BOTHA<br>
+            MORTGAGE<br>
+            NEAR<br>
+            NELSON RIDDLE<br>
+            OMAN<br>
+            ONES<br>
+            REGIA AERONAUTICA<br>
+            RELATIONSHIP<br>
+            RESIN<br>
+            ROUGHHOUSE<br>
+            SEMIFINALISTS<br>
+            SLOT MACHINE<br>
+            SPRINGBOARD<br>
+            STEP<br>
+            SWIMMER<br>
+            SWORD COAST<br>
+            TERRA<br>
+            TINY BIT<br>
+            TRUNCATED ICOSAHEDRON<br>
+            ULTIMATE QUESTION<br>
+            WEAK INTERACTION<br>
+            ZANY<br></p><br></div></div>
+<p></tt><br>
+<em>You may check the answer to a subpuzzle using the answer checker. Incorrect guesses count towards your total limit.</em></p>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present1.1ea9f93c805a.png"><div class="left"><p style="font-size:18px">Puzzle Santa had some <br>trouble seeing this box.</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present2.6d4d4d7efe59.png"><div class="left"><p style="font-size:18px">Puzzle Santa has been <br>using a phone to keep <br>connected, only <br>tapping out the latter <br>word of a pair each <br>time.</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present3.1c5ee9046835.png"><div class="left"><p style="font-size:18px">Puzzle Santa has left <br>dotted notches for <br>several words of <br>identical length. <br>In addition to them, <br>you'll need dashes of<br> the items on the right.</p></div><div class="topright"><p style="font-size:18px">
+    • A force<br>
+    • A musician<br>
+    • A pool item<br>
+    • A tie<br>
+    • Some competitors<br>
+    • Something obtained <br>during lifetime</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present4.b18fd750e636.png"><div class="left"><p style="font-size:18px">Puzzle Santa has left <br>over some things that <br>need to be translated.</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present5.d9a054a48b37.png"><div class="left"><p style="font-size:18px">Puzzle Santa has tried <br>sending messages <br>across the North <br>Atlantic, but they got <br>all mixed up.</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present6.b0bde2b8e178.png"><div class="left"><p style="font-size:18px">Puzzle Santa has used <br>his pair of compasses <br>to navigate to faraway <br>places.</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present7.24222320f240.png"><div class="left"><p style="font-size:18px">Puzzle Santa notes that <br>some numbers are very <br>symbolic.</p></div><div class="bottomright"><p style="font-size:18px">
+    a. Vertices<br>
+    b. Answer<br>
+    c. Lids and doors<br>
+    d. Jersey<br>
+    e. Days, commonly<br>
+    f. Sound-alike</p></div></div>
+<div class="container"><img src="../static/puzzle_resources/puzzleboxes/present8.c09a485c5ba7.png"><div class="topleft"><p style="font-size:18px">Puzzle Santa went there <br>and back again, shifting<br> pieces appropriately.</p></div><div class="bottomleft"><p style="font-size:14px"><br>
+        Largest _<br>
+        The largest _ was found here<br>
+        It makes plants _<br>
+        Brown _<br>
+        _ genus<br>
+        _ closest living relative</p></div><div class="right"><p style="font-size:14px"><br>
+        _ <ha>_</ha> _ <ha>_</ha> _ _<br>
+        _ _ <ha>_</ha> _ <ha>_</ha> _&emsp; _ _ _ _<br>
+        _ _ _ <ha>_</ha> _ _ _ _ <ha>_</ha> _ _<br>
+        _ _ _ _ _ _ <ha>_ </ha><ha>_</ha> _<br>
+        _ <ha>_</ha> _ _ _ _ <ha>_</ha><br>
+        _ _ _ _ <ha>_</ha> _ _ &emsp; _ _ _ _ _ <ha>_</ha></p></div></div>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

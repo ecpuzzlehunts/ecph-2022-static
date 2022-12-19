@@ -1,0 +1,594 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Back to School - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/autumn.html" class="btn">Back to Autumn</a>
+
+
+
+<a href="../post-hunt-solve/backtoschool.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/backtoschool.html" class="btn">View solution</a>
+<a href="../stats/backtoschool.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Back to School
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <script src="../static/puzzle_resources/backtoschool/backtoschool.64ebe9ba09f0.js"></script>
+<style>
+  .u {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .grid {
+    position: relative;        
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .board {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  #toggle-blockbusters {
+    position: absolute;
+    top: 5.75%;
+    left: 4.4%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-01.3eb3a568f7b8.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-chainreaction {
+    position: absolute;
+    top: 5.75%;
+    left: 29.8%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-02.b558b7daebbb.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-thechase {
+    position: absolute;
+    top: 5.75%;
+    left: 55.2%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-03.0aaaacd29f2c.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-countdown {
+    position: absolute;
+    top: 5.75%;
+    left: 80.6%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-04.779bd6b0cb5a.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-familyfeud {
+    position: absolute;
+    top: 23.4%;
+    left: 4.5%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-05.584f715d6b8a.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-jeopardy {
+    position: absolute;
+    top: 23.4%;
+    left: 29.8%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-06.27068ca62196.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-mastermind {
+    position: absolute;
+    top: 23.4%;
+    left: 55.2%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-07.56afd7602452.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-mervgriffinscrosswords {
+    position: absolute;
+    top: 23.4%;
+    left: 80.6%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-08.564cf592e832.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-pointless {
+    position: absolute;
+    top: 41.05%;
+    left: 4.5%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-09.bee067cf85f4.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-thepriceisright {
+    position: absolute;
+    top: 41.05%;
+    left: 29.8%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-10.4000e0464291.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-taskmaster {
+    position: absolute;
+    top: 41.05%;
+    left: 55.2%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-11.87881a6f77cc.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-tenable {
+    position: absolute;
+    top: 41.05%;
+    left: 80.6%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-12.5244658061f5.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-universitychallenge {
+    position: absolute;
+    top: 58.7%;
+    left: 4.5%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-13.fc6238db9acb.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-theweakestlink {
+    position: absolute;
+    top: 58.7%;
+    left: 29.8%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-14.da9968e806e0.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-wheeloffortune {
+    position: absolute;
+    top: 58.7%;
+    left: 55.2%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-15.b461abbe461a.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  #toggle-whowantstobeamillionaire {
+    position: absolute;
+    top: 58.7%;
+    left: 80.6%;
+    width: 15%;
+    height: 15%;
+    background-image: url("../static/puzzle_resources/backtoschool/logo-16.2674151d57c2.png");
+    background-size: 100%;
+    padding: 0;
+    border: 0;
+  }
+
+  hbl{
+    background-color: #D0EAFC;
+  }
+
+  hor{
+    background-color: #FCE1D0;
+  }
+</style>
+
+<p class="flavor">Going back to school brings up a lot of questions. Who might help you make connections?</p>
+<div class="parent"><div class="grid"><img class="board" src="../static/puzzle_resources/backtoschool/backtoschool-00.5ef991270b5c.png"/><button id="toggle-blockbusters" onclick="toggleSoln(this, '.blockbusters')"></button><button id="toggle-chainreaction" onclick="toggleSoln(this, '.chainreaction')"></button><button id="toggle-thechase" onclick="toggleSoln(this, '.thechase')"></button><button id="toggle-countdown" onclick="toggleSoln(this, '.countdown')"></button><button id="toggle-familyfeud" onclick="toggleSoln(this, '.familyfeud')"></button><button id="toggle-jeopardy" onclick="toggleSoln(this, '.jeopardy')"></button><button id="toggle-mastermind" onclick="toggleSoln(this, '.mastermind')"></button><button id="toggle-mervgriffinscrosswords" onclick="toggleSoln(this, '.mervgriffinscrosswords')"></button><button id="toggle-pointless" onclick="toggleSoln(this, '.pointless')"></button><button id="toggle-thepriceisright" onclick="toggleSoln(this, '.thepriceisright')"></button><button id="toggle-taskmaster" onclick="toggleSoln(this, '.taskmaster')"></button><button id="toggle-tenable" onclick="toggleSoln(this, '.tenable')"></button><button id="toggle-universitychallenge" onclick="toggleSoln(this, '.universitychallenge')"></button><button id="toggle-theweakestlink" onclick="toggleSoln(this, '.theweakestlink')"></button><button id="toggle-wheeloffortune" onclick="toggleSoln(this, '.wheeloffortune')"></button><button id="toggle-whowantstobeamillionaire" onclick="toggleSoln(this, '.whowantstobeamillionaire')"></button></div></div>
+<div class="nested-solution blockbusters">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-01.00a8b7e1c289.png" width="80%"><br></center></p>
+<p>What N might have a special habit?<br />
+  What R gets counted in a game of baseball?<br />
+  What P is a common vegetable?<br />
+  What C is a social deduction board game?<br />
+  What Q might you catch a ferry at?<br />
+  What D is a colour for a horse?<br />
+  What G is a sort of sandwich?</p>
+<p>5x 💣 </p>
+</div>
+<div class="nested-solution chainreaction">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-02.42626aef58f3.png" width="80%"></p>
+<p>🧪🧪🧪</center></p>
+</div>
+<div class="nested-solution thechase">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /></p>
+<h4>The Chase <img src="../static/puzzle_resources/backtoschool/unitedkingdom.864e5bf9c4c5.png" width="3%"></h4>
+<p>What is the preceding word in the Star Wars film's title?<br />
+  What was the third of the first five American classes with a weight of over a thousand tons?<br />
+  What is the third word in the song's lyrics?<br />
+  Who was the first of Connecticut?<br />
+  Who is the author of the work on which the opera is based?<br />
+  What is the Number?  </p>
+</div>
+<div class="nested-solution countdown">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-04.ad0c688c01d8.png" width="80%"></center></p>
+</div>
+<div class="nested-solution familyfeud">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-05a.ea8de7adac98.png" width="50%"><br>
+    Name a season.<br><img src="../static/puzzle_resources/backtoschool/backtoschool-05b.dd691eca2c55.png" width="50%"><br>
+    Name a room in Clue.<br><img src="../static/puzzle_resources/backtoschool/backtoschool-05c.5a7168760b5a.png" width="50%"><br>
+    Name a zodiac sign.<br><img src="../static/puzzle_resources/backtoschool/backtoschool-05d.b0957be839a5.png" width="50%"><br>
+    Name a metal of antiquity.<br><img src="../static/puzzle_resources/backtoschool/backtoschool-05e.243d1371ab10.png" width="50%"><br>
+    Name one of the Seven Dwarfs.<br></center></p>
+</div>
+<div class="nested-solution jeopardy">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-06.ca5dfbd6a71f.png" width="50%"></center></p>
+<p>A Canadian Olympian named Alex did this to win Canada's first ever medal in their Winter Olympic event. (5)<br />
+  This synonym of "strenuous" or "laborious" may also appear in discussions of fiscal policy. (6)<br />
+  Algorithms such as the T permutation exchange the positions of four of these. (6)<br />
+  The maximum size of this in the NFL is 7 greater than that for the CFL. (6)<br />
+  "Sk8r Boi" by Avril Lavigne follows a similar chord progression to this famous piece in D major. (5)</p>
+</div>
+<div class="nested-solution mastermind">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" />
+  What word do you get when the last letter is removed from an alcoholic drink?<br />
+  What word goes in the following blank: "carpenter <span class="u">___</span>"?<br />
+  What word do you get when a vowel is deleted from a family member?<br />
+  What word might you use to describe an amiable friend?<br />
+  What word goes in the following blank: "I couldn't answer the question about what <span class="u">___</span> of fish Nemo is"?<br />
+  What might you — I've started so I'll finish — do to a list of numbers?</p>
+</div>
+<div class="nested-solution mervgriffinscrosswords">
+<p><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-08.c7928b29beeb.png"></center></p>
+<p><strong>Across</strong>
+  </p>
+<div>
+  1. English painter Richard<br>
+  5. Zenith<br>
+  9. It is often depicted as a light bulb over one's head<br>
+  10. <hbl>???</hbl><br>
+  11. <hor>Prefix meaning one millionth</hor><br>
+  12. Multiple countries' currency<br>
+  13. <hor>Like a non-acoustic guitar</hor><br>
+  15. <hbl>Male sheep</hbl><br>
+  16. Extremist<br>
+  18. Encountered<br>
+  19. <hbl>Not cold</hbl><br>
+  20. <hor>Shiny and smooth</hor><br>
+  22. Failure to hit a target<br>
+  25. <hor>???</hor><br>
+  26. <hbl>Naughty kids' Christmas gift</hbl><br>
+  27. <hor>Material making up the Tanagra figurines</hor><br>
+  28. Gemstone that is often black and white<br></div>
+<p><br>
+  <strong>Down</strong>
+  </p>
+<div>
+  1. Underworld city<br>
+  2. Without further <span class="u">___</span><br>
+  3. Attitude of accepting failure<br>
+  4. <hor>Not in</hor><br>
+  5. <hbl>Bucket</hbl><br>
+  6. It is not implied by correlation<br>
+  7. Wall art<br>
+  8. Esau's nation<br>
+  14. Top of jar<br>
+  16. Reinforcing rods of steel<br>
+  17. Group of jazz musicians<br>
+  18. Muscovite, for example<br>
+  21. <hor>Sus animal</hor><br>
+  23. <hbl>3.14159...</hbl><br>
+  24. <hbl>Chest muscles, colloquially</hbl><br><br><center><div style="font-size: 40px;">_ _ _ _ _</div>
+<p></center></p>
+</div>
+<p>&emsp;
+</div><div class="nested-solution pointless" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-09.00e5efcd587e.png" width="80%"></center></div><div class="nested-solution thepriceisright" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-10.1d3be016ce61.png" width="80%"><br><b>??? = $113,442</b></center></div><div class="nested-solution taskmaster" markdown="1"></p>
+<ol>
+<li>Greg says, "Write down the letter denoted by three dashes in Morse code."</li>
+<li>Alex says, "Write down the Roman numeral for 506."</li>
+<li>Pilvi says, "Write down the letter denoted by dot-dash-dot in Morse code."</li>
+<li>Lasse says, "Write down the Roman numeral for 4."</li>
+<li>Mark says, "Write down the last recorded letter shifted 13 spaces backwards in the alphabet."</li>
+<li>Reggie says, "Write down the last recorded letter shifted 4 spaces backwards in the alphabet."</li>
+<li>Jeremy says, "Write down the letter denoted by dash-dash-dot in Morse code."</li>
+<li>David says, "Write down the second-last recorded letter two more times."</li>
+<li>Paul says, "Duplicate the fifth recorded letter."</li>
+<li>Babben says, "Anagram everything to form an uncapitalized noun."</li>
+<li>Olli says, "Replace the second letter with H."</li>
+<li>Atle says, "Add the letters OUS to the end of your string."</li>
+<li>Luka says, "Add the letters NG to the end of your string."</li>
+<li>
+<p>Nuno says, "Anagram everything to form a two-word phrase."
+</div><div class="nested-solution tenable" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-12.0688511f8e6e.png" width="80%"></center></div><div class="nested-solution universitychallenge" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center>
+    Identify the sibling in each case.</p>
+<p><div><img src="../static/puzzle_resources/backtoschool/backtoschool-13a.4f642656fc47.jpg" style="vertical-align: middle;" width="40%"><span style="vertical-align: middle;"> ↔ (5)</span></div><br><div><img src="../static/puzzle_resources/backtoschool/backtoschool-13b.0cb350f2c3c3.jpg" style="vertical-align: middle;" width="40%"><span style="vertical-align: middle;"> ↔ (4)</span></div><br><div><img src="../static/puzzle_resources/backtoschool/backtoschool-13c.18d1d61504cc.jpg" style="vertical-align: middle;" width="40%"><span style="vertical-align: middle;"> ↔ (2)</span></div><br><div><img src="../static/puzzle_resources/backtoschool/backtoschool-13d.33860d69a818.jpg" style="vertical-align: middle;" width="40%"><span style="vertical-align: middle;"> ↔ (5)</span></div><br><div><img src="../static/puzzle_resources/backtoschool/backtoschool-13e.1527f6ddfc56.jpg" style="vertical-align: middle;" width="40%"><span style="vertical-align: middle;"> ↔ (5)</span></div><br><div><img src="../static/puzzle_resources/backtoschool/backtoschool-13f.23727d95708d.jpg" style="vertical-align: middle;" width="40%"><span style="vertical-align: middle;"> ↔ (1)</span></div></center></div><div class="nested-solution theweakestlink" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" />
+  In geography, what is the traditional name given to indigenous residents of Aotearoa? ... In hunt puzzles, what ordering is often used to indicate that a re-sorting step is required? ... In the animal kingdom, what reptile possesses hands where the five digits are fused into two chunks? ... In pop culture, what type of degree is held by both members of YouTube comedy duo Rhett and Link? ... In computer science, what collaborative software development platform was launched in April 2008? ... In literature, what president is set to be executed, but is ultimately spared by the bow-wielding protagonist? ... In film, what animated film revolves around restoring the top half of the main characters' father? ... In the human body, what type of cell may possess nodes of Ranvier? ... In mathematics, whose eponymous paradox concerns random chords in a circle in comparison to an inscribed equilateral triangle?</p>
+</li>
+</ol>
+<p>... 💰 ... 💰 ... 💰 ... 💰 ... 💰 ... 💰
+</div><div class="nested-solution wheeloffortune" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-15.587ded53a038.png" width="80%"></center></div><div class="nested-solution whowantstobeamillionaire" markdown="1"><link rel="stylesheet" type="text/css" href="../static/puzzle_resources/backtoschool/backtoschool.84d3b7af624c.css" /><center><img src="../static/puzzle_resources/backtoschool/backtoschool-16.8fe54899bb3f.png" width="80%"><br></center></div></p>
+<hr />
+<p><em>You may check the answer to a subpuzzle using the answer checker. Incorrect guesses count towards your total limit.</em></p>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

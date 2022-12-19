@@ -1,0 +1,542 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Butterfly Catching - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/butterflycatching.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Butterfly Catching
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">APPROACHING STORM</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee and ev
+
+    </h2>
+
+    
+    <p>This is a PictureGame-style puzzle! </p>
+<p>In this puzzle, we are given 18 images of locations around the world taken from Google Street View, and need to identify them. However, the butterflies block attempts at reverse image searching the landmarks, so we will need to devise a solve path for each image based on what we see. For that, it is often helpful to describe the things in the picture to a search engine (e.g. suspension bridge, clock tower, statue), use any visible flags to narrow down the location, or look up any visible text to get additional clues.</p>
+<p>The flavour text mentions cities, so we should note down the city where each picture was taken:</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>City + Street View link</th>
+<th># of butterflies</th>
+<th>Letter</th>
+<th>Possible solve path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td><a href="https://www.google.com/maps/@51.4549941,-2.6254322,3a,75y,297.05h,88.87t/data=!3m6!1e1!3m4!1sD3N_fLB4Rp8VHUTwUb4nUg!2e0!7i16384!8i8192">Bristol</a></td>
+<td>4</td>
+<td>S</td>
+<td>Searching for "stone suspension bridge" (or even "suspension bridge") should bring this up.</td>
+</tr>
+<tr>
+<td>B</td>
+<td><a href="https://www.google.com/maps/@-29.1229365,26.2230331,3a,81y,110.17h,95.31t/data=!3m6!1e1!3m4!1sM4NNPJ3Z9dNL0QrY8YD0BA!2e0!7i13312!8i6656">Bloemfontein</a></td>
+<td>4</td>
+<td>E</td>
+<td>Search for "africa cooling towers" (from the vibe and "AFRICAN" near the bottom left). Alternatively, directly looking up the text on one of the cooling towers ("WAAIHOEK") should work.</td>
+</tr>
+<tr>
+<td>C</td>
+<td><a href="https://www.google.com/maps/@39.7598182,30.4724416,3a,75y,51.99h,97.18t/data=!3m6!1e1!3m4!1ss7VbC0F5SJQ_O_ratGw9AA!2e0!7i16384!8i8192">Eskisehir</a></td>
+<td>1</td>
+<td>E</td>
+<td>Search for "blue-roofed castle" (or "blue roof castle")</td>
+</tr>
+<tr>
+<td>D</td>
+<td><a href="https://www.google.com/maps/@-33.9553558,22.4591802,3a,59.7y,358.23h,85.18t/data=!3m6!1e1!3m4!1s3sV1j4V_aaHMaNBBGygFCg!2e0!7i13312!8i6656">George</a></td>
+<td>5</td>
+<td>G</td>
+<td>Searching for "N9 N12 roads" will reveal that this is somewhere in South Africa. While it is not necessary to find the exact coordinates, the intersection of N9 and N12 is found north of the city of George.</td>
+</tr>
+<tr>
+<td>E</td>
+<td><a href="https://www.google.com/maps/@36.7522976,-119.8208351,3a,75y,160.62h,89.55t/data=!3m8!1e1!3m6!1sAF1QipPIOi7fANfrdOqwBf2CyJDJNCJBTeEJ3-Cfo0fj!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPIOi7fANfrdOqwBf2CyJDJNCJBTeEJ3-Cfo0fj%3Dw203-h100-k-no-pi-0-ya143.37253-ro-0-fo100!7i8704!8i4352">Fresno</a></td>
+<td>3</td>
+<td>E</td>
+<td>After guessing it is a zoo, "African Adventure zoo" finds it. Otherwise, it is also possible to use "African Adventure donor tiles".</td>
+</tr>
+<tr>
+<td>F</td>
+<td><a href="https://www.google.com/maps/@21.1571021,-86.8255353,3a,75y,95.06h,96.93t/data=!3m6!1e1!3m4!1sDLsCjp2cRSL_ti_ijXixnA!2e0!7i16384!8i8192?hl=en">Cancun</a></td>
+<td>3</td>
+<td>N</td>
+<td>Search for "starfish roundabout".</td>
+</tr>
+<tr>
+<td>G</td>
+<td><a href="https://www.google.com/maps/@-12.9712742,-38.5083003,3a,90y,270.57h,92.54t/data=!3m6!1e1!3m4!1sbGRMmxtUUIjtPDHK87aQyQ!2e0!7i16384!8i8192">Salvador</a></td>
+<td>4</td>
+<td>V</td>
+<td>From searching up some of the text, we can find out that this is in some Portuguese-speaking country. Searching either "9967-9955 Brazil" or "Brazil colourful houses" works for this one.</td>
+</tr>
+<tr>
+<td>H</td>
+<td><a href="https://www.google.com/maps/@48.800186,2.1289142,2a,90y,205.46h,80.28t,0.34r/data=!3m6!1e1!3m4!1sMJQLoNNFzX-hjc6Mgv56Og!2e0!7i13312!8i6656">Versailles</a></td>
+<td>6</td>
+<td>I</td>
+<td>This is a train station near Paris (Transilien is the city's commuter rail system); we can see that it is the terminus of a line as the tracks end. We can now use the other visible text in the image, "Gauche", to find the exact train station.</td>
+</tr>
+<tr>
+<td>I</td>
+<td><a href="https://www.google.com/maps/@43.2699684,-2.9324399,3a,75y,153.07h,97t/data=!3m7!1e1!3m5!1sFI29Yh8ucsbgvx9V9t5BXg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DFI29Yh8ucsbgvx9V9t5BXg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D257.62445%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?hl=en">Bilbao</a></td>
+<td>4</td>
+<td>B</td>
+<td>Search for "spider sculpture" to find Maman. The sculpture appears in several locations around the world. Find one that is also near a bridge.</td>
+</tr>
+<tr>
+<td>J</td>
+<td><a href="https://www.google.com/maps/@60.4522793,22.2748141,3a,41.2y,189.76h,96.8t/data=!3m6!1e1!3m4!1sErzOlGNYM3lsqma2zyjivw!2e0!7i13312!8i6656?hl=en">Turku</a></td>
+<td>5</td>
+<td>U</td>
+<td>The yellow road sign is characteristic to Nordic countries. Search for coats of arms in these countries (perhaps ones with fleurs-de-lis). It is also possible to further narrow down the coat of arms with <a href="https://commons.wikimedia.org/wiki/Category:4_fleurs-de-lis_argent_in_heraldry">a more specific description</a href>.</td>
+</tr>
+<tr>
+<td>K</td>
+<td><a href="https://www.google.com/maps/@1.2905502,103.8546999,3a,75y,105.66h,96.08t/data=!3m6!1e1!3m4!1s_FodBT-nq1oD96cyY0WQVg!2e0!7i16384!8i8192">Singapore</a></td>
+<td>4</td>
+<td>G</td>
+<td>Search "spiky building". If one squints, it is also possible to read "CIVIC DISTRICT" off the poster on the right.</td>
+</tr>
+<tr>
+<td>L</td>
+<td><a href="https://www.google.com/maps/@40.4445754,-79.9424992,3a,75y,239.27h,101.13t/data=!3m6!1e1!3m4!1s1qipgeP5OKwn4Bnc94y4kw!2e0!7i16384!8i8192">Pittsburgh</a></td>
+<td>1</td>
+<td>P</td>
+<td>Search for "people walking up a pole" or something similar.</td>
+</tr>
+<tr>
+<td>M</td>
+<td><a href="https://www.google.com/maps/@21.3068958,-157.863943,3a,75y,284.21h,100.43t/data=!3m6!1e1!3m4!1synIEB43zT9rZP-3tWQALCA!2e0!7i16384!8i8192?hl=en">Honolulu</a></td>
+<td>4</td>
+<td>O</td>
+<td>Note the flag of Hawaii on the right. There is also a clock tower near the middle of the picture, behind the trees. Search "Hawaii clock tower".</td>
+</tr>
+<tr>
+<td>N</td>
+<td><a href="https://www.google.com/maps/@35.0201062,138.5227241,2a,84.7y,18.04h,100.66t/data=!3m6!1e1!3m4!1srb8Oycnje8kMXg8VvJI_5Q!2e0!7i13312!8i6656">Shizuoka</a></td>
+<td>7</td>
+<td>K</td>
+<td>Mount Fuji is visible in the background. It should be possible to narrow down the area to a coast found south or southwest of it. Searching for lighthouses in the area can help with narrowing it down further.</td>
+</tr>
+<tr>
+<td>O</td>
+<td><a href="https://www.google.com/maps/@52.097323,5.0759822,3a,75y,36.34h,107.8t/data=!3m6!1e1!3m4!1s-3-p2t5A4plxHqVlfLeaQQ!2e0!7i16384!8i8192">Utrecht</a></td>
+<td>4</td>
+<td>E</td>
+<td>The type of bridge and colour are useful for finding bridges in general. For this one, search for "yellow tied arch bridge".</td>
+</tr>
+<tr>
+<td>P</td>
+<td><a href="https://www.google.com/maps/@46.7996483,-100.8066394,3a,75y,198.78h,91.65t/data=!3m6!1e1!3m4!1snm0gYnYYHCBOJTUe_yFeyw!2e0!7i16384!8i8192">Bismarck</a></td>
+<td>4</td>
+<td>M</td>
+<td>Squint at the flag on the right, which is a US state flag. After identifying it as North Dakota, search for zoos in the same state.</td>
+</tr>
+<tr>
+<td>Q</td>
+<td><a href="https://www.google.com/maps/@43.0611259,141.3573151,3a,75y,263.43h,114.97t/data=!3m6!1e1!3m4!1srdXOiWS4lTR9rlMTcGGixQ!2e0!7i16384!8i8192">Sapporo</a></td>
+<td>5</td>
+<td>O</td>
+<td>Noting that this is an Eiffel Tower lookalike, search for "Panasonic Eiffel Tower". Alternatively, "Panasonic clock tower" works.</td>
+</tr>
+<tr>
+<td>R</td>
+<td><a href="https://www.google.com/maps/@24.1385404,120.6705346,3a,90y,213.22h,86.92t/data=!3m6!1e1!3m4!1sE4E8wlHB8TEgEtvy7NMKbg!2e0!7i16384!8i8192?hl=en-CA">Taichung</a></td>
+<td>7</td>
+<td>N</td>
+<td>Possibly search for "super mario mural alley".</td>
+</tr>
+</tbody>
+</table>
+<p>Indexing into the names of the cities with the number of butterflies, we get the clue SEE GEN VI BUG POKEMON.</p>
+<p>Solvers will now need to do some research. There are three Bug pokemon in Gen VI that are not Mega Evolutions: The Pure Bug-type Scatterbug and Spewpa and the dual-type Bug/Flying Vivillon. Since the puzzle primarily deals with butterflies, the relevant Pokemon is Vivillon (and submitting it in the answer checker will give a confirmation). </p>
+<p>Vivillon has 18 different wing patterns (and 2 additional limited patterns), which are dependent on the player's real-world location. The locations are fairly well-defined, and both <a href="https://media.pocketmonsters.net/pages/506/Vivillon-Weltkarte.png">a map</a href> and <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_with_form_differences#Vivillon">a list</a href> of them can be found online. We should now go back to the cities we found, and check which Vivillon pattern can be found in which city. With 18 different patterns for 18 cities around the world, each pattern appears in exactly one of the cities featured in this puzzle:</p>
+<table>
+<thead>
+<tr>
+<th>Image</th>
+<th>City</th>
+<th>Pattern</th>
+<th># of butterflies</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Bristol</td>
+<td>Garden</td>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Bloemfontein</td>
+<td>River</td>
+<td>4</td>
+<td>E</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Eskisehir</td>
+<td>Sandstorm</td>
+<td>1</td>
+<td>S</td>
+</tr>
+<tr>
+<td>D</td>
+<td>George</td>
+<td>Archipelago</td>
+<td>5</td>
+<td>I</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Fresno</td>
+<td>High Plains</td>
+<td>3</td>
+<td>G</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Cancun</td>
+<td>Sun</td>
+<td>3</td>
+<td>N</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Salvador</td>
+<td>Savanna</td>
+<td>4</td>
+<td>A</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Versailles</td>
+<td>Meadow</td>
+<td>6</td>
+<td>W</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Bilbao</td>
+<td>Marine</td>
+<td>4</td>
+<td>I</td>
+</tr>
+<tr>
+<td>J</td>
+<td>Turku</td>
+<td>Icy Snow</td>
+<td>5</td>
+<td>N</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Singapore</td>
+<td>Jungle</td>
+<td>4</td>
+<td>G</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Pittsburgh</td>
+<td>Polar</td>
+<td>1</td>
+<td>P</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Honolulu</td>
+<td>Ocean</td>
+<td>4</td>
+<td>A</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Shizuoka</td>
+<td>Elegant</td>
+<td>7</td>
+<td>T</td>
+</tr>
+<tr>
+<td>O</td>
+<td>Utrecht</td>
+<td>Continental</td>
+<td>4</td>
+<td>T</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Bismarck</td>
+<td>Modern</td>
+<td>4</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>Sapporo</td>
+<td>Tundra</td>
+<td>5</td>
+<td>R</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Taichung</td>
+<td>Monsoon</td>
+<td>7</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>We will use the number of butterflies in each image again as an index, this time indexing into the Vivillon patterns to get the message DESIGN A WING PATTERN.</p>
+<p>During the hunt, when teams submitted this message, they received an instruction to design a new wing pattern to represent their team, and send it to us via email. After submitting their designs, teams received a reply containing the puzzle answer, <strong>APPROACHING STORM</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>chimpaznee: We wanted to include one puzzle in this hunt that would be reminiscent of rounds on r/PictureGame, or at least use its concept of image-based solve paths. Work on the puzzle started when ev shared the idea of a Vivillon puzzle with me. We thought for a while about how to clue the locations, then I suggested turning this into an geography-image-based puzzle.</p>
+<p>While we tried to find images for which there was a relatively simple solve path, we were still afraid that solvers who are not familiar with PictureGame will have a very hard time with these. Fortunately, we also have a few people on our team who haven't played PictureGame before, and the internal testsolves showed that the puzzle can probably be manageable the general puzzle community. While we had a couple of harder-to-find locations (such as the ones in Turku and Taichung), we hope that most of the locations were reasonable to find.</p>
+<p>We were expecting this puzzle to be solved by very few teams, because of the niche skills we thought are required. However we were extremely pleasantly surprised by the large amount of wing patterns sent out way, with over 80 teams creating one. Several people have even told us that this was their single favourite puzzle of the hunt! To these people, and everyone else who has given this puzzle a shot, thank you so much for trying out our PictureGame-style puzzle!</p>
+<p>During the hunt, the location for image N was Nagasaki Peace Park. However, a keen-eyed solver found out that the Vivillon pattern found in Nagasaki is Continental, rather than the Elegant pattern found in most of Japan. This was noticed nearly a week after the hunt began, after more than 60 teams have already solved the puzzle. Correcting the erratum would have required creating a whole new image, so in the interest of fairness, we decided to update the image only after the hunt ended.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

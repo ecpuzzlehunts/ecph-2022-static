@@ -1,0 +1,281 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Field Notes - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzles.html" class="btn">Back to Exploring</a>
+
+
+
+<a href="../post-hunt-solve/fieldnotes.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/fieldnotes.html" class="btn">View solution</a>
+<a href="../stats/fieldnotes.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Field Notes
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <div id="puzzle-contents-copyable">
+<p class="flavor">I took out my binoculars and wrote down my observations of the wildlife dotting the landscape. I think I managed to hit every item in my field guide!</p>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>I saw a very large, friendly animal with a human boy in the forest. Even though it appeared to be lazy, I could see it mentoring the boy, referring to him as a "man-cub".</li>
+<li>I could hear a fat insect buzzing beside me (I think it even tried to talk to me?). According to scientists, there's no way it should be able to stay in the air, yet it somehow does.</li>
+<li>I could only see this creature intermittently. But when I could, it always had a wide grin!</li>
+<li>I saw a bird wearing a blue cap. It was accompanied by two other identical-looking birds, one wearing a red cap and the other wearing a green cap.  </li>
+<li>I saw a pachyderm use its huge ears to fly over the trees!  </li>
+<li>I shifted my view to the ocean, and saw this yellow-and-blue creature swimming alongside a red-haired mermaid.  </li>
+<li>It was a clay-like canine creature accompanying a human wearing a green sweater and brown pants.  </li>
+<li>I saw a lagomorph wearing blue clothes and a badge.  </li>
+<li>I saw an obese reptile standing on two legs. It wore a red cape and a crown.  </li>
+<li>It looked like a large, green creature, part of a group of four. Upon a closer look, I could see the orange mask it wears around its eyes.   </li>
+<li>I saw a rodent cooking a pleasant-smelling vegetable dish.  </li>
+<li>I saw a saber-toothed animal holding a large acorn.  </li>
+<li>I saw a large equine beast gallop across the hills at a dizzying pace, carrying a wizard in white robes on its back.   </li>
+<li>I could not believe my eyes - today I saw the King of the Jungle! At this time, he was still a cub being guided by his father, but it was still a sight to behold.   </li>
+<li>I saw a vulpine creature running away from a girl and a monkey with a stolen bag.   </li>
+<li>I saw a magical equine beast roam the hills! It had a horn and a distinctive mane and its fur was coloured purple. It also appeared very friendly to the other equine beasts on the hills.</li>
+</ul>
+<p><strong>Excerpts from the field guide:</strong></p>
+<ul>
+<li>The males of its kind become very attractive once their hair greys. It is most active at around 4 PM.  </li>
+<li>It likes to wrap its arms around people it adores, in a similar way a wrestler might grapple their opponent. It is most active at around 2 PM.  </li>
+<li>It likes to roll over, like a capsizing ship. It is most active at around 8 PM.  </li>
+<li>It always waits when told to do so. It is most active at around 4 PM.  </li>
+<li>It stores valuables in a safe place for future use. It is most active at around 4 PM.  </li>
+<li>It often gets lost in the endless warrens of places like Wikipedia. It is most active at around 6 PM.  </li>
+<li>It is very uncomfortable with its unfamiliar surroundings. It is most active at around 8 PM.  </li>
+<li>It can be seen frequently during periods of hot weather, when Sirius first rises above the horizon. It is most active at around 6 PM.  </li>
+<li>It has an inclination to carelessly reveal secrets. It is most active at around 3 PM.  </li>
+<li>It makes fake displays of sorrow. It is most active at around 9 PM.  </li>
+<li>It engages in an endless, pointless pursuit. It is most active at around 2 PM.  </li>
+<li>It appears to only be good at a single skill. It is most active at around 1 PM.  </li>
+<li>For some reason, people deliberately avoid speaking of it, even though it plays a central role in the ecosystem. It is most active at around 2 PM.   </li>
+<li>It is very industrious. It is most active at around 1 PM.  </li>
+<li>It always receives the largest portion of every meal. It is most active at around 4 PM.   </li>
+<li>It lacks protection from attacks, making it an easy target to predators. It is most active at around 5 PM. </li>
+</ul>
+</div>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+</html>

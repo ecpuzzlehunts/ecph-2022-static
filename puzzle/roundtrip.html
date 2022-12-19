@@ -1,0 +1,259 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Round Trip - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzles.html" class="btn">Back to Exploring</a>
+
+
+
+<a href="../post-hunt-solve/roundtrip.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/roundtrip.html" class="btn">View solution</a>
+<a href="../stats/roundtrip.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Round Trip
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <div id="puzzle-contents-copyable">
+<p class="flavor">You were hoping that visiting the places marked on your map would colour your trip positively, but you've just gone sick of all this wheeling around. At least there were other interesting sights along the path.</p>
+<div class="no-copy" style="text-align: center"><p style="margin:auto"><a href="../static/puzzle_resources/roundtrip/A.png"><img src="../static/puzzle_resources/roundtrip/A.e6d3e978d463.png" width = "47%" style="padding: 0px 20px 0px 0px;"></a><a href="../static/puzzle_resources/roundtrip/B.png"><img src="../static/puzzle_resources/roundtrip/B.5a78d531ad86.png" width = "47%"></a></p><p style="margin:auto"><a href="../static/puzzle_resources/roundtrip/C.png"><img src="../static/puzzle_resources/roundtrip/C.9fb4276ce45e.png" width = "47%" style="padding: 0px 20px 0px 0px;"></a><a href="../static/puzzle_resources/roundtrip/D.png"><img src="../static/puzzle_resources/roundtrip/D.c41e85115371.png" width = "47%"></a></p><p style="margin:auto"><a href="../static/puzzle_resources/roundtrip/E.png"><img src="../static/puzzle_resources/roundtrip/E.089fc1eaf766.png" width = "47%" style="padding: 0px 20px 0px 0px;"></a><a href="../static/puzzle_resources/roundtrip/F.png"><img src="../static/puzzle_resources/roundtrip/F.a09fa096e9f2.png" width = "47%"></a></p><p style="margin:auto"><a href="../static/puzzle_resources/roundtrip/G.png"><img src="../static/puzzle_resources/roundtrip/G.d86971d1a9c8.png" width = "47%" style="padding: 0px 20px 0px 0px;"></a><a href="../static/puzzle_resources/roundtrip/H.png"><img src="../static/puzzle_resources/roundtrip/H.13d984a160ea.png" width = "47%"></a></p><p style="margin:auto"><a href="../static/puzzle_resources/roundtrip/I.png"><img src="../static/puzzle_resources/roundtrip/I.0748317351f0.png" width = "47%" style="padding: 0px 20px 0px 0px;"></a><a href="../static/puzzle_resources/roundtrip/J.png"><img src="../static/puzzle_resources/roundtrip/J.42334f05b2c4.png" width = "47%"></a></p><p style="margin:auto"><a href="../static/puzzle_resources/roundtrip/K.png"><img src="../static/puzzle_resources/roundtrip/K.f834f06801ce.png" width = "47%" style="padding: 0px 20px 0px 0px;"></a><a href="../static/puzzle_resources/roundtrip/L.png"><img src="../static/puzzle_resources/roundtrip/L.7ab797956288.png" width = "47%"></a></p></div>
+<p><center><p class="no-copy">(Click on each image to open a full-sized version.)</p></center>&emsp;</p>
+<hr />
+<p class="clipboard-only">[See original puzzle for images.]</p>
+<p>The name of this body of water means "Mound of the Dead" in French. (4,5,3,5)</p>
+<p>There are several islands in the southern part of this Black Sea bay, including St. Anastasia Island and St. Ivan Island. (4,2,6)</p>
+<p>This building, which took nearly six centuries to construct, is the largest religious building in Italy. (5,9)</p>
+<p>This city, which lies in the Rhône Valley in Switzerland, is connected by road to Chamonix in France and to Aosta in Italy. (8)</p>
+<p>This depression in the Western Desert of Egypt, which has a major agricultural sector, includes the necropolis known as the Valley of the Golden Mummies. (8,5)</p>
+<p>This French city is the capital of the Eure-et-Loir department, and is famous for its cathedral. (8)</p>
+<p>This hill in Scotland, which rises 637 meters above sea level, lies on the border between the Dumfries and Galloway and Scottish Borders council areas. (9,7)</p>
+<p>This island is connected to the larger island of Shikoku via the Kurushima Kaikyō Bridge. (6)</p>
+<p>This island, which lies in the English Channel, is connected to Great Britain via Chesil Beach. (4,2,8)</p>
+<p>This Ontario town was originally named Normanton. (4,5)</p>
+<p>This place is the largest of its kind in France, and serves as the hub of Air France, the country's flag carrier. (7,2,6,7)</p>
+<p>This Quebec city was founded in 1876 after the discovery of large asbestos deposits in the area. (8,5)</p>
+</div>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+</html>

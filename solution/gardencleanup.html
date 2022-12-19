@@ -1,0 +1,389 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Garden Cleanup - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/gardencleanup.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Garden Cleanup
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">INDECENT POETRY</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chuttiekang and quatrevingtneuf
+
+    </h2>
+
+    
+    <style>
+hc1 { color: #ff0000; }
+hc2 { color: #800000; }
+hc3 { color: #ffff00; }
+hc4 { color: #808000; }
+hc5 { color: #00ff00; }
+hc6 { color: #008000; }
+hc7 { color: #00ffff; }
+hc8 { color: #008080; }
+hc9 { color: #0000ff; }
+hc10 { color: #000080; }
+hc11 { color: #ff00ff; }
+hc12 { color: #800080; }
+hc13 { color: #808080; }
+hc14 { color: #404040; }
+</style>
+
+<p>Solvers are presented with a large image containing a variety of symbols. Some symbols can be
+identified with a descriptive web search; for others, a specialized search tool such as 
+<a href="https://shapecatcher.com/">Shapecatcher</a> may be useful. After identifying a few of them, 
+it should become apparent that the symbols fall into several "sets", and that the number of elements in 
+each set is unique. Moreover, each set is missing one member. Note that for some of the ordered sets, 
+instead of including every member, a string of consecutive members is given, with a gap. These are 
+summarized in the table below, and coloured in the image underneath.</p>
+<table>
+<thead>
+<tr>
+<th>Highlight</th>
+<th>Set size</th>
+<th>Set</th>
+<th>Missing item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><hc1>██████</hc1></td>
+<td>3</td>
+<td>Legend of Zelda Marks of the Goddesses</td>
+<td>Farore</td>
+</tr>
+<tr>
+<td><hc2>██████</hc2></td>
+<td>4</td>
+<td>Playing card suits</td>
+<td>Hearts</td>
+</tr>
+<tr>
+<td><hc3>██████</hc3></td>
+<td>5</td>
+<td>Katakana starting with /m/</td>
+<td>Mo</td>
+</tr>
+<tr>
+<td><hc4>██████</hc4></td>
+<td>6</td>
+<td>Only Connect hieroglyphs</td>
+<td>Eye of Horus</td>
+</tr>
+<tr>
+<td><hc5>██████</hc5></td>
+<td>7</td>
+<td>Tetris pieces</td>
+<td>L tetromino</td>
+</tr>
+<tr>
+<td><hc6>██████</hc6></td>
+<td>8</td>
+<td>NHL Central Division team logos</td>
+<td>Colorado Avalanche</td>
+</tr>
+<tr>
+<td><hc7>██████</hc7></td>
+<td>9</td>
+<td>Astrological symbols for the solar system planets</td>
+<td>Pluto</td>
+</tr>
+<tr>
+<td><hc8>██████</hc8></td>
+<td>10</td>
+<td>Gravity Falls Bill Cipher Zodiac</td>
+<td>Llama</td>
+</tr>
+<tr>
+<td><hc9>██████</hc9></td>
+<td>11</td>
+<td>Cube nets</td>
+<td>(no names, the S- or Z-shaped one)</td>
+</tr>
+<tr>
+<td><hc10>██████</hc10></td>
+<td>12</td>
+<td>Star sign symbols</td>
+<td>Gemini</td>
+</tr>
+<tr>
+<td><hc11>██████</hc11></td>
+<td>13</td>
+<td>Cherokee syllabary ending in /u/</td>
+<td>Tsu</td>
+</tr>
+<tr>
+<td><hc12>██████</hc12></td>
+<td>14</td>
+<td>Hangul consonants</td>
+<td>Tieut</td>
+</tr>
+<tr>
+<td><hc13>██████</hc13></td>
+<td>15</td>
+<td>Actinides</td>
+<td>Uranium</td>
+</tr>
+<tr>
+<td><hc14>██████</hc14></td>
+<td>16</td>
+<td>Younger Futhark runes</td>
+<td>Thurs</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../static/puzzle_resources/gardencleanup/sets_saje.1dd30a8629bb.png" width = "100%"></p>
+<p>Lining up all the missing symbols in ascending order of how many members are in each set, we notice 
+that the symbols look like letters:</p>
+<p><img src="../static/puzzle_resources/gardencleanup/cluephrase_saje.87e3c546e5a9.png" width = "100%"></p>
+<p>This reads "OVERLAP L SIDE UP". We should now overlay the entire image over itself, but with the left 
+side on top. The result may look like a mess, but as the flavour text suggests, looking in the circles 
+shows something promising:</p>
+<p><img src="../static/puzzle_resources/gardencleanup/extraction_saje.4b1fef591baf.png" width = "100%"></p>
+<p>Reading left to right, top to bottom, the letters in the circles spell out the final answer:
+<strong>INDECENT POETRY</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>chuttiekang: This was a doozy to construct, mostly because of how difficult it was to find appropriate sets. I absolutely cannot understate how frustrating and time-consuming that was. It took several months of looking at writing systems, Wikipedia categories, fan wikis, and search results for "[number] symbols/letters/icons/emblems" to get to the final state of the puzzle. Interesting sets that weren't used include Zener cards, click consonants, and the Wikipedia logo.</p>
+<p>Making the image itself was much easier. First, I placed the symbols with circles in their post-rotation positions, and noted what letters go in each circle. I only had to make sure things didn't conflict with the pre-rotation positions.</p>
+<p><img src="../static/puzzle_resources/gardencleanup/sol1_saje.477e3e0535d0.png" width = "50%"></p>
+<p>Next, I placed the symbols that form the letters. This went quite smoothly, probably due to the large number of symbols to choose from.</p>
+<p><img src="../static/puzzle_resources/gardencleanup/sol2_saje.117e75a3beff.png" width = "50%"></p>
+<p>From there, it was just a matter of drawing the rest of the symbols. I am really pleased with how this puzzle came together.</p>
+<p>quatrevingtneuf: We chose to make the extraction left side up because we wanted to avoid the ambiguity of right side up being interpreted as the opposite of upside down. Of course, this didn't stop many teams from interpreting the llama as all sorts of letters.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

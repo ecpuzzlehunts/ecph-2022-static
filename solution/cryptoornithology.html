@@ -1,0 +1,601 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Cryptoornithology - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/cryptoornithology.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Cryptoornithology
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">PEACOCK-PHEASANT</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee
+
+    </h2>
+
+    
+    <p>We are presented with a diagram that contains some pictures of birds, strange symbols and nests with colourful eggs. Below the grid, there are two sets of modified cryptic clues: “Tags” and “Extra Practice”. The clues contain symbols whose meaning we do not know yet, but we are informed that changes must somehow be made.</p>
+<p><strong>How the symbols work</strong><br>
+Each symbol affects the emboldened word that comes before it, and the word needs to be changed in some way for the clue to work. Each symbol indicates a different transformation that remains consistent between all occurrences of the same symbol. To figure out how these work, we’ll need to parse the other parts of the clues to figure out what changes need to be done for them to work. In addition, the shapes of many of the symbols allude to their function.
+As an example, here is the last Extra Practice clue: Uncover <strong>lever</strong> <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="1.75%"> that includes one (6). The answer is REVEAL. The definition is UNCOVER and the wordplay is REVE(A)L, where the symbol <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="1.75%"> indicates that we need to reverse “lever”. The result of reversal, “revel”, also happens to be a valid word.</p>
+<p>Here is what each symbol does, the result of which will always be a valid word:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Transformation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png"width="40%"></td>
+<td>Reverse the word</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/85eedb3dcd.85eedb3dcd2d.png"width="40%"></td>
+<td>Expand a clipped word</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png"width="40%"></td>
+<td>Remove the last two letters</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png"width="40%"></td>
+<td>Remove the middle letter</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png"width="40%"></td>
+<td>ROT13 with NATO Phonetic Alphabet</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/b909b27fc7.b909b27fc764.png"width="40%"></td>
+<td>Turn word into NATO Phonetic Alphabet equivalent</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png"width="40%"></td>
+<td>Change one or more vowels</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/d4ac862889.d4ac8628896d.png"width="40%"></td>
+<td>Prepend S</td>
+</tr>
+<tr>
+<td><img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png"width="40%"></td>
+<td>Change the first letter to G</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solving the clues</strong><br>
+The Extra Practice clues are meant to be an additional aid to figuring out the transformations, in addition to the Tag clues. Solving these is completely optional and their answers won't be used further in the puzzle. Still, here are the solutions to the Extra Practice clues:</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Changed word</th>
+<th>Answer</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reproduces Byzantium's original <strong>roads</strong> <img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="5%"> (6)</td>
+<td>REEDS</td>
+<td>BREEDS</td>
+<td>B + REEDS</td>
+</tr>
+<tr>
+<td>Vegetable composed of <strong>even</strong> <img src="../static/puzzle_resources/cryptoornithology/d4ac862889.d4ac8628896d.png" width="5%"> notes (7)</td>
+<td>SEVEN</td>
+<td>CABBAGE</td>
+<td>Seven "note" letters (A-G)</td>
+</tr>
+<tr>
+<td>Sentimental twist to one <strong>capital</strong> <img src="../static/puzzle_resources/cryptoornithology/b909b27fc7.b909b27fc764.png" width="5%"> (9)</td>
+<td>LIMA</td>
+<td>EMOTIONAL</td>
+<td>Anag. of TO ONE LIMA</td>
+</tr>
+<tr>
+<td>Confine in <strong>Spain</strong> <img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png" width="5%">, it’s said (6)</td>
+<td>SPIN</td>
+<td>INTERN</td>
+<td>Homophone of "IN TURN"</td>
+</tr>
+<tr>
+<td>Head bug drop taking middle of <strong>limo</strong> <img src="../static/puzzle_resources/cryptoornithology/85eedb3dcd.85eedb3dcd2d.png" width="5%"> (5)</td>
+<td>LIMOUSINE</td>
+<td>LOUSE</td>
+<td>U (middle of "LIMOUSINE") in LOSE</td>
+</tr>
+<tr>
+<td>Replace the flower in a <strong>monkey</strong> <img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="5%">'s living space with electronic cash (5)</td>
+<td>MONK</td>
+<td>MONEY</td>
+<td>MON(ASTER→E)Y (MONASTERY = monk’s living space)</td>
+</tr>
+<tr>
+<td><strong>Coops</strong> <img src="../static/puzzle_resources/cryptoornithology/d4ac862889.d4ac8628896d.png" width="5%"> in every direction (4)</td>
+<td>SCOOPS</td>
+<td>NEWS</td>
+<td>Every compass dir. (N+E+W+S)</td>
+</tr>
+<tr>
+<td>Bird of darkness, in <strong>Yale</strong> <img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png" width="5%"> (11)</td>
+<td>GALE</td>
+<td>NIGHTINGALE</td>
+<td>NIGHT + IN + GALE</td>
+</tr>
+<tr>
+<td><strong>Delta</strong> <img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png" width="5%"> is one in favor of former WWE chairman (8)</td>
+<td>QUEBEC</td>
+<td>PROVINCE</td>
+<td>PRO + VINCE</td>
+</tr>
+<tr>
+<td>Uncover <strong>lever</strong> <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="5%"> that includes one (6)</td>
+<td>REVEL</td>
+<td>REVEAL</td>
+<td>A in REVEL</td>
+</tr>
+</tbody>
+</table>
+<p>There are 12 Tag clues. This is the same as the number of birds in the image, which suggests (along with the instruction to "tag" the birds) to pair them up later. Here are the solutions to the Tag clues:</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Changed word</th>
+<th>Answer</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Oscar</strong> <img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png" width="5%"> to appear to flourish (5)</td>
+<td>BRAVO</td>
+<td>BLOOM</td>
+<td>B + LOOM</td>
+</tr>
+<tr>
+<td>Cheerful <strong>lover</strong> <img src="../static/puzzle_resources/cryptoornithology/b909b27fc7.b909b27fc764.png" width="5%"> stuck in a loop (6)</td>
+<td>ROMEO</td>
+<td>BRIGHT</td>
+<td>R in BIGHT ( = loop of rope)</td>
+</tr>
+<tr>
+<td>Oddly-deprived acrobat <strong>tern</strong> <img src="../static/puzzle_resources/cryptoornithology/d4ac862889.d4ac8628896d.png" width="5%"> drops new glass tray (7)</td>
+<td>STERN</td>
+<td>COASTER</td>
+<td>aCrObAt lacking odd-position letters + STER(-n)</td>
+</tr>
+<tr>
+<td><strong>Prudent</strong> <img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="5%"> organization's fruit (5)</td>
+<td>PRUDE</td>
+<td>DRUPE</td>
+<td>Anag. of PRUDE</td>
+</tr>
+<tr>
+<td><strong>Abuse</strong> <img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="5%"> that woman’s ancestor (6)</td>
+<td>OBESE</td>
+<td>FATHER</td>
+<td>FAT + HER</td>
+</tr>
+<tr>
+<td>Globe <strong>sold</strong> <img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png" width="5%"> before breakfast’s beginning (3)</td>
+<td>GOLD</td>
+<td>ORB</td>
+<td>OR ( = gold) + B</td>
+</tr>
+<tr>
+<td>Document <strong>ribbon</strong> <img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png" width="5%">, perhaps, within proper limits (5)</td>
+<td>GIBBON</td>
+<td>PAPER</td>
+<td>APE inside PR (ends of "proper")</td>
+</tr>
+<tr>
+<td>Royal rule ends <strong>gales</strong> <img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="5%"> (5)</td>
+<td>GAL</td>
+<td>REGAL</td>
+<td>ends of RulE + GAL</td>
+</tr>
+<tr>
+<td>Do again, <strong>per</strong> <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="5%"> direction without direction (6)</td>
+<td>REP</td>
+<td>REPEAT</td>
+<td>REP + EA(-s)T</td>
+</tr>
+<tr>
+<td>In Petra, <strong>flu</strong> <img src="../static/puzzle_resources/cryptoornithology/85eedb3dcd.85eedb3dcd2d.png" width="5%"> is tame (5)</td>
+<td>INFLUENZA</td>
+<td>TRAIN</td>
+<td>hidden in peTRA INfluenza</td>
+</tr>
+<tr>
+<td><strong>Pro at</strong> <img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png" width="5%"> unconventional trick (4)</td>
+<td>PRAT</td>
+<td>TRAP</td>
+<td>Anag. of PRAT</td>
+</tr>
+<tr>
+<td>Audibly <strong>pronounce</strong> <img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="5%"> “tree” (3)</td>
+<td>PRONOUN</td>
+<td>YEW</td>
+<td>Homophone of "YOU" (pronoun)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solving the diagram</strong><br>
+Equipped with the clue answers and knowning the functions of the symbols, we can now have a closer look at the diagram. First of all, we should identify the birds, which can be done by reverse image search or carefully finding terms to describe them, then putting these in a search engine. We can observe that each bird has a colour in its common name (red/yellow/green/blue), and also try to find a way to pair up the birds with the Tag answers.</p>
+<p>It turns out that each answer can also be associated with the common name of a bird, whether it is by forming a phrase, a synonym, or some other semantic connection. Once the Tag answers are connected to birds, we can begin to follow the paths and and try to find where each word ends up and how it gets changed. By assuming that all paths result in valid words (both as intermediate and final products), and that bird colour must correspond to egg colour (or RYGB letter on nest), there is a unique correct arrangement of the paths the birds or words take. </p>
+<p><center><img src="../static/puzzle_resources/cryptoornithology/Cryptoornithology_solution_wkuz.a9436723ec7e.png" width="100%"></center></p>
+<p>After following the paths to the nests, we should use the number of eggs in each nest to index into the final words. Going in clockwise order by nest starting from the top, these are:</p>
+<table>
+<thead>
+<tr>
+<th>Bird</th>
+<th>Clue answer</th>
+<th>Intermediate steps</th>
+<th>Final word</th>
+<th># of eggs</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blue-footed booby</td>
+<td>TRAP</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/d4ac862889.d4ac8628896d.png" width="6%">→ STRAP <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="6%">→</td>
+<td>PARTS</td>
+<td>1</td>
+<td>P</td>
+</tr>
+<tr>
+<td>Red-rumped parrot</td>
+<td>REPEAT</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/b909b27fc7.b909b27fc764.png" width="6%">→ ECHO <img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png" width="6%">→</td>
+<td>ROMEO</td>
+<td>2</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Yellow bishop</td>
+<td>FATHER</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/b909b27fc7.b909b27fc764.png" width="6%">→ PAPA <img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png" width="6%">→</td>
+<td>CHARLIE</td>
+<td>5</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Red-bellied woodpecker</td>
+<td>YEW</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="6%">→ YAW <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="6%">→ WAY <img src="../static/puzzle_resources/cryptoornithology/d4ac862889.d4ac8628896d.png" width="6%">→</td>
+<td>SWAY</td>
+<td>4</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Green-breasted mango</td>
+<td>DRUPE</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="6%">→ DRAPE <img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png" width="6%">→</td>
+<td>GRAPE</td>
+<td>4</td>
+<td>P</td>
+</tr>
+<tr>
+<td>Blue-breasted kingfisher</td>
+<td>REGAL</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="6%">→ LAGER <img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="6%">→</td>
+<td>LAG</td>
+<td>1</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Greater green leafbird</td>
+<td>PAPER</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="6%">→ PIPER <img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png" width="6%">→</td>
+<td>PIER</td>
+<td>3</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Blue-bellied roller</td>
+<td>COASTER</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="6%">→ COAST <img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png" width="6%">→</td>
+<td>COST</td>
+<td>1</td>
+<td>C</td>
+</tr>
+<tr>
+<td>Red-headed weaver</td>
+<td>ORB</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="6%">→ BRO <img src="../static/puzzle_resources/cryptoornithology/85eedb3dcd.85eedb3dcd2d.png" width="6%">→ BROTHER <img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="6%">→</td>
+<td>BROTH</td>
+<td>4</td>
+<td>T</td>
+</tr>
+<tr>
+<td>Green-crowned brilliant</td>
+<td>BRIGHT</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/b9b0b91ddf.b9b0b91ddf75.png" width="6%">→ BRIG <img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="6%">→ BRAG <img src="../static/puzzle_resources/cryptoornithology/59a19202c8.59a19202c8da.png" width="6%">→</td>
+<td>GARB</td>
+<td>3</td>
+<td>R</td>
+</tr>
+<tr>
+<td>Yellow-bellied flowerpecker</td>
+<td>BLOOM</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png" width="6%">→ GLOOM <img src="../static/puzzle_resources/cryptoornithology/6558903155.6558903155a0.png" width="6%">→ GLEAM <img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png" width="6%">→ GLAM <img src="../static/puzzle_resources/cryptoornithology/85eedb3dcd.85eedb3dcd2d.png" width="6%">→</td>
+<td>GLAMOUR</td>
+<td>5</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Yellow rail</td>
+<td>TRAIN</td>
+<td><img src="../static/puzzle_resources/cryptoornithology/cb2ff03bdd.cb2ff03bddd3.png" width="6%">→ GRAIN <img src="../static/puzzle_resources/cryptoornithology/9ffb566aae.9ffb566aaed9.png" width="6%">→</td>
+<td>GRIN</td>
+<td>4</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>The result of indexing is “POLYPLECTRON”. This is a genus of birds whose common name is the final answer to the puzzle – <strong>PEACOCK-PHEASANT</strong>.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>Chirp. </p>
+<p>I like birds, and would often spend long times watching them when I was younger. I still sometimes stop what I’m doing to watch a flock of birds.</p>
+<p>I also like cryptics, especially if you have to analyze the wordplay in order to work out the parts of the puzzle, so this was a natural thing to write for me. The hardest part was coming up with 12 words that are semantically connected to their avian counterparts, while at the same time transformable several times and extract to the right letters. Originally I wanted to use the cluephrase COMMON NAME OF POLYPLECTRON but it was virtually impossible with the puzzle’s constraints, so I thought including this in the flavour text can fly. In the end, I’m quite happy with the set of words and transformations that I came up with. Though I think “YEW” is non-ideal (I’m only using it because the extraction needs a Y), it did not ruffle any testsolvers’ feathers.</p>
+<p>The puzzle's name is pronounced with separate O sounds. It has also occasionally been nicknamed “Cryptobirb” or "Cryptobird" internally.</p>
+<p>Here are a couple of clues that were intended for the Extra Practice section but did not make it to the final puzzle:<br>
+• Tie door part with <strong>golf</strong> <img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png" width="1.75%"> for the end (4)<br>
+• <strong>Uniform</strong> <img src="../static/puzzle_resources/cryptoornithology/854c3a4000.854c3a40005b.png" width="1.75%">'s been torn - Behold the tragedy (7)<br>
+In addition to these, Vince McMahon retired while this hunt was being written, which means I had to add the word "former" to the respective clue.</p>
+<p>And as a finishing note, here is a picture of a Palawan peacock-pheasant:</p>
+<p><img src="../static/puzzle_resources/cryptoornithology/authors_notes_birb.0c0d4592d709.png" width="50%"><h2>Image Attributions</h1></p>
+<p>The bird pictures can all be found in Wikimedia Commons:</p>
+<p>• <a href="https://commons.wikimedia.org/wiki/File:Blue-footed_Booby_by_Graham_Racher.jpg">Blue-footed booby</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Psephotus_haematonotus_male_-_Cornwallis_Rd.jpg">Red-rumped parrot</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Yellow_Bishop_-_Kenya_S4E8557_(22662474520).jpg">Yellow bishop</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Red-bellied_Woodpecker_Female.jpg">Red-bellied woodpecker</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Green-breasted_Mango_(Anthracothorax_prevostii)RWD.jpg">Green-breasted mango</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:BlueBreastedKingfisher.jpg">Blue-breasted kingfisher</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Chloropsis_sonnerati-20030531.jpg">Greater green leafbird</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Blue-bellied_rollers_(Coracias_cyanogaster).jpg">Blue-bellied roller</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Red-headed_Weaver,_Anaplectes_rubriceps_at_Marakele_National_Park,_Limpopo_Province,_South_Africa_(male_in_breeding_plumage)_(15679994373).jpg">Red-headed weaver</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Green-crowned_brilliant_(Heliodoxa_jacula_henryi)_female.jpg">Green-crowned brilliant</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Yellow-bellied_flowerpecker_(Dicaeum_melanoxanthum)_01.jpg">Yellow-bellied flowerpecker</a href><br>
+• <a href="https://commons.wikimedia.org/wiki/File:Yellow_Rail.jpg">Yellow rail</a href><br></p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

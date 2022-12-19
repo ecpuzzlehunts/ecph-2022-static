@@ -1,0 +1,653 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: A Very Large Integer - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                
+        <style>
+    .background {
+            background-image: url(../static/images/introbg.png);
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+</style>
+<div class=background></div>
+    
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/averylargeinteger.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: A Very Large Integer
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">SOCOTRA</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+chimpaznee
+
+    </h2>
+
+    
+    <style>
+    .wrap{
+        word-break: break-all;
+    }
+</style>
+
+<p>This puzzle is entirely contained in a single, very large integer. But how do we break into it?
+We can start by looking for clues near the beginning of the number. If its first digits are split up
+into groups of 2, each such group is a number 01-26, which means we can translate these to letters.
+Doing this, the first 228 digits spell out a message, which reads like this once spaces are added:</p>
+<p><tt>SUPERB START THE FIRST DIGIT IS FOUND IN HONEY AND NOW ISOLATE THE FOLLOWING DIGITS IN CHUNKS OF ONE HUNDRED AND USE RAPIDTABLES TO CONVERT TO BASE THIRTY SIX</tt></p>
+<p>This message has two main parts. The first one states that “the first digit is found in honey”.
+We do not know the context of this yet, but we can observe that the digit ONE is found as a substring of
+honey. The second part is an instruction. If we isolate the digits that follow the message in blocks of
+100, and convert each block to base 36, using the base converter on <a href="https://www.rapidtables.com/convert/number/base-converter.html">rapidtables</a>, 
+we can get 10 blocks of characters (with the last 93 digits only base36'ing to gibberish):</p>
+<p><tt>
+GREATNOWREADTHEFINAL93BASE10DIGITSINBLOCKSOFTHREEANDAFTERDOINGSO
+READTHESECUIGDEAGANDHAMALAUANDKAKSTEISTANDNEUNZEHNANDNIJUUICHIAN
+DPESEMBEDHJETEANDPYMPANDSHESHANDSHIPPALANDVINGTETUNANDZESTIENAND
+NOWLOOKOUTFORTHENUMBERTWENTYFIVEWHICHWILLAPPEARTENTIMESINAROWAHE
+AD153127171211917271C100NOWCARRYONANDTREATTHEFOLLOWING56CHARSAS8
+COLUMNSBY7ROWSNUMBERLINKBISBLANK1BBB2BBBBBBBBB1BBBB4BBBBBBBBB5BB
+B2BBBBBBB3BB4BBBBBBBBB53ANDNOWGOLOOKBELOWYOURMONITORZ4VFSANDXEVT
+AND87UIKJANDTBUMOAND21QWQASANDCTYGFGBANDCRBYANDEXAND6G4DANDTRFGF
+VBANDFINALLYYOUSHOULDUSETHESIXDIGITSYOUGOTASNORTHLATEASTLONGCOOR
+DINATESINTWOSETSOFTHREEWITHONEDECIMALPLACEEACHFINALANSIS7LETTERS
+</tt></p>
+<p>Examining these strings, we notice that they contain several minipuzzles, each of which resolves to 
+a single digit. Here is a breakdown of the individual minipuzzles:</p>
+<h2>Honey</h2>
+<p><tt>THEFIRSTDIGITISFOUNDINHONEY</tt></p>
+<p>As stated above, "HONEY" contains the substring ONE. The first digit is <strong>1</strong>.</p>
+<h2>Sequences</h2>
+<div class="wrap"><tt>GREATNOWREADTHEFINAL93BASE10DIGITSINBLOCKSOFTHREE</tt></div>
+<p><br>
+It turns out that the final digits of the number are hiding a puzzle in plain sight!
+We will split the final 93 digits of the very large integer into blocks of 3, as the message indicates:</p>
+<p><tt>067 011 079 011 043 047 043 011 000 036 081 484 025 400 529 225 196 081 196 025 000 120 105 015 210 276 120 351 015 171 120</tt></p>
+<p>These numbers are all parts of well-known sequences. There are three sections to this minipuzzle, 
+each representing a distinct sequence. The sections are separated by “000”. The first section contains
+prime numbers, the second section contains square numbers, and the third section contains triangular
+numbers. If we take the position of each number in its sequence, and convert to letters via A1Z26, they 
+spell out several digits:</p>
+<table>
+<thead>
+<tr>
+<th>Prime<br>number</th>
+<th>Position</th>
+<th>Letter</th>
+<th>Square<br>number</th>
+<th>Position</th>
+<th>Letter</th>
+<th>Triangular<br>number</th>
+<th>Position</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>67</td>
+<td>19</td>
+<td>S</td>
+<td>36</td>
+<td>6</td>
+<td>F</td>
+<td>120</td>
+<td>15</td>
+<td>O</td>
+</tr>
+<tr>
+<td>11</td>
+<td>5</td>
+<td>E</td>
+<td>81</td>
+<td>9</td>
+<td>I</td>
+<td>105</td>
+<td>14</td>
+<td>N</td>
+</tr>
+<tr>
+<td>79</td>
+<td>22</td>
+<td>V</td>
+<td>484</td>
+<td>22</td>
+<td>V</td>
+<td>15</td>
+<td>5</td>
+<td>E</td>
+</tr>
+<tr>
+<td>11</td>
+<td>5</td>
+<td>E</td>
+<td>25</td>
+<td>5</td>
+<td>E</td>
+<td>210</td>
+<td>20</td>
+<td>T</td>
+</tr>
+<tr>
+<td>43</td>
+<td>14</td>
+<td>N</td>
+<td>400</td>
+<td>20</td>
+<td>T</td>
+<td>276</td>
+<td>23</td>
+<td>W</td>
+</tr>
+<tr>
+<td>47</td>
+<td>15</td>
+<td>O</td>
+<td>529</td>
+<td>23</td>
+<td>W</td>
+<td>120</td>
+<td>15</td>
+<td>O</td>
+</tr>
+<tr>
+<td>43</td>
+<td>14</td>
+<td>N</td>
+<td>225</td>
+<td>15</td>
+<td>O</td>
+<td>351</td>
+<td>26</td>
+<td>Z</td>
+</tr>
+<tr>
+<td>11</td>
+<td>5</td>
+<td>E</td>
+<td>196</td>
+<td>14</td>
+<td>N</td>
+<td>15</td>
+<td>5</td>
+<td>E</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>81</td>
+<td>9</td>
+<td>I</td>
+<td>171</td>
+<td>18</td>
+<td>R</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>196</td>
+<td>14</td>
+<td>N</td>
+<td>120</td>
+<td>15</td>
+<td>O</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>25</td>
+<td>5</td>
+<td>E</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Each set of spelled-out digits makes up a number that happens to be a member of the sequence from which
+it was extracted, which means that we can re-apply the position-to-letter mechanism with these numbers.
+71 is the 20th prime number, 529 is the 23rd square number, and 120 is the 15th triangular number.
+Converting these positions to letters gives us "TWO". The second digit is <strong>2</strong>.</p>
+<h2>Languages</h2>
+<div class="wrap"><tt>ANDAFTERDOINGSOREADTHESECUIGDEAGANDHAMALAUANDKAKSTEISTANDNEUNZEHNANDNIJUUICHIANDPESEMBEDHJETEANDPYMPANDSHESHANDSHIPPALANDVINGTETUNANDZESTIEN</tt></div>
+<p><br>
+We have several non-English words here, each of them separated by "AND". Looking up each of these items individually, we realize that they are numbers in different languages (however, some of them are transliterations from non-Latin scripts). Furthermore, we may observe that the languages start with letters A-K. We can reorder the list alphabetically by language and, like before, convert numbers into letters via A1Z26:</p>
+<table>
+<thead>
+<tr>
+<th>Word</th>
+<th>Language</th>
+<th>Number</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pesëmbëdhjetë</td>
+<td>Albanian</td>
+<td>15</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Hamalau</td>
+<td>Basque</td>
+<td>14</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Pymp</td>
+<td>Cornish</td>
+<td>5</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Zestien</td>
+<td>Dutch</td>
+<td>16</td>
+<td>P</td>
+</tr>
+<tr>
+<td>Kaksteist</td>
+<td>Estonian</td>
+<td>12</td>
+<td>L</td>
+</tr>
+<tr>
+<td>Vingt-en-un</td>
+<td>French</td>
+<td>21</td>
+<td>U</td>
+</tr>
+<tr>
+<td>Neunzehn</td>
+<td>German</td>
+<td>19</td>
+<td>S</td>
+</tr>
+<tr>
+<td>Shesh (שש)</td>
+<td>Hebrew</td>
+<td>6</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Cúig déag</td>
+<td>Irish</td>
+<td>15</td>
+<td>O</td>
+</tr>
+<tr>
+<td>Nijuu-ichi (二十一)</td>
+<td>Japanese</td>
+<td>21</td>
+<td>U</td>
+</tr>
+<tr>
+<td>Ship-pal (십팔)</td>
+<td>Korean</td>
+<td>18</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<p>The resulting phrase is ONE PLUS FOUR. Adding these up gives us the third digit, <strong>5</strong>.</p>
+<h2>Twenty-Five</h2>
+<div class="wrap"><tt>ANDNOWLOOKOUTFORTHENUMBERTWENTYFIVEWHICHWILLAPPEARTENTIMESINAROWAHEAD153127171211917271C100</tt></div>
+<p><br>
+The message implies that the number 25 appears ten times in the string “153127171211917271C100”. 
+"25" doesn't appear; instead, the number 25 is written in several different bases. Converting each base
+number to a letter via A1Z26, we get a message:</p>
+<table>
+<thead>
+<tr>
+<th>Substring</th>
+<th>Base</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>20</td>
+<td>T</td>
+</tr>
+<tr>
+<td>31</td>
+<td>8</td>
+<td>H</td>
+</tr>
+<tr>
+<td>27</td>
+<td>9</td>
+<td>I</td>
+</tr>
+<tr>
+<td>17</td>
+<td>18</td>
+<td>R</td>
+</tr>
+<tr>
+<td>121</td>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td>19</td>
+<td>16</td>
+<td>P</td>
+</tr>
+<tr>
+<td>17</td>
+<td>18</td>
+<td>R</td>
+</tr>
+<tr>
+<td>27</td>
+<td>9</td>
+<td>I</td>
+</tr>
+<tr>
+<td>1C</td>
+<td>13</td>
+<td>M</td>
+</tr>
+<tr>
+<td>100</td>
+<td>5</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<p>The fourth digit is the third prime number, <strong>5</strong>.</p>
+<h2>Numberlink</h2>
+<div class="wrap"><tt>NOWCARRYONANDTREATTHEFOLLOWING56CHARSAS8COLUMNSBY7ROWSNUMBERLINKBISBLANK1BBB2BBBBBBBBB1BBBB4BBBBBBBBB5BBB2BBBBBBB3BB4BBBBBBBBB53</tt></div>
+<p><br>
+These are instructions for creating an 8x7 numberlink grid. Following the key, we end up with a numberlink
+puzzle (left) that has a unique solution (right).</p>
+<p><center><img src="../static/puzzle_resources/averylargeinteger/numberlink_subpuzzle_unsolved_vvnt.3890a2fb622a.png">
+&emsp; &emsp; &emsp;
+<img src="../static/puzzle_resources/averylargeinteger/numberlink_subpuzzle_solved_vvnt.ec9fb8911324.png"></center></p>
+<p>If we count how many cells each segment passes through, including the ends, and order 1-5,
+we can spell out “THREE” via A1Z26. The fifth digit is <strong>3</strong>.</p>
+<h2>Keyboard</h2>
+<div class="wrap"><tt>ANDNOWGOLOOKBELOWYOURMONITORZ4VFSANDXEVTAND87UIKJANDTBUMOAND21QWQASANDCTYGFGBANDCRBYANDEXAND6G4DANDTRFGFVB</tt></div>
+<p><br>
+“Look below your monitor” is a clue that this minipuzzle is keyboard-related. This is followed by
+several gibberish strings, each separated by “AND”. If we trace the paths made by these characters on
+a QWERTY keyboard, they spell out letters:</p>
+<table>
+<thead>
+<tr>
+<th>String</th>
+<th>Letter Traced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z4VFS</td>
+<td>A</td>
+</tr>
+<tr>
+<td>XEVT</td>
+<td>N</td>
+</tr>
+<tr>
+<td>87UIKJ</td>
+<td>S</td>
+</tr>
+<tr>
+<td>TBUMO</td>
+<td>W</td>
+</tr>
+<tr>
+<td>21QWQAS</td>
+<td>E</td>
+</tr>
+<tr>
+<td>CTYGFGB</td>
+<td>R</td>
+</tr>
+<tr>
+<td>CRBY</td>
+<td>N</td>
+</tr>
+<tr>
+<td>EX</td>
+<td>I</td>
+</tr>
+<tr>
+<td>6G4D</td>
+<td>N</td>
+</tr>
+<tr>
+<td>TRFGFVB</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<p>The sixth digit is <strong>9</strong>.</p>
+<h2>Conclusion</h2>
+<div class="wrap"><tt>ANDFINALLYYOUSHOULDUSETHESIXDIGITSYOUGOTASNORTHLATEASTLONGCOORDINATESINTWOSETSOFTHREEWITHONEDECIMALPLACEEACHFINALANSIS7LETTERS</tt></div>
+<p><br>
+To obtain the final answer, we will need to treat the minipuzzles' answer digits as geographic coordinates. For that, both the latitude and longitude values will be positive. We'll group the digits in two sets of three, and have one digit after the decimal mark in each group. The resulting coordinates are 12.5, 53.9. These coordinates land at the very center of the island of <strong>SOCOTRA</strong>! With the information that the final answer is 7 letters long, this is the correct answer to the puzzle.</p>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>I thought it would be funny to write a puzzle that is contained entirely in a single number.</p>
+<p>This puzzle had to be rewritten less than one month before the hunt started. The previous answer to it was QUBATY TOWER. While the structure was the same (6 minipuzzles, each of them extracting to a digit), the final step involved Qubaty Tower's Emporis Building Number of 105362, which seemed like a reliable, unchanging source that is relevant to the answer. Or so we thought. On Sep. 14, Emporis and its entire database were shut down. This meant that we had to give the puzzle a major revision. We had a second look at the meta, and luckily quatrevingtneuf gave me a much nicer answer to work with, SOCOTRA. Luckily, the coordinates 12.5, 53.9 land comfortably in the middle of the island, which means that I could keep the structure of six minipuzzles, where each of them has a digit as an answer. The minipuzzles were all there, I've just had to change their extracted numbers and reorder them.</p>
+<p>Because the final step involves coordinates, the extracted digits have differing importance. I tried to put the minipuzzles that I thought are more interesting or difficult as the first or second digits of the latitude or longitude, to encourage more teams to solve them. The very first digit, however, is given for free. This was also the case when I was working with the answer QUBATY TOWER, and I did not want to change this.</p>
+<p>I like this type of puzzle that isn't what it looks like on the surface, though I've found that a lot of these puzzles are on the high end of the difficulty scale, so I wanted to make a much more approachable version of the type. I drew some inspiration from a puzzle in the 2022 Mystery Hunt,
+<a href="https://www.bookspace.world/puzzle/lists-of-large-integers/">Lists of Large Integers</a>, including the puzzle title.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

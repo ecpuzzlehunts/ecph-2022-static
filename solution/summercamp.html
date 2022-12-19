@@ -1,0 +1,528 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Solution: Summer Camp - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../puzzle/summercamp.html" class="btn">Back to the puzzle</a>
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<style>
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 2rem 0;
+}
+</style>
+
+<h1>
+    
+    Solution: Summer Camp
+    <div class="solved-title-marker">Answer: <span class="solved-title-answer spoiler">HARMONIC NUMBER</span></div>
+    
+</h1>
+
+<main>
+    <h2>
+        Written by
+        
+eanacra
+
+    </h2>
+
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<p>We are presented with a list of clues, a graph with lowercase or Greek letters and a complicated formula. There is nothing we can do with the graph or formula for now, so we turn our attention to the clues first.</p>
+<p>After inspecting the clues, it becomes apparent that each clue references something associated with a mathematician. The fourth clue, for example, references Hilbert’s hotel. The presence of the subtitle “Participants” suggests we should focus on the mathematicians instead of the mathematical concepts. With the help of a search engine, we can figure out most, if not all, of the mathematicians. We then notice that the given numbers are never greater than the length of the mathematicians’ surnames, so it would make sense to index into the surnames. Eventually, we should have enough clues solved to obtain the cluephrase MATH GENEALOGY IDS.</p>
+<table>
+<thead>
+<tr>
+<th>Clue</th>
+<th>Mathematician</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I'm associated with the eighth problem in a list which is associated with another participant.</td>
+<td><tt>RIE<strong>M</strong>ANN</tt></td>
+</tr>
+<tr>
+<td>Did you know that \(3^2-2^3=1\) is the unique answer?</td>
+<td><tt>CATAL<strong>A</strong>N</tt></td>
+</tr>
+<tr>
+<td>I often find that putting my belongings into drawers and shelves help me solve problems.</td>
+<td><tt>DIRICHLE<strong>T</strong></tt></td>
+</tr>
+<tr>
+<td>I arrived at the hotel in a coach last night. There were so many guests!</td>
+<td><tt><strong>H</strong>ILBERT</tt></td>
+</tr>
+<tr>
+<td>I came across a truly remarkable theorem today.</td>
+<td><tt><strong>G</strong>AUSS</tt></td>
+</tr>
+<tr>
+<td>Could you fill up this bottle for me please?</td>
+<td><tt>KL<strong>E</strong>IN</tt></td>
+</tr>
+<tr>
+<td>I can help if you think the binomial distribution has too many limitations.</td>
+<td><tt>POISSO<strong>N</strong></tt></td>
+</tr>
+<tr>
+<td>I think cylinders function well.</td>
+<td><tt>B<strong>E</strong>SSEL</tt></td>
+</tr>
+<tr>
+<td>I carry these chains around all the time.</td>
+<td><tt>M<strong>A</strong>RKOV</tt></td>
+</tr>
+<tr>
+<td>What a beautiful equation - who would've thought these constants are all related to each other!</td>
+<td><tt>EU<strong>L</strong>ER</tt></td>
+</tr>
+<tr>
+<td>I introduced the first problem in a list which is associated with another participant.</td>
+<td><tt>CANT<strong>O</strong>R</tt></td>
+</tr>
+<tr>
+<td>I generalized the integral first rigorously defined by another participant and now I have my own!</td>
+<td><tt>LEBES<strong>G</strong>UE</tt></td>
+</tr>
+<tr>
+<td>My inequality follows directly from an inequality associated with another participant.</td>
+<td><tt>CHEB<strong>Y</strong>SHEV</tt></td>
+</tr>
+<tr>
+<td>This is the least well-behaved function I've ever seen - its derivative doesn't exist!</td>
+<td><tt>WE<strong>I</strong>ERSTRASS</tt></td>
+</tr>
+<tr>
+<td>If a little theorem doesn't satisfy you, don't worry, I've got a great theorem!</td>
+<td><tt>PICAR<strong>D</strong></tt></td>
+</tr>
+<tr>
+<td>I love collaborating with others.</td>
+<td><tt>ERDO<strong>S</strong></tt></td>
+</tr>
+</tbody>
+</table>
+<p>A quick search of the cluephrase leads us to the <a href=https://www.genealogy.math.ndsu.nodak.edu/index.php>Mathematics Genealogy Project</a>. We immediately notice that its home page features a very similar graph to the one in this puzzle which is good confirmation that we are on the right track. After searching for a few names on the website, we observe that it lists dissertation titles and, more importantly, each mathematician’s advisor(s) and student(s). We also note that each mathematician has a unique ID stated at the bottom of the page.</p>
+<p>At this point, the objective of the next step should become clear - the given graph illustrates the advisor-student relationship of 32 mathematicians. A directed edge from A to B denotes A is an advisor of B. We need to figure out who each node represents. We might also conjecture that the 16 mathematicians identified earlier all appear in this graph and it should be clear that this is the case after some more investigation.</p>
+<p>We might revisit the graph presented on the home page of the MGP and observe that both graphs contain a rather unusual “cycle” involving 4 nodes. The puzzle in fact uses the same mathematicians (Lagrange, Fourier, Poisson and Dirichlet) and this allows us to start matching letters to names/IDs. A good strategy is to explore advisors rather than students first as some mathematicians have a large number of students, and when exploring students, it’s a good idea to prioritize the more well-known names. Another point to keep in mind is that the nodes with no outgoing edges will very likely correspond to a clued mathematician, otherwise the puzzle might not have a unique solution. We can figure out the unclued mathematicians by checking who can join the disconnected chains formed by the clued ones.</p>
+<p>After completing the graph and verifying that the sum of all IDs matches the number in the hint (Σ is often used to denote sum in mathematics), we substitute the IDs into the complicated formula to get the number 801181315140903142113020518. Finally, we apply A1Z26 to every two digits (with an implied leading zero) to obtain the answer <strong>HARMONIC NUMBER</strong>.</p>
+<p><center><img src="../static/puzzle_resources/summercamp/summercamp_solution_dtol.314b33eff617.png" width="60%"></center></p>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Mathematician</th>
+<th>MGP ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\(a\)</td>
+<td>GAUSS</td>
+<td>18231</td>
+</tr>
+<tr>
+<td>\(b\)</td>
+<td>BESSEL</td>
+<td>18603</td>
+</tr>
+<tr>
+<td>\(c\)</td>
+<td>SCHERK</td>
+<td>25484</td>
+</tr>
+<tr>
+<td>\(d\)</td>
+<td>KUMMER</td>
+<td>18331</td>
+</tr>
+<tr>
+<td>\(e\)</td>
+<td>CANTOR</td>
+<td>29561</td>
+</tr>
+<tr>
+<td>\(f\)</td>
+<td>WEIERSTRASS</td>
+<td>7486</td>
+</tr>
+<tr>
+<td>\(g\)</td>
+<td>SCHWARZ</td>
+<td>7487</td>
+</tr>
+<tr>
+<td>\(h\)</td>
+<td>FEJER</td>
+<td>7488</td>
+</tr>
+<tr>
+<td>\(i\)</td>
+<td>ERDOS</td>
+<td>19470</td>
+</tr>
+<tr>
+<td>\(j\)</td>
+<td>RIEMANN</td>
+<td>18232</td>
+</tr>
+<tr>
+<td>\(k\)</td>
+<td>GERLING</td>
+<td>29642</td>
+</tr>
+<tr>
+<td>\(l\)</td>
+<td>PLUCKER</td>
+<td>7402</td>
+</tr>
+<tr>
+<td>\(m\)</td>
+<td>KLEIN</td>
+<td>7401</td>
+</tr>
+<tr>
+<td>\(n\)</td>
+<td>LINDEMANN</td>
+<td>7404</td>
+</tr>
+<tr>
+<td>\(o\)</td>
+<td>HILBERT</td>
+<td>7298</td>
+</tr>
+<tr>
+<td>\(p\)</td>
+<td>EULER</td>
+<td>38586</td>
+</tr>
+<tr>
+<td>\(q\)</td>
+<td>LAGRANGE</td>
+<td>17864</td>
+</tr>
+<tr>
+<td>\(r\)</td>
+<td>FOURIER</td>
+<td>17981</td>
+</tr>
+<tr>
+<td>\(s\)</td>
+<td>DIRICHLET</td>
+<td>17946</td>
+</tr>
+<tr>
+<td>\(t\)</td>
+<td>LIPSCHITZ</td>
+<td>19964</td>
+</tr>
+<tr>
+<td>\(u\)</td>
+<td>POISSON</td>
+<td>17865</td>
+</tr>
+<tr>
+<td>\(v\)</td>
+<td>LIOUVILLE</td>
+<td>55185</td>
+</tr>
+<tr>
+<td>\(w\)</td>
+<td>CATALAN</td>
+<td>100550</td>
+</tr>
+<tr>
+<td>\(x\)</td>
+<td>CHASLES</td>
+<td>26995</td>
+</tr>
+<tr>
+<td>\(y\)</td>
+<td>DARBOUX</td>
+<td>34254</td>
+</tr>
+<tr>
+<td>\(z\)</td>
+<td>BOREL</td>
+<td>39071</td>
+</tr>
+<tr>
+<td>\(\alpha\)</td>
+<td>LEBESGUE</td>
+<td>86693</td>
+</tr>
+<tr>
+<td>\(\beta\)</td>
+<td>PICARD</td>
+<td>34266</td>
+</tr>
+<tr>
+<td>\(\gamma\)</td>
+<td>OSTROGRADSKY</td>
+<td>259973</td>
+</tr>
+<tr>
+<td>\(\delta\)</td>
+<td>BRASHMAN</td>
+<td>12541</td>
+</tr>
+<tr>
+<td>\(\epsilon\)</td>
+<td>CHEBYCHEV</td>
+<td>12542</td>
+</tr>
+<tr>
+<td>\(\zeta\)</td>
+<td>MARKOV</td>
+<td>12543</td>
+</tr>
+</tbody>
+</table>
+
+    
+    
+    <h2 id="authors-notes">Author&rsquo;s Notes</h2>
+    <p>I suspect the majority of solvers won't have come across the Mathematical Genealogy Project before. 
+Admittedly, there are tedious steps in this puzzle but testsolvers reported that they had fun puzzling 
+out the structure of the graph so I hope you enjoyed working it out as well! Solvers who are familiar 
+with famous mathematicians will inevitably have had a slight advantage in this puzzle, but I certainly 
+hope that those who aren't found the puzzle relatively approachable too. While designing the graph, I 
+was pleasantly surprised at how connected all the famous mathematicians are! CATALAN is one of the 
+hardest mathematicians to identify from the clues but I kept it because the letter it extracted wasn't 
+crucial for figuring out the cluephrase and one can figure it out later with the help of the graph.</p>
+<p>Since a lot of the advisor-student relationships can be found on each mathematician's Wikipedia article, 
+I decided to extract the answer using the MGP IDs instead of simply extracting letters from names in 
+order to fully justify the inclusion of the MGP. An earlier version of this puzzle extracted the answer 
+using sums of pairs of variables but this was deemed to be not very interesting and a formula extraction 
+seemed to be a more satisfying ending to the puzzle. Because of this, a checksum was added to make sure 
+teams didn't have to waste time in determining whether errors were made when plugging numbers into the 
+formula or during an earlier step. Inevitably, the formula had to be very long due to the number of 
+mathematicians involved. It ended up being too long that one must split it into smaller pieces when using WolframAlpha.
+Two weeks before the hunt started, I decided to implement a calculator to avoid the last step being tedious.</p>
+<p>The first draft of this puzzle had a completely different 
+step after the initial identification of mathematicians, but it was scrapped after a couple of testsolves 
+made it clear that the “aha” required was too difficult to get and I couldn't find an easy way to resolve 
+this issue without making the puzzle substantially less interesting.</p>
+    
+
+    
+    
+</main>
+
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+     
+    
+</body>
+
+</html>

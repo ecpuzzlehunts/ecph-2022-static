@@ -1,0 +1,345 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+<title>Summer Camp - EC Puzzle Hunt</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
+    <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script src="../static/js/sorttable.3809d26cbae1.js"></script>
+    <script src="../static/js/tray.ac18af883297.js"></script>
+    <script src="../static/js/notify.7898a6be1e40.js"></script>
+    <script src="../static/js/time.4f918ead85cd.js"></script>
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <script>
+        function setCookie(name,value,days=7) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        }
+    
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+    </script>
+    <style>#cookie-hide {
+        display: none;
+    }
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+</style>
+    
+<script>
+  /* FIXME */
+</script>
+
+</head>
+
+<body>
+    
+    
+        
+            
+                <style>
+    .background {
+            background-size: 25%;
+            background-position-y: 0px;
+            background-repeat: repeat;
+            position:absolute;
+            padding:0;
+            margin:0;
+
+            top:0;
+            left:0;
+
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    #spring-bg{
+        background-image: url(../static/images/seasons/backgrounds/springbg.png);
+    }
+    #summer-bg{
+        background-image: url(../static/images/seasons/backgrounds/summerbg.png);
+    }
+    #autumn-bg{
+        background-image: url(../static/images/seasons/backgrounds/autumnbg.png);
+    }
+    #winter-bg{
+        background-image: url(../static/images/seasons/backgrounds/winterbg.png);
+    }
+</style>
+<div id="spring-bg" class=background style="filter: grayscale(0)"></div>
+<div id="summer-bg" class=background style="filter: grayscale(0)"></div>
+<div id="autumn-bg" class=background style="filter: grayscale(0)"></div>
+<div id="winter-bg" class=background style="filter: grayscale(0)"></div>
+            
+        
+    
+
+    
+    
+    <nav>
+        <div class="nav-bar">
+            <div class="inner-column">
+                <span class="tray">
+                    <div class="top-tabs">
+                        <a href="../index.html">
+                            Home
+                        </a>
+                        <a href="../rules.html">
+                            Rules
+                        </a>
+                        
+                        <a href="../story.html">
+                            Story
+                        </a>
+                        
+                        
+                        <a class="selected-tab" href="../puzzles.html">
+                            Puzzles
+                        </a>
+                        
+                        <a href="../teams.html">
+                            Teams
+                        </a>
+                        <a href="../faq.html">
+                            FAQ
+                        </a>
+                        
+                        <a href="../errata.html">
+                            Updates
+                        </a>
+                        
+                        
+                        <a href="../wrapup.html">
+                            Wrap-Up
+                        </a>
+                        
+                    </div>
+                </span>
+            </div>
+            <div class="inner-column lighten-bg">
+                <div class="top-actions">
+                    <div class="top-left-actions">
+                        
+<a href="../round/summer.html" class="btn">Back to Summer</a>
+
+
+
+<a href="../post-hunt-solve/summercamp.html" class="btn">Check your answer spoiler-free</a>
+
+
+<a href="../solution/summercamp.html" class="btn">View solution</a>
+<a href="../stats/summercamp.html" class="btn">Stats</a>
+
+
+
+                    </div>
+                    <div class="top-right-actions">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-column">
+        
+        
+        
+        <script>
+        /**/
+        
+        showLink();
+        </script> 
+    </div>
+    <div class="inner-column lighten-bg">
+        <div class="content">
+            
+
+<h1>
+    
+    Summer Camp
+    
+    
+</h1>
+
+<main class="clipboard-container">
+    
+    
+    
+    
+    
+
+    
+    
+    <style>
+  input[type=text] {
+    width: 90%;
+    margin: 2px;
+  }
+  .calc td:nth-child(1), td:nth-child(3), td:nth-child(5), td:nth-child(7), td:nth-child(9), td:nth-child(11) {
+    text-align: right;
+    padding-right: 0;
+  }
+  .calc td {
+    border-bottom: 0;
+  }
+  .calc {
+    margin-bottom: 0;
+  }
+</style>
+<div id="puzzle-contents-copyable">
+<p class="flavor">Welcome to this summer camp where you might be connected to the person next to you!</p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<p><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<strong>Participants</strong></p>
+<ul>
+<li>I'm associated with the eighth problem in a list which is associated with another participant. (4)  </li>
+<li>Did you know that \(3^2-2^3=1\)<span class="clipboard-only">3²-2³=1&nbsp;</span> is the unique answer? (6)  </li>
+<li>I often find that putting my belongings into drawers and shelves help me solve problems. (9)  </li>
+<li>I arrived at the hotel in a coach last night. There were so many guests! (1)  </li>
+<li>I came across a truly remarkable theorem today. (1)  </li>
+<li>Could you fill up this bottle for me please? (3)  </li>
+<li>I can help if you think the binomial distribution has too many limitations. (7)  </li>
+<li>I think cylinders function well. (2)  </li>
+<li>I carry these chains around all the time. (2)  </li>
+<li>What a beautiful equation - who would've thought these constants are all related to each other! (3)  </li>
+<li>I introduced the first problem in a list which is associated with another participant. (5)  </li>
+<li>I generalized the integral first rigorously defined by another participant and now I have my own! (6)  </li>
+<li>My inequality follows directly from an inequality associated with another participant. (5)  </li>
+<li>This is the least well-behaved function I've ever seen - its derivative doesn't exist! (3)  </li>
+<li>If a little theorem doesn't satisfy you, don't worry, I've got a great theorem! (6)  </li>
+<li>I love collaborating with others. (5)  </li>
+</ul>
+<p><center><img src="../static/puzzle_resources/summercamp/01.71313e3da50e.png" width="60%" class="no-copy"><p class="clipboard-only"><a href="../static/puzzle_resources/summercamp/01.71313e3da50e.png">Image</a href></p><div style="overflow-x:auto">
+$$\small \begin{align}
+&amp; \beta + \delta - z + \left\lfloor \frac{l}{30} \right\rfloor + \frac{1}{2}(v-s-r)(\zeta-g-\left\lfloor \frac{\epsilon}{42} \right\rfloor -2) + ceijk(w+\left\lfloor \frac{t-u}{4} \right\rfloor)\\
+&amp; - \left\lfloor adx(b+oy) \left(3fy \left( \beta - \left\lfloor \frac{q}{17} \right\rfloor + 15 \right) + \left(p - \left\lfloor \frac{z}{10} \right\rfloor + 7 \right) \left(h + \left\lfloor \frac{l}{62} \right\rfloor +1 \right) - \gamma -  \frac{n}{2} -2 \right) \times 10^{-\left\lfloor \frac{\alpha}{m}  \right\rfloor-2} \right\rfloor
+\end{align}$$</p>
+</div>
+<p class="clipboard-only">β+δ-z+floor(l/30)+1/2×(v-s-r)(ζ-g-floor(ε/42)-2)+ceijk(w+floor((t-u)/4))-floor(adx(b+oy)(3fy(β-floor(q/17)+15)+(p-floor(z/10)+7)(h+floor(l/62)+1)-γ-n/2-2)×10^(-floor(α/m)-2))</p>
+
+<p><em>Hint: \(\Sigma = 1034339\)<span class="clipboard-only">Σ = 1034339</span></em>
+</center><div class="no-copy" style="display: table;"><hr>
+  <em>The following calculator is only provided for convenience and is otherwise not part of the puzzle.</em> 
+<br />
+<table class="calc"><tr><td>\(a\)</td><td><input type="text" id="a"></td><td>\(b\)</td><td><input type="text" id="b"></td><td>\(c\)</td><td><input type="text" id="c"></td><td>\(d\)</td><td><input type="text" id="d"></td><td>\(e\)</td><td><input type="text" id="e"></td><td>\(f\)</td><td><input type="text" id="f"></td></tr><tr><td>\(g\)</td><td><input type="text" id="g"></td><td>\(h\)</td><td><input type="text" id="h"></td><td>\(i\)</td><td><input type="text" id="i"></td><td>\(j\)</td><td><input type="text" id="j"></td><td>\(k\)</td><td><input type="text" id="k"></td><td>\(l\)</td><td><input type="text" id="l"></td></tr><tr><td>\(m\)</td><td><input type="text" id="m"></td><td>\(n\)</td><td><input type="text" id="n"></td><td>\(o\)</td><td><input type="text" id="o"></td><td>\(p\)</td><td><input type="text" id="p"></td><td>\(q\)</td><td><input type="text" id="q"></td><td>\(r\)</td><td><input type="text" id="r"></td></tr><tr><td>\(s\)</td><td><input type="text" id="s"></td><td>\(t\)</td><td><input type="text" id="t"></td><td>\(u\)</td><td><input type="text" id="u"></td><td>\(v\)</td><td><input type="text" id="v"></td><td>\(w\)</td><td><input type="text" id="w"></td><td>\(x\)</td><td><input type="text" id="x"></td></tr><tr><td>\(y\)</td><td><input type="text" id="y"></td><td>\(z\)</td><td><input type="text" id="z"></td><td>\(\alpha\)</td><td><input type="text" id="alpha"></td><td>\(\beta\)</td><td><input type="text" id="beta"></td><td>\(\gamma\)</td><td><input type="text" id="gamma"></td><td>\(\delta\)</td><td><input type="text" id="delta"></td></tr><tr><td>\(\epsilon\)</td><td><input type="text" id="epsilon"></td><td>\(\zeta\)</td><td><input type="text" id="zeta"></td><td></td></tr></table></p>
+<p><input type="button" value="Calculate" onclick="calculate()"><br>
+  Result: <input type="text" id="calculation-result" style="width: 100%"></div></div></p>
+    
+</main>
+
+<script src="../static/js/copyjack.1dbad08982a3.js"></script>
+
+        </div>
+    </div>
+    </div>
+    <div class="inner-column lighten-bg" style="flex-grow:1;">
+    </div>
+    <div class="inner-column lighten-bg">
+        <footer>
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+        </footer>
+    </div>
+    
+<!-- Button to copy-to-clipboard when clicked -->
+<button id="clipboard-button">
+    <div>
+        📋 <span id="clipboard-message">Copy to clipboard</span>
+    </div>
+</button>
+
+<!-- Load jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../static/js/clipboard.b6f74b22533f.js"></script>
+ 
+    
+</body>
+
+<script>
+  function calculate() {
+    var a = BigInt(document.getElementById("a").value);
+    var b = BigInt(document.getElementById("b").value);
+    var c = BigInt(document.getElementById("c").value);
+    var d = BigInt(document.getElementById("d").value);
+    var e = BigInt(document.getElementById("e").value);
+    var f = BigInt(document.getElementById("f").value);
+    var g = BigInt(document.getElementById("g").value);
+    var h = BigInt(document.getElementById("h").value);
+    var i = BigInt(document.getElementById("i").value);
+    var j = BigInt(document.getElementById("j").value);
+    var k = BigInt(document.getElementById("k").value);
+    var l = BigInt(document.getElementById("l").value);
+    var m = BigInt(document.getElementById("m").value);
+    var n = BigInt(document.getElementById("n").value);
+    var o = BigInt(document.getElementById("o").value);
+    var p = BigInt(document.getElementById("p").value);
+    var q = BigInt(document.getElementById("q").value);
+    var r = BigInt(document.getElementById("r").value);
+    var s = BigInt(document.getElementById("s").value);
+    var t = BigInt(document.getElementById("t").value);
+    var u = BigInt(document.getElementById("u").value);
+    var v = BigInt(document.getElementById("v").value);
+    var w = BigInt(document.getElementById("w").value);
+    var x = BigInt(document.getElementById("x").value);
+    var y = BigInt(document.getElementById("y").value);
+    var z = BigInt(document.getElementById("z").value);
+    var alpha = BigInt(document.getElementById("alpha").value);
+    var beta = BigInt(document.getElementById("beta").value);
+    var gamma = BigInt(document.getElementById("gamma").value);
+    var delta = BigInt(document.getElementById("delta").value);
+    var epsilon = BigInt(document.getElementById("epsilon").value);
+    var zeta = BigInt(document.getElementById("zeta").value);
+    var result = beta+delta-z+l/30n+(v-s-r)*(zeta-g-epsilon/42n-2n)/2n+c*e*i*j*k*(w+(t-u)/4n)-(a*d*x*(b+o*y)*(3n*f*y*(beta-q/17n+15n)+(p-z/10n+7n)*(h+l/62n+1n)-gamma-n/2n-2n))/(10n**(alpha/m+2n));
+    document.getElementById("calculation-result").value = result;
+  }
+</script>  
+
+</html>
