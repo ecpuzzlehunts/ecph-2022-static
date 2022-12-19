@@ -1,20 +1,17 @@
-
-
-
-
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    
-<title>Call in: Back to School - EC Puzzle Hunt</title>
+
+    <title>Call in: Back to School - EC Puzzle Hunt</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat+Brush|Poppins|Kalam">
     <link rel="stylesheet" href="../static/css/skeleton.dcba2c152942.css">
     <link rel="stylesheet" href="../static/css/base.d486c8104204.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,34 +22,35 @@
     <script src="../static/js/tray.ac18af883297.js"></script>
     <script src="../static/js/notify.7898a6be1e40.js"></script>
     <script src="../static/js/time.4f918ead85cd.js"></script>
-    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico" type="image/vnd.microsoft.icon">
+    <link rel="icon" sizes="16x16 32x32 48x48 64x64" href="../static/images/favicon.dfc8ea3ef163.ico"
+        type="image/vnd.microsoft.icon">
 
 </head>
 
 <body>
-    
-        <style>
-    .background {
+
+    <style>
+        .background {
             background-image: url(../static/images/introbg.png);
             background-size: 25%;
             background-position-y: 0px;
             background-repeat: repeat;
-            position:absolute;
-            padding:0;
-            margin:0;
+            position: absolute;
+            padding: 0;
+            margin: 0;
 
-            top:0;
-            left:0;
+            top: 0;
+            left: 0;
 
             width: 100%;
             height: 100%;
             z-index: -1;
         }
-</style>
-<div class=background></div>
-    
-    
-    
+    </style>
+    <div class=background></div>
+
+
+
     <nav>
         <div class="nav-bar">
             <div class="inner-column">
@@ -64,84 +62,154 @@
                         <a href="../rules.html">
                             Rules
                         </a>
-                        
+
                         <a href="../story.html">
                             Story
                         </a>
-                        
-                        
+
+
                         <a class="selected-tab" href="../puzzles.html">
                             Puzzles
                         </a>
-                        
+
                         <a href="../teams.html">
                             Teams
                         </a>
                         <a href="../faq.html">
                             FAQ
                         </a>
-                        
+
                         <a href="../errata.html">
                             Updates
                         </a>
-                        
-                        
+
+
                         <a href="../wrapup.html">
                             Wrap-Up
                         </a>
-                        
+
                     </div>
                 </span>
             </div>
             <div class="inner-column lighten-bg">
                 <div class="top-actions">
                     <div class="top-left-actions">
-                        
-<a href="../puzzle/backtoschool.html" class="btn">Back to the puzzle</a>
+
+                        <a href="../puzzle/backtoschool.html" class="btn">Back to the puzzle</a>
 
                     </div>
                     <div class="top-right-actions">
-                        
+
                     </div>
                 </div>
             </div>
         </div>
     </nav>
     <div class="inner-column">
-        
-        
-        
+
+
+
 
     </div>
     <div class="inner-column lighten-bg">
         <div class="content">
-            
 
-<h1>Check your answer for Back to School</h1>
 
-<main>
-    
+            <h1>Check your answer for Back to School</h1>
 
-    
+            <main>
 
-    <form class="call-in-answer-panel">
-        
-        <div class="row">
-            <div class="four columns">
-                <label for="id_answer">Enter your guess:</label>
-            </div>
-            <div class="four columns">
-                <input type="text" name="answer" maxlength="500" required id="id_answer">
-                
-            </div>
-            <div class="four columns">
-                <button class="btn" type="submit">Submit</button>
-            </div>
-        </div>
-        
-    </form>
-</main>
 
+
+
+                <form class="call-in-answer-panel">
+
+                    <div class="row">
+                        <div class="four columns">
+                            <label for="id_answer">Enter your guess:</label>
+                        </div>
+                        <div class="four columns">
+                            <input type="text" name="answer" maxlength="500" required id="id_answer">
+
+                        </div>
+                        <div class="four columns">
+                            <button class="btn" type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="solved-panel" style="display: none" id="phs_correct">
+                    <h4>+correct!</h4>
+                    <p>The answer was <b>ROWAN ATKINSON</b>.</p>
+                </div>
+                <div class="unsolved-panel" style="display: none" id="phs_wrong">
+                    <h4>Incorrect!</h4>
+                </div>
+
+                <div style="display: none" id="phs_message_BABIES">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_BANKS">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_BELT">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_BROAD">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_COFFEE">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_EYE">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_GIBBON">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_MAGIC">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_MARKET">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_NAVY">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_PATIO">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_POWERS">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_SMART">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_STRING">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+                <div style="display: none" id="phs_message_VIGOROUS">
+                    <p style="color: red">Congratulations! You have solved one piece of this puzzle.</p>
+                </div>
+            </main>
+
+            <script>$(function () {
+                    const params = new URLSearchParams(window.location.search);
+                    const answer = params.get("answer");
+                    if (!answer) return;
+                    $("#id_answer").val(answer);
+                    const semicleaned_guess = answer.normalize('NFKD').replace(/[^0-9A-Z]/gi, '').toUpperCase();
+                    const normalized_answer = answer.normalize('NFKD').replace(/[^A-Z]/gi, '').toUpperCase();
+                    $('[id^="phs_"]').hide();
+                    if ($('#phs_message_' + semicleaned_guess).show().length)
+                        return;
+                    if (normalized_answer == 'ROWANATKINSON')
+                        $('#phs_correct,#phs_victory').show();
+
+                    else
+                        $('#phs_wrong').show();
+                });</script>
 
         </div>
     </div>
@@ -150,11 +218,11 @@
     </div>
     <div class="inner-column lighten-bg">
         <footer>
-            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>  
+            Powered by <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>
         </footer>
     </div>
-     
-    
+
+
 </body>
 
 </html>
