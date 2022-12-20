@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /solution/
+Disallow: /post-hunt-solve/
